@@ -1,6 +1,15 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { SITE_CONTENT } from '@/lib/site-content';
+import { Activity, Radio, Heart, Book, FlaskConical } from 'lucide-react';
+
+const FACILITY_ICONS: Record<string, React.ElementType> = {
+  activity: Activity,
+  radio: Radio,
+  heart: Heart,
+  book: Book,
+  flask: FlaskConical,
+};
 
 export function SectionHeading({ 
   title, 
@@ -68,10 +77,11 @@ export function TestimonialCard({ testimonial }: { testimonial: typeof SITE_CONT
 }
 
 export function FacilityCard({ facility }: { facility: typeof SITE_CONTENT.facilities.items[0] }) {
+  const Icon = FACILITY_ICONS[facility.icon] ?? Activity;
   return (
     <div className="flex items-start gap-4 p-5 rounded-xl hover:bg-sims-surface transition-colors group border border-transparent hover:border-sims-border/50">
       <div className="w-12 h-12 rounded-full bg-sims-surface-2 flex items-center justify-center flex-shrink-0 text-sims-primary-2 group-hover:bg-sims-primary group-hover:text-white transition-colors">
-        <div className="w-6 h-6" data-lucide={facility.icon} />
+        <Icon className="w-6 h-6" />
       </div>
       <div>
         <h3 className="font-bold text-sims-primary mb-1">{facility.name}</h3>

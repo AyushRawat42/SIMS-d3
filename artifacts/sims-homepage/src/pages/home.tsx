@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { FlaskConical, Users, Building2, GraduationCap, CheckCircle2, FileText, MessagesSquare, CheckSquare, Phone, Activity, Radio, Heart, Book, Youtube, Facebook, Instagram, ChevronRight } from 'lucide-react';
 import { SITE_CONTENT } from '@/lib/site-content';
 import { Header } from '@/components/Header';
@@ -21,12 +21,12 @@ import gallery4 from '@assets/gallery-4.png';
 import gallery5 from '@assets/gallery-5.png';
 import gallery6 from '@assets/gallery-6.png';
 
-const fadeUpVariant = {
+const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
