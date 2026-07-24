@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "SIMS Homepage"
+version = "1.0.0"
+id = "artifacts/sims-homepage"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20982
+
+[services.development]
+run = "pnpm --filter @workspace/sims-homepage run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sims-homepage", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/sims-homepage/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20982"
+BASE_PATH = "/"
