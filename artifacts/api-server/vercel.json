@@ -1,5 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "cd ../.. && corepack enable && corepack prepare pnpm@10.30.2 --activate && pnpm install",
-  "buildCommand": "echo \"Express zero-config: Vercel bundles src/app.ts\""
+  "installCommand": "cd ../.. && corepack enable && corepack prepare pnpm@10.30.2 --activate && pnpm install"
 }
