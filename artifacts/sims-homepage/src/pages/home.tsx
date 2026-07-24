@@ -9,17 +9,17 @@ import { SectionHeading, CourseCard, TestimonialCard, FacilityCard } from '@/com
 import { Button } from '@/components/ui/button';
 
 // Image imports
-import heroBg from '@assets/hero-bg.png';
-import whyChooseUsImg from '@assets/why-choose-us.png';
-import facilityFeatured from '@assets/facility-featured.png';
-import facilityPreview1 from '@assets/facility-preview-1.png';
-import facilityPreview2 from '@assets/facility-preview-2.png';
-import gallery1 from '@assets/gallery-1.png';
-import gallery2 from '@assets/gallery-2.png';
-import gallery3 from '@assets/gallery-3.png';
-import gallery4 from '@assets/gallery-4.png';
-import gallery5 from '@assets/gallery-5.png';
-import gallery6 from '@assets/gallery-6.png';
+import heroBg from '@assets/DSC00075-scaled.jpg';
+import whyChooseUsImg from '@assets/12.png';
+import facilityFeatured from '@assets/9.png';
+import facilityPreview1 from '@assets/DSC00134-scaled.jpg';
+import facilityPreview2 from '@assets/DSC00118-scaled.jpg';
+import gallery1 from '@assets/DSC00840-scaled.jpg';
+import gallery2 from '@assets/85cd0d1b-dedd-429d-9b22-297d0c72f2cc-scaled.jpg';
+import gallery3 from '@assets/2 (1).png';
+import gallery4 from '@assets/DSC00066-scaled.jpg';
+import gallery5 from '@assets/DSC00177-scaled.jpg';
+import gallery6 from '@assets/DSC00698-1-scaled.jpg';
 
 const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -48,7 +48,7 @@ export function Home() {
       <section id="home" className="relative pt-[120px] md:pt-[160px] min-h-[90vh] flex items-center">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="Nursing students studying" className="w-full h-full object-cover" />
+          <img src={heroBg} alt="SIMS students on campus" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-sims-primary/90 via-sims-primary/70 to-transparent"></div>
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
@@ -94,7 +94,7 @@ export function Home() {
               className="relative"
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/5] lg:aspect-square">
-                <img src={whyChooseUsImg} alt="SIMS Faculty mentoring" className="w-full h-full object-cover" />
+                <img src={whyChooseUsImg} alt="SIMS students in training" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 shadow-inner rounded-3xl pointer-events-none"></div>
               </div>
               {/* Floating Quote */}
@@ -267,14 +267,14 @@ export function Home() {
               className="lg:col-span-7 flex flex-col gap-6"
             >
               <div className="rounded-3xl overflow-hidden shadow-lg h-[400px]">
-                <img src={facilityFeatured} alt="Featured Facility" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={facilityFeatured} alt="Faculty mentoring session" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="grid grid-cols-2 gap-6 h-[200px]">
                 <div className="rounded-2xl overflow-hidden shadow-md">
-                  <img src={facilityPreview1} alt="Facility 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img src={facilityPreview1} alt="Anthropometric assessment skills lab" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-md">
-                  <img src={facilityPreview2} alt="Facility 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img src={facilityPreview2} alt="Clinical skills training lab" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
               </div>
             </motion.div>

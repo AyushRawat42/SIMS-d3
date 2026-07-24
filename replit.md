@@ -4,12 +4,15 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- Open the UI at **http://localhost:20982/** (not the API port)
+- `PORT=20982 BASE_PATH=/ pnpm --filter @workspace/sims-homepage run dev` — homepage (Vite)
+- `PORT=5000 pnpm --filter @workspace/api-server run build && PORT=5000 pnpm --filter @workspace/api-server run start` — API
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- Required env: `DATABASE_URL` — Postgres connection string (only when using `@workspace/db`)
+- Local Vite proxies `/api` → `http://localhost:5000` (override with `API_PROXY_TARGET`)
 
 ## Stack
 

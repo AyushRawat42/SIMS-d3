@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { SITE_CONTENT } from '@/lib/site-content';
-import simsLogo from '@assets/sims-logo-generated.png';
+import simsLogo from '@assets/Shushila_Institute_Of-removebg-preview-1-e1743436624699.png';
 import { Button } from '@/components/ui/button';
 
 export function Header({ onApplyClick }: { onApplyClick: () => void }) {
@@ -21,16 +21,12 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 backdrop-blur-sm py-4'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 md:gap-4 z-50">
-            <img src={simsLogo} alt="SIMS Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-sims-primary text-sm md:text-xl leading-tight max-w-[200px] md:max-w-none">
-                {SITE_CONTENT.header.logoText}
-              </span>
-              <span className="text-xs md:text-sm text-sims-text-muted">
-                {SITE_CONTENT.header.tagline}
-              </span>
-            </div>
+          <a href="#" className="flex items-center z-50">
+            <img
+              src={simsLogo}
+              alt="Sushila Institute of Medical Sciences"
+              className="h-12 md:h-14 w-auto max-w-[260px] md:max-w-[340px] object-contain object-left"
+            />
           </a>
 
           {/* Desktop Nav */}

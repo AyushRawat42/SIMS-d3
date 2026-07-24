@@ -64,6 +64,12 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, 'dist/public'),
     emptyOutDir: true,
   },
+  // Isolate from parent-folder postcss.config (Tailwind v3). v4 is via @tailwindcss/vite.
+  css: {
+    postcss: {
+      plugins: [],
+    },
+  },
   server: {
     port,
     strictPort: true,
@@ -71,6 +77,12 @@ export default defineConfig({
     allowedHosts: true,
     fs: {
       strict: true,
+    },
+    proxy: {
+      '/api': {
+        target: process.env.API_PROXY_TARGET ?? 'http://localhost:5000',
+        changeOrigin: true,
+      },
     },
   },
   preview: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SITE_CONTENT } from '@/lib/site-content';
 import { Youtube, Facebook, Instagram, Phone, Mail, Globe, MapPin } from 'lucide-react';
-import simsLogo from '@assets/sims-logo-generated.png';
+import simsLogo from '@assets/Shushila_Institute_Of-removebg-preview-1-e1743436624699.png';
 
 export function Footer() {
   return (
@@ -11,11 +11,12 @@ export function Footer() {
           
           {/* Column 1: Brand & Social */}
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3 bg-white/5 p-4 rounded-xl">
-              <img src={simsLogo} alt="SIMS Logo" className="w-12 h-12" />
-              <div className="font-display font-bold text-lg leading-tight">
-                {SITE_CONTENT.header.logoText}
-              </div>
+            <div className="bg-white p-3 rounded-xl">
+              <img
+                src={simsLogo}
+                alt="Sushila Institute of Medical Sciences"
+                className="w-full h-auto max-h-16 object-contain object-left"
+              />
             </div>
             <div className="flex items-start gap-3 text-sims-border">
               <MapPin className="w-5 h-5 flex-shrink-0 mt-1 text-amber-500" />

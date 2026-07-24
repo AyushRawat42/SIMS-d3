@@ -55,6 +55,12 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
+  // Isolate from parent-folder postcss.config (Tailwind v3). v4 is via @tailwindcss/vite.
+  css: {
+    postcss: {
+      plugins: [],
+    },
+  },
   server: {
     port,
     host: "0.0.0.0",
