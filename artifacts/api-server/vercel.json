@@ -1,21 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "version": 2,
   "installCommand": "cd ../.. && corepack enable && corepack prepare pnpm@10.30.2 --activate && pnpm install",
-  "buildCommand": "pnpm run build",
-  "builds": [
+  "buildCommand": "echo \"Vercel bundles api/index.ts; skip local esbuild\"",
+  "rewrites": [
     {
-      "src": "dist/app.mjs",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["dist/**"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/app.mjs"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ]
 }
