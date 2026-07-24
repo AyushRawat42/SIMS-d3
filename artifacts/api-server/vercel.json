@@ -2,6 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "cd ../.. && corepack enable && corepack prepare pnpm@10.30.2 --activate && pnpm install",
+  "buildCommand": "",
+  "outputDirectory": "",
   "rewrites": [
     {
       "source": "/(.*)",
