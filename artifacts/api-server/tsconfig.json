@@ -6,12 +6,15 @@
     "outDir": "dist",
     "rootDir": "src",
     "types": ["node"],
-    "customConditions": []
+    "customConditions": [],
+    "noEmitOnError": false
   },
   "include": ["src"],
-  "references": [
-    {
-      "path": "../../lib/api-zod"
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs",
+      "rootDir": "."
     }
-  ]
+  }
 }

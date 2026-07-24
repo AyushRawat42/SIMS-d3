@@ -5,12 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm run build && pnpm run start",
-    "build": "tsc -b ../../lib/api-zod && node ./build.mjs",
+    "build": "node ./build.mjs",
     "start": "node --enable-source-maps ./dist/index.mjs",
-    "typecheck": "tsc -b ../../lib/api-zod && tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@workspace/api-zod": "workspace:*",
     "@workspace/db": "workspace:*",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
