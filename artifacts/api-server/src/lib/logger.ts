@@ -1,24 +1,15 @@
-import { pino } from "pino";
+type LogFn = (obj: unknown, msg?: string) => void;
 
-// Vercel serverless: never use worker-thread transports (pino-pretty).
-// They crash the isolate with MODULE_NOT_FOUND / worker exited → FUNCTION_INVOCATION_FAILED.
-const isServerless = process.env.VERCEL === "1";
-const usePrettyTransport =
-  !isServerless && process.env.NODE_ENV !== "production";
-
-export const logger = pino({
-  level: process.env.LOG_LEVEL ?? "info",
-  redact: [
-    "req.headers.authorization",
-    "req.headers.cookie",
-    "res.headers['set-cookie']",
-  ],
-  ...(usePrettyTransport
-    ? {
-        transport: {
-          target: "pino-pretty",
-          options: { colorize: true },
-        },
-      }
-    : {}),
-});
+export const logger: {
+  info: LogFn;
+  error: LogFn;
+} = {
+  info: (obj, msg) => {
+    if (typeof obj === "string") console.info(obj);
+    else console.info(msg ?? "", obj);
+  },
+  error: (obj, msg) => {
+    if (typeof obj === "string") console.error(obj);
+    else console.error(msg ?? "", obj);
+  },
+};
