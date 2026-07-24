@@ -1,9 +1,15 @@
+import { createRequire } from "node:module";
 import type { IncomingMessage, ServerResponse } from "http";
 import express, { type Express } from "express";
 import cors from "cors";
-import { pinoHttp } from "pino-http";
+import type { pinoHttp as PinoHttp } from "pino-http";
 import router from "./routes";
 import { logger } from "./lib/logger";
+
+// pino-http is CJS. Named/default ESM imports can be non-callable after Vercel bundles.
+// createRequire loads the real CommonJS export (the middleware factory function).
+const require = createRequire(import.meta.url);
+const pinoHttp = require("pino-http") as typeof PinoHttp;
 
 const app: Express = express();
 
