@@ -114,7 +114,6 @@ export const SITE_CONTENT = {
   },
   placements: {
     title: "Your Career, Our Priority",
-    stats: ["500+ Graduates Placed", "50+ Hospital Partners", "100% Placement Assistance"],
     outcomes: [
       {
         title: "Hospital Placement Support",

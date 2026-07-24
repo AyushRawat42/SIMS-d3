@@ -209,24 +209,6 @@ export function Home() {
       {/* SECTION 6: PLACEMENTS */}
       <section id="placements" className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          {/* Stat Strip */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="bg-sims-primary rounded-3xl p-8 md:p-12 mb-20 shadow-xl"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
-              {SITE_CONTENT.placements.stats.map((stat, i) => {
-                const [number, ...rest] = stat.split(' ');
-                return (
-                  <div key={i} className="pt-8 md:pt-0 first:pt-0">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-amber-400 mb-2">{number}</div>
-                    <div className="text-white/80 font-medium text-lg">{rest.join(' ')}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
-
           <SectionHeading title={SITE_CONTENT.placements.title} centered className="mb-16" />
 
           {/* Outcomes */}
