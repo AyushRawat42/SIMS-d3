@@ -159,7 +159,10 @@ export const SITE_CONTENT = {
       { name: "Anatomy & Physiology Lab", icon: "activity", desc: "Detailed biological models and study materials" },
       { name: "Radiology & Imaging Suite", icon: "radio", desc: "Hands-on experience with modern scanners" },
       { name: "Nursing Skills Centre", icon: "heart", desc: "Simulated ward environments" },
-      { name: "Library & Resource Room", icon: "book", desc: "Extensive medical texts and journals" }
+      { name: "Library & Resource Room", icon: "book", desc: "Extensive medical texts and journals" },
+      { name: "Hostel", icon: "home", desc: "Safe, comfortable on-campus accommodation" },
+      { name: "Canteen", icon: "utensils", desc: "Hygienic meals and refreshments on campus" },
+      { name: "Transportation", icon: "bus", desc: "Convenient college transport for students" }
     ]
   },
   gallery: {

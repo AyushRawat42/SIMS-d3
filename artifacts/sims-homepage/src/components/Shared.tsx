@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { SITE_CONTENT } from '@/lib/site-content';
-import { Activity, Radio, Heart, Book, FlaskConical } from 'lucide-react';
+import { Activity, Radio, Heart, Book, FlaskConical, Home, UtensilsCrossed, Bus } from 'lucide-react';
 
 const FACILITY_ICONS: Record<string, React.ElementType> = {
   activity: Activity,
@@ -9,6 +9,9 @@ const FACILITY_ICONS: Record<string, React.ElementType> = {
   heart: Heart,
   book: Book,
   flask: FlaskConical,
+  home: Home,
+  utensils: UtensilsCrossed,
+  bus: Bus,
 };
 
 export function SectionHeading({ 
