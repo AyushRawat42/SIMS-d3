@@ -13,20 +13,69 @@ import { CheckCircle2, Loader2 } from 'lucide-react';
 export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpenChange: (open: boolean) => void }) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("[admissions] handleSubmit fired");
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    setSubmitError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      fullName: String(formData.get("fullName") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      phone: String(formData.get("phone") ?? "").trim(),
+      courseInterested: String(formData.get("courseInterested") ?? "").trim(),
+    };
+
+    if (!payload.fullName || !payload.email || !payload.phone || !payload.courseInterested) {
+      console.log("[admissions] client validation failed", payload);
+      setSubmitError("Please fill in all required fields.");
       setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const apiBase = import.meta.env.VITE_API_BASE_URL ?? "";
+      const url = `${apiBase}/api/admissions`;
+      console.log("[admissions] before fetch", url, payload);
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      console.log("[admissions] after fetch", response.status, response.ok);
+
+      if (!response.ok) {
+        let message = "Submission failed. Please try again.";
+        try {
+          const data = (await response.json()) as { error?: string; details?: string[] };
+          if (data.details?.length) message = data.details.join(". ");
+          else if (data.error) message = data.error;
+        } catch {
+          // keep default message
+        }
+        throw new Error(message);
+      }
+
       setIsSuccess(true);
-    }, 1500);
+      form.reset();
+    } catch (err) {
+      console.log("[admissions] catch", err);
+      setSubmitError(err instanceof Error ? err.message : "Submission failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     onOpenChange(false);
-    setTimeout(() => setIsSuccess(false), 300); // Reset after animation
+    setTimeout(() => {
+      setIsSuccess(false);
+      setSubmitError(null);
+    }, 300); // Reset after animation
   };
 
   return (
@@ -54,11 +103,12 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
               </Button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} noValidate className="space-y-4">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-sims-text">Full Name *</label>
                 <input 
-                  id="name" 
+                  id="name"
+                  name="fullName"
                   required 
                   className="w-full px-4 py-3 rounded-xl border border-sims-border bg-sims-bg focus:outline-none focus:ring-2 focus:ring-sims-primary/50 transition-shadow" 
                   placeholder="e.g. Rahul Sharma"
@@ -69,7 +119,8 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-sims-text">Email Address *</label>
                   <input 
-                    id="email" 
+                    id="email"
+                    name="email"
                     type="email" 
                     required 
                     className="w-full px-4 py-3 rounded-xl border border-sims-border bg-sims-bg focus:outline-none focus:ring-2 focus:ring-sims-primary/50 transition-shadow" 
@@ -79,7 +130,8 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium text-sims-text">Phone Number *</label>
                   <input 
-                    id="phone" 
+                    id="phone"
+                    name="phone"
                     type="tel" 
                     required 
                     className="w-full px-4 py-3 rounded-xl border border-sims-border bg-sims-bg focus:outline-none focus:ring-2 focus:ring-sims-primary/50 transition-shadow" 
@@ -91,16 +143,22 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
               <div className="space-y-2">
                 <label htmlFor="course" className="text-sm font-medium text-sims-text">Course of Interest *</label>
                 <select 
-                  id="course" 
-                  required 
+                  id="course"
+                  name="courseInterested"
+                  required
+                  defaultValue=""
                   className="w-full px-4 py-3 rounded-xl border border-sims-border bg-sims-bg focus:outline-none focus:ring-2 focus:ring-sims-primary/50 transition-shadow appearance-none"
                 >
-                  <option value="" disabled selected>Select a course</option>
+                  <option value="" disabled>Select a course</option>
                   {SITE_CONTENT.programs.courses.map(c => (
                     <option key={c.name} value={c.name}>{c.name}</option>
                   ))}
                 </select>
               </div>
+
+              {submitError ? (
+                <p className="text-sm text-red-600" role="alert">{submitError}</p>
+              ) : null}
 
               <Button 
                 type="submit" 
