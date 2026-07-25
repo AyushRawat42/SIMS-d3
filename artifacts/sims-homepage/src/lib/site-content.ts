@@ -2,7 +2,7 @@ export const SITE_CONTENT = {
   header: {
     logoText: "SUSHILA INSTITUTE OF MEDICAL SCIENCES",
     tagline: "Dehradun, Uttarakhand",
-    announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · GNM · PB · B.Sc Nursing",
+    announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · GNM · PB · B.Sc Nursing · M.Sc Nursing · M.Sc Microbiology · B.Optometry · B.O.T.T · B.A.S.L.P",
     navLinks: [
       { label: "Home", href: "#home" },
       { label: "About", href: "#about" },
@@ -82,9 +82,34 @@ export const SITE_CONTENT = {
         name: "BMRIT — Bachelor of Medical Radiology & Imaging Technology",
         duration: "3 Years",
         description: "X-rays, MRIs, CT scans, and medical imaging."
+      },
+      {
+        name: "M.Sc Nursing",
+        duration: "2 Years",
+        description: "Postgraduate program advancing clinical expertise, leadership, and research capabilities — preparing professionals for specialized, evidence-based, and ethically sound healthcare."
+      },
+      {
+        name: "M.Sc. Microbiology",
+        duration: "2 Years",
+        description: "In-depth study of bacteria, viruses, fungi, and parasites, blending theory with intensive lab work in microbial genetics, immunology, molecular biology, and industrial biotechnology."
+      },
+      {
+        name: "B.Optometry",
+        duration: "4 Years",
+        description: "Undergraduate healthcare program blending academic theory with intensive clinical training to develop skilled primary eye care professionals."
+      },
+      {
+        name: "BOTT — Bachelor of Operation Theatre Technology",
+        duration: "3–4 Years",
+        description: "Specialized allied health science degree training professionals to manage the critical environment of surgical suites."
+      },
+      {
+        name: "BASLP — Bachelor of Audiology and Speech-Language Pathology",
+        duration: "4 Years",
+        description: "RCI-regulated dual-focused program training students to diagnose, evaluate, and treat hearing, balance, speech, and language disorders across pediatric and adult populations."
       }
     ],
-    comingSoon: ["M.Sc Nursing", "M.Sc Microbiology", "B.Optometry", "B.O.T.T", "B.A.S.L.P"]
+    comingSoon: [] as string[]
   },
   admissions: {
     title: "Simple Admissions Process",
@@ -109,8 +134,7 @@ export const SITE_CONTENT = {
         title: "Secure Your Seat",
         description: "Pay fees and confirm your enrollment"
       }
-    ],
-    badges: "Free Demo Classes Available · Scholarships for Deserving Students"
+    ]
   },
   placements: {
     title: "Your Career, Our Priority",
@@ -126,23 +150,6 @@ export const SITE_CONTENT = {
       {
         title: "Industry-Ready Training",
         description: "Skills curricula co-designed with hospital partners"
-      }
-    ],
-    testimonials: [
-      {
-        name: "Priya Rawat",
-        course: "B.Sc Nursing 2024",
-        quote: "SIMS gave me my first hospital posting within 3 months of graduating. The clinical exposure during my course made the real ward feel familiar."
-      },
-      {
-        name: "Rohit Bisht",
-        course: "BMLT 2023",
-        quote: "The lab facilities are excellent. I joined a diagnostic centre in Dehradun immediately after passing — the hands-on training made all the difference."
-      },
-      {
-        name: "Anjali Negi",
-        course: "GNM 2024",
-        quote: "The faculty genuinely cares. They helped me prepare for interviews and even connected me with the hospital where I now work."
       }
     ]
   },
@@ -161,15 +168,15 @@ export const SITE_CONTENT = {
   social: {
     title: "Connect With Us",
     whatsapp: "https://wa.me/918979999395",
-    facebook: "https://www.facebook.com/sims.college",
+    facebook: "https://www.facebook.com/sushilainstituteofmedicalsciences",
     youtube: "https://www.youtube.com/@SIMSDEHRADUN",
-    instagram: "https://www.instagram.com/sushilainstituteofmedicalsciences",
+    instagram: "https://www.instagram.com/simscollegedehradun",
     whatsappNumber: "+91 8979999395"
   },
   footer: {
-    address: "8VRF+25, Central Hope Town, Uttarakhand 248197",
+    address: "SUSHILA INSTITUTE OF MEDICAL SCIENCES\n8VRF+25, Central Hope Town, Uttarakhand 248011, India",
     links: ["Admission Procedure", "About Us", "Visions & Missions", "Doubt Sessions", "Extra Curricular", "Disclaimer", "Privacy Policy"],
-    courses: ["B.Sc Nursing", "Post Basic BSc Nursing", "GNM", "BPT", "BMLT", "BMRIT", "M.Sc Nursing"],
+    courses: ["B.Sc Nursing", "Post Basic BSc Nursing", "GNM", "BPT", "BMLT", "BMRIT", "M.Sc Nursing", "M.Sc. Microbiology", "B.Optometry", "BOTT", "BASLP"],
     contact: {
       phones: ["975976-1244", "975976-1243", "975976-1241", "8979-999-395"],
       email: "Info@sims.college",

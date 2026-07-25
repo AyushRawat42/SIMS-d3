@@ -20,7 +20,14 @@ export function Footer() {
             </div>
             <div className="flex items-start gap-3 text-sims-border">
               <MapPin className="w-5 h-5 flex-shrink-0 mt-1 text-amber-500" />
-              <p className="text-sm leading-relaxed">{SITE_CONTENT.footer.address}</p>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE_CONTENT.footer.address.replace(/\n/g, ", "))}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm leading-relaxed text-left hover:text-amber-400 transition-colors underline-offset-2 hover:underline whitespace-pre-line"
+              >
+                {SITE_CONTENT.footer.address}
+              </a>
             </div>
             <div className="flex gap-4 mt-2">
               <a href={SITE_CONTENT.social.youtube} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 hover:text-sims-primary transition-all">

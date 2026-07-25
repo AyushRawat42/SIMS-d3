@@ -102,16 +102,6 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
                 </select>
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-sims-text">Message (Optional)</label>
-                <textarea 
-                  id="message" 
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-xl border border-sims-border bg-sims-bg focus:outline-none focus:ring-2 focus:ring-sims-primary/50 transition-shadow resize-none" 
-                  placeholder="Any questions you have?"
-                />
-              </div>
-
               <Button 
                 type="submit" 
                 disabled={isSubmitting}

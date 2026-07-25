@@ -5,7 +5,7 @@ import { SITE_CONTENT } from '@/lib/site-content';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
-import { SectionHeading, CourseCard, TestimonialCard, FacilityCard } from '@/components/Shared';
+import { SectionHeading, CourseCard, FacilityCard } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
 
 // Image imports
@@ -150,16 +150,18 @@ export function Home() {
             ))}
           </motion.div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="mt-20 text-center">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-sims-text-muted mb-6">Upcoming Programs</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {SITE_CONTENT.programs.comingSoon.map(program => (
-                <span key={program} className="px-4 py-2 bg-white border border-sims-border rounded-full text-sm font-medium text-sims-text-muted shadow-sm">
-                  {program}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+          {SITE_CONTENT.programs.comingSoon.length > 0 && (
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="mt-20 text-center">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-sims-text-muted mb-6">Upcoming Programs</h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {SITE_CONTENT.programs.comingSoon.map(program => (
+                  <span key={program} className="px-4 py-2 bg-white border border-sims-border rounded-full text-sm font-medium text-sims-text-muted shadow-sm">
+                    {program}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -199,9 +201,6 @@ export function Home() {
             <Button size="lg" className="bg-sims-primary hover:bg-sims-primary-2 text-white h-14 px-10 text-lg font-bold shadow-lg" onClick={handleApplyClick}>
               Start Your Application
             </Button>
-            <p className="mt-6 text-sm font-semibold text-sims-primary-2 tracking-wide">
-              {SITE_CONTENT.admissions.badges}
-            </p>
           </motion.div>
         </div>
       </section>
@@ -214,24 +213,12 @@ export function Home() {
           {/* Outcomes */}
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {SITE_CONTENT.placements.outcomes.map((outcome, i) => (
               <motion.div key={i} variants={fadeUpVariant} className="p-8 rounded-2xl bg-sims-bg border border-sims-border/60 hover:bg-white hover:shadow-lg transition-all">
                 <h3 className="text-xl font-bold text-sims-primary mb-3">{outcome.title}</h3>
                 <p className="text-sims-text-muted leading-relaxed">{outcome.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Testimonials */}
-          <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {SITE_CONTENT.placements.testimonials.map((test, i) => (
-              <motion.div key={i} variants={fadeUpVariant}>
-                <TestimonialCard testimonial={test} />
               </motion.div>
             ))}
           </motion.div>
@@ -272,7 +259,7 @@ export function Home() {
               ))}
               
               <div className="mt-8 pt-8 border-t border-sims-border">
-                <Button variant="ghost" className="w-full justify-between text-sims-primary hover:text-sims-primary-2 hover:bg-sims-surface h-12">
+                <Button variant="ghost" className="w-full justify-between text-sims-primary hover:text-sims-primary-2 hover:bg-sims-surface h-12" onClick={handleApplyClick}>
                   <span className="font-semibold">Schedule a Campus Tour</span>
                   <ChevronRight className="w-5 h-5" />
                 </Button>
@@ -355,7 +342,7 @@ export function Home() {
                 <Instagram className="w-7 h-7" />
               </div>
               <div>
-                <h4 className="font-bold text-sims-text">@sushilainstitute</h4>
+                <h4 className="font-bold text-sims-text">@simscollegedehradun</h4>
                 <p className="text-sm text-sims-text-muted">Follow for updates</p>
                 <span className="text-xs font-semibold text-pink-600 mt-1 inline-block">Follow →</span>
               </div>

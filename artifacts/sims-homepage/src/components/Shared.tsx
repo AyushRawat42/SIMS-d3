@@ -61,21 +61,6 @@ export function CourseCard({ course }: { course: typeof SITE_CONTENT.programs.co
   );
 }
 
-export function TestimonialCard({ testimonial }: { testimonial: typeof SITE_CONTENT.placements.testimonials[0] }) {
-  return (
-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-sims-border relative flex flex-col h-full">
-      <div className="text-4xl text-sims-primary/20 font-display absolute top-6 left-6 leading-none">"</div>
-      <p className="text-sims-text-muted italic relative z-10 flex-grow pt-4">
-        {testimonial.quote}
-      </p>
-      <div className="mt-6 pt-6 border-t border-sims-surface-2">
-        <div className="font-semibold text-sims-text">{testimonial.name}</div>
-        <div className="text-sm text-sims-primary-2">{testimonial.course}</div>
-      </div>
-    </div>
-  );
-}
-
 export function FacilityCard({ facility }: { facility: typeof SITE_CONTENT.facilities.items[0] }) {
   const Icon = FACILITY_ICONS[facility.icon] ?? Activity;
   return (
