@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
@@ -15,72 +14,37 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
   const [isSuccess, setIsSuccess] = React.useState(false);
   const [submitError, setSubmitError] = React.useState<string | null>(null);
 
-  const handleDebugDirectFetch = async () => {
-    const apiBase = import.meta.env.VITE_API_BASE_URL ?? "";
-    const url = `${apiBase}/api/admissions`;
-    console.log("VITE_API_BASE_URL", import.meta.env.VITE_API_BASE_URL);
-    console.log("[admissions] request URL", url);
-    console.log("[admissions] direct fetch start", url);
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: "Test User",
-          email: "test@example.com",
-          phone: "9999999999",
-          courseInterested: "Test Course",
-        }),
-      });
-      console.log("[admissions] direct fetch done", response.status, response.ok);
-      try {
-        const body = await response.clone().json();
-        console.log("[admissions] direct fetch body", body);
-      } catch {
-        console.log("[admissions] direct fetch body (non-json)", await response.text());
-      }
-    } catch (err) {
-      console.log("[admissions] catch", err);
-    }
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("[admissions] handleSubmit fired");
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError(null);
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    console.log("[admissions] FormData created", Array.from(formData.entries()));
-
     const payload = {
       fullName: String(formData.get("fullName") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
       phone: String(formData.get("phone") ?? "").trim(),
       courseInterested: String(formData.get("courseInterested") ?? "").trim(),
     };
-    console.log("[admissions] payload", payload);
 
     if (!payload.fullName || !payload.email || !payload.phone || !payload.courseInterested) {
-      console.log("[admissions] client validation failed", payload);
       setSubmitError("Please fill in all required fields.");
       setIsSubmitting(false);
       return;
     }
 
     try {
-      const apiBase = import.meta.env.VITE_API_BASE_URL ?? "";
-      const url = `${apiBase}/api/admissions`;
-      console.log("VITE_API_BASE_URL", import.meta.env.VITE_API_BASE_URL);
-      console.log("[admissions] request URL", url);
-      console.log("[admissions] before fetch", url, payload);
-      const response = await fetch(url, {
+      const apiBase = import.meta.env.VITE_API_BASE_URL;
+      if (!apiBase) {
+        throw new Error("Admissions service is temporarily unavailable. Please try again later.");
+      }
+
+      const response = await fetch(`${apiBase}/api/admissions`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      console.log("[admissions] after fetch", response.status, response.ok);
 
       if (!response.ok) {
         let message = "Submission failed. Please try again.";
@@ -97,10 +61,8 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
       setIsSuccess(true);
       form.reset();
     } catch (err) {
-      console.log("[admissions] catch", err);
       setSubmitError(err instanceof Error ? err.message : "Submission failed. Please try again.");
     } finally {
-      console.log("[admissions] finally");
       setIsSubmitting(false);
     }
   };
@@ -206,15 +168,6 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
                     Submitting...
                   </>
                 ) : "Submit Application"}
-              </Button>
-
-              <Button
-                type="button"
-                variant="outline"
-                onClick={handleDebugDirectFetch}
-                className="w-full py-6 text-base font-semibold rounded-xl"
-              >
-                Debug Direct Fetch
               </Button>
             </form>
           )}
