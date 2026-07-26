@@ -1,6 +1,9 @@
 /**
- * Generates responsive WebP variants for all @assets images used by sims-homepage,
+ * Generates responsive WebP variants for archived original images used by sims-homepage,
  * plus a TypeScript module that exports ResponsiveImage objects for each source file.
+ *
+ * Sources live in archive/original-images/ (backup / regeneration only).
+ * Runtime assets are written to attached_assets/optimized/ (WebP).
  *
  * Usage: node scripts/optimize-images.mjs
  */
@@ -11,8 +14,8 @@ import sharp from 'sharp';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const ASSETS = path.join(ROOT, 'attached_assets');
-const OUT_DIR = path.join(ASSETS, 'optimized');
+const ASSETS = path.join(ROOT, 'archive', 'original-images');
+const OUT_DIR = path.join(ROOT, 'attached_assets', 'optimized');
 const SRC_ROOT = path.join(ROOT, 'artifacts', 'sims-homepage', 'src');
 const GENERATED = path.join(
   ROOT,
@@ -198,7 +201,7 @@ function generateTs(entries) {
     lines.push('');
   }
 
-  lines.push('/** Lookup by original attached_assets filename */');
+  lines.push('/** Lookup by original archive/original-images filename */');
   lines.push('export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {');
   for (const e of entries) {
     lines.push(`  ${JSON.stringify(e.source)}: ${e.exportId},`);
@@ -210,7 +213,7 @@ function generateTs(entries) {
 }
 
 async function main() {
-  console.log('Collecting @assets imports…');
+  console.log('Collecting locked sources + any @assets imports…');
   const used = await collectUsedAssets();
   console.log(`Found ${used.length} source images`);
 

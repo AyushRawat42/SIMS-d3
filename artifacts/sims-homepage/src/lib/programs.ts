@@ -10,10 +10,11 @@ import {
   DSC00312,
   DSC00338,
   DSC00365,
+  DSC00447,
   DSC00503,
 } from '@/lib/responsive-images.generated';
 
-// Reserved (not used on program heroes): DSC00030, DSC00074, DSC00085, DSC00447
+// Reserved (not used on program heroes): DSC00030, DSC00074, DSC00085
 
 export type ProgramCategoryId = 'nursing' | 'allied' | 'life-sciences';
 
@@ -487,6 +488,56 @@ export const PROGRAMS: Program[] = [
     image: DSC00312,
     imageAlt:
       'SIMS students in uniform observing an anatomy demonstration in a medical laboratory classroom.',
+  },
+  {
+    slug: 'msc-medical-biochemistry',
+    name: 'M.Sc. Medical Biochemistry',
+    shortName: 'M.Sc. Medical Biochemistry',
+    category: 'life-sciences',
+    subtitle:
+      'Postgraduate study of the chemical basis of health, disease, and laboratory diagnostics.',
+    duration: '2 Years',
+    level: 'Postgraduate',
+    eligibility:
+      'Relevant bachelor’s degree in biochemistry, life sciences, or related health / medical sciences (as per university norms)',
+    learningFocus:
+      'Clinical biochemistry, metabolism, enzymology, and diagnostic laboratory science',
+    cardDescription:
+      'Postgraduate training in biochemical processes underlying health and disease, with a focus on diagnostics and laboratory practice.',
+    overview: [
+      'M.Sc. Medical Biochemistry at Sushila Institute of Medical Sciences (SIMS), Dehradun, is a postgraduate pathway for students who want to understand how chemical processes in the body relate to health, illness, and clinical decision-making.',
+      'Medical biochemistry connects molecular science with diagnostic practice. Learners typically explore metabolism, enzymes, molecular biology foundations, and the biochemical basis of disease — knowledge that underpins a large share of laboratory investigations used in modern healthcare.',
+      'The program emphasizes clear scientific reasoning and laboratory-oriented learning so graduates can contribute in diagnostic settings, research support roles, quality-focused lab environments, and further academic study.',
+      'Exact syllabus structure, laboratory schedules, and admission criteria follow applicable university norms. Prospective students should confirm current requirements with the SIMS admissions team.',
+    ],
+    curriculum: [
+      'Metabolism, enzymology, and biochemical pathways',
+      'Clinical biochemistry and interpretation of laboratory findings',
+      'Molecular biology foundations relevant to medical science',
+      'Diagnostic laboratory techniques and quality practices',
+      'Immunology-related foundations and biochemical basis of disease',
+      'Research methods and project / dissertation-oriented learning',
+    ],
+    careers: [
+      'Clinical / medical laboratory roles in biochemistry and diagnostics',
+      'Diagnostic centre and hospital laboratory support roles',
+      'Research associate / research support positions',
+      'Quality control and quality assurance roles in healthcare or life sciences labs',
+      'Teaching and academic pathways (with further preparation as required)',
+      'Opportunities in pharmaceutical, biotech, and healthcare laboratory settings',
+    ],
+    highlights: [
+      { label: 'Duration', value: '2 Years' },
+      { label: 'Level', value: 'Postgraduate Degree' },
+      { label: 'Eligibility', value: 'Relevant B.Sc / life or health sciences degree' },
+      { label: 'Learning Focus', value: 'Clinical biochemistry & diagnostics' },
+      { label: 'Career Pathways', value: 'Labs, diagnostics, research, academia' },
+    ],
+    metaDescription:
+      'M.Sc. Medical Biochemistry at Sushila Institute of Medical Sciences (SIMS), Dehradun — postgraduate training in clinical biochemistry, metabolism, and diagnostic laboratory science.',
+    image: DSC00447,
+    imageAlt:
+      'SIMS students studying anatomical models and medical charts in a bright life sciences laboratory classroom.',
   },
   {
     slug: 'baslp',

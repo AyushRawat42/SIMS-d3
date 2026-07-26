@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { OptimizedImage } from '@/components/OptimizedImage';
-import { logoTransparent } from '@/lib/responsive-images.generated';
+import { logo_transparent as logoTransparent } from '@/lib/responsive-images.generated';
 import { cn } from '@/lib/utils';
 
 type SimsLogoProps = {
@@ -25,7 +25,7 @@ const VARIANT_SIZES = {
 } as const;
 
 /**
- * Shared SIMS brand logo — transparent WebP derived from logo.jpeg.
+ * Shared SIMS brand logo — transparent WebP derived from archived logo.jpeg.
  * Used in both header and footer.
  */
 export function SimsLogo({

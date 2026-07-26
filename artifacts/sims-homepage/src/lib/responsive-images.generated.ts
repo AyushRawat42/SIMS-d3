@@ -146,6 +146,10 @@ import DSC00446_640 from '@assets/optimized/DSC00446-640.webp';
 import DSC00446_1024 from '@assets/optimized/DSC00446-1024.webp';
 import DSC00446_1600 from '@assets/optimized/DSC00446-1600.webp';
 import DSC00446_full from '@assets/optimized/DSC00446-full.webp';
+import DSC00447_640 from '@assets/optimized/DSC00447-640.webp';
+import DSC00447_1024 from '@assets/optimized/DSC00447-1024.webp';
+import DSC00447_1600 from '@assets/optimized/DSC00447-1600.webp';
+import DSC00447_full from '@assets/optimized/DSC00447-full.webp';
 import DSC00450_640 from '@assets/optimized/DSC00450-640.webp';
 import DSC00450_1024 from '@assets/optimized/DSC00450-1024.webp';
 import DSC00450_1600 from '@assets/optimized/DSC00450-1600.webp';
@@ -222,18 +226,6 @@ import Shushila_Institute_Of_removebg_preview_1_e1743436624699_640 from '@assets
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_1024 from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-1024.webp';
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_1600 from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-1600.webp';
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_full from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-full.webp';
-import logo_640 from '@assets/optimized/logo-640.webp';
-import logo_1024 from '@assets/optimized/logo-1024.webp';
-import logo_1600 from '@assets/optimized/logo-1600.webp';
-import logo_full from '@assets/optimized/logo-full.webp';
-import logo_watermark_640 from '@assets/optimized/logo-watermark-640.webp';
-import logo_watermark_1024 from '@assets/optimized/logo-watermark-1024.webp';
-import logo_watermark_1600 from '@assets/optimized/logo-watermark-1600.webp';
-import logo_watermark_full from '@assets/optimized/logo-watermark-full.webp';
-import logo_transparent_640 from '@assets/optimized/logo-transparent-640.webp';
-import logo_transparent_1024 from '@assets/optimized/logo-transparent-1024.webp';
-import logo_transparent_1600 from '@assets/optimized/logo-transparent-1600.webp';
-import logo_transparent_full from '@assets/optimized/logo-transparent-full.webp';
 import chairman_640 from '@assets/optimized/chairman-640.webp';
 import chairman_1024 from '@assets/optimized/chairman-1024.webp';
 import chairman_1600 from '@assets/optimized/chairman-1600.webp';
@@ -242,6 +234,18 @@ import director_640 from '@assets/optimized/director-640.webp';
 import director_1024 from '@assets/optimized/director-1024.webp';
 import director_1600 from '@assets/optimized/director-1600.webp';
 import director_full from '@assets/optimized/director-full.webp';
+import logo_transparent_640 from '@assets/optimized/logo-transparent-640.webp';
+import logo_transparent_1024 from '@assets/optimized/logo-transparent-1024.webp';
+import logo_transparent_1600 from '@assets/optimized/logo-transparent-1600.webp';
+import logo_transparent_full from '@assets/optimized/logo-transparent-full.webp';
+import logo_watermark_640 from '@assets/optimized/logo-watermark-640.webp';
+import logo_watermark_1024 from '@assets/optimized/logo-watermark-1024.webp';
+import logo_watermark_1600 from '@assets/optimized/logo-watermark-1600.webp';
+import logo_watermark_full from '@assets/optimized/logo-watermark-full.webp';
+import logo_640 from '@assets/optimized/logo-640.webp';
+import logo_1024 from '@assets/optimized/logo-1024.webp';
+import logo_1600 from '@assets/optimized/logo-1600.webp';
+import logo_full from '@assets/optimized/logo-full.webp';
 import vice_chairperson_640 from '@assets/optimized/vice-chairperson-640.webp';
 import vice_chairperson_1024 from '@assets/optimized/vice-chairperson-1024.webp';
 import vice_chairperson_1600 from '@assets/optimized/vice-chairperson-1600.webp';
@@ -572,6 +576,15 @@ export const DSC00446 = ri(
   DSC00446_full,
 );
 
+/** Optimized from DSC00447.jpg (6000×4000) */
+export const DSC00447 = ri(
+  DSC00447_1600,
+  `${DSC00447_640} 640w, ${DSC00447_1024} 1024w, ${DSC00447_1600} 1600w`,
+  1600,
+  1067,
+  DSC00447_full,
+);
+
 /** Optimized from DSC00450.jpg (6000×4000) */
 export const DSC00450 = ri(
   DSC00450_1600,
@@ -743,33 +756,6 @@ export const Shushila_Institute_Of_removebg_preview_1_e1743436624699 = ri(
   Shushila_Institute_Of_removebg_preview_1_e1743436624699_full,
 );
 
-/** Optimized from logo.jpeg (1600×219, whitespace cropped) */
-export const logo = ri(
-  logo_1600,
-  `${logo_640} 640w, ${logo_1024} 1024w, ${logo_1600} 1600w`,
-  1600,
-  219,
-  logo_full,
-);
-
-/** Transparent watermark derived from logo.jpeg (white bg removed) */
-export const logoWatermark = ri(
-  logo_watermark_1600,
-  `${logo_watermark_640} 640w, ${logo_watermark_1024} 1024w, ${logo_watermark_1600} 1600w`,
-  1600,
-  219,
-  logo_watermark_full,
-);
-
-/** Web-ready transparent logo from logo.jpeg (soft white→alpha keying) */
-export const logoTransparent = ri(
-  logo_transparent_1600,
-  `${logo_transparent_640} 640w, ${logo_transparent_1024} 1024w, ${logo_transparent_1600} 1600w`,
-  1600,
-  219,
-  logo_transparent_full,
-);
-
 /** Optimized from chairman.jpeg (1024×678) */
 export const chairman = ri(
   chairman_1600,
@@ -786,6 +772,33 @@ export const director = ri(
   1024,
   1024,
   director_full,
+);
+
+/** Optimized from logo-transparent.png (1600×219) */
+export const logo_transparent = ri(
+  logo_transparent_1600,
+  `${logo_transparent_640} 640w, ${logo_transparent_1024} 1024w, ${logo_transparent_1600} 1600w`,
+  1600,
+  219,
+  logo_transparent_full,
+);
+
+/** Optimized from logo-watermark.png (1600×219) */
+export const logo_watermark = ri(
+  logo_watermark_1600,
+  `${logo_watermark_640} 640w, ${logo_watermark_1024} 1024w, ${logo_watermark_1600} 1600w`,
+  1600,
+  219,
+  logo_watermark_full,
+);
+
+/** Optimized from logo.jpeg (1600×219) */
+export const logo = ri(
+  logo_1600,
+  `${logo_640} 640w, ${logo_1024} 1024w, ${logo_1600} 1600w`,
+  1600,
+  219,
+  logo_full,
 );
 
 /** Optimized from vice-chairperson.jpeg (781×678) */
@@ -834,6 +847,7 @@ export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "DSC00413.jpg": DSC00413,
   "DSC00434.jpg": DSC00434,
   "DSC00446.jpg": DSC00446,
+  "DSC00447.jpg": DSC00447,
   "DSC00450.jpg": DSC00450,
   "DSC00456.jpg": DSC00456,
   "DSC00484.jpg": DSC00484,
@@ -853,10 +867,10 @@ export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "DSC05150.jpg": DSC05150,
   "DSC05222.jpg": DSC05222,
   "Shushila_Institute_Of-removebg-preview-1-e1743436624699.png": Shushila_Institute_Of_removebg_preview_1_e1743436624699,
-  "logo.jpeg": logo,
-  "logo-watermark.png": logoWatermark,
-  "logo-transparent.png": logoTransparent,
   "chairman.jpeg": chairman,
   "director.jpeg": director,
+  "logo-transparent.png": logo_transparent,
+  "logo-watermark.png": logo_watermark,
+  "logo.jpeg": logo,
   "vice-chairperson.jpeg": vice_chairperson,
 };

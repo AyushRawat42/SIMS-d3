@@ -7,8 +7,8 @@ import path from 'path';
  * Near-white pixels become alpha so the mark works on light/dark surfaces
  * (footer still uses a light plate for contrast with the dark navy artwork).
  */
-const INPUT = 'attached_assets/logo.jpeg';
-const WATERMARK_PNG = 'attached_assets/logo-watermark.png';
+const INPUT = 'archive/original-images/logo.jpeg';
+const WATERMARK_PNG = 'archive/original-images/logo-watermark.png';
 const OUT_DIR = 'attached_assets/optimized';
 
 const WHITE_THRESHOLD = 245; // RGB channels >= this → transparent

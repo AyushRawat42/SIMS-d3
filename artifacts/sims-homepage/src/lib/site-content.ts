@@ -1,8 +1,20 @@
+/** Canonical WhatsApp click-to-chat contact (shared across the site). */
+export const WHATSAPP_CONTACT = {
+  /** Digits only with country code — for wa.me URLs */
+  number: '919759761244',
+  /** Human-readable display without country code */
+  display: '9759761244',
+  /** Open WhatsApp chat */
+  href: 'https://wa.me/919759761244',
+  /** Phone dialer for the same line */
+  tel: 'tel:+919759761244',
+} as const;
+
 export const SITE_CONTENT = {
   header: {
     logoText: "SUSHILA INSTITUTE OF MEDICAL SCIENCES",
     tagline: "Dehradun, Uttarakhand",
-    announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · GNM · PB · B.Sc Nursing · M.Sc Nursing · M.Sc Medical Microbiology · B.Optometry · B.O.T.T · B.A.S.L.P",
+    announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · GNM · PB · B.Sc Nursing · M.Sc Nursing · M.Sc Medical Microbiology · M.Sc. Medical Biochemistry · B.Optometry · B.O.T.T · B.A.S.L.P",
     navLinks: [
       { label: "Home", href: "#home" },
       { label: "About", href: "/about" },
@@ -114,6 +126,12 @@ export const SITE_CONTENT = {
         description: "In-depth study of bacteria, viruses, fungi, and parasites, blending theory with intensive lab work."
       },
       {
+        name: "M.Sc. Medical Biochemistry",
+        slug: "msc-medical-biochemistry",
+        duration: "2 Years",
+        description: "Postgraduate training in biochemical processes underlying health and disease, with a focus on diagnostics and laboratory practice."
+      },
+      {
         name: "BASLP — Bachelor of Audiology and Speech-Language Pathology",
         slug: "baslp",
         duration: "4 Years",
@@ -181,11 +199,11 @@ export const SITE_CONTENT = {
   },
   social: {
     title: "Connect With Us",
-    whatsapp: "https://wa.me/918979999395",
+    whatsapp: WHATSAPP_CONTACT.href,
     facebook: "https://www.facebook.com/sushilainstituteofmedicalsciences",
     youtube: "https://www.youtube.com/@SIMSDEHRADUN",
     instagram: "https://www.instagram.com/simscollegedehradun",
-    whatsappNumber: "+91 8979999395"
+    whatsappNumber: WHATSAPP_CONTACT.display,
   },
   footer: {
     address: "SUSHILA INSTITUTE OF MEDICAL SCIENCES\n8VRF+25, Central Hope Town, Uttarakhand 248011, India",
@@ -201,10 +219,15 @@ export const SITE_CONTENT = {
       { name: "B.Optometry", slug: "b-optometry" },
       { name: "BOTT", slug: "bott" },
       { name: "M.Sc Medical Microbiology", slug: "msc-microbiology" },
+      { name: "M.Sc. Medical Biochemistry", slug: "msc-medical-biochemistry" },
       { name: "BASLP", slug: "baslp" },
     ],
     contact: {
-      phones: ["975976-1244", "975976-1243", "975976-1241", "8979-999-395"],
+      phones: [
+        { display: "9759761244", tel: "+919759761244" },
+        { display: "9759761243", tel: "+919759761243" },
+        { display: "9759761241", tel: "+919759761241" },
+      ],
       email: "Info@sims.college",
       web: "sims.college"
     },

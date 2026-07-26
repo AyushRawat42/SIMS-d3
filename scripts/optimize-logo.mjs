@@ -2,7 +2,7 @@ import sharp from 'sharp';
 import fs from 'fs/promises';
 import path from 'path';
 
-const input = 'attached_assets/logo.jpeg';
+const input = 'archive/original-images/logo.jpeg';
 const outDir = 'attached_assets/optimized';
 
 // Crop whitespace and overwrite source with clean high-quality JPEG

@@ -8,8 +8,8 @@ import path from 'path';
  * - trims any leftover empty margin
  * - writes PNG source + responsive WebP variants
  */
-const INPUT = 'attached_assets/logo.jpeg';
-const OUT_PNG = 'attached_assets/logo-transparent.png';
+const INPUT = 'archive/original-images/logo.jpeg';
+const OUT_PNG = 'archive/original-images/logo-transparent.png';
 const OUT_DIR = 'attached_assets/optimized';
 
 /** Fully opaque below this; fully transparent at/above WHITE_HIGH */

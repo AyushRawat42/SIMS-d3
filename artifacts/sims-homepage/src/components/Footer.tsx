@@ -80,8 +80,14 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 flex-shrink-0 text-amber-500 mt-0.5" />
                 <div className="flex flex-col gap-1">
-                  {SITE_CONTENT.footer.contact.phones.map(phone => (
-                    <a key={phone} href={`tel:${phone}`} className="hover:text-white transition-colors leading-snug">{phone}</a>
+                  {SITE_CONTENT.footer.contact.phones.map((phone) => (
+                    <a
+                      key={phone.tel}
+                      href={`tel:${phone.tel}`}
+                      className="hover:text-white transition-colors leading-snug"
+                    >
+                      {phone.display}
+                    </a>
                   ))}
                 </div>
               </div>

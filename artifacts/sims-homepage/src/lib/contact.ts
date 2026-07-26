@@ -21,7 +21,7 @@ export const CONTACT_DETAILS = {
   phones: [
     { display: '9759761244', tel: '+919759761244', label: 'Admissions' },
     { display: '9759761243', tel: '+919759761243', label: 'Admissions' },
-    { display: '8979999395', tel: '+918979999395', label: 'WhatsApp / Admissions' },
+    { display: '9759761241', tel: '+919759761241', label: 'Admissions' },
   ],
   /** Primary email listed on the official SIMS Contact Us page */
   email: 'info@simsdehradun.com',
