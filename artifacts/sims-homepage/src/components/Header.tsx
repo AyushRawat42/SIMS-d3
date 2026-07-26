@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
-import { SITE_CONTENT } from '@/lib/site-content';
+import { Menu, X, ChevronDown, ChevronRight, Phone } from 'lucide-react';
+import { SITE_CONTENT, WHATSAPP_CONTACT } from '@/lib/site-content';
 import {
   PROGRAM_CATEGORIES,
   getProgramsByCategory,
@@ -18,6 +18,23 @@ function homeSectionHref(hashOrPath: string): string {
     return `/${hashOrPath}`;
   }
   return hashOrPath;
+}
+
+function CallAdmissionsButton({ className }: { className?: string }) {
+  return (
+    <a
+      href={WHATSAPP_CONTACT.tel}
+      aria-label="Call Admissions"
+      className={cn(
+        'inline-flex items-center justify-center size-10 rounded-full border border-sims-border bg-white text-sims-primary shadow-sm',
+        'hover:bg-sims-surface hover:border-sims-primary/30 transition-colors',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40 focus-visible:ring-offset-2',
+        className,
+      )}
+    >
+      <Phone className="w-5 h-5" aria-hidden="true" strokeWidth={2} />
+    </a>
+  );
 }
 
 export function Header({ onApplyClick }: { onApplyClick: () => void }) {
@@ -293,13 +310,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button
-              variant="outline"
-              className="h-10 border-sims-border text-sims-primary hover:bg-sims-surface rounded-lg px-4"
-              onClick={onApplyClick}
-            >
-              Contact Admissions
-            </Button>
+            <CallAdmissionsButton />
             <Button
               className="h-10 bg-sims-primary hover:bg-sims-primary-2 text-white rounded-lg px-5"
               onClick={onApplyClick}
@@ -308,17 +319,20 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
             </Button>
           </div>
 
-          {/* Mobile Toggle */}
-          <button
-            type="button"
-            className="lg:hidden p-2 -mr-1 text-sims-primary z-50 rounded-lg hover:bg-sims-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-nav"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile: call + menu */}
+          <div className="flex lg:hidden items-center gap-2 shrink-0">
+            <CallAdmissionsButton />
+            <button
+              type="button"
+              className="p-2 -mr-1 text-sims-primary z-50 rounded-lg hover:bg-sims-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -476,12 +490,9 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                 <Button
                   variant="outline"
                   className="w-full justify-center h-11 rounded-lg"
-                  onClick={() => {
-                    onApplyClick();
-                    setMobileMenuOpen(false);
-                  }}
+                  asChild
                 >
-                  Contact Admissions
+                  <a href={WHATSAPP_CONTACT.tel}>Call Admissions</a>
                 </Button>
                 <Button
                   className="w-full justify-center h-11 bg-sims-primary rounded-lg"
