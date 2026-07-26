@@ -121,8 +121,8 @@ export function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-4">
               <SectionHeading title="Who We Are" className="mb-3" />
-              <p className="text-sm font-semibold text-sims-primary-2 tracking-wide uppercase">
-                Dehradun · HNBUMU Affiliated
+              <p className="text-xs sm:text-sm font-semibold text-sims-primary-2 tracking-wide leading-snug max-w-[18rem] sm:max-w-none">
+                Dehradun · HNB UTTARAKHAND MEDICAL EDUCATION UNIVERSITY
               </p>
             </div>
             <div className="lg:col-span-8 space-y-4 text-sims-text-muted leading-relaxed text-[0.975rem] md:text-base">

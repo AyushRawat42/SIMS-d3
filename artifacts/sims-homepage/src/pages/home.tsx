@@ -110,9 +110,9 @@ export function Home() {
 
               <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-x-5 gap-y-2.5 mt-6 md:mt-8 pt-6 md:pt-7 border-t border-white/20">
                 {SITE_CONTENT.hero.badges.map((badge, i) => (
-                  <div key={i} className="flex items-center gap-2 text-white/90 text-sm font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
-                    {badge}
+                  <div key={i} className="flex items-start gap-2 text-white/90 text-xs sm:text-sm font-medium max-w-full sm:max-w-[22rem] leading-snug">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <span>{badge}</span>
                   </div>
                 ))}
               </motion.div>

@@ -446,8 +446,8 @@ export const PROGRAMS: Program[] = [
   },
   {
     slug: 'msc-microbiology',
-    name: 'M.Sc Microbiology',
-    shortName: 'M.Sc Microbiology',
+    name: 'M.Sc Medical Microbiology',
+    shortName: 'M.Sc Medical Microbiology',
     category: 'life-sciences',
     subtitle: 'Postgraduate study of microorganisms with intensive laboratory learning.',
     duration: '2 Years',
@@ -457,7 +457,7 @@ export const PROGRAMS: Program[] = [
     cardDescription:
       'In-depth study of microbes with theory and lab work in genetics, immunology, and biotechnology.',
     overview: [
-      'M.Sc Microbiology at SIMS offers postgraduate training in the biology of bacteria, viruses, fungi, and parasites, with a strong laboratory emphasis.',
+      'M.Sc Medical Microbiology at SIMS offers postgraduate training in the biology of bacteria, viruses, fungi, and parasites, with a strong laboratory emphasis.',
       'Students typically engage with microbial genetics, immunology, molecular biology, and industrial biotechnology concepts while strengthening experimental skills.',
       'The program supports careers in diagnostics, research, quality control, and further academic study in the life sciences.',
     ],
@@ -483,7 +483,7 @@ export const PROGRAMS: Program[] = [
       { label: 'Career Pathways', value: 'Labs, research, biotech' },
     ],
     metaDescription:
-      'M.Sc Microbiology at Sushila Institute of Medical Sciences, Dehradun — postgraduate microbiology with strong laboratory focus.',
+      'M.Sc Medical Microbiology at Sushila Institute of Medical Sciences, Dehradun — postgraduate microbiology with strong laboratory focus.',
     image: DSC00312,
     imageAlt:
       'SIMS students in uniform observing an anatomy demonstration in a medical laboratory classroom.',

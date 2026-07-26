@@ -2,7 +2,7 @@ export const SITE_CONTENT = {
   header: {
     logoText: "SUSHILA INSTITUTE OF MEDICAL SCIENCES",
     tagline: "Dehradun, Uttarakhand",
-    announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · GNM · PB · B.Sc Nursing · M.Sc Nursing · M.Sc Microbiology · B.Optometry · B.O.T.T · B.A.S.L.P",
+    announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · GNM · PB · B.Sc Nursing · M.Sc Nursing · M.Sc Medical Microbiology · B.Optometry · B.O.T.T · B.A.S.L.P",
     navLinks: [
       { label: "Home", href: "#home" },
       { label: "About", href: "/about" },
@@ -19,7 +19,7 @@ export const SITE_CONTENT = {
     subheading: "One of Dehradun's leading institutions for Nursing and Healthcare Sciences, shaping compassionate professionals for tomorrow's hospitals.",
     badges: [
       "Ministry Recognized",
-      "HNB University Affiliated",
+      "HNB UTTARAKHAND MEDICAL EDUCATION UNIVERSITY",
       "100% Placement Support"
     ]
   },
@@ -108,7 +108,7 @@ export const SITE_CONTENT = {
         description: "Specialized allied health science degree training professionals to manage the critical environment of surgical suites."
       },
       {
-        name: "M.Sc Microbiology",
+        name: "M.Sc Medical Microbiology",
         slug: "msc-microbiology",
         duration: "2 Years",
         description: "In-depth study of bacteria, viruses, fungi, and parasites, blending theory with intensive lab work."
@@ -200,7 +200,7 @@ export const SITE_CONTENT = {
       { name: "BMRIT", slug: "bmrit" },
       { name: "B.Optometry", slug: "b-optometry" },
       { name: "BOTT", slug: "bott" },
-      { name: "M.Sc Microbiology", slug: "msc-microbiology" },
+      { name: "M.Sc Medical Microbiology", slug: "msc-microbiology" },
       { name: "BASLP", slug: "baslp" },
     ],
     contact: {

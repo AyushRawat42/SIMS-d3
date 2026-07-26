@@ -6,12 +6,12 @@ export const ABOUT_PAGE = {
   subtitle:
     'Quality healthcare education in Dehradun — modern labs, experienced faculty, and hands-on training for nursing and allied health careers.',
   metaDescription:
-    'About Sushila Institute of Medical Sciences (SIMS), Dehradun — healthcare education with hands-on training, HNBUMU affiliation, vision, mission, and leadership messages.',
+    'About Sushila Institute of Medical Sciences (SIMS), Dehradun — healthcare education with hands-on training, affiliation with HNB UTTARAKHAND MEDICAL EDUCATION UNIVERSITY, vision, mission, and leadership messages.',
 };
 
 export const ABOUT_INTRO = [
   'At Sushila Institute of Medical Sciences (SIMS), we are dedicated to shaping future healthcare professionals through quality education and hands-on training. Located in Dehradun, we offer modern labs, experienced faculty, and real-world learning to prepare students for careers in nursing, physiotherapy, medical laboratory technology, and related healthcare fields.',
-  'SIMS is affiliated with HNB Uttarakhand Medical University (HNBUMU), supporting programmes that meet recognised academic and professional standards. With a strong focus on practical skills and industry-ready training, SIMS helps students build a solid foundation for life in healthcare.',
+  'SIMS is affiliated with HNB UTTARAKHAND MEDICAL EDUCATION UNIVERSITY, supporting programmes that meet recognised academic and professional standards. With a strong focus on practical skills and industry-ready training, SIMS helps students build a solid foundation for life in healthcare.',
 ];
 
 export const ABOUT_SOCIAL = {

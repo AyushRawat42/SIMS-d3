@@ -222,6 +222,18 @@ import Shushila_Institute_Of_removebg_preview_1_e1743436624699_640 from '@assets
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_1024 from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-1024.webp';
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_1600 from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-1600.webp';
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_full from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-full.webp';
+import logo_640 from '@assets/optimized/logo-640.webp';
+import logo_1024 from '@assets/optimized/logo-1024.webp';
+import logo_1600 from '@assets/optimized/logo-1600.webp';
+import logo_full from '@assets/optimized/logo-full.webp';
+import logo_watermark_640 from '@assets/optimized/logo-watermark-640.webp';
+import logo_watermark_1024 from '@assets/optimized/logo-watermark-1024.webp';
+import logo_watermark_1600 from '@assets/optimized/logo-watermark-1600.webp';
+import logo_watermark_full from '@assets/optimized/logo-watermark-full.webp';
+import logo_transparent_640 from '@assets/optimized/logo-transparent-640.webp';
+import logo_transparent_1024 from '@assets/optimized/logo-transparent-1024.webp';
+import logo_transparent_1600 from '@assets/optimized/logo-transparent-1600.webp';
+import logo_transparent_full from '@assets/optimized/logo-transparent-full.webp';
 import chairman_640 from '@assets/optimized/chairman-640.webp';
 import chairman_1024 from '@assets/optimized/chairman-1024.webp';
 import chairman_1600 from '@assets/optimized/chairman-1600.webp';
@@ -731,6 +743,33 @@ export const Shushila_Institute_Of_removebg_preview_1_e1743436624699 = ri(
   Shushila_Institute_Of_removebg_preview_1_e1743436624699_full,
 );
 
+/** Optimized from logo.jpeg (1600×219, whitespace cropped) */
+export const logo = ri(
+  logo_1600,
+  `${logo_640} 640w, ${logo_1024} 1024w, ${logo_1600} 1600w`,
+  1600,
+  219,
+  logo_full,
+);
+
+/** Transparent watermark derived from logo.jpeg (white bg removed) */
+export const logoWatermark = ri(
+  logo_watermark_1600,
+  `${logo_watermark_640} 640w, ${logo_watermark_1024} 1024w, ${logo_watermark_1600} 1600w`,
+  1600,
+  219,
+  logo_watermark_full,
+);
+
+/** Web-ready transparent logo from logo.jpeg (soft white→alpha keying) */
+export const logoTransparent = ri(
+  logo_transparent_1600,
+  `${logo_transparent_640} 640w, ${logo_transparent_1024} 1024w, ${logo_transparent_1600} 1600w`,
+  1600,
+  219,
+  logo_transparent_full,
+);
+
 /** Optimized from chairman.jpeg (1024×678) */
 export const chairman = ri(
   chairman_1600,
@@ -814,6 +853,9 @@ export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "DSC05150.jpg": DSC05150,
   "DSC05222.jpg": DSC05222,
   "Shushila_Institute_Of-removebg-preview-1-e1743436624699.png": Shushila_Institute_Of_removebg_preview_1_e1743436624699,
+  "logo.jpeg": logo,
+  "logo-watermark.png": logoWatermark,
+  "logo-transparent.png": logoTransparent,
   "chairman.jpeg": chairman,
   "director.jpeg": director,
   "vice-chairperson.jpeg": vice_chairperson,
