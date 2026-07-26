@@ -326,8 +326,9 @@ export function Home() {
             <Button
               variant="outline"
               className="border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white rounded-lg h-11 px-7"
+              asChild
             >
-              View Full Gallery
+              <a href="/life-at-sims">Explore Life at SIMS</a>
             </Button>
           </div>
         </div>

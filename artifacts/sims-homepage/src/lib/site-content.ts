@@ -8,7 +8,7 @@ export const SITE_CONTENT = {
       { label: "About", href: "#about" },
       { label: "Programs", href: "#programs" },
       { label: "Admissions", href: "#admissions" },
-      { label: "Life at SIMS", href: "#life" },
+      { label: "Life at SIMS", href: "/life-at-sims" },
       { label: "Placements", href: "#placements" },
       { label: "Facilities", href: "/facilities" },
       { label: "Contact Us", href: "/contact-us" }

@@ -8,6 +8,7 @@ import { Home } from '@/pages/home';
 import { ProgramPage } from '@/pages/program';
 import { FacilitiesPage } from '@/pages/facilities';
 import { ContactPage } from '@/pages/contact';
+import { LifeAtSimsPage } from '@/pages/life-at-sims';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/facilities" component={FacilitiesPage} />
       <Route path="/contact-us" component={ContactPage} />
+      <Route path="/life-at-sims" component={LifeAtSimsPage} />
       <Route component={NotFound} />
     </Switch>
   );
