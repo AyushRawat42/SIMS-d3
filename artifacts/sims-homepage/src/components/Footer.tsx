@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'wouter';
 import { SITE_CONTENT } from '@/lib/site-content';
+import { programPath } from '@/lib/programs';
 import { Youtube, Facebook, Instagram, Phone, Mail, Globe, MapPin } from 'lucide-react';
 import simsLogo from '@assets/Shushila_Institute_Of-removebg-preview-1-e1743436624699.png';
 
@@ -48,7 +50,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {SITE_CONTENT.footer.links.map(link => (
                 <li key={link}>
-                  <a href="#" className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug">
+                  <a href="/#about" className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug">
                     <span className="w-1 h-1 rounded-full bg-amber-500 shrink-0" />
                     {link}
                   </a>
@@ -62,11 +64,14 @@ export function Footer() {
             <h4 className="text-base font-bold font-display mb-4 text-white border-b border-white/10 pb-3">Our Courses</h4>
             <ul className="flex flex-col gap-2.5">
               {SITE_CONTENT.footer.courses.map(course => (
-                <li key={course}>
-                  <a href="#programs" className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug">
+                <li key={course.slug}>
+                  <Link
+                    href={programPath(course.slug)}
+                    className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug"
+                  >
                     <span className="w-1 h-1 rounded-full bg-amber-500 shrink-0" />
-                    {course}
-                  </a>
+                    {course.name}
+                  </Link>
                 </li>
               ))}
             </ul>

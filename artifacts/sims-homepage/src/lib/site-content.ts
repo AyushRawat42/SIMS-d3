@@ -55,58 +55,69 @@ export const SITE_CONTENT = {
     courses: [
       {
         name: "B.Sc Nursing",
+        slug: "bsc-nursing",
         duration: "4 Years",
         description: "Nursing fundamentals, patient care, and clinical training in hospitals and healthcare settings."
       },
       {
         name: "Post Basic B.Sc Nursing",
+        slug: "post-basic-bsc-nursing",
         duration: "2 Years",
         description: "For GNM graduates — upgrade qualifications and expand career opportunities."
       },
       {
-        name: "GNM — General Nursing & Midwifery",
+        name: "GNM",
+        slug: "gnm",
         duration: "3 Years",
         description: "In-depth nursing, midwifery, and primary care for hospital and community roles."
       },
       {
-        name: "BPT — Bachelor in Physiotherapy",
-        duration: "4 Years",
+        name: "M.Sc Nursing",
+        slug: "msc-nursing",
+        duration: "2 Years",
+        description: "Postgraduate program advancing clinical expertise, leadership, and research capabilities."
+      },
+      {
+        name: "BPT",
+        slug: "bpt",
+        duration: "4.5 Years + 6 Months Internship",
         description: "Physical therapy, rehabilitation, and movement sciences."
       },
       {
-        name: "BMLT — Bachelor of Medical Lab Technology",
-        duration: "3 Years",
+        name: "BMLT",
+        slug: "bmlt",
+        duration: "3 Years + 6 Months Internship",
         description: "Advanced lab techniques, diagnostic testing, and disease analysis."
       },
       {
-        name: "BMRIT — Bachelor of Medical Radiology & Imaging Technology",
-        duration: "3 Years",
+        name: "BMRIT",
+        slug: "bmrit",
+        duration: "3 Years + 6 Months Internship",
         description: "X-rays, MRIs, CT scans, and medical imaging."
       },
       {
-        name: "M.Sc Nursing",
-        duration: "2 Years",
-        description: "Postgraduate program advancing clinical expertise, leadership, and research capabilities — preparing professionals for specialized, evidence-based, and ethically sound healthcare."
-      },
-      {
-        name: "M.Sc. Microbiology",
-        duration: "2 Years",
-        description: "In-depth study of bacteria, viruses, fungi, and parasites, blending theory with intensive lab work in microbial genetics, immunology, molecular biology, and industrial biotechnology."
-      },
-      {
         name: "B.Optometry",
+        slug: "b-optometry",
         duration: "4 Years",
-        description: "Undergraduate healthcare program blending academic theory with intensive clinical training to develop skilled primary eye care professionals."
+        description: "Undergraduate healthcare program blending academic theory with intensive clinical training for primary eye care."
       },
       {
         name: "BOTT — Bachelor of Operation Theatre Technology",
+        slug: "bott",
         duration: "3–4 Years",
         description: "Specialized allied health science degree training professionals to manage the critical environment of surgical suites."
       },
       {
+        name: "M.Sc Microbiology",
+        slug: "msc-microbiology",
+        duration: "2 Years",
+        description: "In-depth study of bacteria, viruses, fungi, and parasites, blending theory with intensive lab work."
+      },
+      {
         name: "BASLP — Bachelor of Audiology and Speech-Language Pathology",
+        slug: "baslp",
         duration: "4 Years",
-        description: "RCI-regulated dual-focused program training students to diagnose, evaluate, and treat hearing, balance, speech, and language disorders across pediatric and adult populations."
+        description: "Dual-focused program training students to diagnose, evaluate, and treat hearing, speech, and language disorders."
       }
     ],
     comingSoon: [] as string[]
@@ -179,7 +190,19 @@ export const SITE_CONTENT = {
   footer: {
     address: "SUSHILA INSTITUTE OF MEDICAL SCIENCES\n8VRF+25, Central Hope Town, Uttarakhand 248011, India",
     links: ["Admission Procedure", "About Us", "Visions & Missions", "Doubt Sessions", "Extra Curricular", "Disclaimer", "Privacy Policy"],
-    courses: ["B.Sc Nursing", "Post Basic BSc Nursing", "GNM", "BPT", "BMLT", "BMRIT", "M.Sc Nursing", "M.Sc. Microbiology", "B.Optometry", "BOTT", "BASLP"],
+    courses: [
+      { name: "B.Sc Nursing", slug: "bsc-nursing" },
+      { name: "Post Basic B.Sc Nursing", slug: "post-basic-bsc-nursing" },
+      { name: "GNM", slug: "gnm" },
+      { name: "M.Sc Nursing", slug: "msc-nursing" },
+      { name: "BPT", slug: "bpt" },
+      { name: "BMLT", slug: "bmlt" },
+      { name: "BMRIT", slug: "bmrit" },
+      { name: "B.Optometry", slug: "b-optometry" },
+      { name: "BOTT", slug: "bott" },
+      { name: "M.Sc Microbiology", slug: "msc-microbiology" },
+      { name: "BASLP", slug: "baslp" },
+    ],
     contact: {
       phones: ["975976-1244", "975976-1243", "975976-1241", "8979-999-395"],
       email: "Info@sims.college",

@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'wouter';
 import { cn } from '@/lib/utils';
 import { SITE_CONTENT } from '@/lib/site-content';
+import { programPath } from '@/lib/programs';
 import { Activity, Radio, Heart, Book, FlaskConical, Home, UtensilsCrossed, Bus } from 'lucide-react';
 
 const FACILITY_ICONS: Record<string, React.ElementType> = {
@@ -44,9 +46,18 @@ export function SectionHeading({
   );
 }
 
-export function CourseCard({ course }: { course: typeof SITE_CONTENT.programs.courses[0] }) {
+export function CourseCard({
+  course,
+}: {
+  course: typeof SITE_CONTENT.programs.courses[0] & { slug?: string };
+}) {
+  const href = course.slug ? programPath(course.slug) : '/#programs';
+
   return (
-    <div className="group relative bg-white rounded-2xl p-6 md:p-7 border border-sims-border shadow-sm hover:shadow-lg hover:border-sims-primary/20 transition-all duration-300 flex flex-col h-full">
+    <Link
+      href={href}
+      className="group relative bg-white rounded-2xl p-6 md:p-7 border border-sims-border shadow-sm hover:shadow-lg hover:border-sims-primary/20 transition-all duration-300 flex flex-col h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40"
+    >
       <div className="mb-3">
         <span className="inline-flex items-center rounded-full bg-sims-surface-2 px-3 py-1 text-xs font-semibold tracking-wide text-sims-primary-2 ring-1 ring-inset ring-sims-primary/10">
           {course.duration}
@@ -59,11 +70,11 @@ export function CourseCard({ course }: { course: typeof SITE_CONTENT.programs.co
         {course.description}
       </p>
       <div className="mt-5 pt-5 border-t border-sims-border/60">
-        <a href="#admissions" className="inline-flex items-center text-sm font-semibold text-sims-primary-2 group-hover:text-sims-primary transition-colors">
+        <span className="inline-flex items-center text-sm font-semibold text-sims-primary-2 group-hover:text-sims-primary transition-colors">
           Learn More <span className="ml-1.5 transition-transform group-hover:translate-x-0.5">→</span>
-        </a>
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
 
