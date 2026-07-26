@@ -5,7 +5,7 @@ export const SITE_CONTENT = {
     announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · GNM · PB · B.Sc Nursing · M.Sc Nursing · M.Sc Microbiology · B.Optometry · B.O.T.T · B.A.S.L.P",
     navLinks: [
       { label: "Home", href: "#home" },
-      { label: "About", href: "#about" },
+      { label: "About", href: "/about" },
       { label: "Programs", href: "#programs" },
       { label: "Admissions", href: "#admissions" },
       { label: "Life at SIMS", href: "/life-at-sims" },

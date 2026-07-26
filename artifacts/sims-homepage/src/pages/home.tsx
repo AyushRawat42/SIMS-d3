@@ -138,6 +138,15 @@ export function Home() {
                   );
                 })}
               </div>
+              <motion.div variants={fadeUpVariant} className="mt-8">
+                <Button
+                  variant="outline"
+                  className="border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white rounded-lg h-11 px-6 font-semibold"
+                  asChild
+                >
+                  <a href="/about">About SIMS →</a>
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </div>

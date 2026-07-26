@@ -37,6 +37,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
   const isOnFacilitiesPage = location === '/facilities';
   const isOnContactPage = location === '/contact-us';
   const isOnLifePage = location === '/life-at-sims';
+  const isOnAboutPage = location === '/about';
 
   React.useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -263,6 +264,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                   (link.label === 'Facilities' && isOnFacilitiesPage) ||
                   (link.label === 'Contact Us' && isOnContactPage) ||
                   (link.label === 'Life at SIMS' && isOnLifePage) ||
+                  (link.label === 'About' && isOnAboutPage) ||
                   location === link.href;
                 return (
                   <Link

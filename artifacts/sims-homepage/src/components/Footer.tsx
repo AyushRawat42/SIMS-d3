@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {SITE_CONTENT.footer.links.map(link => (
                 <li key={link}>
-                  <a href="/#about" className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug">
+                  <a href="/about" className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug">
                     <span className="w-1 h-1 rounded-full bg-amber-500 shrink-0" />
                     {link}
                   </a>
