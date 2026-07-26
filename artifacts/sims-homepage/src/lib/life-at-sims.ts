@@ -1,23 +1,26 @@
-import imgTreeCanteen from '@assets/DSC00080.jpg';
-import imgBloodDonor from '@assets/DSC00096.jpg';
-import imgStudentsSteps from '@assets/DSC00116.jpg';
-import imgFacultyGroup from '@assets/DSC00123.jpg';
-import imgAwardsStage from '@assets/DSC00159.jpg';
-import imgFacultyTeach from '@assets/DSC00161.jpg';
-import imgBloodCamp from '@assets/DSC00171.jpg';
-import imgHealthClass from '@assets/DSC00188.jpg';
-import imgStudyNotes from '@assets/DSC00259.jpg';
-import imgDanceGroup from '@assets/DSC00317.jpg';
-import imgEventAudience from '@assets/DSC00382.jpg';
-import imgCelebration2024 from '@assets/DSC00408.jpg';
-import imgRecognition from '@assets/DSC00413.jpg';
-import imgLectern from '@assets/DSC00434.jpg';
-import imgFresherDuo from '@assets/DSC00446.jpg';
-import imgDanceMen from '@assets/DSC00456.jpg';
-import imgBusStudents from '@assets/DSC00578.jpg';
-import imgOutdoorGroup from '@assets/DSC00697.jpg';
-import imgDanceRed from '@assets/DSC00738.jpg';
-import imgFresherAwards from '@assets/DSC00836.jpg';
+import type { ResponsiveImage } from '@/lib/responsive-image';
+import {
+  DSC00080,
+  DSC00096,
+  DSC00116,
+  DSC00123,
+  DSC00159,
+  DSC00161,
+  DSC00171,
+  DSC00188,
+  DSC00259,
+  DSC00317,
+  DSC00382,
+  DSC00408,
+  DSC00413,
+  DSC00434,
+  DSC00446,
+  DSC00456,
+  DSC00578,
+  DSC00697,
+  DSC00738,
+  DSC00836,
+} from '@/lib/responsive-images.generated';
 
 export const LIFE_PAGE = {
   title: 'Life at SIMS',
@@ -33,7 +36,7 @@ export const LIFE_PAGE = {
 };
 
 export const LIFE_HERO = {
-  src: imgDanceGroup,
+  src: DSC00317,
   alt: 'SIMS students performing a group dance on stage during a Freshers Party cultural event',
 };
 
@@ -42,7 +45,7 @@ export interface LifeActivity {
   title: string;
   description: string;
   highlights: string[];
-  image: string;
+  image: ResponsiveImage;
   imageAlt: string;
 }
 
@@ -57,7 +60,7 @@ export const LIFE_ACTIVITIES: LifeActivity[] = [
       'Clinical skills, first aid, and soft-skills sessions',
       'Quiz, poster, and model exhibition opportunities',
     ],
-    image: imgStudyNotes,
+    image: DSC00259,
     imageAlt: 'SIMS students taking detailed handwritten notes during a classroom learning session',
   },
   {
@@ -70,7 +73,7 @@ export const LIFE_ACTIVITIES: LifeActivity[] = [
       'Fresher’s, farewell, and festival gatherings',
       'Inter-departmental participation and celebration',
     ],
-    image: imgDanceRed,
+    image: DSC00738,
     imageAlt: 'Two SIMS students dancing in red sarees on a decorated Freshers Party stage',
   },
   {
@@ -83,7 +86,7 @@ export const LIFE_ACTIVITIES: LifeActivity[] = [
       'Blood donation drives with partner centres',
       'Campaigns on hygiene, nutrition, and first aid',
     ],
-    image: imgBloodDonor,
+    image: DSC00096,
     imageAlt: 'A SIMS student donating blood during a campus blood donation drive',
   },
   {
@@ -96,7 +99,7 @@ export const LIFE_ACTIVITIES: LifeActivity[] = [
       'Yoga and meditation for stress relief',
       'Team spirit through friendly competition',
     ],
-    image: imgStudentsSteps,
+    image: DSC00116,
     imageAlt: 'A cheerful group of SIMS students in uniform posing together on campus steps',
   },
   {
@@ -109,7 +112,7 @@ export const LIFE_ACTIVITIES: LifeActivity[] = [
       'CPR, lab safety, and clinical skills workshops',
       'Communication and professional readiness',
     ],
-    image: imgLectern,
+    image: DSC00434,
     imageAlt: 'A faculty member presenting from a wooden lectern during a classroom seminar session',
   },
   {
@@ -122,59 +125,59 @@ export const LIFE_ACTIVITIES: LifeActivity[] = [
       'Exposure beyond the classroom',
       'Preparation for real patient-care environments',
     ],
-    image: imgBusStudents,
+    image: DSC00578,
     imageAlt: 'Two smiling SIMS students in uniform posing at the door of a campus transport bus',
   },
 ];
 
 export const LIFE_GALLERY = [
   {
-    src: imgFresherAwards,
+    src: DSC00836,
     alt: 'SIMS Freshers Party award winners and faculty posing on a decorated stage',
     large: true,
   },
   {
-    src: imgCelebration2024,
+    src: DSC00408,
     alt: 'SIMS students celebrating together under a festive balloon arch marked 2024',
     large: false,
   },
   {
-    src: imgFresherDuo,
+    src: DSC00446,
     alt: 'Students performing on stage at the SIMS Freshers Party with balloon decorations',
     large: false,
   },
   {
-    src: imgEventAudience,
+    src: DSC00382,
     alt: 'Students and guests smiling during a festive campus celebration at SIMS',
     large: false,
   },
   {
-    src: imgDanceMen,
+    src: DSC00456,
     alt: 'Male SIMS students performing an energetic group dance at a cultural function',
     large: true,
   },
   {
-    src: imgRecognition,
+    src: DSC00413,
     alt: 'SIMS students holding certificates of recognition and trophies during a campus celebration',
     large: false,
   },
   {
-    src: imgTreeCanteen,
+    src: DSC00080,
     alt: 'SIMS students planting a sapling near the campus canteen during a green initiative',
     large: false,
   },
   {
-    src: imgOutdoorGroup,
+    src: DSC00697,
     alt: 'A large group of SIMS students and faculty posing outdoors after a campus event',
     large: false,
   },
   {
-    src: imgAwardsStage,
+    src: DSC00159,
     alt: 'Students receiving certificates and trophies on stage during an Independence Day programme',
     large: false,
   },
   {
-    src: imgBloodCamp,
+    src: DSC00171,
     alt: 'SIMS students and staff during a blood donation or health camp session on campus',
     large: false,
   },
@@ -183,19 +186,19 @@ export const LIFE_GALLERY = [
 /** Faculty presence photos only — no names, titles, or profile text */
 export const FACULTY_SHOWCASE = [
   {
-    src: imgFacultyGroup,
+    src: DSC00123,
     alt: 'Faculty and staff of SIMS gathered for a group photograph during a campus celebration',
   },
   {
-    src: imgFacultyTeach,
+    src: DSC00161,
     alt: 'A SIMS faculty member teaching clinical concepts at a classroom whiteboard',
   },
   {
-    src: imgHealthClass,
+    src: DSC00188,
     alt: 'A SIMS instructor leading a health assessment lecture for nursing students',
   },
   {
-    src: imgLectern,
+    src: DSC00434,
     alt: 'A SIMS educator presenting from the lectern during an academic session',
   },
 ];

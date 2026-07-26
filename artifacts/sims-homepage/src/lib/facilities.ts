@@ -1,21 +1,24 @@
-import imgCampus from '@assets/DSC05222.jpg';
-import imgCampusEntrance from '@assets/DSC00273.jpg';
-import imgAnatomyLab from '@assets/DSC00450.jpg';
-import imgBoneModels from '@assets/DSC00484.jpg';
-import imgComputerLab from '@assets/DSC00555.jpg';
-import imgLibrary from '@assets/DSC00603.jpg';
-import imgPhysioLab from '@assets/DSC00646.jpg';
-import imgHostel1 from '@assets/DSC05124.jpg';
-import imgHostel2 from '@assets/DSC05126.jpg';
-import imgHostel3 from '@assets/DSC05143.jpg';
-import imgHostel4 from '@assets/DSC05150.jpg';
+import type { ResponsiveImage } from '@/lib/responsive-image';
+import {
+  DSC00273,
+  DSC00450,
+  DSC00484,
+  DSC00555,
+  DSC00603,
+  DSC00646,
+  DSC05124,
+  DSC05126,
+  DSC05143,
+  DSC05150,
+  DSC05222,
+} from '@/lib/responsive-images.generated';
 
 export interface FacilityItem {
   id: string;
   title: string;
   description: string;
   highlights: string[];
-  image?: string;
+  image?: ResponsiveImage;
   imageAlt?: string;
   category: 'academic' | 'labs' | 'living' | 'support';
 }
@@ -25,7 +28,7 @@ export interface LabItem {
   title: string;
   description: string;
   highlights: string[];
-  image?: string;
+  image?: ResponsiveImage;
   imageAlt?: string;
 }
 
@@ -56,7 +59,7 @@ export const FACILITIES: FacilityItem[] = [
       'Spaces planned for focused study and campus movement',
       'Environment suited to healthcare training routines',
     ],
-    image: imgCampus,
+    image: DSC05222,
     imageAlt:
       'Green lawn and outdoor seating area on the SIMS Dehradun campus with institutional buildings in the background',
   },
@@ -85,7 +88,7 @@ export const FACILITIES: FacilityItem[] = [
       'Models, instruments, and clinical teaching aids',
       'Preparation for hospital and diagnostic settings',
     ],
-    image: imgAnatomyLab,
+    image: DSC00450,
     imageAlt:
       'SIMS students in uniform surrounded by anatomical models and medical charts in a campus laboratory',
   },
@@ -101,7 +104,7 @@ export const FACILITIES: FacilityItem[] = [
       'Quiet reading zones',
       'Internet-enabled systems and online journal access',
     ],
-    image: imgLibrary,
+    image: DSC00603,
     imageAlt:
       'A SIMS student reading a textbook beside wooden library bookshelves filled with medical and nursing titles',
   },
@@ -117,7 +120,7 @@ export const FACILITIES: FacilityItem[] = [
       'Collaborative digital study sessions',
       'Access aligned with classroom and library learning',
     ],
-    image: imgComputerLab,
+    image: DSC00555,
     imageAlt:
       'SIMS students in white coats collaborating at a desktop computer workstation in the computer lab',
   },
@@ -133,7 +136,7 @@ export const FACILITIES: FacilityItem[] = [
       'Furnished rooms for study and rest',
       'Sharing and single-occupancy options',
     ],
-    image: imgHostel1,
+    image: DSC05124,
     imageAlt:
       'Shared SIMS student hostel room with beds, study desks, storage locker, and a window overlooking greenery',
   },
@@ -175,7 +178,7 @@ export const FACILITIES: FacilityItem[] = [
       'Green surroundings that support focused study',
       'Everyday campus life beyond lecture hours',
     ],
-    image: imgCampus,
+    image: DSC05222,
     imageAlt:
       'Outdoor seating on the grassy SIMS campus lawn beneath trees near academic buildings',
   },
@@ -231,7 +234,7 @@ export const LABS: LabItem[] = [
       'Charts for system-based learning',
       'Bone and organ model practice',
     ],
-    image: imgBoneModels,
+    image: DSC00484,
     imageAlt:
       'SIMS students examining anatomical bone and heart models in the anatomy and physiology laboratory',
   },
@@ -274,7 +277,7 @@ export const LABS: LabItem[] = [
       'Therapeutic apparatus exposure',
       'Rehab-focused practical sessions',
     ],
-    image: imgPhysioLab,
+    image: DSC00646,
     imageAlt:
       'Physiotherapy practice lab at SIMS with treatment beds, therapy equipment, and instructional medical posters',
   },
@@ -285,24 +288,24 @@ export const LAB_TOOLS_NOTE =
 
 export const HOSTEL_GALLERY = [
   {
-    src: imgHostel1,
+    src: DSC05124,
     alt: 'SIMS hostel room with twin beds, study desks, metal locker, and open window to campus greenery',
   },
   {
-    src: imgHostel2,
+    src: DSC05126,
     alt: 'Twin-sharing SIMS hostel room with wooden desks, chairs, and natural light from open shutters',
   },
   {
-    src: imgHostel3,
+    src: DSC05143,
     alt: 'Shared SIMS dormitory room with multiple beds, study corner, and personal student belongings',
   },
   {
-    src: imgHostel4,
+    src: DSC05150,
     alt: 'Furnished SIMS hostel room with two beds, desks, and study materials for residential students',
   },
 ];
 
 export const FACILITIES_HERO_IMAGE = {
-  src: imgCampusEntrance,
+  src: DSC00273,
   alt: 'Main entrance of Sushila Institute of Medical Sciences (SIMS) in Dehradun with campus gate, building signage, and college bus',
 };

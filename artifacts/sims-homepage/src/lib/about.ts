@@ -1,6 +1,4 @@
-import imgChairman from '@assets/chairman.jpeg';
-import imgViceChair from '@assets/vice-chairperson.jpeg';
-import imgDirector from '@assets/director.jpeg';
+import { chairman, director, vice_chairperson } from '@/lib/responsive-images.generated';
 import { SITE_CONTENT } from '@/lib/site-content';
 
 export const ABOUT_PAGE = {
@@ -44,7 +42,7 @@ export const LEADERSHIP = [
     name: 'Mr. Sanjeev Kumar',
     quote:
       'At SIMS, we aim to empower students with both knowledge and compassion. Healthcare is not just a profession — it’s a responsibility. Our mission is to nurture future leaders who will bring meaningful change in society.',
-    image: imgChairman,
+    image: chairman,
     imageAlt: 'Honourable Chairman Mr. Sanjeev Kumar',
   },
   {
@@ -53,7 +51,7 @@ export const LEADERSHIP = [
     name: 'Mrs. Kumkum Singhal',
     quote:
       'I strive to ensure that every student is guided, challenged, and supported. Our faculty and infrastructure work in harmony to create a student-friendly, result-oriented environment.',
-    image: imgViceChair,
+    image: vice_chairperson,
     imageAlt: 'Honourable Vice-Chairperson Mrs. Kumkum Singhal',
   },
   {
@@ -62,7 +60,7 @@ export const LEADERSHIP = [
     name: 'Mr. Tushar Singhal',
     quote:
       'We believe in delivering education that is relevant, ethical, and transformative. SIMS is committed to academic excellence, skill development, and social awareness.',
-    image: imgDirector,
+    image: director,
     imageAlt: 'Honourable Managing Director Mr. Tushar Singhal',
   },
 ] as const;

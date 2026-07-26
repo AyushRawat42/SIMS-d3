@@ -6,6 +6,9 @@ import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { IMAGE_SIZES } from '@/lib/responsive-image';
+import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import NotFound from '@/pages/not-found';
 import {
   PROGRAM_CATEGORIES,
@@ -62,6 +65,7 @@ function ProgramContent({ program }: { program: Program }) {
     `${program.name} | SIMS — Sushila Institute of Medical Sciences`,
     program.metaDescription,
   );
+  usePreloadHeroImage(program.image);
 
   const handleApplyClick = () => setModalOpen(true);
 
@@ -73,10 +77,12 @@ function ProgramContent({ program }: { program: Program }) {
       {/* Hero */}
       <section className="relative pt-28 md:pt-32 lg:pt-36 pb-14 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={program.image}
+          <OptimizedImage
+            image={program.image}
             alt=""
             aria-hidden="true"
+            sizes={IMAGE_SIZES.hero}
+            priority
             className="w-full h-full object-cover scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-sims-primary/94 via-sims-primary/82 to-sims-primary/45" />
@@ -137,9 +143,11 @@ function ProgramContent({ program }: { program: Program }) {
 
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] bg-sims-primary/30">
-                <img
-                  src={program.image}
+                <OptimizedImage
+                  image={program.image}
                   alt={program.imageAlt}
+                  sizes={IMAGE_SIZES.heroFeatured}
+                  priority
                   className="w-full h-full object-cover"
                 />
               </div>

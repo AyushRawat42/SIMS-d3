@@ -1,14 +1,17 @@
-import imgBscNursing from '@assets/DSC00007.jpg';
-import imgPostBasic from '@assets/DSC00009.jpg';
-import imgGnm from '@assets/DSC00066.jpg';
-import imgMscNursing from '@assets/DSC00338.jpg';
-import imgBpt from '@assets/DSC00365.jpg';
-import imgBmlt from '@assets/DSC00503.jpg';
-import imgBmrit from '@assets/DSC00050.jpg';
-import imgOptometry from '@assets/DSC00114.jpg';
-import imgBott from '@assets/DSC00287.jpg';
-import imgMicrobiology from '@assets/DSC00312.jpg';
-import imgBaslp from '@assets/DSC00051.jpg';
+import type { ResponsiveImage } from '@/lib/responsive-image';
+import {
+  DSC00007,
+  DSC00009,
+  DSC00050,
+  DSC00051,
+  DSC00066,
+  DSC00114,
+  DSC00287,
+  DSC00312,
+  DSC00338,
+  DSC00365,
+  DSC00503,
+} from '@/lib/responsive-images.generated';
 
 // Reserved (not used on program heroes): DSC00030, DSC00074, DSC00085, DSC00447
 
@@ -35,7 +38,7 @@ export interface Program {
   careers: string[];
   highlights: { label: string; value: string }[];
   metaDescription: string;
-  image: string;
+  image: ResponsiveImage;
   imageAlt: string;
 }
 
@@ -87,7 +90,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'B.Sc Nursing at Sushila Institute of Medical Sciences (SIMS), Dehradun — a 4-year undergraduate nursing program with clinical training and hospital exposure.',
-    image: imgBscNursing,
+    image: DSC00007,
     imageAlt:
       'Instructor in a white lab coat guiding SIMS students during a classroom session for B.Sc Nursing.',
   },
@@ -131,7 +134,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'Post Basic B.Sc Nursing at SIMS Dehradun — a 2-year program for GNM graduates seeking a bachelor’s degree and advanced nursing roles.',
-    image: imgPostBasic,
+    image: DSC00009,
     imageAlt:
       'SIMS faculty member reviewing coursework with nursing students in a bright classroom.',
   },
@@ -175,7 +178,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'GNM at Sushila Institute of Medical Sciences, Dehradun — a 3-year General Nursing and Midwifery diploma with practical clinical training.',
-    image: imgGnm,
+    image: DSC00066,
     imageAlt:
       'GNM nursing students in white uniforms attending a theory class at SIMS.',
   },
@@ -219,7 +222,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'M.Sc Nursing at SIMS Dehradun — a 2-year postgraduate program for advanced clinical practice, research, and nursing leadership.',
-    image: imgMscNursing,
+    image: DSC00338,
     imageAlt:
       'SIMS nursing students in lab coats observing bedside clinical teaching with an instructor.',
   },
@@ -262,7 +265,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'BPT at Sushila Institute of Medical Sciences, Dehradun — Bachelor of Physiotherapy with clinical training and a mandatory internship.',
-    image: imgBpt,
+    image: DSC00365,
     imageAlt:
       'SIMS students examining anatomical bone and organ models during physiotherapy-related practical learning.',
   },
@@ -306,7 +309,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'BMLT at SIMS Dehradun — Bachelor of Medical Laboratory Technology with diagnostic lab training and a mandatory internship.',
-    image: imgBmlt,
+    image: DSC00503,
     imageAlt:
       'SIMS students in lab coats measuring and mixing liquids during a medical laboratory practical.',
   },
@@ -349,7 +352,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'BMRIT at Sushila Institute of Medical Sciences — radiology and imaging technology training with clinical internship support.',
-    image: imgBmrit,
+    image: DSC00050,
     imageAlt:
       'SIMS instructor teaching medical theory at a whiteboard during an imaging and healthcare sciences class.',
   },
@@ -393,7 +396,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'B.Optometry at SIMS Dehradun — a 4-year primary eye care program combining classroom learning with clinical training.',
-    image: imgOptometry,
+    image: DSC00114,
     imageAlt:
       'SIMS students in uniform engaged in focused classroom learning related to healthcare sciences.',
   },
@@ -437,7 +440,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'BOTT — Bachelor of Operation Theatre Technology at SIMS Dehradun, training students for surgical suite support and OT workflows.',
-    image: imgBott,
+    image: DSC00287,
     imageAlt:
       'SIMS students in white lab coats practicing a clinical procedure during hands-on OT-related training.',
   },
@@ -481,7 +484,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'M.Sc Microbiology at Sushila Institute of Medical Sciences, Dehradun — postgraduate microbiology with strong laboratory focus.',
-    image: imgMicrobiology,
+    image: DSC00312,
     imageAlt:
       'SIMS students in uniform observing an anatomy demonstration in a medical laboratory classroom.',
   },
@@ -525,7 +528,7 @@ export const PROGRAMS: Program[] = [
     ],
     metaDescription:
       'BASLP — Bachelor of Audiology and Speech-Language Pathology at SIMS Dehradun, preparing students for hearing and communication care roles.',
-    image: imgBaslp,
+    image: DSC00051,
     imageAlt:
       'SIMS students in formal uniforms collaborating around a study table in a classroom with audio-aids teaching materials.',
   },

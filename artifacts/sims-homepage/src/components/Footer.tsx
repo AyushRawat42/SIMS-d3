@@ -3,7 +3,8 @@ import { Link } from 'wouter';
 import { SITE_CONTENT } from '@/lib/site-content';
 import { programPath } from '@/lib/programs';
 import { Youtube, Facebook, Instagram, Phone, Mail, Globe, MapPin } from 'lucide-react';
-import simsLogo from '@assets/Shushila_Institute_Of-removebg-preview-1-e1743436624699.png';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { Shushila_Institute_Of_removebg_preview_1_e1743436624699 as simsLogo } from '@/lib/responsive-images.generated';
 
 export function Footer() {
   return (
@@ -14,9 +15,10 @@ export function Footer() {
           {/* Column 1: Brand & Social */}
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
             <div className="bg-white p-3 rounded-xl w-full max-w-xs">
-              <img
-                src={simsLogo}
+              <OptimizedImage
+                image={simsLogo}
                 alt="Sushila Institute of Medical Sciences"
+                sizes="320px"
                 className="w-full h-auto max-h-14 object-contain object-left"
               />
             </div>

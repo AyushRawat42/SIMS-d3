@@ -9,9 +9,10 @@ import {
   programPath,
   type ProgramCategoryId,
 } from '@/lib/programs';
-import simsLogo from '@assets/Shushila_Institute_Of-removebg-preview-1-e1743436624699.png';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { Shushila_Institute_Of_removebg_preview_1_e1743436624699 as simsLogo } from '@/lib/responsive-images.generated';
 
 function homeSectionHref(hashOrPath: string): string {
   if (hashOrPath.startsWith('#')) {
@@ -107,9 +108,11 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center z-50 shrink-0">
-            <img
-              src={simsLogo}
+            <OptimizedImage
+              image={simsLogo}
               alt="Sushila Institute of Medical Sciences"
+              sizes="300px"
+              loading="eager"
               className="h-11 md:h-12 w-auto max-w-[220px] md:max-w-[300px] object-contain object-left"
             />
           </Link>

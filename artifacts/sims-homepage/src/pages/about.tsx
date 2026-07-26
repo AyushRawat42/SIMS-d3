@@ -6,6 +6,8 @@ import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { IMAGE_SIZES } from '@/lib/responsive-image';
 import {
   ABOUT_INTRO,
   ABOUT_MISSION,
@@ -210,11 +212,11 @@ export function AboutPage() {
                 className="rounded-2xl border border-sims-border bg-white shadow-sm overflow-hidden flex flex-col h-full"
               >
                 <div className="aspect-[4/5] overflow-hidden bg-sims-surface">
-                  <img
-                    src={leader.image}
+                  <OptimizedImage
+                    image={leader.image}
                     alt={leader.imageAlt}
+                    sizes={IMAGE_SIZES.quarter}
                     className="w-full h-full object-cover object-top"
-                    loading="lazy"
                   />
                 </div>
                 <div className="p-5 md:p-6 flex flex-col flex-grow">

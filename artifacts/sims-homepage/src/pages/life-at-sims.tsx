@@ -6,6 +6,10 @@ import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { IMAGE_SIZES } from '@/lib/responsive-image';
+import type { ResponsiveImage } from '@/lib/responsive-image';
+import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import {
   FACULTY_SHOWCASE,
   LIFE_ACTIVITIES,
@@ -46,12 +50,13 @@ function useDocumentMeta(title: string, description: string) {
 
 export function LifeAtSimsPage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [lightbox, setLightbox] = useState<{ image: ResponsiveImage; alt: string } | null>(null);
 
   useDocumentMeta(
     'Life at SIMS | Sushila Institute of Medical Sciences',
     LIFE_PAGE.metaDescription,
   );
+  usePreloadHeroImage(LIFE_HERO.src);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -75,10 +80,12 @@ export function LifeAtSimsPage() {
       {/* Hero */}
       <section className="relative pt-28 md:pt-32 lg:pt-36 pb-14 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={LIFE_HERO.src}
+          <OptimizedImage
+            image={LIFE_HERO.src}
             alt=""
             aria-hidden="true"
+            sizes={IMAGE_SIZES.hero}
+            priority
             className="w-full h-full object-cover scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-sims-primary/94 via-sims-primary/78 to-sims-primary/35" />
@@ -136,9 +143,11 @@ export function LifeAtSimsPage() {
 
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3]">
-                <img
-                  src={LIFE_HERO.src}
+                <OptimizedImage
+                  image={LIFE_HERO.src}
                   alt={LIFE_HERO.alt}
+                  sizes={IMAGE_SIZES.heroFeatured}
+                  priority
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -196,14 +205,14 @@ export function LifeAtSimsPage() {
                       type="button"
                       className="w-full rounded-2xl overflow-hidden border border-sims-border shadow-sm aspect-[4/3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40"
                       onClick={() =>
-                        setLightbox({ src: activity.image, alt: activity.imageAlt })
+                        setLightbox({ image: activity.image, alt: activity.imageAlt })
                       }
                     >
-                      <img
-                        src={activity.image}
+                      <OptimizedImage
+                        image={activity.image}
                         alt={activity.imageAlt}
+                        sizes={IMAGE_SIZES.half}
                         className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
-                        loading="lazy"
                       />
                     </button>
                   </div>
@@ -228,16 +237,16 @@ export function LifeAtSimsPage() {
               <button
                 key={photo.alt}
                 type="button"
-                onClick={() => setLightbox({ src: photo.src, alt: photo.alt })}
+                onClick={() => setLightbox({ image: photo.src, alt: photo.alt })}
                 className={`relative rounded-xl md:rounded-2xl overflow-hidden group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40 ${
                   photo.large ? 'sm:row-span-2' : 'row-span-1'
                 }`}
               >
-                <img
-                  src={photo.src}
+                <OptimizedImage
+                  image={photo.src}
                   alt={photo.alt}
+                  sizes={IMAGE_SIZES.third}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-sims-primary/55 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
@@ -261,11 +270,11 @@ export function LifeAtSimsPage() {
                 key={photo.alt}
                 className="rounded-2xl overflow-hidden border border-sims-border shadow-sm aspect-[3/4] bg-white"
               >
-                <img
-                  src={photo.src}
+                <OptimizedImage
+                  image={photo.src}
                   alt={photo.alt}
+                  sizes={IMAGE_SIZES.quarter}
                   className="w-full h-full object-cover"
-                  loading="lazy"
                 />
               </div>
             ))}
@@ -360,9 +369,12 @@ export function LifeAtSimsPage() {
           >
             <X className="w-6 h-6" />
           </button>
-          <img
-            src={lightbox.src}
+          <OptimizedImage
+            image={lightbox.image}
             alt={lightbox.alt}
+            sizes="90vw"
+            useFull
+            priority
             className="max-h-[85vh] max-w-full rounded-lg object-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />

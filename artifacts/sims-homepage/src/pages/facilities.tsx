@@ -6,6 +6,9 @@ import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { IMAGE_SIZES } from '@/lib/responsive-image';
+import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import {
   FACILITIES,
   FACILITIES_HERO_IMAGE,
@@ -113,11 +116,11 @@ function FacilityBlock({
       {facility.image ? (
         <div className={`lg:col-span-6 ${reverse ? 'lg:order-1' : ''}`}>
           <div className="rounded-2xl overflow-hidden border border-sims-border shadow-sm aspect-[4/3] bg-sims-surface">
-            <img
-              src={facility.image}
+            <OptimizedImage
+              image={facility.image}
               alt={facility.imageAlt ?? facility.title}
+              sizes={IMAGE_SIZES.half}
               className="w-full h-full object-cover"
-              loading="lazy"
             />
           </div>
         </div>
@@ -149,6 +152,7 @@ export function FacilitiesPage() {
     'Facilities at SIMS | Sushila Institute of Medical Sciences',
     FACILITIES_PAGE.metaDescription,
   );
+  usePreloadHeroImage(FACILITIES_HERO_IMAGE.src);
 
   const handleApplyClick = () => setModalOpen(true);
 
@@ -163,10 +167,12 @@ export function FacilitiesPage() {
       {/* Hero */}
       <section className="relative pt-28 md:pt-32 lg:pt-36 pb-14 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={FACILITIES_HERO_IMAGE.src}
+          <OptimizedImage
+            image={FACILITIES_HERO_IMAGE.src}
             alt=""
             aria-hidden="true"
+            sizes={IMAGE_SIZES.hero}
+            priority
             className="w-full h-full object-cover scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-sims-primary/94 via-sims-primary/80 to-sims-primary/40" />
@@ -224,9 +230,11 @@ export function FacilitiesPage() {
 
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3]">
-                <img
-                  src={FACILITIES_HERO_IMAGE.src}
+                <OptimizedImage
+                  image={FACILITIES_HERO_IMAGE.src}
                   alt={FACILITIES_HERO_IMAGE.alt}
+                  sizes={IMAGE_SIZES.heroFeatured}
+                  priority
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -324,11 +332,11 @@ export function FacilitiesPage() {
                 className="lg:col-span-6 rounded-2xl overflow-hidden border border-sims-border bg-white shadow-sm"
               >
                 <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={lab.image}
+                  <OptimizedImage
+                    image={lab.image!}
                     alt={lab.imageAlt ?? lab.title}
+                    sizes={IMAGE_SIZES.half}
                     className="w-full h-full object-cover"
-                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">
@@ -394,11 +402,11 @@ export function FacilitiesPage() {
                 key={photo.alt}
                 className="rounded-2xl overflow-hidden border border-sims-border shadow-sm aspect-[4/3]"
               >
-                <img
-                  src={photo.src}
+                <OptimizedImage
+                  image={photo.src}
                   alt={photo.alt}
+                  sizes={IMAGE_SIZES.half}
                   className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
-                  loading="lazy"
                 />
               </div>
             ))}

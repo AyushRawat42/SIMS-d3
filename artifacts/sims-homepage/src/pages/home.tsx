@@ -7,19 +7,36 @@ import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading, CourseCard, FacilityCard } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { IMAGE_SIZES } from '@/lib/responsive-image';
+import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
+import {
+  DSC00066_scaled,
+  DSC00075_scaled,
+  DSC00118_scaled,
+  DSC00134_scaled,
+  DSC00177_scaled,
+  DSC00698_1_scaled,
+  DSC00840_scaled,
+  img_12,
+  img_2_1,
+  img_9,
+  img_85cd0d1b_dedd_429d_9b22_297d0c72f2cc_scaled,
+} from '@/lib/responsive-images.generated';
 
-// Image imports
-import heroBg from '@assets/DSC00075-scaled.jpg';
-import whyChooseUsImg from '@assets/12.png';
-import facilityFeatured from '@assets/9.png';
-import facilityPreview1 from '@assets/DSC00134-scaled.jpg';
-import facilityPreview2 from '@assets/DSC00118-scaled.jpg';
-import gallery1 from '@assets/DSC00840-scaled.jpg';
-import gallery2 from '@assets/85cd0d1b-dedd-429d-9b22-297d0c72f2cc-scaled.jpg';
-import gallery3 from '@assets/2 (1).png';
-import gallery4 from '@assets/DSC00066-scaled.jpg';
-import gallery5 from '@assets/DSC00177-scaled.jpg';
-import gallery6 from '@assets/DSC00698-1-scaled.jpg';
+const heroBg = DSC00075_scaled;
+const whyChooseUsImg = img_12;
+const facilityFeatured = img_9;
+const facilityPreview1 = DSC00134_scaled;
+const facilityPreview2 = DSC00118_scaled;
+const galleryImages = [
+  { image: DSC00840_scaled, alt: 'Life at SIMS 1' },
+  { image: img_85cd0d1b_dedd_429d_9b22_297d0c72f2cc_scaled, alt: 'Life at SIMS 2' },
+  { image: img_2_1, alt: 'Life at SIMS 3' },
+  { image: DSC00066_scaled, alt: 'Life at SIMS 4' },
+  { image: DSC00177_scaled, alt: 'Life at SIMS 5' },
+  { image: DSC00698_1_scaled, alt: 'Life at SIMS 6' },
+];
 
 const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -40,6 +57,7 @@ const headingGap = "mb-10 md:mb-12";
 
 export function Home() {
   const [modalOpen, setModalOpen] = useState(false);
+  usePreloadHeroImage(heroBg);
 
   const handleApplyClick = () => setModalOpen(true);
 
@@ -51,7 +69,13 @@ export function Home() {
       {/* SECTION 2: HERO */}
       <section id="home" className="relative pt-28 md:pt-36 lg:pt-40 pb-16 md:pb-20 min-h-[85vh] md:min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="SIMS students on campus" className="w-full h-full object-cover" />
+          <OptimizedImage
+            image={heroBg}
+            alt="SIMS students on campus"
+            sizes={IMAGE_SIZES.hero}
+            priority
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-sims-primary/92 via-sims-primary/75 to-sims-primary/30"></div>
           <div className="absolute inset-0 bg-black/15"></div>
         </div>
@@ -106,7 +130,12 @@ export function Home() {
               className="relative max-w-lg mx-auto lg:mx-0 lg:max-w-none"
             >
               <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-xl relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-square">
-                <img src={whyChooseUsImg} alt="SIMS students in training" className="w-full h-full object-cover" />
+                <OptimizedImage
+                  image={whyChooseUsImg}
+                  alt="SIMS students in training"
+                  sizes={IMAGE_SIZES.content}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:bottom-6 sm:max-w-[280px] bg-sims-primary text-white p-5 rounded-xl shadow-lg">
                 <p className="font-display italic text-base md:text-lg leading-snug">"{SITE_CONTENT.whyChooseUs.quote}"</p>
@@ -262,14 +291,29 @@ export function Home() {
               className="lg:col-span-7 flex flex-col gap-4 md:gap-5"
             >
               <div className="rounded-2xl overflow-hidden shadow-md h-56 sm:h-72 md:h-80 lg:h-[360px]">
-                <img src={facilityFeatured} alt="Faculty mentoring session" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                <OptimizedImage
+                  image={facilityFeatured}
+                  alt="Faculty mentoring session"
+                  sizes={IMAGE_SIZES.half}
+                  className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+                />
               </div>
               <div className="grid grid-cols-2 gap-4 md:gap-5 h-32 sm:h-40 md:h-44">
                 <div className="rounded-xl overflow-hidden shadow-sm h-full">
-                  <img src={facilityPreview1} alt="Anthropometric assessment skills lab" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                  <OptimizedImage
+                    image={facilityPreview1}
+                    alt="Anthropometric assessment skills lab"
+                    sizes={IMAGE_SIZES.third}
+                    className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+                  />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-sm h-full">
-                  <img src={facilityPreview2} alt="Clinical skills training lab" className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700" />
+                  <OptimizedImage
+                    image={facilityPreview2}
+                    alt="Clinical skills training lab"
+                    sizes={IMAGE_SIZES.third}
+                    className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+                  />
                 </div>
               </div>
             </motion.div>
@@ -317,7 +361,7 @@ export function Home() {
           <SectionHeading title={SITE_CONTENT.gallery.title} centered className={headingGap} />
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 auto-rows-[200px] sm:auto-rows-[220px] md:auto-rows-[240px]">
-            {[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6].map((img, i) => {
+            {galleryImages.map((item, i) => {
               const isLarge = i === 0 || i === 3;
               return (
                 <motion.div 
@@ -328,7 +372,12 @@ export function Home() {
                   transition={{ delay: i * 0.06, duration: 0.45 }}
                   className={`relative rounded-xl md:rounded-2xl overflow-hidden group cursor-pointer ${isLarge ? 'sm:row-span-2' : 'row-span-1'}`}
                 >
-                  <img src={img} alt={`Life at SIMS ${i + 1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <OptimizedImage
+                    image={item.image}
+                    alt={item.alt}
+                    sizes={IMAGE_SIZES.third}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-sims-primary/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                     <span className="text-white text-sm font-medium translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                       Life at SIMS
