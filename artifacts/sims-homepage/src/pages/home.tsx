@@ -208,13 +208,21 @@ export function Home() {
             </motion.div>
           </div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="mt-12 md:mt-14 text-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} className="mt-12 md:mt-14 text-center flex flex-col sm:flex-row gap-3 justify-center">
             <Button
               size="lg"
               className="bg-sims-primary hover:bg-sims-primary-2 text-white h-12 px-8 text-base font-bold shadow-md rounded-lg"
               onClick={handleApplyClick}
             >
               Start Your Application
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white h-12 px-8 text-base font-semibold rounded-lg"
+              asChild
+            >
+              <a href="/admissions">Admission Details →</a>
             </Button>
           </motion.div>
         </div>

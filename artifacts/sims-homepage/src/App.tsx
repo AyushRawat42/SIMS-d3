@@ -10,6 +10,7 @@ import { FacilitiesPage } from '@/pages/facilities';
 import { ContactPage } from '@/pages/contact';
 import { LifeAtSimsPage } from '@/pages/life-at-sims';
 import { AboutPage } from '@/pages/about';
+import { AdmissionsPage } from '@/pages/admissions';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={AboutPage} />
+      <Route path="/admissions" component={AdmissionsPage} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/facilities" component={FacilitiesPage} />
       <Route path="/contact-us" component={ContactPage} />
