@@ -34,6 +34,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
   const closeTimerRef = React.useRef<number | null>(null);
 
   const isOnProgramPage = location.startsWith('/programs');
+  const isOnFacilitiesPage = location === '/facilities';
 
   React.useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -255,6 +256,27 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                 );
               }
 
+              if (link.href.startsWith('/')) {
+                const isActive =
+                  (link.label === 'Facilities' && isOnFacilitiesPage) ||
+                  location === link.href;
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className={cn(
+                      'text-xs xl:text-sm font-medium transition-colors px-1.5 xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
+                      isActive
+                        ? 'text-sims-primary-2 bg-sims-surface'
+                        : 'text-sims-text hover:text-sims-primary-2',
+                    )}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+
               return (
                 <a
                   key={link.label}
@@ -412,6 +434,26 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                         </div>
                       )}
                     </div>
+                  );
+                }
+
+                if (link.href.startsWith('/')) {
+                  const isActive =
+                    (link.label === 'Facilities' && isOnFacilitiesPage) ||
+                    location === link.href;
+                  return (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className={cn(
+                        'text-base font-medium py-3 border-b border-sims-border/60 last:border-0',
+                        isActive ? 'text-sims-primary-2' : 'text-sims-text',
+                      )}
+                      aria-current={isActive ? 'page' : undefined}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
                   );
                 }
 

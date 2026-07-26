@@ -10,7 +10,7 @@ export const SITE_CONTENT = {
       { label: "Admissions", href: "#admissions" },
       { label: "Life at SIMS", href: "#life" },
       { label: "Placements", href: "#placements" },
-      { label: "Facilities", href: "#facilities" },
+      { label: "Facilities", href: "/facilities" },
       { label: "Contact Us", href: "#contact" }
     ]
   },

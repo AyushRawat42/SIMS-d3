@@ -269,7 +269,17 @@ export function Home() {
                 ))}
               </div>
               
-              <div className="mt-4 pt-5 border-t border-sims-border">
+              <div className="mt-4 pt-5 border-t border-sims-border flex flex-col gap-2">
+                <Button
+                  variant="ghost"
+                  className="w-full justify-between text-sims-primary hover:text-sims-primary-2 hover:bg-sims-surface h-11 rounded-lg px-3"
+                  asChild
+                >
+                  <a href="/facilities">
+                    <span className="font-semibold">Explore All Facilities</span>
+                    <ChevronRight className="w-5 h-5" />
+                  </a>
+                </Button>
                 <Button
                   variant="ghost"
                   className="w-full justify-between text-sims-primary hover:text-sims-primary-2 hover:bg-sims-surface h-11 rounded-lg px-3"
