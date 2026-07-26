@@ -388,7 +388,7 @@ export function Home() {
             </a>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
             <a 
               href={SITE_CONTENT.social.whatsapp} 
               target="_blank" 
@@ -398,6 +398,13 @@ export function Home() {
               <MessageCircleIcon className="w-5 h-5 shrink-0" />
               <span className="truncate">Chat on WhatsApp ({SITE_CONTENT.social.whatsappNumber})</span>
             </a>
+            <Button
+              variant="outline"
+              className="h-12 px-6 rounded-lg border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white font-semibold"
+              asChild
+            >
+              <a href="/contact-us">Contact Us Page →</a>
+            </Button>
           </div>
         </div>
       </section>

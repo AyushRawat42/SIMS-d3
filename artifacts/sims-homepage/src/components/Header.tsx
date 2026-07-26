@@ -35,6 +35,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
 
   const isOnProgramPage = location.startsWith('/programs');
   const isOnFacilitiesPage = location === '/facilities';
+  const isOnContactPage = location === '/contact-us';
 
   React.useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -259,6 +260,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
               if (link.href.startsWith('/')) {
                 const isActive =
                   (link.label === 'Facilities' && isOnFacilitiesPage) ||
+                  (link.label === 'Contact Us' && isOnContactPage) ||
                   location === link.href;
                 return (
                   <Link
@@ -440,6 +442,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                 if (link.href.startsWith('/')) {
                   const isActive =
                     (link.label === 'Facilities' && isOnFacilitiesPage) ||
+                    (link.label === 'Contact Us' && isOnContactPage) ||
                     location === link.href;
                   return (
                     <Link

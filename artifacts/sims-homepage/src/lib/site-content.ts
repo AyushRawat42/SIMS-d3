@@ -11,7 +11,7 @@ export const SITE_CONTENT = {
       { label: "Life at SIMS", href: "#life" },
       { label: "Placements", href: "#placements" },
       { label: "Facilities", href: "/facilities" },
-      { label: "Contact Us", href: "#contact" }
+      { label: "Contact Us", href: "/contact-us" }
     ]
   },
   hero: {
