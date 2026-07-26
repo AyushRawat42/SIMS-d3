@@ -4,6 +4,7 @@
   "installCommand": "cd ../.. && corepack enable && corepack prepare pnpm@10.30.2 --activate && pnpm install",
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist/public",
+  "ignoreCommand": "exit 1",
   "rewrites": [
     {
       "source": "/(.*)",
