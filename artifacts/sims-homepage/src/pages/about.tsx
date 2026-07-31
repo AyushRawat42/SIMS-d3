@@ -52,6 +52,8 @@ const strengthIcons = [FlaskConical, Users, Building2, HeartPulse];
 
 export function AboutPage() {
   const [modalOpen, setModalOpen] = useState(false);
+  const chairman = LEADERSHIP.find((l) => l.id === 'chairman');
+  const otherLeaders = LEADERSHIP.filter((l) => l.id !== 'chairman');
 
   useDocumentMeta(
     'About SIMS | Sushila Institute of Medical Sciences',
@@ -205,40 +207,132 @@ export function AboutPage() {
             centered
             className="mb-8 md:mb-10"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-            {LEADERSHIP.map((leader) => (
-              <article
-                key={leader.id}
-                className="rounded-2xl border border-sims-border bg-white shadow-sm overflow-hidden flex flex-col h-full"
-              >
-                <div className="aspect-[4/5] overflow-hidden bg-sims-surface">
-                  <OptimizedImage
-                    image={leader.image}
-                    alt={leader.imageAlt}
-                    sizes={IMAGE_SIZES.quarter}
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                <div className="p-5 md:p-6 flex flex-col flex-grow">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-sims-primary-2 mb-1">
-                    {leader.role}
-                  </p>
-                  <h3 className="text-lg font-bold text-sims-primary mb-4 leading-snug">
-                    {leader.name}
-                  </h3>
-                  <div className="relative flex-grow">
-                    <Quote
-                      className="w-5 h-5 text-sims-primary/20 absolute -top-1 -left-0.5"
-                      aria-hidden="true"
-                    />
-                    <blockquote className="pl-6 text-sm text-sims-text-muted leading-relaxed italic">
-                      “{leader.quote}”
-                    </blockquote>
+
+          {chairman && (
+              <>
+                {/* Honourable Chairman — featured banner */}
+                <article className="relative overflow-hidden rounded-2xl bg-sims-primary text-white mb-6 md:mb-8">
+                  {/* Subtle flowing mesh accent (left) */}
+                  <div
+                    className="pointer-events-none absolute inset-y-0 left-0 w-[min(55%,420px)] opacity-40"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="h-full w-full"
+                      viewBox="0 0 320 480"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="xMinYMid slice"
+                    >
+                      <path
+                        d="M-20 40C40 80 60 140 20 200C-20 260 40 300 90 280C140 260 180 320 140 380C100 440 160 480 220 460"
+                        stroke="url(#chairmanMesh)"
+                        strokeWidth="1.25"
+                        strokeDasharray="2 6"
+                      />
+                      <path
+                        d="M0 20C70 70 90 130 50 190C10 250 70 310 130 290C190 270 220 340 170 400C120 460 190 500 250 480"
+                        stroke="url(#chairmanMesh)"
+                        strokeWidth="1"
+                        strokeDasharray="1.5 7"
+                        opacity="0.7"
+                      />
+                      <path
+                        d="M30 0C100 50 120 120 80 180C40 240 100 290 160 270C220 250 250 320 200 380C150 440 220 500 280 470"
+                        stroke="url(#chairmanMesh)"
+                        strokeWidth="0.9"
+                        strokeDasharray="1 8"
+                        opacity="0.5"
+                      />
+                      <defs>
+                        <linearGradient id="chairmanMesh" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stopColor="#1E5288" />
+                          <stop offset="55%" stopColor="#93C5FD" />
+                          <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.35" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
                   </div>
+
+                  <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 lg:min-h-[380px]">
+                    <div className="lg:col-span-7 flex flex-col justify-center px-6 py-8 sm:px-8 md:px-10 lg:px-12 lg:py-12 order-2 lg:order-1">
+                      <div className="max-w-xl">
+                        <p className="font-script text-[1.75rem] sm:text-[2.15rem] md:text-[2.35rem] leading-none text-white">
+                          {chairman.role}
+                        </p>
+                        <div
+                          className="mt-2 mb-5 h-px w-40 sm:w-52 bg-gradient-to-r from-white/80 via-white/40 to-transparent"
+                          aria-hidden="true"
+                        />
+                        <h3 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-white leading-[1.15] tracking-tight mb-6">
+                          {chairman.name}
+                        </h3>
+                        <blockquote className="relative pl-1">
+                          <span
+                            className="font-display text-5xl sm:text-6xl leading-none text-white/35 select-none block mb-1"
+                            aria-hidden="true"
+                          >
+                            “
+                          </span>
+                          <p className="text-sm sm:text-[0.95rem] md:text-base text-white/90 leading-relaxed -mt-6 sm:-mt-7 pl-5 sm:pl-6">
+                            {chairman.quote}
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    {/* Match source aspect (~1024×678) on stacked layouts so the portrait isn't vertically cropped */}
+                    <div className="lg:col-span-5 relative order-1 lg:order-2 w-full aspect-[1024/678] lg:aspect-auto lg:min-h-full bg-sims-primary-2/30">
+                      <OptimizedImage
+                        image={chairman.image}
+                        alt={chairman.imageAlt}
+                        sizes={IMAGE_SIZES.content}
+                        className="absolute inset-0 w-full h-full object-cover object-center"
+                      />
+                      <div
+                        className="absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-sims-primary to-transparent pointer-events-none hidden lg:block"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+                </article>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                  {otherLeaders.map((leader) => (
+                    <article
+                      key={leader.id}
+                      className="rounded-2xl border border-sims-border bg-white shadow-sm overflow-hidden flex flex-col sm:flex-row h-full"
+                    >
+                      <div className="sm:w-44 md:w-48 shrink-0 aspect-[4/5] sm:aspect-auto sm:min-h-[220px] overflow-hidden bg-sims-surface">
+                        <OptimizedImage
+                          image={leader.image}
+                          alt={leader.imageAlt}
+                          sizes={IMAGE_SIZES.quarter}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      </div>
+                      <div className="p-5 md:p-6 flex flex-col flex-grow">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-sims-primary-2 mb-1">
+                          {leader.role}
+                        </p>
+                        <h3 className="text-lg font-bold text-sims-primary mb-4 leading-snug">
+                          {leader.name}
+                        </h3>
+                        <div className="relative flex-grow">
+                          <Quote
+                            className="w-5 h-5 text-sims-primary/20 absolute -top-1 -left-0.5"
+                            aria-hidden="true"
+                          />
+                          <blockquote className="pl-6 text-sm text-sims-text-muted leading-relaxed italic">
+                            “{leader.quote}”
+                          </blockquote>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
                 </div>
-              </article>
-            ))}
-          </div>
+              </>
+            )}
         </div>
       </section>
 

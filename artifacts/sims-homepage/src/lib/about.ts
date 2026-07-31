@@ -39,29 +39,29 @@ export const LEADERSHIP = [
   {
     id: 'chairman',
     role: 'Honourable Chairman',
-    name: 'Mr. Sanjeev Kumar',
+    name: 'Mr. Sanjeev Kumar Singhal',
     quote:
       'At SIMS, we aim to empower students with both knowledge and compassion. Healthcare is not just a profession — it’s a responsibility. Our mission is to nurture future leaders who will bring meaningful change in society.',
     image: chairman,
-    imageAlt: 'Honourable Chairman Mr. Sanjeev Kumar',
+    imageAlt: 'Honourable Chairman Mr. Sanjeev Kumar Singhal',
   },
   {
     id: 'vice-chairperson',
-    role: 'Honourable Vice-Chairperson',
+    role: 'Chairperson',
     name: 'Mrs. Kumkum Singhal',
     quote:
       'I strive to ensure that every student is guided, challenged, and supported. Our faculty and infrastructure work in harmony to create a student-friendly, result-oriented environment.',
     image: vice_chairperson,
-    imageAlt: 'Honourable Vice-Chairperson Mrs. Kumkum Singhal',
+    imageAlt: 'Chairperson Mrs. Kumkum Singhal',
   },
   {
     id: 'managing-director',
-    role: 'Honourable Managing Director',
+    role: 'Managing Director',
     name: 'Mr. Tushar Singhal',
     quote:
       'We believe in delivering education that is relevant, ethical, and transformative. SIMS is committed to academic excellence, skill development, and social awareness.',
     image: director,
-    imageAlt: 'Honourable Managing Director Mr. Tushar Singhal',
+    imageAlt: 'Managing Director Mr. Tushar Singhal',
   },
 ] as const;
 
