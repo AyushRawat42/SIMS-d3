@@ -70,6 +70,22 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     setMobileOpenCategory(null);
   }, [location]);
 
+  // Keep compact vs desktop chrome in sync when the viewport crosses xl
+  React.useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1280px)');
+    const onChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        setMobileMenuOpen(false);
+        setMobileProgramsOpen(false);
+        setMobileOpenCategory(null);
+      } else {
+        setDesktopProgramsOpen(false);
+      }
+    };
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
   React.useEffect(() => {
     if (!desktopProgramsOpen) return;
 
@@ -121,13 +137,13 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
         isScrolled ? 'bg-white shadow-sm py-2' : 'bg-white/95 backdrop-blur-sm py-3',
       )}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 md:px-6 xl:px-5 2xl:px-6">
+        <div className="flex items-center justify-between gap-3 xl:gap-4">
           <SimsLogo variant="header" linkToHome priority />
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav — xl+ so mid-widths use compact/hamburger instead of crowded full nav */}
           <nav
-            className="hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center min-w-0"
+            className="hidden xl:flex items-center gap-0 2xl:gap-1 flex-1 justify-center min-w-0"
             aria-label="Primary"
           >
             {SITE_CONTENT.header.navLinks.map((link) => {
@@ -144,7 +160,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                       ref={programsButtonRef}
                       type="button"
                       className={cn(
-                        'inline-flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors px-1.5 xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
+                        'inline-flex items-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-medium transition-colors px-1 2xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
                         desktopProgramsOpen || isOnProgramPage
                           ? 'text-sims-primary-2 bg-sims-surface'
                           : 'text-sims-text hover:text-sims-primary-2',
@@ -284,7 +300,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                     key={link.label}
                     href={link.href}
                     className={cn(
-                      'text-xs xl:text-sm font-medium transition-colors px-1.5 xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
+                      'text-xs 2xl:text-sm font-medium transition-colors px-1 2xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
                       isActive
                         ? 'text-sims-primary-2 bg-sims-surface'
                         : 'text-sims-text hover:text-sims-primary-2',
@@ -300,7 +316,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                 <a
                   key={link.label}
                   href={homeSectionHref(link.href)}
-                  className="text-xs xl:text-sm font-medium text-sims-text hover:text-sims-primary-2 transition-colors px-1.5 xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40"
+                  className="text-xs 2xl:text-sm font-medium text-sims-text hover:text-sims-primary-2 transition-colors px-1 2xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40"
                 >
                   {link.label}
                 </a>
@@ -308,19 +324,19 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
             })}
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          {/* Desktop Actions — matches nav collapse at xl */}
+          <div className="hidden xl:flex items-center gap-2 2xl:gap-3 shrink-0">
             <CallAdmissionsButton />
             <Button
-              className="h-10 bg-sims-primary hover:bg-sims-primary-2 text-white rounded-lg px-5"
+              className="h-9 2xl:h-10 bg-sims-primary hover:bg-sims-primary-2 text-white rounded-lg px-3.5 2xl:px-5 text-sm whitespace-nowrap"
               onClick={onApplyClick}
             >
               Apply Now
             </Button>
           </div>
 
-          {/* Mobile: call + menu */}
-          <div className="flex lg:hidden items-center gap-2 shrink-0">
+          {/* Compact / mobile: call + menu (below xl) */}
+          <div className="flex xl:hidden items-center gap-2 shrink-0">
             <CallAdmissionsButton />
             <button
               type="button"
@@ -344,7 +360,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-sims-border shadow-lg max-h-[min(80vh,640px)] overflow-y-auto"
+            className="xl:hidden absolute top-full left-0 right-0 bg-white border-b border-sims-border shadow-lg max-h-[min(80vh,640px)] overflow-y-auto"
           >
             <div className="container mx-auto px-4 md:px-6 py-5 flex flex-col gap-1">
               {SITE_CONTENT.header.navLinks.map((link) => {

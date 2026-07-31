@@ -15,12 +15,14 @@ type SimsLogoProps = {
 };
 
 const VARIANT_CLASS = {
-  header: 'h-14 md:h-16 w-auto max-w-[280px] md:max-w-[380px] object-contain object-left',
+  // Progressive max-width so the mark stays clear without crowding mid-range headers
+  header:
+    'h-12 sm:h-14 md:h-16 w-auto max-w-[220px] sm:max-w-[260px] md:max-w-[280px] xl:max-w-[300px] 2xl:max-w-[360px] object-contain object-left',
   footer: 'w-full h-auto max-h-14 object-contain object-left',
 } as const;
 
 const VARIANT_SIZES = {
-  header: '380px',
+  header: '(max-width: 640px) 220px, (max-width: 1280px) 280px, 360px',
   footer: '320px',
 } as const;
 
