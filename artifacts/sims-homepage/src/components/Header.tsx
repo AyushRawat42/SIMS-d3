@@ -526,7 +526,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
       </AnimatePresence>
 
       {/* Announcement Strip */}
-      <div className="w-full bg-amber-500/10 border-t border-amber-500/20 py-1.5 absolute top-full left-0 hidden md:block">
+      <div className="w-full bg-amber-500/55 border-t border-amber-500/20 py-1.5 absolute top-full left-0 hidden md:block">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <p className="text-xs md:text-sm font-semibold text-amber-900/90 tracking-wide">
             {SITE_CONTENT.header.announcement}
