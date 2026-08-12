@@ -85,3 +85,17 @@ export const CONTACT_HELP_NOTES = [
     text: 'Share the course you’re interested in and we’ll connect you with the right admissions counsellor.',
   },
 ];
+
+/** Career counselling offer — Contact Us page */
+export const CAREER_COUNSELLING = {
+  eyebrow: 'Free guidance',
+  title: 'Career Counselling',
+  description:
+    'Not sure whether nursing, physiotherapy, lab technology, or another allied health path fits you? Our counsellors help you compare programmes against your aptitude, interests, and long-term goals — from patient-facing care to diagnostic and rehabilitation roles.',
+  points: [
+    'Match PCB strengths and interests to the right SIMS programme',
+    'Clarify nursing vs allied health pathways and day-to-day roles',
+    'Discuss eligibility, intake timelines, and career outcomes',
+  ],
+  cta: 'Book a Free Counselling Session',
+} as const;

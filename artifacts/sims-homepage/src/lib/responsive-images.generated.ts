@@ -250,6 +250,10 @@ import vice_chairperson_640 from '@assets/optimized/vice-chairperson-640.webp';
 import vice_chairperson_1024 from '@assets/optimized/vice-chairperson-1024.webp';
 import vice_chairperson_1600 from '@assets/optimized/vice-chairperson-1600.webp';
 import vice_chairperson_full from '@assets/optimized/vice-chairperson-full.webp';
+import hnb_umeu_logo_128 from '@assets/optimized/hnb-umeu-logo-128.webp';
+import hnb_umeu_logo_256 from '@assets/optimized/hnb-umeu-logo-256.webp';
+import hnb_umeu_logo_300 from '@assets/optimized/hnb-umeu-logo-300.webp';
+import hnb_umeu_logo_full from '@assets/optimized/hnb-umeu-logo-full.webp';
 
 function ri(
   src: string,
@@ -810,6 +814,15 @@ export const vice_chairperson = ri(
   vice_chairperson_full,
 );
 
+/** Optimized from hnb-umeu-logo.png (300×308) */
+export const hnb_umeu_logo = ri(
+  hnb_umeu_logo_300,
+  `${hnb_umeu_logo_128} 128w, ${hnb_umeu_logo_256} 256w, ${hnb_umeu_logo_300} 300w`,
+  300,
+  308,
+  hnb_umeu_logo_full,
+);
+
 /** Lookup by original attached_assets filename */
 export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "12.png": img_12,
@@ -869,6 +882,7 @@ export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "Shushila_Institute_Of-removebg-preview-1-e1743436624699.png": Shushila_Institute_Of_removebg_preview_1_e1743436624699,
   "chairman.jpeg": chairman,
   "director.jpeg": director,
+  "hnb-umeu-logo.png": hnb_umeu_logo,
   "logo-transparent.png": logo_transparent,
   "logo-watermark.png": logo_watermark,
   "logo.jpeg": logo,

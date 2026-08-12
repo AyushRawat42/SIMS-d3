@@ -11,6 +11,7 @@ import {
   MapPin,
   GraduationCap,
   BookOpen,
+  MessageCircle,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -18,6 +19,7 @@ import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
 import { CONTACT_DETAILS, MAP_CONFIG } from '@/lib/contact';
+import { SITE_CONTENT } from '@/lib/site-content';
 import {
   ADMISSIONS_PAGE,
   DISCLAIMER,
@@ -311,10 +313,10 @@ export function AdmissionsPage() {
             subtitle="Need help with eligibility, documents, or the current intake? Reach our admissions team."
             className="mb-8"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5 mb-8">
             <a
               href={`tel:${primaryPhone.tel}`}
-              className="group rounded-2xl border border-sims-border bg-white p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 transition-all"
+              className="group rounded-2xl border border-sims-border bg-blue-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-blue-100 transition-all duration-200"
             >
               <Phone className="w-5 h-5 text-sims-primary-2 mb-3" aria-hidden="true" />
               <h3 className="font-bold text-sims-primary mb-1">Call Admissions</h3>
@@ -325,7 +327,7 @@ export function AdmissionsPage() {
             </a>
             <a
               href={`mailto:${CONTACT_DETAILS.email}`}
-              className="group rounded-2xl border border-sims-border bg-white p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 transition-all"
+              className="group rounded-2xl border border-sims-border bg-indigo-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-indigo-100 transition-all duration-200"
             >
               <Mail className="w-5 h-5 text-sims-primary-2 mb-3" aria-hidden="true" />
               <h3 className="font-bold text-sims-primary mb-1">Email Us</h3>
@@ -335,12 +337,24 @@ export function AdmissionsPage() {
               href={MAP_CONFIG.directionsUrl}
               target="_blank"
               rel="noreferrer"
-              className="group rounded-2xl border border-sims-border bg-white p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 transition-all"
+              className="group rounded-2xl border border-sims-border bg-amber-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-amber-100 transition-all duration-200"
             >
               <MapPin className="w-5 h-5 text-sims-primary-2 mb-3" aria-hidden="true" />
               <h3 className="font-bold text-sims-primary mb-1">Visit Campus</h3>
               <p className="text-sm text-sims-text-muted leading-relaxed">
                 Sheeshambara, Sighniwala, Chakrata Road, Dehradun
+              </p>
+            </a>
+            <a
+              href={SITE_CONTENT.social.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-2xl border border-sims-border bg-green-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-green-100 transition-all duration-200"
+            >
+              <MessageCircle className="w-5 h-5 text-sims-primary-2 mb-3" aria-hidden="true" />
+              <h3 className="font-bold text-sims-primary mb-1">WhatsApp Us</h3>
+              <p className="text-sm text-sims-text-muted">
+                {SITE_CONTENT.social.whatsappNumber}
               </p>
             </a>
           </div>

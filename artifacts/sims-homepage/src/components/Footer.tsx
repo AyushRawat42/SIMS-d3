@@ -28,14 +28,14 @@ export function Footer() {
               </a>
             </div>
             <div className="flex gap-3">
-              <a href={SITE_CONTENT.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 hover:text-sims-primary transition-all">
-                <Youtube className="w-5 h-5" />
-              </a>
               <a href={SITE_CONTENT.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 hover:text-sims-primary transition-all">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href={SITE_CONTENT.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 hover:text-sims-primary transition-all">
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a href={SITE_CONTENT.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-500 hover:text-sims-primary transition-all">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>

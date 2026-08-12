@@ -29,4 +29,6 @@ export const IMAGE_SIZES = {
   quarter: '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw',
   /** Portrait / square content image */
   content: '(max-width: 1023px) 100vw, 40vw',
+  /** Small affiliation / partner logos */
+  affiliationLogo: '(max-width: 639px) 112px, 160px',
 } as const;

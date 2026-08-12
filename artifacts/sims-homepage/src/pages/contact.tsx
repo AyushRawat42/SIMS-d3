@@ -6,26 +6,25 @@ import {
   MapPin,
   Clock,
   ExternalLink,
-  Facebook,
-  Instagram,
-  Youtube,
   CheckCircle2,
   Loader2,
   ArrowRight,
   MessageCircle,
+  Compass,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
+import { SocialFeedGrid } from '@/components/SocialFeedGrid';
 import { Button } from '@/components/ui/button';
 import { SITE_CONTENT } from '@/lib/site-content';
 import {
+  CAREER_COUNSELLING,
   CONTACT_DETAILS,
   CONTACT_HELP_NOTES,
   CONTACT_PAGE,
   MAP_CONFIG,
-  SOCIAL_LINKS,
 } from '@/lib/contact';
 
 const sectionPad = 'py-14 md:py-16 lg:py-20';
@@ -58,19 +57,6 @@ function useDocumentMeta(title: string, description: string) {
       }
     };
   }, [title, description]);
-}
-
-function SocialIcon({ id }: { id: string }) {
-  if (id === 'facebook') return <Facebook className="w-6 h-6" aria-hidden="true" />;
-  if (id === 'instagram') return <Instagram className="w-6 h-6" aria-hidden="true" />;
-  return <Youtube className="w-6 h-6" aria-hidden="true" />;
-}
-
-function socialAccent(id: string) {
-  if (id === 'facebook') return 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white';
-  if (id === 'instagram')
-    return 'bg-pink-50 text-pink-600 group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:via-pink-500 group-hover:to-purple-500 group-hover:text-white';
-  return 'bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white';
 }
 
 export function ContactPage() {
@@ -299,7 +285,7 @@ export function ContactPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                 <a
                   href={`tel:${primaryPhone.tel}`}
-                  className="group rounded-2xl border border-sims-border bg-sims-bg p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 transition-all"
+                  className="group rounded-2xl border border-sims-border bg-blue-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-blue-100 transition-all duration-200"
                 >
                   <div className="w-11 h-11 rounded-xl bg-sims-surface text-sims-primary-2 flex items-center justify-center mb-4 group-hover:bg-sims-primary group-hover:text-white transition-colors">
                     <Phone className="w-5 h-5" aria-hidden="true" />
@@ -315,7 +301,7 @@ export function ContactPage() {
 
                 <a
                   href={`mailto:${CONTACT_DETAILS.email}`}
-                  className="group rounded-2xl border border-sims-border bg-sims-bg p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 transition-all"
+                  className="group rounded-2xl border border-sims-border bg-indigo-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-indigo-100 transition-all duration-200"
                 >
                   <div className="w-11 h-11 rounded-xl bg-sims-surface text-sims-primary-2 flex items-center justify-center mb-4 group-hover:bg-sims-primary group-hover:text-white transition-colors">
                     <Mail className="w-5 h-5" aria-hidden="true" />
@@ -333,7 +319,7 @@ export function ContactPage() {
                   href={MAP_CONFIG.directionsUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group rounded-2xl border border-sims-border bg-sims-bg p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 transition-all"
+                  className="group rounded-2xl border border-sims-border bg-amber-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-amber-100 transition-all duration-200"
                 >
                   <div className="w-11 h-11 rounded-xl bg-sims-surface text-sims-primary-2 flex items-center justify-center mb-4 group-hover:bg-sims-primary group-hover:text-white transition-colors">
                     <MapPin className="w-5 h-5" aria-hidden="true" />
@@ -347,88 +333,114 @@ export function ContactPage() {
                   </span>
                 </a>
 
-                <div className="rounded-2xl border border-sims-border bg-sims-bg p-6 shadow-sm">
-                  <div className="w-11 h-11 rounded-xl bg-sims-surface text-sims-primary-2 flex items-center justify-center mb-4">
-                    <Clock className="w-5 h-5" aria-hidden="true" />
-                  </div>
-                  <h3 className="font-bold text-sims-primary mb-1">Office Hours</h3>
-                  <p className="text-sm font-semibold text-sims-text mb-2">
-                    {CONTACT_DETAILS.officeHours}
-                  </p>
-                  <p className="text-sm text-sims-text-muted leading-relaxed">
-                    {CONTACT_DETAILS.officeHoursNote}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-5">
                 <a
                   href={SITE_CONTENT.social.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1fb855] text-white px-5 h-11 rounded-lg font-semibold text-sm shadow-sm transition-colors"
+                  className="group rounded-2xl border border-sims-border bg-green-50 p-6 shadow-sm hover:shadow-md hover:border-sims-primary/20 hover:bg-green-100 transition-all duration-200"
                 >
-                  <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                  Chat on WhatsApp ({SITE_CONTENT.social.whatsappNumber})
+                  <div className="w-11 h-11 rounded-xl bg-sims-surface text-sims-primary-2 flex items-center justify-center mb-4 group-hover:bg-sims-primary group-hover:text-white transition-colors">
+                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-bold text-sims-primary mb-1">WhatsApp Us</h3>
+                  <p className="text-sm text-sims-text-muted leading-relaxed mb-3">
+                    Message admissions on {SITE_CONTENT.social.whatsappNumber} for quick guidance.
+                  </p>
+                  <span className="text-sm font-semibold text-sims-primary-2 inline-flex items-center">
+                    Chat now <ArrowRight className="w-4 h-4 ml-1" />
+                  </span>
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Map */}
-      <section className={`${sectionPad} bg-sims-bg border-y border-sims-border/60`}>
-        <div className={containerPad}>
-          <SectionHeading
-            title="Where to Find Us"
-            subtitle="Campus location on Chakrata Road, Dehradun — open the map for directions."
-            className="mb-8"
-          />
-
-          <div className="rounded-2xl overflow-hidden border border-sims-border shadow-md bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="lg:col-span-8 min-h-[280px] sm:min-h-[360px] lg:min-h-[420px] relative bg-sims-surface">
-                <iframe
-                  title={MAP_CONFIG.iframeTitle}
-                  src={MAP_CONFIG.embedSrc}
-                  className="absolute inset-0 w-full h-full border-0"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
-              </div>
-              <div className="lg:col-span-4 p-6 md:p-8 flex flex-col justify-between gap-6 border-t lg:border-t-0 lg:border-l border-sims-border">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-sims-primary-2 mb-2">
-                    Campus address
-                  </p>
-                  <h3 className="font-bold text-sims-primary text-lg mb-3 leading-snug">
-                    {CONTACT_DETAILS.collegeName}
-                  </h3>
-                  <address className="not-italic text-sm text-sims-text-muted leading-relaxed mb-4">
-                    {CONTACT_DETAILS.addressSingle}
-                  </address>
-                  <p className="text-sm text-sims-text">
-                    <span className="font-semibold">Hours:</span> {CONTACT_DETAILS.officeHours}
+              <div className="mt-5 rounded-xl bg-sims-surface border border-sims-border/70 px-4 py-3.5 sm:px-5 flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-4">
+                <div className="flex items-center gap-2.5 shrink-0">
+                  <Clock className="w-4 h-4 text-sims-primary-2" aria-hidden="true" />
+                  <p className="text-sm font-semibold text-sims-primary">
+                    {CONTACT_DETAILS.officeHours}
                   </p>
                 </div>
-                <Button
-                  className="w-full h-11 bg-sims-primary hover:bg-sims-primary-2 text-white rounded-lg font-semibold"
-                  asChild
-                >
-                  <a href={MAP_CONFIG.directionsUrl} target="_blank" rel="noreferrer">
-                    Get Directions
-                    <ExternalLink className="w-4 h-4 ml-2" aria-hidden="true" />
-                  </a>
-                </Button>
+                <p className="text-sm text-sims-text-muted leading-snug sm:border-l sm:border-sims-border sm:pl-4">
+                  {CONTACT_DETAILS.officeHoursNote}
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social */}
+      {/* Career Counselling — after contact methods, before map */}
+      <section className={`${sectionPad} bg-sims-bg border-t border-sims-border/60`}>
+        <div className={containerPad}>
+          <div className="rounded-2xl border border-sims-border bg-white shadow-sm overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-8 p-5 sm:p-6 md:p-8 lg:p-9">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-sims-surface text-sims-primary-2 flex items-center justify-center shrink-0">
+                    <Compass className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-1.5">
+                      {CAREER_COUNSELLING.eyebrow}
+                    </p>
+                    <h2 className="font-display text-xl sm:text-2xl md:text-[1.75rem] font-bold text-sims-primary leading-tight mb-3">
+                      {CAREER_COUNSELLING.title}
+                    </h2>
+                    <p className="text-sm md:text-[0.9375rem] text-sims-text-muted leading-relaxed mb-5 max-w-2xl">
+                      {CAREER_COUNSELLING.description}
+                    </p>
+                    <ul className="space-y-2.5 mb-6">
+                      {CAREER_COUNSELLING.points.map((point) => (
+                        <li key={point} className="flex gap-2.5 text-sm text-sims-text">
+                          <CheckCircle2
+                            className="w-4 h-4 text-sims-primary-2 shrink-0 mt-0.5"
+                            aria-hidden="true"
+                          />
+                          <span className="min-w-0 break-words">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                      <Button
+                        size="lg"
+                        className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white h-11 px-5 sm:px-6 font-bold rounded-lg text-sm sm:text-base whitespace-normal"
+                        onClick={() => setModalOpen(true)}
+                      >
+                        {CAREER_COUNSELLING.cta}
+                      </Button>
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="w-full sm:w-auto border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white h-11 px-5 sm:px-6 font-semibold rounded-lg"
+                        asChild
+                      >
+                        <a href={SITE_CONTENT.social.whatsapp} target="_blank" rel="noreferrer">
+                          Talk to an Expert
+                          <ArrowRight className="w-4 h-4 ml-1.5 shrink-0" aria-hidden="true" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-4 bg-sims-primary text-white p-5 sm:p-6 md:p-8 flex flex-col justify-center gap-3 sm:gap-4 border-t lg:border-t-0 lg:border-l border-sims-border">
+                <p className="text-xs font-semibold uppercase tracking-wider text-amber-300">
+                  Who it’s for
+                </p>
+                <p className="text-sm text-white/90 leading-relaxed">
+                  Students and families choosing between B.Sc Nursing, BPT, BMLT, imaging,
+                  optometry, and related SIMS programmes — based on aptitude and career goals, not
+                  guesswork.
+                </p>
+                <p className="text-sm font-semibold text-white leading-snug">
+                  Available during office hours · Free for prospective students
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social — live embeds (Facebook · Instagram · YouTube) */}
       <section className={`${sectionPad} bg-white`}>
         <div className={containerPad}>
           <SectionHeading
@@ -436,32 +448,7 @@ export function ContactPage() {
             subtitle="Follow official SIMS channels for campus updates and programme news."
             className="mb-8"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.id}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group rounded-2xl border border-sims-border bg-sims-bg p-6 shadow-sm hover:shadow-md hover:border-sims-primary/15 transition-all flex flex-col h-full"
-              >
-                <div
-                  className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-colors ${socialAccent(social.id)}`}
-                >
-                  <SocialIcon id={social.id} />
-                </div>
-                <h3 className="font-bold text-sims-primary text-lg mb-0.5">{social.name}</h3>
-                <p className="text-xs font-semibold text-sims-text-muted mb-3">{social.handle}</p>
-                <p className="text-sm text-sims-text-muted leading-relaxed flex-grow mb-5">
-                  {social.description}
-                </p>
-                <span className="inline-flex items-center text-sm font-semibold text-sims-primary-2">
-                  {social.cta}
-                  <ExternalLink className="w-4 h-4 ml-1.5" aria-hidden="true" />
-                </span>
-              </a>
-            ))}
-          </div>
+          <SocialFeedGrid />
         </div>
       </section>
 
@@ -651,6 +638,57 @@ export function ContactPage() {
             >
               <Link href="/facilities">View Facilities</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Map — bottom of page */}
+      <section className={`${sectionPad} bg-sims-bg border-t border-sims-border/60`}>
+        <div className={containerPad}>
+          <SectionHeading
+            title="Where to Find Us"
+            subtitle="Campus location on Chakrata Road, Dehradun — open the map for directions."
+            className="mb-8"
+          />
+
+          <div className="rounded-2xl overflow-hidden border border-sims-border shadow-md bg-white">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-8 min-h-[280px] sm:min-h-[360px] lg:min-h-[420px] relative bg-sims-surface">
+                <iframe
+                  title={MAP_CONFIG.iframeTitle}
+                  src={MAP_CONFIG.embedSrc}
+                  className="absolute inset-0 w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+              <div className="lg:col-span-4 p-6 md:p-8 flex flex-col justify-between gap-6 border-t lg:border-t-0 lg:border-l border-sims-border">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-sims-primary-2 mb-2">
+                    Campus address
+                  </p>
+                  <h3 className="font-bold text-sims-primary text-lg mb-3 leading-snug">
+                    {CONTACT_DETAILS.collegeName}
+                  </h3>
+                  <address className="not-italic text-sm text-sims-text-muted leading-relaxed mb-4">
+                    {CONTACT_DETAILS.addressSingle}
+                  </address>
+                  <p className="text-sm text-sims-text">
+                    <span className="font-semibold">Hours:</span> {CONTACT_DETAILS.officeHours}
+                  </p>
+                </div>
+                <Button
+                  className="w-full h-11 bg-sims-primary hover:bg-sims-primary-2 text-white rounded-lg font-semibold"
+                  asChild
+                >
+                  <a href={MAP_CONFIG.directionsUrl} target="_blank" rel="noreferrer">
+                    Get Directions
+                    <ExternalLink className="w-4 h-4 ml-2" aria-hidden="true" />
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

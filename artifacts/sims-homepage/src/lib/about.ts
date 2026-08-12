@@ -1,5 +1,14 @@
-import { chairman, director, vice_chairperson } from '@/lib/responsive-images.generated';
+import { chairman, director, hnb_umeu_logo, vice_chairperson } from '@/lib/responsive-images.generated';
 import { SITE_CONTENT } from '@/lib/site-content';
+
+export const HNB_AFFILIATION = {
+  name: 'H.N.B. Uttarakhand Medical Education University',
+  shortLabel: 'HNB UTTARAKHAND MEDICAL EDUCATION UNIVERSITY',
+  location: 'Dehradun',
+  motto: 'Learn to Serve',
+  logo: hnb_umeu_logo,
+  logoAlt: 'H.N.B. Uttarakhand Medical Education University, Dehradun — official university emblem',
+} as const;
 
 export const ABOUT_PAGE = {
   title: 'About SIMS',
@@ -38,19 +47,20 @@ export const ABOUT_MISSION = {
 export const LEADERSHIP = [
   {
     id: 'chairman',
-    role: 'Honourable Chairman',
+    role: 'Honourable Chairman Emeritus',
+    title: 'Founder & Visionary',
     name: 'Mr. Sanjeev Kumar Singhal',
     quote:
-      'At SIMS, we aim to empower students with both knowledge and compassion. Healthcare is not just a profession — it’s a responsibility. Our mission is to nurture future leaders who will bring meaningful change in society.',
+      'Knowledge is Wealth, Wisdom is Treasure, Understanding is Riches, and Ignorance is a Bliss.',
     image: chairman,
-    imageAlt: 'Honourable Chairman Mr. Sanjeev Kumar Singhal',
+    imageAlt: 'Honourable Chairman Emeritus Mr. Sanjeev Kumar Singhal',
   },
   {
     id: 'vice-chairperson',
     role: 'Chairperson',
     name: 'Mrs. Kumkum Singhal',
     quote:
-      'I strive to ensure that every student is guided, challenged, and supported. Our faculty and infrastructure work in harmony to create a student-friendly, result-oriented environment.',
+      'Be the spark that kindles the light in others and illuminates the world.',
     image: vice_chairperson,
     imageAlt: 'Chairperson Mrs. Kumkum Singhal',
   },
@@ -59,7 +69,7 @@ export const LEADERSHIP = [
     role: 'Managing Director',
     name: 'Mr. Tushar Singhal',
     quote:
-      'We believe in delivering education that is relevant, ethical, and transformative. SIMS is committed to academic excellence, skill development, and social awareness.',
+      'Our Actions Will Speak Loud and Fearless, Set your Heart Ablaze and Transform Your Life.',
     image: director,
     imageAlt: 'Managing Director Mr. Tushar Singhal',
   },
@@ -86,12 +96,12 @@ export const ABOUT_STRENGTHS = [
 
 export const ABOUT_SOCIAL_LINKS = [
   {
-    label: 'Instagram',
-    href: SITE_CONTENT.social.instagram,
-  },
-  {
     label: 'Facebook',
     href: SITE_CONTENT.social.facebook,
+  },
+  {
+    label: 'Instagram',
+    href: SITE_CONTENT.social.instagram,
   },
   {
     label: 'YouTube',

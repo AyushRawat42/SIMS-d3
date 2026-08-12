@@ -407,22 +407,6 @@ export function Home() {
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto mb-10">
             <a
-              href={SITE_CONTENT.social.youtube}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-white p-5 rounded-2xl shadow-sm border border-sims-border hover:shadow-md hover:border-red-200 transition-all group flex items-center gap-3.5 h-full"
-            >
-              <div className="w-12 h-12 bg-red-50 text-red-600 rounded-full flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-colors shrink-0">
-                <Youtube className="w-6 h-6" />
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-bold text-sims-text text-sm leading-snug truncate">SIMS DEHRADUN</h4>
-                <p className="text-xs text-sims-text-muted mt-0.5">@SIMSDEHRADUN</p>
-                <span className="text-xs font-semibold text-red-600 mt-1.5 inline-block">Subscribe →</span>
-              </div>
-            </a>
-            
-            <a
               href={SITE_CONTENT.social.facebook}
               target="_blank"
               rel="noreferrer"
@@ -437,7 +421,7 @@ export function Home() {
                 <span className="text-xs font-semibold text-blue-600 mt-1.5 inline-block">Visit Page →</span>
               </div>
             </a>
-            
+
             <a
               href={SITE_CONTENT.social.instagram}
               target="_blank"
@@ -451,6 +435,22 @@ export function Home() {
                 <h4 className="font-bold text-sims-text text-sm leading-snug truncate">@simscollegedehradun</h4>
                 <p className="text-xs text-sims-text-muted mt-0.5">Follow for updates</p>
                 <span className="text-xs font-semibold text-pink-600 mt-1.5 inline-block">Follow →</span>
+              </div>
+            </a>
+
+            <a
+              href={SITE_CONTENT.social.youtube}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-white p-5 rounded-2xl shadow-sm border border-sims-border hover:shadow-md hover:border-red-200 transition-all group flex items-center gap-3.5 h-full"
+            >
+              <div className="w-12 h-12 bg-red-50 text-red-600 rounded-full flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-colors shrink-0">
+                <Youtube className="w-6 h-6" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="font-bold text-sims-text text-sm leading-snug truncate">SIMS DEHRADUN</h4>
+                <p className="text-xs text-sims-text-muted mt-0.5">@SIMSDEHRADUN</p>
+                <span className="text-xs font-semibold text-red-600 mt-1.5 inline-block">Subscribe →</span>
               </div>
             </a>
           </div>

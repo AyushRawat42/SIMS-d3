@@ -8,6 +8,7 @@ import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
+import { cn } from '@/lib/utils';
 import {
   ABOUT_INTRO,
   ABOUT_MISSION,
@@ -16,6 +17,7 @@ import {
   ABOUT_SOCIAL_LINKS,
   ABOUT_STRENGTHS,
   ABOUT_VISION,
+  HNB_AFFILIATION,
   LEADERSHIP,
 } from '@/lib/about';
 
@@ -49,6 +51,16 @@ function useDocumentMeta(title: string, description: string) {
 }
 
 const strengthIcons = [FlaskConical, Users, Building2, HeartPulse];
+
+function aboutSocialLinkClass(label: string) {
+  if (label === 'Facebook') {
+    return 'bg-blue-50 border-blue-200/80 text-blue-700 hover:bg-blue-100 hover:border-blue-300 [&_svg]:text-blue-600';
+  }
+  if (label === 'Instagram') {
+    return 'bg-pink-50 border-pink-200/80 text-pink-700 hover:bg-pink-100 hover:border-pink-300 [&_svg]:text-pink-600';
+  }
+  return 'bg-red-50 border-red-200/80 text-red-700 hover:bg-red-100 hover:border-red-300 [&_svg]:text-red-600';
+}
 
 export function AboutPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -120,14 +132,28 @@ export function AboutPage() {
       {/* Introduction */}
       <section className={`${sectionPad} bg-white`}>
         <div className={containerPad}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <SectionHeading title="Who We Are" className="mb-8 md:mb-10" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             <div className="lg:col-span-4">
-              <SectionHeading title="Who We Are" className="mb-3" />
-              <p className="text-xs sm:text-sm font-semibold text-sims-primary-2 tracking-wide leading-snug max-w-[18rem] sm:max-w-none">
-                Dehradun · HNB UTTARAKHAND MEDICAL EDUCATION UNIVERSITY
-              </p>
+              <div className="rounded-2xl border border-sims-border bg-sims-bg p-5 sm:p-6 shadow-sm">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-sims-text-muted mb-3">
+                  Affiliated with
+                </p>
+                <OptimizedImage
+                  image={HNB_AFFILIATION.logo}
+                  alt={HNB_AFFILIATION.logoAlt}
+                  sizes={IMAGE_SIZES.affiliationLogo}
+                  className="w-28 sm:w-32 md:w-36 h-auto object-contain mb-3"
+                />
+                <p className="text-xs sm:text-sm font-semibold text-sims-primary-2 tracking-wide leading-snug">
+                  {HNB_AFFILIATION.shortLabel}
+                </p>
+                <p className="text-xs text-sims-text-muted mt-1.5">
+                  {HNB_AFFILIATION.location} · {HNB_AFFILIATION.motto}
+                </p>
+              </div>
             </div>
-            <div className="lg:col-span-8 space-y-4 text-sims-text-muted leading-relaxed text-[0.975rem] md:text-base">
+            <div className="lg:col-span-8 flex flex-col justify-center min-h-0 lg:min-h-[220px] space-y-4 text-sims-text-muted leading-relaxed text-[0.975rem] md:text-base">
               {ABOUT_INTRO.map((para) => (
                 <p key={para.slice(0, 48)}>{para}</p>
               ))}
@@ -150,10 +176,13 @@ export function AboutPage() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-sims-border bg-white px-4 h-11 text-sm font-semibold text-sims-primary hover:border-sims-primary/30 hover:shadow-sm transition-all"
+                className={cn(
+                  'inline-flex items-center gap-2 rounded-lg border px-4 h-11 text-sm font-semibold shadow-sm transition-all duration-200',
+                  aboutSocialLinkClass(link.label),
+                )}
               >
                 {link.label}
-                <ExternalLink className="w-4 h-4 text-sims-primary-2" aria-hidden="true" />
+                <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -257,13 +286,30 @@ export function AboutPage() {
                   <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 lg:min-h-[380px]">
                     <div className="lg:col-span-7 flex flex-col justify-center px-6 py-8 sm:px-8 md:px-10 lg:px-12 lg:py-12 order-2 lg:order-1">
                       <div className="max-w-xl">
-                        <p className="font-script text-[1.75rem] sm:text-[2.15rem] md:text-[2.35rem] leading-none text-white">
-                          {chairman.role}
-                        </p>
-                        <div
-                          className="mt-2 mb-5 h-px w-40 sm:w-52 bg-gradient-to-r from-white/80 via-white/40 to-transparent"
-                          aria-hidden="true"
-                        />
+                        {'title' in chairman && chairman.title ? (
+                          <>
+                            <p className="font-script text-[1.75rem] sm:text-[2.15rem] md:text-[2.35rem] leading-none text-white">
+                              {chairman.title}
+                            </p>
+                            <div
+                              className="mt-2 mb-4 h-px w-40 sm:w-52 bg-gradient-to-r from-white/80 via-white/40 to-transparent"
+                              aria-hidden="true"
+                            />
+                            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-amber-300/95 mb-5">
+                              {chairman.role}
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <p className="font-script text-[1.75rem] sm:text-[2.15rem] md:text-[2.35rem] leading-none text-white">
+                              {chairman.role}
+                            </p>
+                            <div
+                              className="mt-2 mb-5 h-px w-40 sm:w-52 bg-gradient-to-r from-white/80 via-white/40 to-transparent"
+                              aria-hidden="true"
+                            />
+                          </>
+                        )}
                         <h3 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-white leading-[1.15] tracking-tight mb-6">
                           {chairman.name}
                         </h3>
