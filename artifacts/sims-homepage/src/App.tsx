@@ -11,6 +11,9 @@ import { FacilitiesPage } from '@/pages/facilities';
 import { ContactPage } from '@/pages/contact';
 import { LifeAtSimsPage } from '@/pages/life-at-sims';
 import { AboutPage } from '@/pages/about';
+import { VisionMissionPage } from '@/pages/vision-mission';
+import { LeadershipPage } from '@/pages/leadership';
+import { AwardsHighlightsPage } from '@/pages/awards-highlights';
 import { AdmissionsPage } from '@/pages/admissions';
 
 const queryClient = new QueryClient();
@@ -20,6 +23,9 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={AboutPage} />
+      <Route path="/vision-mission" component={VisionMissionPage} />
+      <Route path="/leadership" component={LeadershipPage} />
+      <Route path="/awards-highlights" component={AwardsHighlightsPage} />
       <Route path="/admissions" component={AdmissionsPage} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/facilities" component={FacilitiesPage} />

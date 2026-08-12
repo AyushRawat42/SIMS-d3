@@ -55,14 +55,32 @@ export function Footer() {
           <div>
             <h4 className="text-base font-bold font-display mb-4 text-white border-b border-white/10 pb-3">Important Links</h4>
             <ul className="flex flex-col gap-2.5">
-              {SITE_CONTENT.footer.links.map(link => (
-                <li key={link}>
-                  <a href="/about" className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug">
-                    <span className="w-1 h-1 rounded-full bg-amber-500 shrink-0" />
-                    {link}
-                  </a>
-                </li>
-              ))}
+              {SITE_CONTENT.footer.links.map((link) => {
+                const href =
+                  link === 'About Us'
+                    ? '/about'
+                    : link === 'Vision & Mission'
+                      ? '/vision-mission'
+                      : link === 'Leadership Talk'
+                        ? '/leadership'
+                        : link === 'Awards & Highlights'
+                          ? '/awards-highlights'
+                          : link === 'Admission Procedure'
+                            ? '/admissions'
+                            : '/about';
+
+                return (
+                  <li key={link}>
+                    <Link
+                      href={href}
+                      className="text-sims-border hover:text-amber-400 transition-colors text-sm flex items-center gap-2 leading-snug"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-amber-500 shrink-0" />
+                      {link}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

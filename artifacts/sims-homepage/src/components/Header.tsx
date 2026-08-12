@@ -9,6 +9,7 @@ import {
   programPath,
   type ProgramCategoryId,
 } from '@/lib/programs';
+import { ABOUT_NAV_LINKS, isAboutSectionPath } from '@/lib/about-nav';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { SimsLogo } from '@/components/SimsLogo';
@@ -42,19 +43,24 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [desktopProgramsOpen, setDesktopProgramsOpen] = React.useState(false);
+  const [desktopAboutOpen, setDesktopAboutOpen] = React.useState(false);
   const [activeCategory, setActiveCategory] = React.useState<ProgramCategoryId>('nursing');
   const [mobileProgramsOpen, setMobileProgramsOpen] = React.useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = React.useState(false);
   const [mobileOpenCategory, setMobileOpenCategory] = React.useState<ProgramCategoryId | null>(null);
 
   const programsRef = React.useRef<HTMLDivElement>(null);
   const programsButtonRef = React.useRef<HTMLButtonElement>(null);
+  const aboutRef = React.useRef<HTMLDivElement>(null);
+  const aboutButtonRef = React.useRef<HTMLButtonElement>(null);
   const closeTimerRef = React.useRef<number | null>(null);
+  const aboutCloseTimerRef = React.useRef<number | null>(null);
 
   const isOnProgramPage = location.startsWith('/programs');
   const isOnFacilitiesPage = location === '/facilities';
   const isOnContactPage = location === '/contact-us';
   const isOnLifePage = location === '/life-at-sims';
-  const isOnAboutPage = location === '/about';
+  const isOnAboutSection = isAboutSectionPath(location);
   const isOnAdmissionsPage = location === '/admissions';
 
   React.useEffect(() => {
@@ -66,7 +72,9 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
   React.useEffect(() => {
     setMobileMenuOpen(false);
     setDesktopProgramsOpen(false);
+    setDesktopAboutOpen(false);
     setMobileProgramsOpen(false);
+    setMobileAboutOpen(false);
     setMobileOpenCategory(null);
   }, [location]);
 
@@ -77,9 +85,11 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
       if (e.matches) {
         setMobileMenuOpen(false);
         setMobileProgramsOpen(false);
+        setMobileAboutOpen(false);
         setMobileOpenCategory(null);
       } else {
         setDesktopProgramsOpen(false);
+        setDesktopAboutOpen(false);
       }
     };
     mq.addEventListener('change', onChange);
@@ -109,6 +119,29 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     };
   }, [desktopProgramsOpen]);
 
+  React.useEffect(() => {
+    if (!desktopAboutOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setDesktopAboutOpen(false);
+        aboutButtonRef.current?.focus();
+      }
+    };
+    const onPointerDown = (e: MouseEvent) => {
+      if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
+        setDesktopAboutOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('mousedown', onPointerDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('mousedown', onPointerDown);
+    };
+  }, [desktopAboutOpen]);
+
   const clearCloseTimer = () => {
     if (closeTimerRef.current != null) {
       window.clearTimeout(closeTimerRef.current);
@@ -116,8 +149,16 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     }
   };
 
+  const clearAboutCloseTimer = () => {
+    if (aboutCloseTimerRef.current != null) {
+      window.clearTimeout(aboutCloseTimerRef.current);
+      aboutCloseTimerRef.current = null;
+    }
+  };
+
   const openDesktopPrograms = () => {
     clearCloseTimer();
+    setDesktopAboutOpen(false);
     setDesktopProgramsOpen(true);
   };
 
@@ -125,6 +166,19 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     clearCloseTimer();
     closeTimerRef.current = window.setTimeout(() => {
       setDesktopProgramsOpen(false);
+    }, 160);
+  };
+
+  const openDesktopAbout = () => {
+    clearAboutCloseTimer();
+    setDesktopProgramsOpen(false);
+    setDesktopAboutOpen(true);
+  };
+
+  const scheduleCloseDesktopAbout = () => {
+    clearAboutCloseTimer();
+    aboutCloseTimerRef.current = window.setTimeout(() => {
+      setDesktopAboutOpen(false);
     }, 160);
   };
 
@@ -147,6 +201,96 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
             aria-label="Primary"
           >
             {SITE_CONTENT.header.navLinks.map((link) => {
+              if (link.label === 'About') {
+                return (
+                  <div
+                    key={link.label}
+                    ref={aboutRef}
+                    className="relative"
+                    onMouseEnter={openDesktopAbout}
+                    onMouseLeave={scheduleCloseDesktopAbout}
+                  >
+                    <button
+                      ref={aboutButtonRef}
+                      type="button"
+                      className={cn(
+                        'inline-flex items-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-medium transition-colors px-1 2xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
+                        desktopAboutOpen || isOnAboutSection
+                          ? 'text-sims-primary-2 bg-sims-surface'
+                          : 'text-sims-text hover:text-sims-primary-2',
+                      )}
+                      aria-haspopup="true"
+                      aria-expanded={desktopAboutOpen}
+                      aria-controls="about-megamenu"
+                      onClick={() => setDesktopAboutOpen((open) => !open)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setDesktopAboutOpen((open) => !open);
+                        }
+                        if (e.key === 'ArrowDown') {
+                          e.preventDefault();
+                          setDesktopAboutOpen(true);
+                        }
+                      }}
+                    >
+                      About
+                      <ChevronDown
+                        className={cn(
+                          'w-3.5 h-3.5 transition-transform',
+                          desktopAboutOpen && 'rotate-180',
+                        )}
+                        aria-hidden="true"
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {desktopAboutOpen && (
+                        <motion.div
+                          id="about-megamenu"
+                          role="menu"
+                          aria-label="About SIMS pages"
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.16 }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full pt-3 md:pt-10 w-[min(92vw,340px)] z-[60]"
+                          onMouseEnter={openDesktopAbout}
+                          onMouseLeave={scheduleCloseDesktopAbout}
+                        >
+                          <div className="bg-white rounded-2xl border border-sims-border shadow-xl overflow-hidden p-2">
+                            <ul className="space-y-0.5">
+                              {ABOUT_NAV_LINKS.map((item) => (
+                                <li key={item.href}>
+                                  <Link
+                                    href={item.href}
+                                    role="menuitem"
+                                    className={cn(
+                                      'block rounded-xl px-3 py-2.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
+                                      location === item.href
+                                        ? 'bg-sims-surface text-sims-primary'
+                                        : 'hover:bg-sims-surface text-sims-text',
+                                    )}
+                                    onClick={() => setDesktopAboutOpen(false)}
+                                  >
+                                    <span className="block text-sm font-semibold leading-snug">
+                                      {item.label}
+                                    </span>
+                                    <span className="block text-xs text-sims-text-muted mt-0.5">
+                                      {item.description}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               if (link.label === 'Programs') {
                 return (
                   <div
@@ -292,7 +436,6 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                   (link.label === 'Facilities' && isOnFacilitiesPage) ||
                   (link.label === 'Contact Us' && isOnContactPage) ||
                   (link.label === 'Life at SIMS' && isOnLifePage) ||
-                  (link.label === 'About' && isOnAboutPage) ||
                   (link.label === 'Admissions' && isOnAdmissionsPage) ||
                   location === link.href;
                 return (
@@ -364,6 +507,58 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
           >
             <div className="container mx-auto px-4 md:px-6 py-5 flex flex-col gap-1">
               {SITE_CONTENT.header.navLinks.map((link) => {
+                if (link.label === 'About') {
+                  return (
+                    <div key={link.label} className="border-b border-sims-border/60 pb-2 mb-1">
+                      <button
+                        type="button"
+                        className="w-full flex items-center justify-between text-base font-medium text-sims-text py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40 rounded-md"
+                        aria-expanded={mobileAboutOpen}
+                        aria-controls="mobile-about-accordion"
+                        onClick={() => setMobileAboutOpen((open) => !open)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            setMobileAboutOpen((open) => !open);
+                          }
+                          if (e.key === 'Escape') {
+                            setMobileAboutOpen(false);
+                          }
+                        }}
+                      >
+                        About
+                        <ChevronDown
+                          className={cn(
+                            'w-5 h-5 text-sims-text-muted transition-transform',
+                            mobileAboutOpen && 'rotate-180',
+                          )}
+                          aria-hidden="true"
+                        />
+                      </button>
+
+                      {mobileAboutOpen && (
+                        <div id="mobile-about-accordion" className="pb-2 space-y-0.5">
+                          {ABOUT_NAV_LINKS.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className={cn(
+                                'block rounded-lg px-3 py-2.5 text-sm transition-colors',
+                                location === item.href
+                                  ? 'bg-sims-surface text-sims-primary font-semibold'
+                                  : 'text-sims-text-muted hover:bg-sims-surface hover:text-sims-primary',
+                              )}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
                 if (link.label === 'Programs') {
                   return (
                     <div key={link.label} className="border-b border-sims-border/60 pb-2 mb-1">

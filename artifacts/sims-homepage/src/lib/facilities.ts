@@ -269,7 +269,7 @@ export const LABS: LabItem[] = [
   },
   {
     id: 'physiotherapy',
-    title: 'Physiotherapy Practice Lab',
+    title: 'Physiotherapy Practice Lab/OPD',
     description:
       'Provides space for exercise therapy, electrotherapy familiarisation, and rehabilitation practice using therapy beds and related apparatus.',
     highlights: [

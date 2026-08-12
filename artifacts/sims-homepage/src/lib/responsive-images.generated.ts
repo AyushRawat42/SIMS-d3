@@ -234,6 +234,26 @@ import director_640 from '@assets/optimized/director-640.webp';
 import director_1024 from '@assets/optimized/director-1024.webp';
 import director_1600 from '@assets/optimized/director-1600.webp';
 import director_full from '@assets/optimized/director-full.webp';
+import principal_640 from '@assets/optimized/principal-640.webp';
+import principal_1024 from '@assets/optimized/principal-1024.webp';
+import principal_1600 from '@assets/optimized/principal-1600.webp';
+import principal_full from '@assets/optimized/principal-full.webp';
+import coo_640 from '@assets/optimized/coo-640.webp';
+import coo_1024 from '@assets/optimized/coo-1024.webp';
+import coo_1600 from '@assets/optimized/coo-1600.webp';
+import coo_full from '@assets/optimized/coo-full.webp';
+import sims_campus_entrance_640 from '@assets/optimized/sims-campus-entrance-640.webp';
+import sims_campus_entrance_1024 from '@assets/optimized/sims-campus-entrance-1024.webp';
+import sims_campus_entrance_1600 from '@assets/optimized/sims-campus-entrance-1600.webp';
+import sims_campus_entrance_full from '@assets/optimized/sims-campus-entrance-full.webp';
+import sims_campus_lobby_640 from '@assets/optimized/sims-campus-lobby-640.webp';
+import sims_campus_lobby_1024 from '@assets/optimized/sims-campus-lobby-1024.webp';
+import sims_campus_lobby_1600 from '@assets/optimized/sims-campus-lobby-1600.webp';
+import sims_campus_lobby_full from '@assets/optimized/sims-campus-lobby-full.webp';
+import sims_campus_signage_640 from '@assets/optimized/sims-campus-signage-640.webp';
+import sims_campus_signage_1024 from '@assets/optimized/sims-campus-signage-1024.webp';
+import sims_campus_signage_1600 from '@assets/optimized/sims-campus-signage-1600.webp';
+import sims_campus_signage_full from '@assets/optimized/sims-campus-signage-full.webp';
 import logo_transparent_640 from '@assets/optimized/logo-transparent-640.webp';
 import logo_transparent_1024 from '@assets/optimized/logo-transparent-1024.webp';
 import logo_transparent_1600 from '@assets/optimized/logo-transparent-1600.webp';
@@ -254,6 +274,27 @@ import hnb_umeu_logo_128 from '@assets/optimized/hnb-umeu-logo-128.webp';
 import hnb_umeu_logo_256 from '@assets/optimized/hnb-umeu-logo-256.webp';
 import hnb_umeu_logo_300 from '@assets/optimized/hnb-umeu-logo-300.webp';
 import hnb_umeu_logo_full from '@assets/optimized/hnb-umeu-logo-full.webp';
+import vision_inclusive_classroom_640 from '@assets/optimized/vision-inclusive-classroom-640.webp';
+import vision_inclusive_classroom_full from '@assets/optimized/vision-inclusive-classroom-full.webp';
+import mission_skills_lab_640 from '@assets/optimized/mission-skills-lab-640.webp';
+import mission_skills_lab_full from '@assets/optimized/mission-skills-lab-full.webp';
+import awards_doctors_day_collage_640 from '@assets/optimized/awards-doctors-day-collage-640.webp';
+import awards_doctors_day_collage_full from '@assets/optimized/awards-doctors-day-collage-full.webp';
+import awards_tree_plantation_nursery_640 from '@assets/optimized/awards-tree-plantation-nursery-640.webp';
+import awards_tree_plantation_nursery_full from '@assets/optimized/awards-tree-plantation-nursery-full.webp';
+import awards_campus_run_team_640 from '@assets/optimized/awards-campus-run-team-640.webp';
+import awards_campus_run_team_full from '@assets/optimized/awards-campus-run-team-full.webp';
+import awards_ceremony_group_640 from '@assets/optimized/awards-ceremony-group-640.webp';
+import awards_ceremony_group_full from '@assets/optimized/awards-ceremony-group-full.webp';
+import awards_campus_facade_640 from '@assets/optimized/awards-campus-facade-640.webp';
+import awards_campus_facade_1024 from '@assets/optimized/awards-campus-facade-1024.webp';
+import awards_campus_facade_full from '@assets/optimized/awards-campus-facade-full.webp';
+import awards_tb_awareness_640 from '@assets/optimized/awards-tb-awareness-640.webp';
+import awards_tb_awareness_full from '@assets/optimized/awards-tb-awareness-full.webp';
+import awards_tb_day_group_640 from '@assets/optimized/awards-tb-day-group-640.webp';
+import awards_tb_day_group_full from '@assets/optimized/awards-tb-day-group-full.webp';
+import awards_blood_donation_640 from '@assets/optimized/awards-blood-donation-640.webp';
+import awards_blood_donation_full from '@assets/optimized/awards-blood-donation-full.webp';
 
 function ri(
   src: string,
@@ -778,6 +819,51 @@ export const director = ri(
   director_full,
 );
 
+/** Optimized from principal.jpeg (387×387) */
+export const principal = ri(
+  principal_1600,
+  `${principal_640} 640w, ${principal_1024} 1024w, ${principal_1600} 1600w`,
+  387,
+  387,
+  principal_full,
+);
+
+/** Optimized from coo.jpeg (388×390) */
+export const coo = ri(
+  coo_1600,
+  `${coo_640} 640w, ${coo_1024} 1024w, ${coo_1600} 1600w`,
+  388,
+  390,
+  coo_full,
+);
+
+/** Optimized from sims-campus-entrance.jpeg (325×282) */
+export const sims_campus_entrance = ri(
+  sims_campus_entrance_1600,
+  `${sims_campus_entrance_640} 640w, ${sims_campus_entrance_1024} 1024w, ${sims_campus_entrance_1600} 1600w`,
+  325,
+  282,
+  sims_campus_entrance_full,
+);
+
+/** Optimized from sims-campus-lobby.jpeg (307×295) */
+export const sims_campus_lobby = ri(
+  sims_campus_lobby_1600,
+  `${sims_campus_lobby_640} 640w, ${sims_campus_lobby_1024} 1024w, ${sims_campus_lobby_1600} 1600w`,
+  307,
+  295,
+  sims_campus_lobby_full,
+);
+
+/** Optimized from sims-campus-signage.jpeg (325×296) */
+export const sims_campus_signage = ri(
+  sims_campus_signage_1600,
+  `${sims_campus_signage_640} 640w, ${sims_campus_signage_1024} 1024w, ${sims_campus_signage_1600} 1600w`,
+  325,
+  296,
+  sims_campus_signage_full,
+);
+
 /** Optimized from logo-transparent.png (1600×219) */
 export const logo_transparent = ri(
   logo_transparent_1600,
@@ -821,6 +907,104 @@ export const hnb_umeu_logo = ri(
   300,
   308,
   hnb_umeu_logo_full,
+);
+
+/** Optimized from vision-inclusive-classroom.png (402×442) */
+export const vision_inclusive_classroom = ri(
+  vision_inclusive_classroom_640,
+  `${vision_inclusive_classroom_640} 402w`,
+  402,
+  442,
+  vision_inclusive_classroom_full,
+);
+
+/** Optimized from mission-skills-lab.png (395×486) */
+export const mission_skills_lab = ri(
+  mission_skills_lab_640,
+  `${mission_skills_lab_640} 395w`,
+  395,
+  486,
+  mission_skills_lab_full,
+);
+
+
+/** Optimized from awards-doctors-day-collage.png (510×345) */
+export const awards_doctors_day_collage = ri(
+  awards_doctors_day_collage_640,
+  `${awards_doctors_day_collage_640} 510w`,
+  510,
+  345,
+  awards_doctors_day_collage_full,
+);
+
+
+/** Optimized from awards-tree-plantation-nursery.png (461×266) */
+export const awards_tree_plantation_nursery = ri(
+  awards_tree_plantation_nursery_640,
+  `${awards_tree_plantation_nursery_640} 461w`,
+  461,
+  266,
+  awards_tree_plantation_nursery_full,
+);
+
+
+/** Optimized from awards-campus-run-team.png (612×268) */
+export const awards_campus_run_team = ri(
+  awards_campus_run_team_640,
+  `${awards_campus_run_team_640} 612w`,
+  612,
+  268,
+  awards_campus_run_team_full,
+);
+
+
+/** Optimized from awards-ceremony-group.png (613×235) */
+export const awards_ceremony_group = ri(
+  awards_ceremony_group_640,
+  `${awards_ceremony_group_640} 613w`,
+  613,
+  235,
+  awards_ceremony_group_full,
+);
+
+
+/** Optimized from awards-campus-facade.png (877×391) */
+export const awards_campus_facade = ri(
+  awards_campus_facade_1024,
+  `${awards_campus_facade_640} 640w, ${awards_campus_facade_1024} 877w`,
+  877,
+  391,
+  awards_campus_facade_full,
+);
+
+
+/** Optimized from awards-tb-awareness.png (488×303) */
+export const awards_tb_awareness = ri(
+  awards_tb_awareness_640,
+  `${awards_tb_awareness_640} 488w`,
+  488,
+  303,
+  awards_tb_awareness_full,
+);
+
+
+/** Optimized from awards-tb-day-group.png (405×190) */
+export const awards_tb_day_group = ri(
+  awards_tb_day_group_640,
+  `${awards_tb_day_group_640} 405w`,
+  405,
+  190,
+  awards_tb_day_group_full,
+);
+
+
+/** Optimized from awards-blood-donation.png (421×247) */
+export const awards_blood_donation = ri(
+  awards_blood_donation_640,
+  `${awards_blood_donation_640} 421w`,
+  421,
+  247,
+  awards_blood_donation_full,
 );
 
 /** Lookup by original attached_assets filename */
@@ -882,9 +1066,24 @@ export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "Shushila_Institute_Of-removebg-preview-1-e1743436624699.png": Shushila_Institute_Of_removebg_preview_1_e1743436624699,
   "chairman.jpeg": chairman,
   "director.jpeg": director,
+  "principal.jpeg": principal,
+  "coo.jpeg": coo,
+  "sims-campus-entrance.jpeg": sims_campus_entrance,
+  "sims-campus-lobby.jpeg": sims_campus_lobby,
+  "sims-campus-signage.jpeg": sims_campus_signage,
   "hnb-umeu-logo.png": hnb_umeu_logo,
   "logo-transparent.png": logo_transparent,
   "logo-watermark.png": logo_watermark,
   "logo.jpeg": logo,
   "vice-chairperson.jpeg": vice_chairperson,
+  "vision-inclusive-classroom.png": vision_inclusive_classroom,
+  "mission-skills-lab.png": mission_skills_lab,
+  "awards-doctors-day-collage.png": awards_doctors_day_collage,
+  "awards-tree-plantation-nursery.png": awards_tree_plantation_nursery,
+  "awards-campus-run-team.png": awards_campus_run_team,
+  "awards-ceremony-group.png": awards_ceremony_group,
+  "awards-campus-facade.png": awards_campus_facade,
+  "awards-tb-awareness.png": awards_tb_awareness,
+  "awards-tb-day-group.png": awards_tb_day_group,
+  "awards-blood-donation.png": awards_blood_donation,
 };

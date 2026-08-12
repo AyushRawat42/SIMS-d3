@@ -207,7 +207,17 @@ export const SITE_CONTENT = {
   },
   footer: {
     address: "SUSHILA INSTITUTE OF MEDICAL SCIENCES\n8VRF+25, Central Hope Town, Uttarakhand 248011, India",
-    links: ["Admission Procedure", "About Us", "Visions & Missions", "Doubt Sessions", "Extra Curricular", "Disclaimer", "Privacy Policy"],
+    links: [
+      "Admission Procedure",
+      "About Us",
+      "Vision & Mission",
+      "Leadership Talk",
+      "Awards & Highlights",
+      "Doubt Sessions",
+      "Extra Curricular",
+      "Disclaimer",
+      "Privacy Policy",
+    ],
     courses: [
       { name: "GNM", slug: "gnm" },
       { name: "B.Sc Nursing", slug: "bsc-nursing" },
