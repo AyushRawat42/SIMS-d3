@@ -42,8 +42,8 @@ function validateAdmissionBody(body: AdmissionBody):
   if (!fullName || fullName.length > 120) {
     errors.push("fullName is required and must be at most 120 characters");
   }
-  if (!email || !EMAIL_RE.test(email) || email.length > 254) {
-    errors.push("email is required and must be a valid email address");
+  if (email && (!EMAIL_RE.test(email) || email.length > 254)) {
+    errors.push("email must be a valid email address");
   }
   if (!phone || !PHONE_RE.test(phone)) {
     errors.push("phone is required and must be a valid phone number");
@@ -52,13 +52,18 @@ function validateAdmissionBody(body: AdmissionBody):
     errors.push("courseInterested is required and must be at most 200 characters");
   }
 
-  if (errors.length > 0 || !fullName || !email || !phone || !courseInterested) {
+  if (errors.length > 0 || !fullName || !phone || !courseInterested) {
     return { ok: false, errors };
   }
 
   return {
     ok: true,
-    data: { fullName, email, phone, courseInterested },
+    data: {
+      fullName,
+      email: email ?? "",
+      phone,
+      courseInterested,
+    },
   };
 }
 

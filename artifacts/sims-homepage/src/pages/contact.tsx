@@ -85,7 +85,7 @@ export function ContactPage() {
     const course = String(formData.get('courseInterested') ?? '').trim();
     const message = String(formData.get('message') ?? '').trim();
 
-    if (!fullName || !email || !phone || !course) {
+    if (!fullName || !phone || !course) {
       setSubmitError('Please fill in all required fields.');
       setIsSubmitting(false);
       return;
@@ -254,15 +254,6 @@ export function ContactPage() {
                     >
                       {CONTACT_DETAILS.email}
                     </a>
-                    <p className="text-xs text-sims-text-muted mt-1">
-                      Also:{' '}
-                      <a
-                        href={`mailto:${CONTACT_DETAILS.emailAlt}`}
-                        className="underline-offset-2 hover:underline"
-                      >
-                        {CONTACT_DETAILS.emailAlt}
-                      </a>
-                    </p>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -509,35 +500,19 @@ export function ContactPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label htmlFor="contact-email" className="text-sm font-medium text-sims-text">
-                          Email *
-                        </label>
-                        <input
-                          id="contact-email"
-                          name="email"
-                          type="email"
-                          required
-                          className={fieldClassName}
-                          placeholder="name@example.com"
-                          autoComplete="email"
-                        />
-                      </div>
-                      <div className="space-y-1.5">
-                        <label htmlFor="contact-phone" className="text-sm font-medium text-sims-text">
-                          Phone *
-                        </label>
-                        <input
-                          id="contact-phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          className={fieldClassName}
-                          placeholder="+91 00000 00000"
-                          autoComplete="tel"
-                        />
-                      </div>
+                    <div className="space-y-1.5">
+                      <label htmlFor="contact-phone" className="text-sm font-medium text-sims-text">
+                        Phone *
+                      </label>
+                      <input
+                        id="contact-phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        className={fieldClassName}
+                        placeholder="+91 00000 00000"
+                        autoComplete="tel"
+                      />
                     </div>
 
                     <div className="space-y-1.5">
@@ -565,8 +540,24 @@ export function ContactPage() {
                     </div>
 
                     <div className="space-y-1.5">
+                      <label htmlFor="contact-email" className="text-sm font-medium text-sims-text">
+                        Email{' '}
+                        <span className="font-normal text-sims-text-muted">(optional)</span>
+                      </label>
+                      <input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        className={fieldClassName}
+                        placeholder="name@example.com"
+                        autoComplete="email"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
                       <label htmlFor="contact-message" className="text-sm font-medium text-sims-text">
-                        Message
+                        Message{' '}
+                        <span className="font-normal text-sims-text-muted">(optional)</span>
                       </label>
                       <textarea
                         id="contact-message"

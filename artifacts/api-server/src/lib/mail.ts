@@ -22,8 +22,8 @@ export async function sendAdmissionNotification(enquiry: AdmissionEnquiry): Prom
     `Enquiry ID: ${enquiry.enquiryId}`,
     `Submitted at: ${enquiry.createdAt}`,
     `Full name: ${enquiry.fullName}`,
-    `Email: ${enquiry.email}`,
-    `Phone: ${enquiry.phone}`,
+    `Email: ${enquiry.email || "(not provided)"}`,
+    `Phone: ${enquiry.phone || "(not provided)"}`,
     `Course interested: ${enquiry.courseInterested}`,
   ].join("\n");
 
@@ -34,8 +34,8 @@ export async function sendAdmissionNotification(enquiry: AdmissionEnquiry): Prom
       <li><strong>Enquiry ID:</strong> ${escapeHtml(enquiry.enquiryId)}</li>
       <li><strong>Submitted at:</strong> ${escapeHtml(enquiry.createdAt)}</li>
       <li><strong>Full name:</strong> ${escapeHtml(enquiry.fullName)}</li>
-      <li><strong>Email:</strong> ${escapeHtml(enquiry.email)}</li>
-      <li><strong>Phone:</strong> ${escapeHtml(enquiry.phone)}</li>
+      <li><strong>Email:</strong> ${escapeHtml(enquiry.email || "(not provided)")}</li>
+      <li><strong>Phone:</strong> ${escapeHtml(enquiry.phone || "(not provided)")}</li>
       <li><strong>Course interested:</strong> ${escapeHtml(enquiry.courseInterested)}</li>
     </ul>
   `;
@@ -43,7 +43,7 @@ export async function sendAdmissionNotification(enquiry: AdmissionEnquiry): Prom
   await transporter.sendMail({
     from: smtp.from,
     to: smtp.to,
-    replyTo: enquiry.email,
+    ...(enquiry.email ? { replyTo: enquiry.email } : {}),
     subject,
     text,
     html,

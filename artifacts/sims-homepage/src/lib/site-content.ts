@@ -2,8 +2,8 @@
 export const WHATSAPP_CONTACT = {
   /** Digits only with country code — for wa.me URLs */
   number: '919759761244',
-  /** Human-readable display without country code */
-  display: '9759761244',
+  /** Human-readable display with country code */
+  display: '+91 9759761244',
   /** Open WhatsApp chat */
   href: 'https://wa.me/919759761244',
   /** Phone dialer for the same line */
@@ -14,7 +14,7 @@ export const SITE_CONTENT = {
   header: {
     logoText: "SUSHILA INSTITUTE OF MEDICAL SCIENCES",
     tagline: "Dehradun, Uttarakhand",
-    announcement: "Admission Open 2025–26 | BPT · BMLT · BMRIT · B.O.T.T · B.Optometry · B.A.S.L.P · GNM · P.B. B.Sc Nursing · M.Sc. Nursing · M.Sc. Medical Microbiology · M.Sc. Medical Biochemistry",
+    announcement: "Admission Open 2025–26 | B.Sc. Nursing · BPT · BMLT · BMRIT · B.O.T.T · B.Optometry · B.A.S.L.P · GNM · P.B. B.Sc Nursing · M.Sc. Nursing · M.Sc. Medical Microbiology · M.Sc. Medical Biochemistry",
     navLinks: [
       { label: "Home", href: "#home" },
       { label: "About", href: "/about" },
@@ -209,24 +209,24 @@ export const SITE_CONTENT = {
     address: "SUSHILA INSTITUTE OF MEDICAL SCIENCES\n8VRF+25, Central Hope Town, Uttarakhand 248011, India",
     links: ["Admission Procedure", "About Us", "Visions & Missions", "Doubt Sessions", "Extra Curricular", "Disclaimer", "Privacy Policy"],
     courses: [
-      { name: "B.Sc Nursing", slug: "bsc-nursing" },
-      { name: "Post Basic B.Sc Nursing", slug: "post-basic-bsc-nursing" },
       { name: "GNM", slug: "gnm" },
-      { name: "M.Sc Nursing", slug: "msc-nursing" },
+      { name: "B.Sc Nursing", slug: "bsc-nursing" },
       { name: "BPT", slug: "bpt" },
       { name: "BMLT", slug: "bmlt" },
       { name: "BMRIT", slug: "bmrit" },
-      { name: "B.Optometry", slug: "b-optometry" },
       { name: "BOTT", slug: "bott" },
+      { name: "B.Optometry", slug: "b-optometry" },
+      { name: "BASLP", slug: "baslp" },
+      { name: "Post Basic B.Sc Nursing", slug: "post-basic-bsc-nursing" },
+      { name: "M.Sc Nursing", slug: "msc-nursing" },
       { name: "M.Sc Medical Microbiology", slug: "msc-microbiology" },
       { name: "M.Sc. Medical Biochemistry", slug: "msc-medical-biochemistry" },
-      { name: "BASLP", slug: "baslp" },
     ],
     contact: {
       phones: [
-        { display: "9759761244", tel: "+919759761244" },
-        { display: "9759761243", tel: "+919759761243" },
-        { display: "9759761241", tel: "+919759761241" },
+        { display: "+91 9759761244", tel: "+919759761244" },
+        { display: "+91 9759761243", tel: "+919759761243" },
+        { display: "+91 9759761241", tel: "+919759761241" },
       ],
       email: "Info@sims.college",
       web: "sims.college"

@@ -19,14 +19,12 @@ export const CONTACT_DETAILS = {
   addressSingle:
     'Sushila Institute of Medical Sciences (SIMS), Sheeshambara, Sighniwala, Chakrata Road, Central Hope Town, Dehradun, Uttarakhand – 248197, India',
   phones: [
-    { display: '9759761244', tel: '+919759761244', label: 'Admissions' },
-    { display: '9759761243', tel: '+919759761243', label: 'Admissions' },
-    { display: '9759761241', tel: '+919759761241', label: 'Admissions' },
+    { display: '+91 9759761244', tel: '+919759761244', label: 'Admissions' },
+    { display: '+91 9759761243', tel: '+919759761243', label: 'Admissions' },
+    { display: '+91 9759761241', tel: '+919759761241', label: 'Admissions' },
   ],
   /** Primary email listed on the official SIMS Contact Us page */
-  email: 'info@simsdehradun.com',
-  /** Email already used across this site and listed on public college directories */
-  emailAlt: 'Info@sims.college',
+  email: 'Info@sims.college',
   officeHours: 'Monday to Saturday, 9 AM – 5 PM',
   officeHoursNote: 'Closed on Sundays and public holidays (confirm with admissions for exceptions).',
   website: 'https://sims.college',
