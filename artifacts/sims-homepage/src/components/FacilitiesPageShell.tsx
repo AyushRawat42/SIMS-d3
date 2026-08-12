@@ -131,13 +131,16 @@ export function FacilitiesPageShell({
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 aspect-[877/391]">
+              <div
+                className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/10"
+                style={{ aspectRatio: `${image.width} / ${image.height}` }}
+              >
                 <OptimizedImage
                   image={image}
                   alt={imageAlt}
                   sizes="(max-width: 1023px) 100vw, 42vw"
                   priority
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-contain object-center"
                 />
               </div>
             </div>

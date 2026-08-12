@@ -1,4 +1,4 @@
-import { awards_campus_facade } from '@/lib/responsive-images.generated';
+import { transport_bus_collage } from '@/lib/responsive-images.generated';
 
 export const FACILITIES_PAGE = {
   title: 'Facilities at SIMS',
@@ -14,6 +14,6 @@ export const FACILITIES_PAGE = {
 };
 
 export const FACILITIES_HERO_IMAGE = {
-  src: awards_campus_facade,
-  alt: 'Entrance facade of Sushila Institute of Medical Sciences (SIMS), Dehradun',
+  src: transport_bus_collage,
+  alt: 'SIMS college bus collage — nursing students posing in front of the yellow campus bus and a student boarding the Sushila Institute of Medical Sciences bus',
 };
