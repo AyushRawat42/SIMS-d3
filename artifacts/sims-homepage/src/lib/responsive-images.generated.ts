@@ -206,6 +206,10 @@ import DSC05124_640 from '@assets/optimized/DSC05124-640.webp';
 import DSC05124_1024 from '@assets/optimized/DSC05124-1024.webp';
 import DSC05124_1600 from '@assets/optimized/DSC05124-1600.webp';
 import DSC05124_full from '@assets/optimized/DSC05124-full.webp';
+import DSC05124_cleanup_640 from '@assets/optimized/DSC05124-cleanup-640.webp';
+import DSC05124_cleanup_1024 from '@assets/optimized/DSC05124-cleanup-1024.webp';
+import DSC05124_cleanup_1600 from '@assets/optimized/DSC05124-cleanup-1600.webp';
+import DSC05124_cleanup_full from '@assets/optimized/DSC05124-cleanup-full.webp';
 import DSC05126_640 from '@assets/optimized/DSC05126-640.webp';
 import DSC05126_1024 from '@assets/optimized/DSC05126-1024.webp';
 import DSC05126_1600 from '@assets/optimized/DSC05126-1600.webp';
@@ -226,34 +230,74 @@ import Shushila_Institute_Of_removebg_preview_1_e1743436624699_640 from '@assets
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_1024 from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-1024.webp';
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_1600 from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-1600.webp';
 import Shushila_Institute_Of_removebg_preview_1_e1743436624699_full from '@assets/optimized/Shushila_Institute_Of-removebg-preview-1-e1743436624699-full.webp';
+import awards_blood_donation_640 from '@assets/optimized/awards-blood-donation-640.webp';
+import awards_blood_donation_1024 from '@assets/optimized/awards-blood-donation-1024.webp';
+import awards_blood_donation_1600 from '@assets/optimized/awards-blood-donation-1600.webp';
+import awards_blood_donation_full from '@assets/optimized/awards-blood-donation-full.webp';
+import awards_campus_facade_640 from '@assets/optimized/awards-campus-facade-640.webp';
+import awards_campus_facade_1024 from '@assets/optimized/awards-campus-facade-1024.webp';
+import awards_campus_facade_1600 from '@assets/optimized/awards-campus-facade-1600.webp';
+import awards_campus_facade_full from '@assets/optimized/awards-campus-facade-full.webp';
+import awards_campus_run_team_640 from '@assets/optimized/awards-campus-run-team-640.webp';
+import awards_campus_run_team_1024 from '@assets/optimized/awards-campus-run-team-1024.webp';
+import awards_campus_run_team_1600 from '@assets/optimized/awards-campus-run-team-1600.webp';
+import awards_campus_run_team_full from '@assets/optimized/awards-campus-run-team-full.webp';
+import awards_ceremony_group_640 from '@assets/optimized/awards-ceremony-group-640.webp';
+import awards_ceremony_group_1024 from '@assets/optimized/awards-ceremony-group-1024.webp';
+import awards_ceremony_group_1600 from '@assets/optimized/awards-ceremony-group-1600.webp';
+import awards_ceremony_group_full from '@assets/optimized/awards-ceremony-group-full.webp';
+import awards_doctors_day_collage_640 from '@assets/optimized/awards-doctors-day-collage-640.webp';
+import awards_doctors_day_collage_1024 from '@assets/optimized/awards-doctors-day-collage-1024.webp';
+import awards_doctors_day_collage_1600 from '@assets/optimized/awards-doctors-day-collage-1600.webp';
+import awards_doctors_day_collage_full from '@assets/optimized/awards-doctors-day-collage-full.webp';
+import awards_tb_awareness_640 from '@assets/optimized/awards-tb-awareness-640.webp';
+import awards_tb_awareness_1024 from '@assets/optimized/awards-tb-awareness-1024.webp';
+import awards_tb_awareness_1600 from '@assets/optimized/awards-tb-awareness-1600.webp';
+import awards_tb_awareness_full from '@assets/optimized/awards-tb-awareness-full.webp';
+import awards_tb_day_group_640 from '@assets/optimized/awards-tb-day-group-640.webp';
+import awards_tb_day_group_1024 from '@assets/optimized/awards-tb-day-group-1024.webp';
+import awards_tb_day_group_1600 from '@assets/optimized/awards-tb-day-group-1600.webp';
+import awards_tb_day_group_full from '@assets/optimized/awards-tb-day-group-full.webp';
+import awards_tree_plantation_nursery_640 from '@assets/optimized/awards-tree-plantation-nursery-640.webp';
+import awards_tree_plantation_nursery_1024 from '@assets/optimized/awards-tree-plantation-nursery-1024.webp';
+import awards_tree_plantation_nursery_1600 from '@assets/optimized/awards-tree-plantation-nursery-1600.webp';
+import awards_tree_plantation_nursery_full from '@assets/optimized/awards-tree-plantation-nursery-full.webp';
 import chairman_640 from '@assets/optimized/chairman-640.webp';
 import chairman_1024 from '@assets/optimized/chairman-1024.webp';
 import chairman_1600 from '@assets/optimized/chairman-1600.webp';
 import chairman_full from '@assets/optimized/chairman-full.webp';
-import director_640 from '@assets/optimized/director-640.webp';
-import director_1024 from '@assets/optimized/director-1024.webp';
-import director_1600 from '@assets/optimized/director-1600.webp';
-import director_full from '@assets/optimized/director-full.webp';
-import principal_640 from '@assets/optimized/principal-640.webp';
-import principal_1024 from '@assets/optimized/principal-1024.webp';
-import principal_1600 from '@assets/optimized/principal-1600.webp';
-import principal_full from '@assets/optimized/principal-full.webp';
 import coo_640 from '@assets/optimized/coo-640.webp';
 import coo_1024 from '@assets/optimized/coo-1024.webp';
 import coo_1600 from '@assets/optimized/coo-1600.webp';
 import coo_full from '@assets/optimized/coo-full.webp';
-import sims_campus_entrance_640 from '@assets/optimized/sims-campus-entrance-640.webp';
-import sims_campus_entrance_1024 from '@assets/optimized/sims-campus-entrance-1024.webp';
-import sims_campus_entrance_1600 from '@assets/optimized/sims-campus-entrance-1600.webp';
-import sims_campus_entrance_full from '@assets/optimized/sims-campus-entrance-full.webp';
-import sims_campus_lobby_640 from '@assets/optimized/sims-campus-lobby-640.webp';
-import sims_campus_lobby_1024 from '@assets/optimized/sims-campus-lobby-1024.webp';
-import sims_campus_lobby_1600 from '@assets/optimized/sims-campus-lobby-1600.webp';
-import sims_campus_lobby_full from '@assets/optimized/sims-campus-lobby-full.webp';
-import sims_campus_signage_640 from '@assets/optimized/sims-campus-signage-640.webp';
-import sims_campus_signage_1024 from '@assets/optimized/sims-campus-signage-1024.webp';
-import sims_campus_signage_1600 from '@assets/optimized/sims-campus-signage-1600.webp';
-import sims_campus_signage_full from '@assets/optimized/sims-campus-signage-full.webp';
+import director_640 from '@assets/optimized/director-640.webp';
+import director_1024 from '@assets/optimized/director-1024.webp';
+import director_1600 from '@assets/optimized/director-1600.webp';
+import director_full from '@assets/optimized/director-full.webp';
+import hnb_umeu_logo_640 from '@assets/optimized/hnb-umeu-logo-640.webp';
+import hnb_umeu_logo_1024 from '@assets/optimized/hnb-umeu-logo-1024.webp';
+import hnb_umeu_logo_1600 from '@assets/optimized/hnb-umeu-logo-1600.webp';
+import hnb_umeu_logo_full from '@assets/optimized/hnb-umeu-logo-full.webp';
+import labs_collage_640 from '@assets/optimized/labs-collage-640.webp';
+import labs_collage_1024 from '@assets/optimized/labs-collage-1024.webp';
+import labs_collage_1600 from '@assets/optimized/labs-collage-1600.webp';
+import labs_collage_full from '@assets/optimized/labs-collage-full.webp';
+import transport_bus_collage_640 from '@assets/optimized/transport-bus-collage-640.webp';
+import transport_bus_collage_1024 from '@assets/optimized/transport-bus-collage-1024.webp';
+import transport_bus_collage_1600 from '@assets/optimized/transport-bus-collage-1600.webp';
+import transport_bus_collage_full from '@assets/optimized/transport-bus-collage-full.webp';
+import transport_route_coverage_map_640 from '@assets/optimized/transport-route-coverage-map-640.webp';
+import transport_route_coverage_map_1024 from '@assets/optimized/transport-route-coverage-map-1024.webp';
+import transport_route_coverage_map_1600 from '@assets/optimized/transport-route-coverage-map-1600.webp';
+import transport_route_coverage_map_full from '@assets/optimized/transport-route-coverage-map-full.webp';
+import hero_campus_life_collage_640 from '@assets/optimized/hero-campus-life-collage-640.webp';
+import hero_campus_life_collage_1024 from '@assets/optimized/hero-campus-life-collage-1024.webp';
+import hero_campus_life_collage_1600 from '@assets/optimized/hero-campus-life-collage-1600.webp';
+import hero_campus_life_collage_full from '@assets/optimized/hero-campus-life-collage-full.webp';
+import hero_campus_life_collage_v2_640 from '@assets/optimized/hero-campus-life-collage-v2-640.webp';
+import hero_campus_life_collage_v2_1024 from '@assets/optimized/hero-campus-life-collage-v2-1024.webp';
+import hero_campus_life_collage_v2_1600 from '@assets/optimized/hero-campus-life-collage-v2-1600.webp';
+import hero_campus_life_collage_v2_full from '@assets/optimized/hero-campus-life-collage-v2-full.webp';
 import logo_transparent_640 from '@assets/optimized/logo-transparent-640.webp';
 import logo_transparent_1024 from '@assets/optimized/logo-transparent-1024.webp';
 import logo_transparent_1600 from '@assets/optimized/logo-transparent-1600.webp';
@@ -266,35 +310,50 @@ import logo_640 from '@assets/optimized/logo-640.webp';
 import logo_1024 from '@assets/optimized/logo-1024.webp';
 import logo_1600 from '@assets/optimized/logo-1600.webp';
 import logo_full from '@assets/optimized/logo-full.webp';
+import mission_skills_lab_640 from '@assets/optimized/mission-skills-lab-640.webp';
+import mission_skills_lab_1024 from '@assets/optimized/mission-skills-lab-1024.webp';
+import mission_skills_lab_1600 from '@assets/optimized/mission-skills-lab-1600.webp';
+import mission_skills_lab_full from '@assets/optimized/mission-skills-lab-full.webp';
+import principal_640 from '@assets/optimized/principal-640.webp';
+import principal_1024 from '@assets/optimized/principal-1024.webp';
+import principal_1600 from '@assets/optimized/principal-1600.webp';
+import principal_full from '@assets/optimized/principal-full.webp';
+import sims_campus_entrance_640 from '@assets/optimized/sims-campus-entrance-640.webp';
+import sims_campus_entrance_1024 from '@assets/optimized/sims-campus-entrance-1024.webp';
+import sims_campus_entrance_1600 from '@assets/optimized/sims-campus-entrance-1600.webp';
+import sims_campus_entrance_full from '@assets/optimized/sims-campus-entrance-full.webp';
+import sims_campus_lobby_640 from '@assets/optimized/sims-campus-lobby-640.webp';
+import sims_campus_lobby_1024 from '@assets/optimized/sims-campus-lobby-1024.webp';
+import sims_campus_lobby_1600 from '@assets/optimized/sims-campus-lobby-1600.webp';
+import sims_campus_lobby_full from '@assets/optimized/sims-campus-lobby-full.webp';
+import sims_campus_signage_640 from '@assets/optimized/sims-campus-signage-640.webp';
+import sims_campus_signage_1024 from '@assets/optimized/sims-campus-signage-1024.webp';
+import sims_campus_signage_1600 from '@assets/optimized/sims-campus-signage-1600.webp';
+import sims_campus_signage_full from '@assets/optimized/sims-campus-signage-full.webp';
 import vice_chairperson_640 from '@assets/optimized/vice-chairperson-640.webp';
 import vice_chairperson_1024 from '@assets/optimized/vice-chairperson-1024.webp';
 import vice_chairperson_1600 from '@assets/optimized/vice-chairperson-1600.webp';
 import vice_chairperson_full from '@assets/optimized/vice-chairperson-full.webp';
-import hnb_umeu_logo_128 from '@assets/optimized/hnb-umeu-logo-128.webp';
-import hnb_umeu_logo_256 from '@assets/optimized/hnb-umeu-logo-256.webp';
-import hnb_umeu_logo_300 from '@assets/optimized/hnb-umeu-logo-300.webp';
-import hnb_umeu_logo_full from '@assets/optimized/hnb-umeu-logo-full.webp';
 import vision_inclusive_classroom_640 from '@assets/optimized/vision-inclusive-classroom-640.webp';
+import vision_inclusive_classroom_1024 from '@assets/optimized/vision-inclusive-classroom-1024.webp';
+import vision_inclusive_classroom_1600 from '@assets/optimized/vision-inclusive-classroom-1600.webp';
 import vision_inclusive_classroom_full from '@assets/optimized/vision-inclusive-classroom-full.webp';
-import mission_skills_lab_640 from '@assets/optimized/mission-skills-lab-640.webp';
-import mission_skills_lab_full from '@assets/optimized/mission-skills-lab-full.webp';
-import awards_doctors_day_collage_640 from '@assets/optimized/awards-doctors-day-collage-640.webp';
-import awards_doctors_day_collage_full from '@assets/optimized/awards-doctors-day-collage-full.webp';
-import awards_tree_plantation_nursery_640 from '@assets/optimized/awards-tree-plantation-nursery-640.webp';
-import awards_tree_plantation_nursery_full from '@assets/optimized/awards-tree-plantation-nursery-full.webp';
-import awards_campus_run_team_640 from '@assets/optimized/awards-campus-run-team-640.webp';
-import awards_campus_run_team_full from '@assets/optimized/awards-campus-run-team-full.webp';
-import awards_ceremony_group_640 from '@assets/optimized/awards-ceremony-group-640.webp';
-import awards_ceremony_group_full from '@assets/optimized/awards-ceremony-group-full.webp';
-import awards_campus_facade_640 from '@assets/optimized/awards-campus-facade-640.webp';
-import awards_campus_facade_1024 from '@assets/optimized/awards-campus-facade-1024.webp';
-import awards_campus_facade_full from '@assets/optimized/awards-campus-facade-full.webp';
-import awards_tb_awareness_640 from '@assets/optimized/awards-tb-awareness-640.webp';
-import awards_tb_awareness_full from '@assets/optimized/awards-tb-awareness-full.webp';
-import awards_tb_day_group_640 from '@assets/optimized/awards-tb-day-group-640.webp';
-import awards_tb_day_group_full from '@assets/optimized/awards-tb-day-group-full.webp';
-import awards_blood_donation_640 from '@assets/optimized/awards-blood-donation-640.webp';
-import awards_blood_donation_full from '@assets/optimized/awards-blood-donation-full.webp';
+import awards_eia_plaque_640 from '@assets/optimized/awards-eia-plaque-640.webp';
+import awards_eia_plaque_full from '@assets/optimized/awards-eia-plaque-full.webp';
+import awards_trophy_presentation_640 from '@assets/optimized/awards-trophy-presentation-640.webp';
+import awards_trophy_presentation_full from '@assets/optimized/awards-trophy-presentation-full.webp';
+import awards_campus_certificate_1_640 from '@assets/optimized/awards-campus-certificate-1-640.webp';
+import awards_campus_certificate_1_full from '@assets/optimized/awards-campus-certificate-1-full.webp';
+import awards_campus_certificate_2_640 from '@assets/optimized/awards-campus-certificate-2-640.webp';
+import awards_campus_certificate_2_full from '@assets/optimized/awards-campus-certificate-2-full.webp';
+import awards_campus_certificate_3_640 from '@assets/optimized/awards-campus-certificate-3-640.webp';
+import awards_campus_certificate_3_full from '@assets/optimized/awards-campus-certificate-3-full.webp';
+import awards_faculty_student_group_640 from '@assets/optimized/awards-faculty-student-group-640.webp';
+import awards_faculty_student_group_full from '@assets/optimized/awards-faculty-student-group-full.webp';
+import awards_tree_plantation_drive_640 from '@assets/optimized/awards-tree-plantation-drive-640.webp';
+import awards_tree_plantation_drive_full from '@assets/optimized/awards-tree-plantation-drive-full.webp';
+import awards_emerging_uttarakhand_640 from '@assets/optimized/awards-emerging-uttarakhand-640.webp';
+import awards_emerging_uttarakhand_full from '@assets/optimized/awards-emerging-uttarakhand-full.webp';
 
 function ri(
   src: string,
@@ -756,6 +815,15 @@ export const DSC05124 = ri(
   DSC05124_full,
 );
 
+/** Optimized from DSC05124-1024_cleanup.webp (720×480) */
+export const DSC05124_cleanup = ri(
+  DSC05124_cleanup_1600,
+  `${DSC05124_cleanup_640} 640w, ${DSC05124_cleanup_1024} 1024w, ${DSC05124_cleanup_1600} 1600w`,
+  720,
+  480,
+  DSC05124_cleanup_full,
+);
+
 /** Optimized from DSC05126.jpg (4466×2977) */
 export const DSC05126 = ri(
   DSC05126_1600,
@@ -801,6 +869,78 @@ export const Shushila_Institute_Of_removebg_preview_1_e1743436624699 = ri(
   Shushila_Institute_Of_removebg_preview_1_e1743436624699_full,
 );
 
+/** Optimized from awards-blood-donation.png (421×247) */
+export const awards_blood_donation = ri(
+  awards_blood_donation_1600,
+  `${awards_blood_donation_640} 640w, ${awards_blood_donation_1024} 1024w, ${awards_blood_donation_1600} 1600w`,
+  421,
+  247,
+  awards_blood_donation_full,
+);
+
+/** Optimized from awards-campus-facade.png (877×391) */
+export const awards_campus_facade = ri(
+  awards_campus_facade_1600,
+  `${awards_campus_facade_640} 640w, ${awards_campus_facade_1024} 1024w, ${awards_campus_facade_1600} 1600w`,
+  877,
+  391,
+  awards_campus_facade_full,
+);
+
+/** Optimized from awards-campus-run-team.png (612×268) */
+export const awards_campus_run_team = ri(
+  awards_campus_run_team_1600,
+  `${awards_campus_run_team_640} 640w, ${awards_campus_run_team_1024} 1024w, ${awards_campus_run_team_1600} 1600w`,
+  612,
+  268,
+  awards_campus_run_team_full,
+);
+
+/** Optimized from awards-ceremony-group.png (613×235) */
+export const awards_ceremony_group = ri(
+  awards_ceremony_group_1600,
+  `${awards_ceremony_group_640} 640w, ${awards_ceremony_group_1024} 1024w, ${awards_ceremony_group_1600} 1600w`,
+  613,
+  235,
+  awards_ceremony_group_full,
+);
+
+/** Optimized from awards-doctors-day-collage.png (510×345) */
+export const awards_doctors_day_collage = ri(
+  awards_doctors_day_collage_1600,
+  `${awards_doctors_day_collage_640} 640w, ${awards_doctors_day_collage_1024} 1024w, ${awards_doctors_day_collage_1600} 1600w`,
+  510,
+  345,
+  awards_doctors_day_collage_full,
+);
+
+/** Optimized from awards-tb-awareness.png (488×303) */
+export const awards_tb_awareness = ri(
+  awards_tb_awareness_1600,
+  `${awards_tb_awareness_640} 640w, ${awards_tb_awareness_1024} 1024w, ${awards_tb_awareness_1600} 1600w`,
+  488,
+  303,
+  awards_tb_awareness_full,
+);
+
+/** Optimized from awards-tb-day-group.png (405×190) */
+export const awards_tb_day_group = ri(
+  awards_tb_day_group_1600,
+  `${awards_tb_day_group_640} 640w, ${awards_tb_day_group_1024} 1024w, ${awards_tb_day_group_1600} 1600w`,
+  405,
+  190,
+  awards_tb_day_group_full,
+);
+
+/** Optimized from awards-tree-plantation-nursery.png (461×266) */
+export const awards_tree_plantation_nursery = ri(
+  awards_tree_plantation_nursery_1600,
+  `${awards_tree_plantation_nursery_640} 640w, ${awards_tree_plantation_nursery_1024} 1024w, ${awards_tree_plantation_nursery_1600} 1600w`,
+  461,
+  266,
+  awards_tree_plantation_nursery_full,
+);
+
 /** Optimized from chairman.jpeg (1024×678) */
 export const chairman = ri(
   chairman_1600,
@@ -808,24 +948,6 @@ export const chairman = ri(
   1024,
   678,
   chairman_full,
-);
-
-/** Optimized from director.jpeg (1024×1024) */
-export const director = ri(
-  director_1600,
-  `${director_640} 640w, ${director_1024} 1024w, ${director_1600} 1600w`,
-  1024,
-  1024,
-  director_full,
-);
-
-/** Optimized from principal.jpeg (387×387) */
-export const principal = ri(
-  principal_1600,
-  `${principal_640} 640w, ${principal_1024} 1024w, ${principal_1600} 1600w`,
-  387,
-  387,
-  principal_full,
 );
 
 /** Optimized from coo.jpeg (388×390) */
@@ -837,31 +959,67 @@ export const coo = ri(
   coo_full,
 );
 
-/** Optimized from sims-campus-entrance.jpeg (325×282) */
-export const sims_campus_entrance = ri(
-  sims_campus_entrance_1600,
-  `${sims_campus_entrance_640} 640w, ${sims_campus_entrance_1024} 1024w, ${sims_campus_entrance_1600} 1600w`,
-  325,
-  282,
-  sims_campus_entrance_full,
+/** Optimized from director.jpeg (1024×1024) */
+export const director = ri(
+  director_1600,
+  `${director_640} 640w, ${director_1024} 1024w, ${director_1600} 1600w`,
+  1024,
+  1024,
+  director_full,
 );
 
-/** Optimized from sims-campus-lobby.jpeg (307×295) */
-export const sims_campus_lobby = ri(
-  sims_campus_lobby_1600,
-  `${sims_campus_lobby_640} 640w, ${sims_campus_lobby_1024} 1024w, ${sims_campus_lobby_1600} 1600w`,
-  307,
-  295,
-  sims_campus_lobby_full,
+/** Optimized from hnb-umeu-logo.png (300×308) */
+export const hnb_umeu_logo = ri(
+  hnb_umeu_logo_1600,
+  `${hnb_umeu_logo_640} 640w, ${hnb_umeu_logo_1024} 1024w, ${hnb_umeu_logo_1600} 1600w`,
+  300,
+  308,
+  hnb_umeu_logo_full,
 );
 
-/** Optimized from sims-campus-signage.jpeg (325×296) */
-export const sims_campus_signage = ri(
-  sims_campus_signage_1600,
-  `${sims_campus_signage_640} 640w, ${sims_campus_signage_1024} 1024w, ${sims_campus_signage_1600} 1600w`,
-  325,
-  296,
-  sims_campus_signage_full,
+/** Optimized from labs-collage.png (495×432) */
+export const labs_collage = ri(
+  labs_collage_1600,
+  `${labs_collage_640} 640w, ${labs_collage_1024} 1024w, ${labs_collage_1600} 1600w`,
+  495,
+  432,
+  labs_collage_full,
+);
+
+/** Optimized from transport-bus-collage.png (532×271) */
+export const transport_bus_collage = ri(
+  transport_bus_collage_1600,
+  `${transport_bus_collage_640} 640w, ${transport_bus_collage_1024} 1024w, ${transport_bus_collage_1600} 1600w`,
+  532,
+  271,
+  transport_bus_collage_full,
+);
+
+/** Optimized from transport-route-coverage-map.png (880×388) */
+export const transport_route_coverage_map = ri(
+  transport_route_coverage_map_1600,
+  `${transport_route_coverage_map_640} 640w, ${transport_route_coverage_map_1024} 1024w, ${transport_route_coverage_map_1600} 1600w`,
+  880,
+  388,
+  transport_route_coverage_map_full,
+);
+
+/** Optimized from hero-campus-life-collage.png (872×803) */
+export const hero_campus_life_collage = ri(
+  hero_campus_life_collage_1600,
+  `${hero_campus_life_collage_640} 640w, ${hero_campus_life_collage_1024} 1024w, ${hero_campus_life_collage_1600} 1600w`,
+  872,
+  803,
+  hero_campus_life_collage_full,
+);
+
+/** Optimized from hero-campus-life-collage-v2.png (876×726) */
+export const hero_campus_life_collage_v2 = ri(
+  hero_campus_life_collage_v2_1600,
+  `${hero_campus_life_collage_v2_640} 640w, ${hero_campus_life_collage_v2_1024} 1024w, ${hero_campus_life_collage_v2_1600} 1600w`,
+  876,
+  726,
+  hero_campus_life_collage_v2_full,
 );
 
 /** Optimized from logo-transparent.png (1600×219) */
@@ -891,6 +1049,51 @@ export const logo = ri(
   logo_full,
 );
 
+/** Optimized from mission-skills-lab.png (395×486) */
+export const mission_skills_lab = ri(
+  mission_skills_lab_1600,
+  `${mission_skills_lab_640} 640w, ${mission_skills_lab_1024} 1024w, ${mission_skills_lab_1600} 1600w`,
+  395,
+  486,
+  mission_skills_lab_full,
+);
+
+/** Optimized from principal.jpeg (387×387) */
+export const principal = ri(
+  principal_1600,
+  `${principal_640} 640w, ${principal_1024} 1024w, ${principal_1600} 1600w`,
+  387,
+  387,
+  principal_full,
+);
+
+/** Optimized from sims-campus-entrance.jpeg (325×282) */
+export const sims_campus_entrance = ri(
+  sims_campus_entrance_1600,
+  `${sims_campus_entrance_640} 640w, ${sims_campus_entrance_1024} 1024w, ${sims_campus_entrance_1600} 1600w`,
+  325,
+  282,
+  sims_campus_entrance_full,
+);
+
+/** Optimized from sims-campus-lobby.jpeg (307×295) */
+export const sims_campus_lobby = ri(
+  sims_campus_lobby_1600,
+  `${sims_campus_lobby_640} 640w, ${sims_campus_lobby_1024} 1024w, ${sims_campus_lobby_1600} 1600w`,
+  307,
+  295,
+  sims_campus_lobby_full,
+);
+
+/** Optimized from sims-campus-signage.jpeg (325×296) */
+export const sims_campus_signage = ri(
+  sims_campus_signage_1600,
+  `${sims_campus_signage_640} 640w, ${sims_campus_signage_1024} 1024w, ${sims_campus_signage_1600} 1600w`,
+  325,
+  296,
+  sims_campus_signage_full,
+);
+
 /** Optimized from vice-chairperson.jpeg (781×678) */
 export const vice_chairperson = ri(
   vice_chairperson_1600,
@@ -900,114 +1103,88 @@ export const vice_chairperson = ri(
   vice_chairperson_full,
 );
 
-/** Optimized from hnb-umeu-logo.png (300×308) */
-export const hnb_umeu_logo = ri(
-  hnb_umeu_logo_300,
-  `${hnb_umeu_logo_128} 128w, ${hnb_umeu_logo_256} 256w, ${hnb_umeu_logo_300} 300w`,
-  300,
-  308,
-  hnb_umeu_logo_full,
-);
-
 /** Optimized from vision-inclusive-classroom.png (402×442) */
 export const vision_inclusive_classroom = ri(
-  vision_inclusive_classroom_640,
-  `${vision_inclusive_classroom_640} 402w`,
+  vision_inclusive_classroom_1600,
+  `${vision_inclusive_classroom_640} 640w, ${vision_inclusive_classroom_1024} 1024w, ${vision_inclusive_classroom_1600} 1600w`,
   402,
   442,
   vision_inclusive_classroom_full,
 );
 
-/** Optimized from mission-skills-lab.png (395×486) */
-export const mission_skills_lab = ri(
-  mission_skills_lab_640,
-  `${mission_skills_lab_640} 395w`,
-  395,
-  486,
-  mission_skills_lab_full,
+/** Optimized from awards-eia-plaque.png (317×212) */
+export const awards_eia_plaque = ri(
+  awards_eia_plaque_640,
+  `${awards_eia_plaque_640} 317w`,
+  317,
+  212,
+  awards_eia_plaque_full,
 );
 
-
-/** Optimized from awards-doctors-day-collage.png (510×345) */
-export const awards_doctors_day_collage = ri(
-  awards_doctors_day_collage_640,
-  `${awards_doctors_day_collage_640} 510w`,
-  510,
-  345,
-  awards_doctors_day_collage_full,
+/** Optimized from awards-trophy-presentation.png (463×278) */
+export const awards_trophy_presentation = ri(
+  awards_trophy_presentation_640,
+  `${awards_trophy_presentation_640} 463w`,
+  463,
+  278,
+  awards_trophy_presentation_full,
 );
 
-
-/** Optimized from awards-tree-plantation-nursery.png (461×266) */
-export const awards_tree_plantation_nursery = ri(
-  awards_tree_plantation_nursery_640,
-  `${awards_tree_plantation_nursery_640} 461w`,
-  461,
+/** Optimized from awards-campus-certificate-1.png (390×266) */
+export const awards_campus_certificate_1 = ri(
+  awards_campus_certificate_1_640,
+  `${awards_campus_certificate_1_640} 390w`,
+  390,
   266,
-  awards_tree_plantation_nursery_full,
+  awards_campus_certificate_1_full,
 );
 
-
-/** Optimized from awards-campus-run-team.png (612×268) */
-export const awards_campus_run_team = ri(
-  awards_campus_run_team_640,
-  `${awards_campus_run_team_640} 612w`,
-  612,
-  268,
-  awards_campus_run_team_full,
+/** Optimized from awards-campus-certificate-2.png (232×197) */
+export const awards_campus_certificate_2 = ri(
+  awards_campus_certificate_2_640,
+  `${awards_campus_certificate_2_640} 232w`,
+  232,
+  197,
+  awards_campus_certificate_2_full,
 );
 
-
-/** Optimized from awards-ceremony-group.png (613×235) */
-export const awards_ceremony_group = ri(
-  awards_ceremony_group_640,
-  `${awards_ceremony_group_640} 613w`,
-  613,
-  235,
-  awards_ceremony_group_full,
+/** Optimized from awards-campus-certificate-3.png (313×150) */
+export const awards_campus_certificate_3 = ri(
+  awards_campus_certificate_3_640,
+  `${awards_campus_certificate_3_640} 313w`,
+  313,
+  150,
+  awards_campus_certificate_3_full,
 );
 
-
-/** Optimized from awards-campus-facade.png (877×391) */
-export const awards_campus_facade = ri(
-  awards_campus_facade_1024,
-  `${awards_campus_facade_640} 640w, ${awards_campus_facade_1024} 877w`,
-  877,
-  391,
-  awards_campus_facade_full,
+/** Optimized from awards-faculty-student-group.png (452×202) */
+export const awards_faculty_student_group = ri(
+  awards_faculty_student_group_640,
+  `${awards_faculty_student_group_640} 452w`,
+  452,
+  202,
+  awards_faculty_student_group_full,
 );
 
-
-/** Optimized from awards-tb-awareness.png (488×303) */
-export const awards_tb_awareness = ri(
-  awards_tb_awareness_640,
-  `${awards_tb_awareness_640} 488w`,
-  488,
-  303,
-  awards_tb_awareness_full,
+/** Optimized from awards-tree-plantation-drive.png (417×275) */
+export const awards_tree_plantation_drive = ri(
+  awards_tree_plantation_drive_640,
+  `${awards_tree_plantation_drive_640} 417w`,
+  417,
+  275,
+  awards_tree_plantation_drive_full,
 );
 
-
-/** Optimized from awards-tb-day-group.png (405×190) */
-export const awards_tb_day_group = ri(
-  awards_tb_day_group_640,
-  `${awards_tb_day_group_640} 405w`,
-  405,
-  190,
-  awards_tb_day_group_full,
+/** Optimized from awards-emerging-uttarakhand.png (552×362) */
+export const awards_emerging_uttarakhand = ri(
+  awards_emerging_uttarakhand_640,
+  `${awards_emerging_uttarakhand_640} 552w`,
+  552,
+  362,
+  awards_emerging_uttarakhand_full,
 );
 
-
-/** Optimized from awards-blood-donation.png (421×247) */
-export const awards_blood_donation = ri(
-  awards_blood_donation_640,
-  `${awards_blood_donation_640} 421w`,
-  421,
-  247,
-  awards_blood_donation_full,
-);
-
-/** Lookup by original attached_assets filename */
+/** Lookup by original archive/original-images filename */
 export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "12.png": img_12,
   "2 (1).png": img_2_1,
@@ -1059,31 +1236,45 @@ export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "DSC00836.jpg": DSC00836,
   "DSC00840-scaled.jpg": DSC00840_scaled,
   "DSC05124.jpg": DSC05124,
+  "DSC05124-cleanup.png": DSC05124_cleanup,
   "DSC05126.jpg": DSC05126,
   "DSC05143.jpg": DSC05143,
   "DSC05150.jpg": DSC05150,
   "DSC05222.jpg": DSC05222,
   "Shushila_Institute_Of-removebg-preview-1-e1743436624699.png": Shushila_Institute_Of_removebg_preview_1_e1743436624699,
+  "awards-blood-donation.png": awards_blood_donation,
+  "awards-campus-facade.png": awards_campus_facade,
+  "awards-campus-run-team.png": awards_campus_run_team,
+  "awards-ceremony-group.png": awards_ceremony_group,
+  "awards-doctors-day-collage.png": awards_doctors_day_collage,
+  "awards-tb-awareness.png": awards_tb_awareness,
+  "awards-tb-day-group.png": awards_tb_day_group,
+  "awards-tree-plantation-nursery.png": awards_tree_plantation_nursery,
   "chairman.jpeg": chairman,
-  "director.jpeg": director,
-  "principal.jpeg": principal,
   "coo.jpeg": coo,
-  "sims-campus-entrance.jpeg": sims_campus_entrance,
-  "sims-campus-lobby.jpeg": sims_campus_lobby,
-  "sims-campus-signage.jpeg": sims_campus_signage,
+  "director.jpeg": director,
   "hnb-umeu-logo.png": hnb_umeu_logo,
+  "hero-campus-life-collage.png": hero_campus_life_collage,
+  "hero-campus-life-collage-v2.png": hero_campus_life_collage_v2,
+  "labs-collage.png": labs_collage,
   "logo-transparent.png": logo_transparent,
   "logo-watermark.png": logo_watermark,
   "logo.jpeg": logo,
+  "mission-skills-lab.png": mission_skills_lab,
+  "principal.jpeg": principal,
+  "sims-campus-entrance.jpeg": sims_campus_entrance,
+  "sims-campus-lobby.jpeg": sims_campus_lobby,
+  "sims-campus-signage.jpeg": sims_campus_signage,
+  "transport-bus-collage.png": transport_bus_collage,
+  "transport-route-coverage-map.png": transport_route_coverage_map,
   "vice-chairperson.jpeg": vice_chairperson,
   "vision-inclusive-classroom.png": vision_inclusive_classroom,
-  "mission-skills-lab.png": mission_skills_lab,
-  "awards-doctors-day-collage.png": awards_doctors_day_collage,
-  "awards-tree-plantation-nursery.png": awards_tree_plantation_nursery,
-  "awards-campus-run-team.png": awards_campus_run_team,
-  "awards-ceremony-group.png": awards_ceremony_group,
-  "awards-campus-facade.png": awards_campus_facade,
-  "awards-tb-awareness.png": awards_tb_awareness,
-  "awards-tb-day-group.png": awards_tb_day_group,
-  "awards-blood-donation.png": awards_blood_donation,
+  "awards-eia-plaque.png": awards_eia_plaque,
+  "awards-trophy-presentation.png": awards_trophy_presentation,
+  "awards-campus-certificate-1.png": awards_campus_certificate_1,
+  "awards-campus-certificate-2.png": awards_campus_certificate_2,
+  "awards-campus-certificate-3.png": awards_campus_certificate_3,
+  "awards-faculty-student-group.png": awards_faculty_student_group,
+  "awards-tree-plantation-drive.png": awards_tree_plantation_drive,
+  "awards-emerging-uttarakhand.png": awards_emerging_uttarakhand,
 };

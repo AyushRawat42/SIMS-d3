@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { FlaskConical, Users, Building2, GraduationCap, CheckCircle2, FileText, MessagesSquare, CheckSquare, ChevronRight, Youtube, Facebook, Instagram } from 'lucide-react';
+import { FlaskConical, Users, Building2, GraduationCap, CheckCircle2, FileText, MessagesSquare, CheckSquare, ChevronRight } from 'lucide-react';
 import { SITE_CONTENT } from '@/lib/site-content';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading, CourseCard, FacilityCard } from '@/components/Shared';
+import { SocialFeedGrid } from '@/components/SocialFeedGrid';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import {
   DSC00066_scaled,
-  DSC00075_scaled,
   DSC00118_scaled,
   DSC00134_scaled,
   DSC00177_scaled,
   DSC00698_1_scaled,
   DSC00840_scaled,
+  hero_campus_life_collage_v2,
   img_12,
   img_2_1,
   img_9,
   img_85cd0d1b_dedd_429d_9b22_297d0c72f2cc_scaled,
 } from '@/lib/responsive-images.generated';
 
-const heroBg = DSC00075_scaled;
+const heroBg = hero_campus_life_collage_v2;
 const whyChooseUsImg = img_12;
 const facilityFeatured = img_9;
 const facilityPreview1 = DSC00134_scaled;
@@ -71,13 +72,13 @@ export function Home() {
         <div className="absolute inset-0 z-0">
           <OptimizedImage
             image={heroBg}
-            alt="SIMS students on campus"
+            alt="SIMS campus life collage — classrooms, seminars, and faculty guiding nursing students"
             sizes={IMAGE_SIZES.hero}
             priority
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[100%_0%] md:object-[50%_0%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-sims-primary/92 via-sims-primary/75 to-sims-primary/30"></div>
-          <div className="absolute inset-0 bg-black/15"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-sims-primary/94 via-sims-primary/80 to-sims-primary/45"></div>
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
         <div className={`${containerPad} relative z-10`}>
@@ -403,68 +404,16 @@ export function Home() {
       {/* SECTION 9: SOCIAL CONNECT */}
       <section id="contact" className={`${sectionPad} bg-sims-surface-2 border-t border-sims-border/60`}>
         <div className={containerPad}>
-          <SectionHeading title={SITE_CONTENT.social.title} centered className={headingGap} />
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto mb-10">
-            <a
-              href={SITE_CONTENT.social.facebook}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-white p-5 rounded-2xl shadow-sm border border-sims-border hover:shadow-md hover:border-blue-200 transition-all group flex items-center gap-3.5 h-full"
-            >
-              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
-                <Facebook className="w-6 h-6" />
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-bold text-sims-text text-sm leading-snug truncate">Sushila Institute</h4>
-                <p className="text-xs text-sims-text-muted mt-0.5">Official Page</p>
-                <span className="text-xs font-semibold text-blue-600 mt-1.5 inline-block">Visit Page →</span>
-              </div>
-            </a>
+          <SectionHeading
+            title={SITE_CONTENT.social.title}
+            subtitle="Follow official SIMS channels for campus updates and programme news."
+            centered
+            className={headingGap}
+          />
 
-            <a
-              href={SITE_CONTENT.social.instagram}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-white p-5 rounded-2xl shadow-sm border border-sims-border hover:shadow-md hover:border-pink-200 transition-all group flex items-center gap-3.5 h-full"
-            >
-              <div className="w-12 h-12 bg-pink-50 text-pink-600 rounded-full flex items-center justify-center group-hover:bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 group-hover:text-white transition-colors shrink-0">
-                <Instagram className="w-6 h-6" />
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-bold text-sims-text text-sm leading-snug truncate">@simscollegedehradun</h4>
-                <p className="text-xs text-sims-text-muted mt-0.5">Follow for updates</p>
-                <span className="text-xs font-semibold text-pink-600 mt-1.5 inline-block">Follow →</span>
-              </div>
-            </a>
+          <SocialFeedGrid />
 
-            <a
-              href={SITE_CONTENT.social.youtube}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-white p-5 rounded-2xl shadow-sm border border-sims-border hover:shadow-md hover:border-red-200 transition-all group flex items-center gap-3.5 h-full"
-            >
-              <div className="w-12 h-12 bg-red-50 text-red-600 rounded-full flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-colors shrink-0">
-                <Youtube className="w-6 h-6" />
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-bold text-sims-text text-sm leading-snug truncate">SIMS DEHRADUN</h4>
-                <p className="text-xs text-sims-text-muted mt-0.5">@SIMSDEHRADUN</p>
-                <span className="text-xs font-semibold text-red-600 mt-1.5 inline-block">Subscribe →</span>
-              </div>
-            </a>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
-            <a 
-              href={SITE_CONTENT.social.whatsapp} 
-              target="_blank" 
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1fb855] text-white px-6 sm:px-8 h-12 rounded-lg font-semibold text-sm sm:text-base shadow-md hover:shadow-lg transition-all max-w-full"
-            >
-              <MessageCircleIcon className="w-5 h-5 shrink-0" />
-              <span className="truncate">Chat on WhatsApp ({SITE_CONTENT.social.whatsappNumber})</span>
-            </a>
+          <div className="flex justify-center items-center mt-10">
             <Button
               variant="outline"
               className="h-12 px-6 rounded-lg border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white font-semibold"
@@ -479,23 +428,4 @@ export function Home() {
       <Footer />
     </div>
   );
-}
-
-function MessageCircleIcon(props: React.ComponentProps<"svg">) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-    </svg>
-  )
 }

@@ -13,6 +13,7 @@ import {
   AI_HIGHLIGHT,
   AWARDS_FEATURED,
   AWARDS_PAGE,
+  AWARDS_RECOGNITION,
   IMPACT_ACTIVITIES,
   IMPACT_INTRO,
 } from '@/lib/about';
@@ -121,6 +122,25 @@ export function AwardsHighlightsPage() {
         </div>
       </section>
 
+      {/* Prestige recognition — Emerging Uttarakhand */}
+      <section className="pb-10 md:pb-12 bg-white">
+        <div className={containerPad}>
+          <figure className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-sims-border bg-sims-bg shadow-sm">
+            <div className="aspect-[552/362]">
+              <OptimizedImage
+                image={AWARDS_FEATURED.emergingUttarakhand.image}
+                alt={AWARDS_FEATURED.emergingUttarakhand.alt}
+                sizes="(max-width: 1023px) 100vw, 768px"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <figcaption className="px-5 py-4 md:px-6 text-sm md:text-[0.9375rem] text-sims-text-muted leading-relaxed border-t border-sims-border">
+              {AWARDS_FEATURED.emergingUttarakhand.caption}
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       {/* Recognition + campus spirit */}
       <section className="pb-14 md:pb-16 bg-white">
         <div className={containerPad}>
@@ -155,7 +175,38 @@ export function AwardsHighlightsPage() {
         </div>
       </section>
 
-      <section className={`${sectionPad} bg-sims-surface-2 border-y border-sims-border/60`}>
+      {/* Recognition gallery */}
+      <section className={`${sectionPad} bg-sims-bg border-y border-sims-border/60`}>
+        <div className={containerPad}>
+          <SectionHeading
+            title="Recognition & Achievements"
+            subtitle="Moments of excellence — from regional awards to campus celebrations."
+            className="mb-8 md:mb-10"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            {AWARDS_RECOGNITION.map((item) => (
+              <figure
+                key={item.id}
+                className="overflow-hidden rounded-2xl border border-sims-border bg-white shadow-sm flex flex-col"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-sims-surface-2">
+                  <OptimizedImage
+                    image={item.image}
+                    alt={item.alt}
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-sm text-sims-text-muted leading-snug border-t border-sims-border">
+                  {item.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={`${sectionPad} bg-sims-surface-2`}>
         <div className={containerPad}>
           <SectionHeading
             title="Making an Impact"

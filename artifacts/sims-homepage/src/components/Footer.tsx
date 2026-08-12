@@ -4,6 +4,7 @@ import { SITE_CONTENT } from '@/lib/site-content';
 import { programPath } from '@/lib/programs';
 import { Youtube, Facebook, Instagram, Phone, Mail, Globe, MapPin } from 'lucide-react';
 import { SimsLogo } from '@/components/SimsLogo';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 export function Footer() {
   return (
@@ -38,15 +39,7 @@ export function Footer() {
                 <Youtube className="w-5 h-5" />
               </a>
               <a href={SITE_CONTENT.social.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="w-10 h-10 rounded-full bg-white/10 text-[#25D366] flex items-center justify-center hover:bg-amber-500 hover:text-sims-primary transition-all">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5"
-                  aria-hidden="true"
-                >
-                  <path d="M17.472 14.382c-.297-.139-1.244-.612-1.437-.683-.192-.07-.332-.105-.472.105-.139.21-.54.682-.661.822-.122.14-.244.157-.453.052-.209-.105-.88-.324-1.676-1.033-.62-.552-1.038-1.233-1.16-1.442-.121-.209-.013-.322.091-.426.094-.093.209-.242.314-.363.105-.121.139-.209.209-.348.07-.139.035-.261-.017-.366-.052-.105-.472-1.156-.647-1.584-.17-.418-.343-.361-.472-.367-.122-.007-.261-.009-.401-.009-.139 0-.365.052-.557.261-.192.21-.732.715-.732 1.744s.75 2.022.855 2.162c.105.139 1.879 2.87 4.555 4.023.637.275 1.134.439 1.521.562.64.203 1.223.174 1.683.105.513-.076 1.244-.508 1.42-.998.175-.49.175-.91.122-1.001-.052-.091-.192-.14-.401-.279M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
+                <WhatsAppIcon className="w-5 h-5" />
               </a>
             </div>
           </div>

@@ -10,6 +10,7 @@ import {
   type ProgramCategoryId,
 } from '@/lib/programs';
 import { ABOUT_NAV_LINKS, isAboutSectionPath } from '@/lib/about-nav';
+import { FACILITIES_NAV_LINKS, isFacilitiesSectionPath } from '@/lib/facilities-nav';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { SimsLogo } from '@/components/SimsLogo';
@@ -44,20 +45,25 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [desktopProgramsOpen, setDesktopProgramsOpen] = React.useState(false);
   const [desktopAboutOpen, setDesktopAboutOpen] = React.useState(false);
+  const [desktopFacilitiesOpen, setDesktopFacilitiesOpen] = React.useState(false);
   const [activeCategory, setActiveCategory] = React.useState<ProgramCategoryId>('nursing');
   const [mobileProgramsOpen, setMobileProgramsOpen] = React.useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = React.useState(false);
+  const [mobileFacilitiesOpen, setMobileFacilitiesOpen] = React.useState(false);
   const [mobileOpenCategory, setMobileOpenCategory] = React.useState<ProgramCategoryId | null>(null);
 
   const programsRef = React.useRef<HTMLDivElement>(null);
   const programsButtonRef = React.useRef<HTMLButtonElement>(null);
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const aboutButtonRef = React.useRef<HTMLButtonElement>(null);
+  const facilitiesRef = React.useRef<HTMLDivElement>(null);
+  const facilitiesButtonRef = React.useRef<HTMLButtonElement>(null);
   const closeTimerRef = React.useRef<number | null>(null);
   const aboutCloseTimerRef = React.useRef<number | null>(null);
+  const facilitiesCloseTimerRef = React.useRef<number | null>(null);
 
   const isOnProgramPage = location.startsWith('/programs');
-  const isOnFacilitiesPage = location === '/facilities';
+  const isOnFacilitiesPage = isFacilitiesSectionPath(location);
   const isOnContactPage = location === '/contact-us';
   const isOnLifePage = location === '/life-at-sims';
   const isOnAboutSection = isAboutSectionPath(location);
@@ -73,8 +79,10 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     setMobileMenuOpen(false);
     setDesktopProgramsOpen(false);
     setDesktopAboutOpen(false);
+    setDesktopFacilitiesOpen(false);
     setMobileProgramsOpen(false);
     setMobileAboutOpen(false);
+    setMobileFacilitiesOpen(false);
     setMobileOpenCategory(null);
   }, [location]);
 
@@ -86,10 +94,12 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
         setMobileMenuOpen(false);
         setMobileProgramsOpen(false);
         setMobileAboutOpen(false);
+        setMobileFacilitiesOpen(false);
         setMobileOpenCategory(null);
       } else {
         setDesktopProgramsOpen(false);
         setDesktopAboutOpen(false);
+        setDesktopFacilitiesOpen(false);
       }
     };
     mq.addEventListener('change', onChange);
@@ -142,6 +152,29 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     };
   }, [desktopAboutOpen]);
 
+  React.useEffect(() => {
+    if (!desktopFacilitiesOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setDesktopFacilitiesOpen(false);
+        facilitiesButtonRef.current?.focus();
+      }
+    };
+    const onPointerDown = (e: MouseEvent) => {
+      if (facilitiesRef.current && !facilitiesRef.current.contains(e.target as Node)) {
+        setDesktopFacilitiesOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('mousedown', onPointerDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('mousedown', onPointerDown);
+    };
+  }, [desktopFacilitiesOpen]);
+
   const clearCloseTimer = () => {
     if (closeTimerRef.current != null) {
       window.clearTimeout(closeTimerRef.current);
@@ -156,9 +189,17 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     }
   };
 
+  const clearFacilitiesCloseTimer = () => {
+    if (facilitiesCloseTimerRef.current != null) {
+      window.clearTimeout(facilitiesCloseTimerRef.current);
+      facilitiesCloseTimerRef.current = null;
+    }
+  };
+
   const openDesktopPrograms = () => {
     clearCloseTimer();
     setDesktopAboutOpen(false);
+    setDesktopFacilitiesOpen(false);
     setDesktopProgramsOpen(true);
   };
 
@@ -172,6 +213,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
   const openDesktopAbout = () => {
     clearAboutCloseTimer();
     setDesktopProgramsOpen(false);
+    setDesktopFacilitiesOpen(false);
     setDesktopAboutOpen(true);
   };
 
@@ -180,6 +222,25 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
     aboutCloseTimerRef.current = window.setTimeout(() => {
       setDesktopAboutOpen(false);
     }, 160);
+  };
+
+  const openDesktopFacilities = () => {
+    clearFacilitiesCloseTimer();
+    setDesktopProgramsOpen(false);
+    setDesktopAboutOpen(false);
+    setDesktopFacilitiesOpen(true);
+  };
+
+  const scheduleCloseDesktopFacilities = () => {
+    clearFacilitiesCloseTimer();
+    facilitiesCloseTimerRef.current = window.setTimeout(() => {
+      setDesktopFacilitiesOpen(false);
+    }, 160);
+  };
+
+  const isFacilitiesLinkActive = (href: string) => {
+    if (href === '/facilities') return location === '/facilities';
+    return location === href || location.startsWith(`${href}/`);
   };
 
   const activePrograms = getProgramsByCategory(activeCategory);
@@ -431,9 +492,98 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                 );
               }
 
+              if (link.label === 'Facilities') {
+                return (
+                  <div
+                    key={link.label}
+                    ref={facilitiesRef}
+                    className="relative"
+                    onMouseEnter={openDesktopFacilities}
+                    onMouseLeave={scheduleCloseDesktopFacilities}
+                  >
+                    <button
+                      ref={facilitiesButtonRef}
+                      type="button"
+                      className={cn(
+                        'inline-flex items-center gap-0.5 2xl:gap-1 text-xs 2xl:text-sm font-medium transition-colors px-1 2xl:px-2.5 py-2 rounded-md whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
+                        desktopFacilitiesOpen || isOnFacilitiesPage
+                          ? 'text-sims-primary-2 bg-sims-surface'
+                          : 'text-sims-text hover:text-sims-primary-2',
+                      )}
+                      aria-haspopup="true"
+                      aria-expanded={desktopFacilitiesOpen}
+                      aria-controls="facilities-megamenu"
+                      onClick={() => setDesktopFacilitiesOpen((open) => !open)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setDesktopFacilitiesOpen((open) => !open);
+                        }
+                        if (e.key === 'ArrowDown') {
+                          e.preventDefault();
+                          setDesktopFacilitiesOpen(true);
+                        }
+                      }}
+                    >
+                      Facilities
+                      <ChevronDown
+                        className={cn(
+                          'w-3.5 h-3.5 transition-transform',
+                          desktopFacilitiesOpen && 'rotate-180',
+                        )}
+                        aria-hidden="true"
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {desktopFacilitiesOpen && (
+                        <motion.div
+                          id="facilities-megamenu"
+                          role="menu"
+                          aria-label="Facilities pages"
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.16 }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full pt-3 md:pt-10 w-[min(92vw,360px)] z-[60]"
+                          onMouseEnter={openDesktopFacilities}
+                          onMouseLeave={scheduleCloseDesktopFacilities}
+                        >
+                          <div className="bg-white rounded-2xl border border-sims-border shadow-xl overflow-hidden p-2">
+                            <ul className="space-y-0.5">
+                              {FACILITIES_NAV_LINKS.map((item) => (
+                                <li key={item.href}>
+                                  <Link
+                                    href={item.href}
+                                    role="menuitem"
+                                    className={cn(
+                                      'block rounded-xl px-3 py-2.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40',
+                                      isFacilitiesLinkActive(item.href)
+                                        ? 'bg-sims-surface text-sims-primary'
+                                        : 'hover:bg-sims-surface text-sims-text',
+                                    )}
+                                    onClick={() => setDesktopFacilitiesOpen(false)}
+                                  >
+                                    <span className="block text-sm font-semibold leading-snug">
+                                      {item.label}
+                                    </span>
+                                    <span className="block text-xs text-sims-text-muted mt-0.5">
+                                      {item.description}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               if (link.href.startsWith('/')) {
                 const isActive =
-                  (link.label === 'Facilities' && isOnFacilitiesPage) ||
                   (link.label === 'Contact Us' && isOnContactPage) ||
                   (link.label === 'Life at SIMS' && isOnLifePage) ||
                   (link.label === 'Admissions' && isOnAdmissionsPage) ||
@@ -664,9 +814,60 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                   );
                 }
 
+                if (link.label === 'Facilities') {
+                  return (
+                    <div key={link.label} className="border-b border-sims-border/60 pb-2 mb-1">
+                      <button
+                        type="button"
+                        className="w-full flex items-center justify-between text-base font-medium text-sims-text py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sims-primary/40 rounded-md"
+                        aria-expanded={mobileFacilitiesOpen}
+                        aria-controls="mobile-facilities-accordion"
+                        onClick={() => setMobileFacilitiesOpen((open) => !open)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            setMobileFacilitiesOpen((open) => !open);
+                          }
+                          if (e.key === 'Escape') {
+                            setMobileFacilitiesOpen(false);
+                          }
+                        }}
+                      >
+                        Facilities
+                        <ChevronDown
+                          className={cn(
+                            'w-5 h-5 text-sims-text-muted transition-transform',
+                            mobileFacilitiesOpen && 'rotate-180',
+                          )}
+                          aria-hidden="true"
+                        />
+                      </button>
+
+                      {mobileFacilitiesOpen && (
+                        <div id="mobile-facilities-accordion" className="pb-2 space-y-0.5">
+                          {FACILITIES_NAV_LINKS.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className={cn(
+                                'block rounded-lg px-3 py-2.5 text-sm transition-colors',
+                                isFacilitiesLinkActive(item.href)
+                                  ? 'bg-sims-surface text-sims-primary font-semibold'
+                                  : 'text-sims-text-muted hover:bg-sims-surface hover:text-sims-primary',
+                              )}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
                 if (link.href.startsWith('/')) {
                   const isActive =
-                    (link.label === 'Facilities' && isOnFacilitiesPage) ||
                     (link.label === 'Contact Us' && isOnContactPage) ||
                     (link.label === 'Life at SIMS' && isOnLifePage) ||
                     location === link.href;

@@ -1,11 +1,18 @@
 import {
   awards_blood_donation,
+  awards_campus_certificate_1,
+  awards_campus_certificate_2,
+  awards_campus_certificate_3,
   awards_campus_facade,
   awards_campus_run_team,
   awards_ceremony_group,
   awards_doctors_day_collage,
+  awards_eia_plaque,
+  awards_emerging_uttarakhand,
+  awards_faculty_student_group,
   awards_tb_day_group,
-  awards_tree_plantation_nursery,
+  awards_tree_plantation_drive,
+  awards_trophy_presentation,
   chairman,
   coo,
   director,
@@ -255,7 +262,58 @@ export const AWARDS_FEATURED = {
     alt: 'SIMS students and staff in matching event T-shirts posing together after a campus run',
     caption: 'Campus spirit — students coming together for community and wellness events.',
   },
+  emergingUttarakhand: {
+    image: awards_emerging_uttarakhand,
+    alt: 'SIMS representatives receiving recognition at the Emerging Uttarakhand Manthan event',
+    caption:
+      'Institutional recognition at Emerging Uttarakhand (Manthan), supported by the Government of Uttarakhand.',
+  },
 } as const;
+
+/** External & campus recognition moments for the Awards page gallery */
+export const AWARDS_RECOGNITION: ReadonlyArray<{
+  id: string;
+  image: ResponsiveImage;
+  alt: string;
+  caption: string;
+}> = [
+  {
+    id: 'eia',
+    image: awards_eia_plaque,
+    alt: 'SIMS representative receiving an EIA Achievement and Excellence award plaque on stage',
+    caption: 'EIA Achievement & Excellence award',
+  },
+  {
+    id: 'trophy',
+    image: awards_trophy_presentation,
+    alt: 'SIMS leader receiving a trophy and framed award at a formal excellence ceremony',
+    caption: 'Excellence trophy presentation',
+  },
+  {
+    id: 'faculty-group',
+    image: awards_faculty_student_group,
+    alt: 'SIMS nursing students in lab coats seated with faculty on a decorated stage',
+    caption: 'Faculty and students on stage',
+  },
+  {
+    id: 'certificate-1',
+    image: awards_campus_certificate_1,
+    alt: 'Certificate presentation on a marigold-decorated stage at SIMS',
+    caption: 'Campus certificate presentation',
+  },
+  {
+    id: 'certificate-2',
+    image: awards_campus_certificate_2,
+    alt: 'SIMS faculty presenting a certificate during a campus recognition ceremony',
+    caption: 'Recognising contributors on campus',
+  },
+  {
+    id: 'certificate-3',
+    image: awards_campus_certificate_3,
+    alt: 'Award presentation with marigold garlands at a SIMS institutional event',
+    caption: 'Celebrating achievement together',
+  },
+];
 
 export const IMPACT_INTRO =
   'At SIMS, we believe in learning beyond the classroom. Our students actively participate in community outreach programs to promote health awareness and make a positive difference in society.';
@@ -285,9 +343,9 @@ export const IMPACT_ACTIVITIES = [
       'Participation by students, teachers, and staff',
       'Creating a lasting green legacy for generations to come',
     ],
-    image: awards_tree_plantation_nursery,
+    image: awards_tree_plantation_drive,
     imageAlt:
-      'SIMS students and faculty at a nursery during a tree plantation and environmental outreach visit',
+      'SIMS students and faculty planting a sapling during a campus tree plantation drive',
   },
   {
     id: 'blood-donation',

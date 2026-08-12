@@ -4,10 +4,16 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { WhatsAppFab } from '@/components/WhatsAppFab';
 import NotFound from '@/pages/not-found';
 import { Home } from '@/pages/home';
 import { ProgramPage } from '@/pages/program';
 import { FacilitiesPage } from '@/pages/facilities';
+import { LaboratoriesPage } from '@/pages/laboratories';
+import { LaboratoryDetailPage } from '@/pages/laboratory-detail';
+import { HostelPage } from '@/pages/hostel';
+import { TransportPage } from '@/pages/transport';
+import { MoreFacilitiesPage } from '@/pages/more-facilities';
 import { ContactPage } from '@/pages/contact';
 import { LifeAtSimsPage } from '@/pages/life-at-sims';
 import { AboutPage } from '@/pages/about';
@@ -28,6 +34,11 @@ function Router() {
       <Route path="/awards-highlights" component={AwardsHighlightsPage} />
       <Route path="/admissions" component={AdmissionsPage} />
       <Route path="/programs/:slug" component={ProgramPage} />
+      <Route path="/facilities/laboratories/:labId" component={LaboratoryDetailPage} />
+      <Route path="/facilities/laboratories" component={LaboratoriesPage} />
+      <Route path="/facilities/hostel" component={HostelPage} />
+      <Route path="/facilities/transport" component={TransportPage} />
+      <Route path="/facilities/more" component={MoreFacilitiesPage} />
       <Route path="/facilities" component={FacilitiesPage} />
       <Route path="/contact-us" component={ContactPage} />
       <Route path="/life-at-sims" component={LifeAtSimsPage} />
@@ -43,6 +54,7 @@ function App() {
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
           <ScrollToTop />
           <Router />
+          <WhatsAppFab />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
