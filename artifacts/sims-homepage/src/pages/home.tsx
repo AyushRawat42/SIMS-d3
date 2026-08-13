@@ -97,7 +97,7 @@ export function Home() {
                   className="bg-amber-500 hover:bg-amber-600 text-white border-0 h-12 px-7 text-base font-bold shadow-lg rounded-lg"
                   onClick={handleApplyClick}
                 >
-                  Apply Now 2025–26
+                  Apply Now 2026–27
                 </Button>
                 <Button
                   size="lg"

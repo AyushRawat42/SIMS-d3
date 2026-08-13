@@ -82,7 +82,7 @@ export function ContactModal({ isOpen, onOpenChange }: { isOpen: boolean, onOpen
     <Dialog open={isOpen} onOpenChange={isSuccess ? handleClose : onOpenChange}>
       <DialogContent className="sm:max-w-[480px] p-0 overflow-hidden bg-white border-sims-border rounded-2xl">
         <div className="bg-sims-primary px-6 py-6 md:py-7 text-center text-white">
-          <DialogTitle className="text-xl md:text-2xl font-display font-bold leading-snug">Apply for Admission 2025–26</DialogTitle>
+          <DialogTitle className="text-xl md:text-2xl font-display font-bold leading-snug">Apply for Admission 2026–27</DialogTitle>
           <DialogDescription className="text-white/75 mt-2 text-sm leading-relaxed">
             Fill out the form below and our admissions team will contact you shortly.
           </DialogDescription>

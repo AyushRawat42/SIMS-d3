@@ -14,7 +14,7 @@ export const SITE_CONTENT = {
   header: {
     logoText: "SUSHILA INSTITUTE OF MEDICAL SCIENCES",
     tagline: "Dehradun, Uttarakhand",
-    announcement: "Admission Open 2025–26 | B.Sc. Nursing · BPT · BMLT · BMRIT · B.O.T.T · B.Optometry · B.A.S.L.P · GNM · P.B. B.Sc Nursing · M.Sc. Nursing · M.Sc. Medical Microbiology · M.Sc. Medical Biochemistry",
+    announcement: "Admission Open 2026–27 | B.Sc. Nursing · BPT · BMLT · BMRIT · B.O.T.T · B.Optometry · B.A.S.L.P · GNM · P.B. B.Sc Nursing · M.Sc. Nursing · M.Sc. Medical Microbiology · M.Sc. Medical Biochemistry",
     navLinks: [
       { label: "Home", href: "#home" },
       { label: "About", href: "/about" },
