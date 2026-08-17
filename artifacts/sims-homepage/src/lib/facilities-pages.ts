@@ -1,10 +1,18 @@
 import type { ResponsiveImage } from '@/lib/responsive-image';
 import {
-  DSC00603,
   DSC05081,
   DSC05087,
   DSC05089,
   DSC05175,
+  facility_av_auditorium_lecture,
+  facility_conference_room_study,
+  facility_library_students,
+  facility_multipurpose_hall_event,
+  lab_nursing_bedside_assessment,
+  sims_campus_lobby,
+  transport_bus_boarding_queue,
+  transport_bus_student_boarding,
+  transport_bus_students,
 } from '@/lib/responsive-images.generated';
 
 export const HOSTEL_PAGE = {
@@ -126,6 +134,21 @@ export const TRANSPORT_PAGE = {
   ],
 };
 
+export const TRANSPORT_GALLERY: { src: ResponsiveImage; alt: string }[] = [
+  {
+    src: transport_bus_students,
+    alt: 'Four SIMS students in uniform posing in front of a yellow Sushila Institute of Medical Sciences transport bus',
+  },
+  {
+    src: transport_bus_boarding_queue,
+    alt: 'SIMS nursing students with backpacks boarding a yellow campus transport bus',
+  },
+  {
+    src: transport_bus_student_boarding,
+    alt: 'A SIMS student in uniform smiling while boarding a yellow Sushila Institute of Medical Sciences bus',
+  },
+];
+
 export const MORE_FACILITIES_PAGE = {
   title: 'More Campus Facilities',
   subtitle:
@@ -160,9 +183,9 @@ export const MORE_FACILITIES: MoreFacilityItem[] = [
       'Journals and research support materials',
       'Internet-enabled academic access',
     ],
-    image: DSC00603,
+    image: facility_library_students,
     imageAlt:
-      'A SIMS student reading a textbook beside wooden library bookshelves filled with medical and nursing titles',
+      'SIMS students in uniform studying anatomy textbooks at a library table with bookshelves behind them',
   },
   {
     id: 'conference-rooms',
@@ -175,6 +198,9 @@ export const MORE_FACILITIES: MoreFacilityItem[] = [
       'Suitable for counselling and programme briefings',
       'Professional setting for institutional interactions',
     ],
+    image: facility_conference_room_study,
+    imageAlt:
+      'Medical students in white coats studying around a conference table with a wall-mounted display',
   },
   {
     id: 'common-rooms',
@@ -187,6 +213,9 @@ export const MORE_FACILITIES: MoreFacilityItem[] = [
       'Support for everyday student wellbeing',
       'Campus life beyond classrooms and labs',
     ],
+    image: sims_campus_lobby,
+    imageAlt:
+      'SIMS campus lobby and common area with seating space, reception counter, and open indoor gathering room',
   },
   {
     id: 'medical-room',
@@ -199,6 +228,9 @@ export const MORE_FACILITIES: MoreFacilityItem[] = [
       'Clear escalation for further medical attention',
       'Aligned with healthcare-campus safety routines',
     ],
+    image: lab_nursing_bedside_assessment,
+    imageAlt:
+      'SIMS students practising bedside assessment in the campus medical room, with a hospital bed, trolley, and CPR guide',
   },
   {
     id: 'av-auditorium',
@@ -211,6 +243,9 @@ export const MORE_FACILITIES: MoreFacilityItem[] = [
       'Projection and sound support for presentations',
       'Shared academic gatherings across programmes',
     ],
+    image: facility_av_auditorium_lecture,
+    imageAlt:
+      'A speaker presenting on epidemiology at the SIMS AV auditorium podium with a projection screen behind her',
   },
   {
     id: 'multipurpose-hall',
@@ -223,5 +258,8 @@ export const MORE_FACILITIES: MoreFacilityItem[] = [
       'Supports co-curricular student life',
       'Complements classrooms and specialised labs',
     ],
+    image: facility_multipurpose_hall_event,
+    imageAlt:
+      'Students and faculty gathered on the SIMS multipurpose hall stage for a campus cultural event',
   },
 ];

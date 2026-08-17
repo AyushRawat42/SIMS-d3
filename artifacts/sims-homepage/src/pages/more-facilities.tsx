@@ -4,7 +4,7 @@ import { FacilitiesPageShell, facilitiesContainerPad, facilitiesSectionPad } fro
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { MORE_FACILITIES, MORE_FACILITIES_PAGE } from '@/lib/facilities-pages';
-import { DSC00603 } from '@/lib/responsive-images.generated';
+import { facility_library_students } from '@/lib/responsive-images.generated';
 
 function facilityIcon(id: string) {
   switch (id) {
@@ -37,8 +37,8 @@ export function MoreFacilitiesPage() {
         { label: 'Facilities', href: '/facilities' },
         { label: 'More Facilities' },
       ]}
-      heroImage={DSC00603}
-      heroImageAlt="SIMS library resource centre with medical and nursing reference books"
+      heroImage={facility_library_students}
+      heroImageAlt="SIMS students in uniform studying anatomy textbooks in the campus library"
       ctaTitle="Explore the full SIMS campus"
       ctaText="Visit laboratories, hostel, and transport pages — or speak with admissions about a campus tour."
     >

@@ -1,4 +1,31 @@
 import type { ResponsiveImage } from '@/lib/responsive-image';
+import {
+  DSC00066_scaled,
+  DSC00118_scaled,
+  DSC00134_scaled,
+  DSC00177_scaled,
+  DSC00287,
+  DSC00312,
+  DSC00338,
+  DSC00484,
+  DSC00503,
+  DSC00555,
+  DSC00646,
+  img_12,
+  lab_av_aids_classroom_session,
+  lab_clinical_research_faculty_discussion,
+  lab_community_health_sanitation_models,
+  lab_exercise_therapy_swiss_ball_group,
+  lab_manual_therapy_limb_assessment,
+  lab_manual_therapy_spinal_technique,
+  lab_microscopy_slide_examination,
+  lab_nutrition_kitchen_demonstration,
+  lab_ot_instrument_set_inspection,
+  lab_pathology_microscope_examination,
+  lab_physio_gait_training_walker,
+  lab_radiology_xray_film_review,
+  labs_collage,
+} from '@/lib/responsive-images.generated';
 
 export type LabCategoryId = 'nursing' | 'paramedical' | 'physiotherapy' | 'common';
 
@@ -87,6 +114,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Nursing Foundation Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Explore the Nursing Foundation Lab at SIMS Dehradun — mannequins, demonstration beds, and supervised skills practice for fundamental nursing procedures.',
+    image: DSC00177_scaled,
+    imageAlt:
+      'SIMS faculty demonstrating a bedside nursing procedure on a mannequin with a sterile instrument tray while students observe',
   },
   {
     id: 'adult-health-nursing-lab',
@@ -113,6 +143,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Adult Health Nursing Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Adult Health Nursing Lab at SIMS Dehradun for medical-surgical skills, IV practice, wound care, and adult patient assessment training.',
+    image: DSC00312,
+    imageAlt:
+      'SIMS nursing students assessing an adult patient on a demonstration bed during a medical-surgical nursing practical',
   },
   {
     id: 'community-health-nursing-lab',
@@ -139,6 +172,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Community Health Nursing Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Community Health Nursing Lab at SIMS Dehradun for bag technique, home-visit skills, family assessment, and public-health education practice.',
+    image: lab_community_health_sanitation_models,
+    imageAlt:
+      'SIMS nursing students arranging sanitation and water-safety teaching models in the community health lab',
   },
   {
     id: 'advanced-nursing-skills-lab',
@@ -165,6 +201,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Advanced Nursing Skills Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Advanced Nursing Skills Lab at SIMS Dehradun for critical care, emergency drills, BLS practice, and high-acuity nursing simulation.',
+    image: DSC00287,
+    imageAlt:
+      'SIMS faculty leading a bedside simulation on a patient mannequin with monitoring equipment while masked students observe',
   },
   {
     id: 'paediatrics-child-health-nursing-lab',
@@ -191,6 +230,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Paediatrics & Child Health Nursing Lab at SIMS Dehradun',
     metaDescription:
       'Paediatrics and Child Health Nursing Lab at SIMS Dehradun for newborn care, growth monitoring, and paediatric nursing skills practice.',
+    image: DSC00134_scaled,
+    imageAlt:
+      'SIMS nursing student weighing an infant mannequin on a baby weighing scale at a paediatric skill station',
   },
   {
     id: 'nutrition-dietetics-lab',
@@ -217,6 +259,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Nutrition & Dietetics Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Nutrition and Dietetics Lab at SIMS Dehradun for therapeutic diet planning, food models, and patient nutrition education practice.',
+    image: lab_nutrition_kitchen_demonstration,
+    imageAlt:
+      'SIMS students preparing a therapeutic diet at the cooking demonstration counter in the nutrition and dietetics lab',
   },
   {
     id: 'pre-clinical-sciences-lab',
@@ -243,6 +288,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Pre-Clinical Sciences Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Pre-Clinical Sciences Lab at SIMS Dehradun for anatomy, physiology, and foundational biomedical learning for nursing students.',
+    image: DSC00066_scaled,
+    imageAlt:
+      'SIMS faculty teaching skull and bone structure with an articulated skeleton and bone models during a pre-clinical practical',
   },
   {
     id: 'obstetrics-gynaecology-nursing-lab',
@@ -269,6 +317,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Obstetrics & Gynaecology Nursing Lab at SIMS Dehradun',
     metaDescription:
       'OBG Nursing Lab at SIMS Dehradun for antenatal, intranatal, postnatal, and newborn care skills with maternity nursing models.',
+    image: DSC00118_scaled,
+    imageAlt:
+      'SIMS nursing student examining a fetal skull model beside fetal presentation and cervical dilatation charts in the maternity lab',
   },
 
   // —— Paramedical ——
@@ -297,6 +348,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Microbiology Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Microbiology Lab at SIMS Dehradun for microscopy, staining, aseptic technique, and diagnostic microbiology learning.',
+    image: lab_microscopy_slide_examination,
+    imageAlt:
+      'SIMS student examining a prepared slide under a compound microscope during a microbiology practical',
   },
   {
     id: 'clinical-research-lab',
@@ -323,6 +377,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Clinical Research Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Clinical Research Lab at SIMS Dehradun for research methods, data practice, and evidence-based healthcare learning.',
+    image: lab_clinical_research_faculty_discussion,
+    imageAlt:
+      'SIMS faculty explaining a laboratory technique to students gathered around a bench with reagent bottles and glassware',
   },
   {
     id: 'blood-collection-phlebotomy-center',
@@ -349,6 +406,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Blood Collection & Phlebotomy Center at SIMS Dehradun',
     metaDescription:
       'Phlebotomy Center at SIMS Dehradun for venous blood collection practice, sample handling, and lab safety training.',
+    image: img_12,
+    imageAlt:
+      'SIMS students practising syringe handling and blood sample collection technique beside a rack of specimen tubes',
   },
   {
     id: 'operation-theater-technology-lab',
@@ -375,6 +435,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Operation Theater Technology Lab at SIMS Dehradun',
     metaDescription:
       'OT Technology Lab at SIMS Dehradun for scrub technique, surgical instruments, asepsis, and operation theatre workflow training.',
+    image: lab_ot_instrument_set_inspection,
+    imageAlt:
+      'SIMS student checking a sterile pack beside a laid-out surgical instrument set in the operation theatre technology lab',
   },
   {
     id: 'biochemistry-lab',
@@ -401,6 +464,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Biochemistry Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Biochemistry Lab at SIMS Dehradun for clinical chemistry practicals, analytical technique, and diagnostic lab training.',
+    image: DSC00503,
+    imageAlt:
+      'SIMS students in lab coats measuring a reagent into graduated glassware during a biochemistry practical',
   },
   {
     id: 'pathology-lab',
@@ -427,6 +493,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Pathology Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Pathology Lab at SIMS Dehradun for haematology practicals, microscopy, staining, and diagnostic laboratory training.',
+    image: lab_pathology_microscope_examination,
+    imageAlt:
+      'SIMS student adjusting a microscope while examining a pathology slide at the laboratory bench',
   },
   {
     id: 'radiology-imaging-technology-lab',
@@ -453,6 +522,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Radiology & Imaging Technology Lab at SIMS Dehradun',
     metaDescription:
       'Radiology and Imaging Technology Lab at SIMS Dehradun for positioning practice, X-ray viewing, and radiation safety training.',
+    image: lab_radiology_xray_film_review,
+    imageAlt:
+      'SIMS faculty holding up an X-ray film against the light while students study the radiograph during an imaging practical',
   },
   {
     id: 'medical-laboratory-technology-lab',
@@ -479,6 +551,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Medical Laboratory Technology (MLT) Lab at SIMS Dehradun',
     metaDescription:
       'MLT Lab at SIMS Dehradun for integrated diagnostic workflows, haematology-biochemistry practice, and lab quality training.',
+    image: labs_collage,
+    imageAlt:
+      'SIMS medical laboratory technology practice — microscopy demonstration, sample vial examination, and specimen tube handling',
   },
 
   // —— Physiotherapy ——
@@ -507,6 +582,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Physiotherapy Rehabilitation Center at SIMS Dehradun',
     metaDescription:
       'Physiotherapy Rehabilitation Center at SIMS Dehradun for gait training, functional recovery practice, and BPT rehab skills.',
+    image: lab_physio_gait_training_walker,
+    imageAlt:
+      'SIMS physiotherapy students supporting a patient during walker-assisted gait training in the rehabilitation centre',
   },
   {
     id: 'pain-manual-therapy-lab',
@@ -533,6 +611,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Pain & Manual Therapy Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Pain and Manual Therapy Lab at SIMS Dehradun for musculoskeletal assessment, soft-tissue techniques, and mobilisation practice.',
+    image: lab_manual_therapy_spinal_technique,
+    imageAlt:
+      'SIMS physiotherapy faculty applying a hands-on lumbar soft-tissue technique to a patient lying prone while a student observes',
   },
   {
     id: 'orthopaedics-sports-lab',
@@ -559,6 +640,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Orthopaedics and Sports Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Orthopaedics and Sports Lab at SIMS Dehradun for injury assessment, sports rehab practice, and taping skills for BPT students.',
+    image: lab_manual_therapy_limb_assessment,
+    imageAlt:
+      'SIMS physiotherapy faculty demonstrating a knee and ankle assessment on a treatment couch while students observe',
   },
   {
     id: 'exercise-therapy-lab',
@@ -585,6 +669,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Exercise Therapy Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Exercise Therapy Lab at SIMS Dehradun for kinesiotherapy, therapeutic exercise practice, and BPT functional training.',
+    image: lab_exercise_therapy_swiss_ball_group,
+    imageAlt:
+      'SIMS physiotherapy faculty correcting a student’s posture during a Swiss ball balance exercise while classmates observe',
   },
   {
     id: 'electrotherapy-lab',
@@ -611,6 +698,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Electrotherapy Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Electrotherapy Lab at SIMS Dehradun for ultrasound, TENS, IFT, heat-cold therapy, and safe modality practice for BPT.',
+    image: DSC00646,
+    imageAlt:
+      'SIMS physiotherapy lab with treatment couches, electrotherapy units, a traction chair, and exercise equipment',
   },
   {
     id: 'physiology-lab',
@@ -637,6 +727,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Physiology Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Physiology Lab at SIMS Dehradun for exercise physiology practicals, vital measurements, and body-system learning.',
+    image: DSC00338,
+    imageAlt:
+      'SIMS faculty demonstrating a kidney organ model to seated students in a physiology practical room lined with body-system charts',
   },
 
   // —— Common ——
@@ -665,6 +758,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Anatomy Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Anatomy Lab Facilities at SIMS Dehradun — skeletons, organ models, and charts for nursing and allied health anatomy learning.',
+    image: DSC00484,
+    imageAlt:
+      'SIMS students studying bone and organ models on anatomy lab tables with anatomical system charts on the walls',
   },
   {
     id: 'computer-lab',
@@ -691,6 +787,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Computer Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Computer Lab at SIMS Dehradun for digital coursework, research, online journals, and student academic computing.',
+    image: DSC00555,
+    imageAlt:
+      'SIMS students working together at a desktop workstation in the campus computer lab',
   },
   {
     id: 'av-aids-lab',
@@ -717,6 +816,9 @@ export const LABS: LabDetail[] = [
     metaTitle: 'AV Aids Lab Facilities at SIMS Dehradun',
     metaDescription:
       'AV Aids Lab at SIMS Dehradun for projectors, teaching models, charts, and instructional media supporting healthcare education.',
+    image: lab_av_aids_classroom_session,
+    imageAlt:
+      'SIMS faculty running a laptop-led teaching session for seated students in a lab room lined with instructional charts',
   },
 ];
 

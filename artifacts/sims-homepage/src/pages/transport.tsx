@@ -2,9 +2,9 @@ import { Bus, CheckCircle2, MapPin, Shield } from 'lucide-react';
 import { SectionHeading } from '@/components/Shared';
 import { FacilitiesPageShell, facilitiesContainerPad, facilitiesSectionPad } from '@/components/FacilitiesPageShell';
 import { OptimizedImage } from '@/components/OptimizedImage';
-import { TRANSPORT_PAGE } from '@/lib/facilities-pages';
-import { FACILITIES_HERO_IMAGE } from '@/lib/facilities';
-import { transport_route_coverage_map } from '@/lib/responsive-images.generated';
+import { IMAGE_SIZES } from '@/lib/responsive-image';
+import { TRANSPORT_GALLERY, TRANSPORT_PAGE } from '@/lib/facilities-pages';
+import { transport_bus_students, transport_route_coverage_map } from '@/lib/responsive-images.generated';
 
 export function TransportPage() {
   return (
@@ -18,8 +18,8 @@ export function TransportPage() {
         { label: 'Facilities', href: '/facilities' },
         { label: 'Transport' },
       ]}
-      heroImage={FACILITIES_HERO_IMAGE.src}
-      heroImageAlt={FACILITIES_HERO_IMAGE.alt}
+      heroImage={transport_bus_students}
+      heroImageAlt="Four SIMS students in uniform posing in front of a yellow Sushila Institute of Medical Sciences transport bus"
       ctaTitle="Ask about SIMS bus routes"
       ctaText="Contact admissions for Medical College Transport Facility details, route coverage in Dehradun, and current schedule guidance."
     >
@@ -118,6 +118,31 @@ export function TransportPage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${facilitiesSectionPad} bg-white`}>
+        <div className={facilitiesContainerPad}>
+          <SectionHeading
+            title="Campus Transport Gallery"
+            subtitle="SIMS students using the yellow campus bus fleet for daily travel across Dehradun."
+            className="mb-8 md:mb-10"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
+            {TRANSPORT_GALLERY.map((photo) => (
+              <div
+                key={photo.alt}
+                className="rounded-2xl overflow-hidden border border-sims-border shadow-sm aspect-[3/4] bg-white"
+              >
+                <OptimizedImage
+                  image={photo.src}
+                  alt={photo.alt}
+                  sizes={IMAGE_SIZES.third}
+                  className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
