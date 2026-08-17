@@ -202,6 +202,30 @@ import DSC00840_scaled_640 from '@assets/optimized/DSC00840-scaled-640.webp';
 import DSC00840_scaled_1024 from '@assets/optimized/DSC00840-scaled-1024.webp';
 import DSC00840_scaled_1600 from '@assets/optimized/DSC00840-scaled-1600.webp';
 import DSC00840_scaled_full from '@assets/optimized/DSC00840-scaled-full.webp';
+import DSC05081_640 from '@assets/optimized/DSC05081-640.webp';
+import DSC05081_1024 from '@assets/optimized/DSC05081-1024.webp';
+import DSC05081_1600 from '@assets/optimized/DSC05081-1600.webp';
+import DSC05081_full from '@assets/optimized/DSC05081-full.webp';
+import DSC05087_640 from '@assets/optimized/DSC05087-640.webp';
+import DSC05087_1024 from '@assets/optimized/DSC05087-1024.webp';
+import DSC05087_1600 from '@assets/optimized/DSC05087-1600.webp';
+import DSC05087_full from '@assets/optimized/DSC05087-full.webp';
+import DSC05089_640 from '@assets/optimized/DSC05089-640.webp';
+import DSC05089_1024 from '@assets/optimized/DSC05089-1024.webp';
+import DSC05089_1600 from '@assets/optimized/DSC05089-1600.webp';
+import DSC05089_full from '@assets/optimized/DSC05089-full.webp';
+import DSC05112_640 from '@assets/optimized/DSC05112-640.webp';
+import DSC05112_1024 from '@assets/optimized/DSC05112-1024.webp';
+import DSC05112_1600 from '@assets/optimized/DSC05112-1600.webp';
+import DSC05112_full from '@assets/optimized/DSC05112-full.webp';
+import DSC05112_hero_640 from '@assets/optimized/DSC05112-hero-640.webp';
+import DSC05112_hero_1024 from '@assets/optimized/DSC05112-hero-1024.webp';
+import DSC05112_hero_1600 from '@assets/optimized/DSC05112-hero-1600.webp';
+import DSC05112_hero_full from '@assets/optimized/DSC05112-hero-full.webp';
+import DSC05175_640 from '@assets/optimized/DSC05175-640.webp';
+import DSC05175_1024 from '@assets/optimized/DSC05175-1024.webp';
+import DSC05175_1600 from '@assets/optimized/DSC05175-1600.webp';
+import DSC05175_full from '@assets/optimized/DSC05175-full.webp';
 import DSC05124_640 from '@assets/optimized/DSC05124-640.webp';
 import DSC05124_1024 from '@assets/optimized/DSC05124-1024.webp';
 import DSC05124_1600 from '@assets/optimized/DSC05124-1600.webp';
@@ -806,6 +830,60 @@ export const DSC00840_scaled = ri(
   DSC00840_scaled_full,
 );
 
+/** Optimized from DSC05081.png (1024×682) */
+export const DSC05081 = ri(
+  DSC05081_1600,
+  `${DSC05081_640} 640w, ${DSC05081_1024} 1024w, ${DSC05081_1600} 1600w`,
+  1024,
+  682,
+  DSC05081_full,
+);
+
+/** Optimized from DSC05087.png (1024×682) */
+export const DSC05087 = ri(
+  DSC05087_1600,
+  `${DSC05087_640} 640w, ${DSC05087_1024} 1024w, ${DSC05087_1600} 1600w`,
+  1024,
+  682,
+  DSC05087_full,
+);
+
+/** Optimized from DSC05089.png (1024×682) */
+export const DSC05089 = ri(
+  DSC05089_1600,
+  `${DSC05089_640} 640w, ${DSC05089_1024} 1024w, ${DSC05089_1600} 1600w`,
+  1024,
+  682,
+  DSC05089_full,
+);
+
+/** Optimized from DSC05112.png (1024×682) */
+export const DSC05112 = ri(
+  DSC05112_1600,
+  `${DSC05112_640} 640w, ${DSC05112_1024} 1024w, ${DSC05112_1600} 1600w`,
+  1024,
+  682,
+  DSC05112_full,
+);
+
+/** Optimized from DSC05112-hero.png (1024×630) */
+export const DSC05112_hero = ri(
+  DSC05112_hero_1600,
+  `${DSC05112_hero_640} 640w, ${DSC05112_hero_1024} 1024w, ${DSC05112_hero_1600} 1600w`,
+  1024,
+  630,
+  DSC05112_hero_full,
+);
+
+/** Optimized from DSC05175.png (1024×682) */
+export const DSC05175 = ri(
+  DSC05175_1600,
+  `${DSC05175_640} 640w, ${DSC05175_1024} 1024w, ${DSC05175_1600} 1600w`,
+  1024,
+  682,
+  DSC05175_full,
+);
+
 /** Optimized from DSC05124.jpg (4410×2940) */
 export const DSC05124 = ri(
   DSC05124_1600,
@@ -1235,6 +1313,12 @@ export const RESPONSIVE_BY_SOURCE: Record<string, ResponsiveImage> = {
   "DSC00738.jpg": DSC00738,
   "DSC00836.jpg": DSC00836,
   "DSC00840-scaled.jpg": DSC00840_scaled,
+  "DSC05081.png": DSC05081,
+  "DSC05087.png": DSC05087,
+  "DSC05089.png": DSC05089,
+  "DSC05112.png": DSC05112,
+  "DSC05112-hero.png": DSC05112_hero,
+  "DSC05175.png": DSC05175,
   "DSC05124.jpg": DSC05124,
   "DSC05124-cleanup.png": DSC05124_cleanup,
   "DSC05126.jpg": DSC05126,

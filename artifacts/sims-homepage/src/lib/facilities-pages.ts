@@ -1,10 +1,10 @@
 import type { ResponsiveImage } from '@/lib/responsive-image';
 import {
   DSC00603,
-  DSC05124_cleanup,
-  DSC05126,
-  DSC05143,
-  DSC05150,
+  DSC05081,
+  DSC05087,
+  DSC05089,
+  DSC05175,
 } from '@/lib/responsive-images.generated';
 
 export const HOSTEL_PAGE = {
@@ -58,20 +58,20 @@ export const HOSTEL_PAGE = {
 
 export const HOSTEL_GALLERY: { src: ResponsiveImage; alt: string }[] = [
   {
-    src: DSC05124_cleanup,
-    alt: 'SIMS hostel room with twin beds, study desks, metal locker, and open window to campus greenery',
+    src: DSC05175,
+    alt: 'Twin-sharing SIMS hostel room with beds, a study desk, and natural light from an open window',
   },
   {
-    src: DSC05126,
-    alt: 'Twin-sharing SIMS hostel room with wooden desks, chairs, and natural light from open shutters',
+    src: DSC05089,
+    alt: 'Four-sharing SIMS hostel room with wooden beds, metal lockers, and a study corner',
   },
   {
-    src: DSC05143,
-    alt: 'Shared SIMS dormitory room with multiple beds, study corner, and personal student belongings',
+    src: DSC05081,
+    alt: 'Four-bed SIMS hostel dormitory with wooden frames, patterned bedspreads, and a study desk',
   },
   {
-    src: DSC05150,
-    alt: 'Furnished SIMS hostel room with two beds, desks, and study materials for residential students',
+    src: DSC05087,
+    alt: 'Four-sharing SIMS hostel room with wooden beds, a wardrobe, and metal storage',
   },
 ];
 

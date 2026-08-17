@@ -25,6 +25,7 @@ export function FacilitiesPageShell({
   breadcrumbs,
   heroImage,
   heroImageAlt,
+  heroImageClassName = 'w-full h-full object-contain object-center',
   children,
   ctaTitle = 'See the campus for yourself',
   ctaText = 'Speak with admissions about programmes, campus facilities, and the next intake — or explore courses that match your career path.',
@@ -36,6 +37,7 @@ export function FacilitiesPageShell({
   breadcrumbs: BreadcrumbItem[];
   heroImage?: ResponsiveImage;
   heroImageAlt?: string;
+  heroImageClassName?: string;
   children: ReactNode;
   ctaTitle?: string;
   ctaText?: string;
@@ -132,7 +134,7 @@ export function FacilitiesPageShell({
 
             <div className="lg:col-span-5">
               <div
-                className="rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/10"
+                className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/10"
                 style={{ aspectRatio: `${image.width} / ${image.height}` }}
               >
                 <OptimizedImage
@@ -140,7 +142,7 @@ export function FacilitiesPageShell({
                   alt={imageAlt}
                   sizes="(max-width: 1023px) 100vw, 42vw"
                   priority
-                  className="w-full h-full object-contain object-center"
+                  className={heroImageClassName}
                 />
               </div>
             </div>

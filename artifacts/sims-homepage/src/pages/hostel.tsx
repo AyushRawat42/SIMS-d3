@@ -4,7 +4,7 @@ import { FacilitiesPageShell, facilitiesContainerPad, facilitiesSectionPad } fro
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { HOSTEL_GALLERY, HOSTEL_PAGE } from '@/lib/facilities-pages';
-import { DSC05124_cleanup } from '@/lib/responsive-images.generated';
+import { DSC05112_hero } from '@/lib/responsive-images.generated';
 
 export function HostelPage() {
   return (
@@ -18,8 +18,8 @@ export function HostelPage() {
         { label: 'Facilities', href: '/facilities' },
         { label: 'Hostel' },
       ]}
-      heroImage={DSC05124_cleanup}
-      heroImageAlt="Furnished SIMS student hostel room with beds, study desks, and natural light"
+      heroImage={DSC05112_hero}
+      heroImageAlt="SIMS hostel room with multiple wooden beds, paired study desks, and a ceiling fan"
       ctaTitle="Ask about SIMS student accommodation"
       ctaText="Speak with admissions about Medical College Hostel options in Dehradun, room types, and the next intake."
     >
