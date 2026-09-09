@@ -5,6 +5,7 @@ import { SITE_CONTENT } from '@/lib/site-content';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
+import { ContactForm } from '@/components/ContactForm';
 import { SectionHeading, CourseCard, FacilityCard } from '@/components/Shared';
 import { SocialFeedGrid } from '@/components/SocialFeedGrid';
 import { Button } from '@/components/ui/button';
@@ -125,12 +126,51 @@ export function Home() {
       {/* SECTION 3: WHY CHOOSE SIMS */}
       <section id="about" className={`${sectionPad} bg-white relative overflow-hidden`}>
         <div className={containerPad}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-center">
-            <motion.div 
-              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUpVariant}
-              className="relative max-w-lg mx-auto lg:mx-0 lg:max-w-none"
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+            className="mb-10 md:mb-12 lg:mb-14"
+          >
+            <SectionHeading title={SITE_CONTENT.whyChooseUs.title} className={headingGap} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-7">
+              {SITE_CONTENT.whyChooseUs.features.map((feature, i) => {
+                const icons = [FlaskConical, Users, Building2, GraduationCap];
+                const Icon = icons[i % icons.length];
+                return (
+                  <motion.div key={i} variants={fadeUpVariant} className="flex gap-4 group">
+                    <div className="w-12 h-12 rounded-xl bg-sims-surface flex items-center justify-center flex-shrink-0 group-hover:bg-sims-primary group-hover:text-white text-sims-primary transition-colors duration-300">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div className="min-w-0 pt-0.5">
+                      <h3 className="text-lg font-bold text-sims-text mb-1 group-hover:text-sims-primary transition-colors leading-snug">{feature.title}</h3>
+                      <p className="text-sims-text-muted leading-relaxed text-[0.9375rem]">{feature.description}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+            <motion.div variants={fadeUpVariant} className="mt-8">
+              <Button
+                variant="outline"
+                className="border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white rounded-lg h-11 px-6 font-semibold"
+                asChild
+              >
+                <a href="/about">About SIMS →</a>
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-14 xl:gap-16 items-stretch lg:items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={fadeUpVariant}
+              className="relative w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none order-1"
             >
-              <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-xl relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-square">
+              <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-xl relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] xl:aspect-square">
                 <OptimizedImage
                   image={whyChooseUsImg}
                   alt="SIMS students in training"
@@ -138,7 +178,7 @@ export function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:bottom-6 sm:max-w-[280px] bg-sims-primary text-white p-5 rounded-xl shadow-lg">
+              <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:bottom-6 sm:max-w-[280px] bg-sims-primary text-white p-4 sm:p-5 rounded-xl shadow-lg">
                 <p className="font-display italic text-base md:text-lg leading-snug">"{SITE_CONTENT.whyChooseUs.quote}"</p>
               </div>
             </motion.div>
@@ -147,36 +187,10 @@ export function Home() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
-              variants={staggerContainer}
-              className="lg:pl-2"
+              variants={fadeUpVariant}
+              className="w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none order-2"
             >
-              <SectionHeading title={SITE_CONTENT.whyChooseUs.title} className={headingGap} />
-              <div className="space-y-6 md:space-y-7">
-                {SITE_CONTENT.whyChooseUs.features.map((feature, i) => {
-                  const icons = [FlaskConical, Users, Building2, GraduationCap];
-                  const Icon = icons[i % icons.length];
-                  return (
-                    <motion.div key={i} variants={fadeUpVariant} className="flex gap-4 group">
-                      <div className="w-12 h-12 rounded-xl bg-sims-surface flex items-center justify-center flex-shrink-0 group-hover:bg-sims-primary group-hover:text-white text-sims-primary transition-colors duration-300">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div className="min-w-0 pt-0.5">
-                        <h3 className="text-lg font-bold text-sims-text mb-1 group-hover:text-sims-primary transition-colors leading-snug">{feature.title}</h3>
-                        <p className="text-sims-text-muted leading-relaxed text-[0.9375rem]">{feature.description}</p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-              <motion.div variants={fadeUpVariant} className="mt-8">
-                <Button
-                  variant="outline"
-                  className="border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white rounded-lg h-11 px-6 font-semibold"
-                  asChild
-                >
-                  <a href="/about">About SIMS →</a>
-                </Button>
-              </motion.div>
+              <ContactForm idPrefix="about-contact" />
             </motion.div>
           </div>
         </div>
