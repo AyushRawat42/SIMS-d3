@@ -20,6 +20,9 @@ import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
 import { CONTACT_DETAILS, MAP_CONFIG } from '@/lib/contact';
 import { SITE_CONTENT } from '@/lib/site-content';
+import { isBlogPostPublished, getBlogPost, isPublicSiteHref } from '@/lib/blog-posts';
+import { RelatedBlogGuides } from '@/components/RelatedBlogGuides';
+import { NURSING_HUB_GUIDES } from '@/lib/blog-internal-links';
 import {
   ADMISSIONS_PAGE,
   DISCLAIMER,
@@ -68,6 +71,9 @@ const stepIcons = [Scale, Users, FileCheck2];
 export function AdmissionsPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const primaryPhone = CONTACT_DETAILS.phones[0];
+  const feeGuidePost = getBlogPost('bsc-nursing-gnm-fee-structure-dehradun-2026-27');
+  const showFeeGuideLink = !!feeGuidePost && isBlogPostPublished(feeGuidePost);
+  const admissionGuides = NURSING_HUB_GUIDES.filter((guide) => isPublicSiteHref(guide.href));
 
   useDocumentMeta(
     'Admissions at SIMS | Sushila Institute of Medical Sciences',
@@ -367,6 +373,18 @@ export function AdmissionsPage() {
             >
               Apply Now
             </Button>
+            {showFeeGuideLink ? (
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white h-12 px-7 font-semibold rounded-lg"
+                asChild
+              >
+                <Link href="/blog/bsc-nursing-gnm-fee-structure-dehradun-2026-27">
+                  2026–27 Fee Structure Guide
+                </Link>
+              </Button>
+            ) : null}
             <Button
               size="lg"
               variant="outline"
@@ -378,6 +396,18 @@ export function AdmissionsPage() {
           </div>
         </div>
       </section>
+
+      {admissionGuides.length > 0 ? (
+        <section className={`${sectionPad} bg-sims-bg border-t border-sims-border/60`}>
+          <div className={containerPad}>
+            <RelatedBlogGuides
+              title="Admission reading"
+              subtitle="Programme pages and these guides point to each other so applicants can check fees, affiliation, and career upgrades before they apply."
+              guides={admissionGuides}
+            />
+          </div>
+        </section>
+      ) : null}
 
       <Footer />
     </div>

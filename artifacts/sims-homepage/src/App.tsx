@@ -21,6 +21,9 @@ import { VisionMissionPage } from '@/pages/vision-mission';
 import { LeadershipPage } from '@/pages/leadership';
 import { AwardsHighlightsPage } from '@/pages/awards-highlights';
 import { AdmissionsPage } from '@/pages/admissions';
+import { BlogIndexPage } from '@/pages/blog';
+import { BlogPostPage } from '@/pages/blog-post';
+import { NursingPage } from '@/pages/nursing';
 
 const queryClient = new QueryClient();
 
@@ -33,6 +36,9 @@ function Router() {
       <Route path="/leadership" component={LeadershipPage} />
       <Route path="/awards-highlights" component={AwardsHighlightsPage} />
       <Route path="/admissions" component={AdmissionsPage} />
+      <Route path="/nursing" component={NursingPage} />
+      <Route path="/blog/:slug" component={BlogPostPage} />
+      <Route path="/blog" component={BlogIndexPage} />
       <Route path="/programs/:slug" component={ProgramPage} />
       <Route path="/facilities/laboratories/:labId" component={LaboratoryDetailPage} />
       <Route path="/facilities/laboratories" component={LaboratoriesPage} />

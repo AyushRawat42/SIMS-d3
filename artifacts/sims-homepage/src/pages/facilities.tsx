@@ -8,6 +8,8 @@ import { FACILITIES_PAGE, FACILITIES_HERO_IMAGE } from '@/lib/facilities';
 import { FACILITIES_NAV_LINKS } from '@/lib/facilities-nav';
 import { LAB_CATEGORIES, LABS } from '@/lib/labs';
 import { labs_collage, transport_bus_collage, DSC00603, DSC05124_cleanup } from '@/lib/responsive-images.generated';
+import { RelatedBlogGuides } from '@/components/RelatedBlogGuides';
+import { FACILITIES_HUB_GUIDES } from '@/lib/blog-internal-links';
 
 const hubCards = [
   {
@@ -209,6 +211,14 @@ export function FacilitiesPage() {
                 {link.label}
               </Link>
             ))}
+          </div>
+
+          <div className="mt-10">
+            <RelatedBlogGuides
+              title="See the campus in photos"
+              subtitle="Walk labs, hostel, and location details in the facility tour—then come back to these facility pages."
+              guides={FACILITIES_HUB_GUIDES}
+            />
           </div>
         </div>
       </section>

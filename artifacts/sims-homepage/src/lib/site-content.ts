@@ -218,6 +218,32 @@ export const SITE_CONTENT = {
       "Disclaimer",
       "Privacy Policy",
     ],
+    blogLinks: [
+      {
+        label: "All articles",
+        href: "/blog",
+      },
+      {
+        label: "Post Basic vs M.Sc Nursing",
+        href: "/blog/post-basic-bsc-nursing-vs-msc-nursing-career-upgrade",
+      },
+      {
+        label: "Campus Photo & Facility Tour",
+        href: "/blog/inside-sims-dehradun-photo-facility-tour-nursing-labs-campus",
+      },
+      {
+        label: "Fee Structure Guide",
+        href: "/blog/bsc-nursing-gnm-fee-structure-dehradun-2026-27",
+      },
+      {
+        label: "BPT Career Guide",
+        href: "/blog/bpt-uttarakhand-eligibility-career-scope-salary-after-12th-pcb",
+      },
+      {
+        label: "Nursing College Checklist",
+        href: "/blog/top-private-bsc-nursing-colleges-dehradun-affiliation-eligibility-checklist",
+      },
+    ],
     courses: [
       { name: "GNM", slug: "gnm" },
       { name: "B.Sc Nursing", slug: "bsc-nursing" },

@@ -19,10 +19,16 @@ export const ABOUT_NAV_LINKS = [
     href: '/awards-highlights',
     description: 'AI innovation and community impact initiatives',
   },
+  {
+    label: 'Articles & News',
+    href: '/blog',
+    description: 'Fee guides, BPT & nursing career articles for parents',
+  },
 ] as const;
 
 export type AboutNavHref = (typeof ABOUT_NAV_LINKS)[number]['href'];
 
 export function isAboutSectionPath(pathname: string): boolean {
+  if (pathname === '/blog' || pathname.startsWith('/blog/')) return true;
   return ABOUT_NAV_LINKS.some((link) => link.href === pathname);
 }

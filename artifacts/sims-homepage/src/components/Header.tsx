@@ -315,7 +315,7 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.16 }}
-                          className="absolute left-1/2 -translate-x-1/2 top-full pt-3 md:pt-10 w-[min(92vw,340px)] z-[60]"
+                          className="absolute left-1/2 -translate-x-1/2 top-full pt-3 md:pt-10 w-[min(92vw,360px)] z-[60]"
                           onMouseEnter={openDesktopAbout}
                           onMouseLeave={scheduleCloseDesktopAbout}
                         >

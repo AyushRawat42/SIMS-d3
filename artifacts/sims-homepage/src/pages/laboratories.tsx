@@ -32,6 +32,16 @@ export function LaboratoriesPage() {
             {LABORATORIES_PAGE.intro.map((para) => (
               <p key={para.slice(0, 40)}>{para}</p>
             ))}
+            <p>
+              For a parent-facing walkthrough of nursing and paramedical labs on Chakrata Road, read the{' '}
+              <Link
+                href="/blog/inside-sims-dehradun-photo-facility-tour-nursing-labs-campus"
+                className="text-sims-primary font-semibold underline underline-offset-2 hover:text-sims-primary-2"
+              >
+                SIMS campus photo and facility tour
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </section>

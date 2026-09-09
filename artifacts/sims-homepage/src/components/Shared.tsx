@@ -30,15 +30,15 @@ export function SectionHeading({
   titleClassName?: string;
 }) {
   return (
-    <div className={cn("flex flex-col gap-3", centered && "items-center text-center", className)}>
+    <div className={cn("flex flex-col gap-3 min-w-0", centered && "items-center text-center", className)}>
       <h2 className={cn(
-        "font-display text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-sims-primary tracking-tight leading-tight",
+        "font-display text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-sims-primary tracking-tight leading-tight break-words",
         titleClassName
       )}>
         {title}
       </h2>
       {subtitle && (
-        <p className="text-base md:text-lg text-sims-text-muted max-w-2xl leading-relaxed">
+        <p className="text-base md:text-lg text-sims-text-muted max-w-2xl leading-relaxed break-words">
           {subtitle}
         </p>
       )}

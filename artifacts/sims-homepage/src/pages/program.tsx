@@ -10,6 +10,8 @@ import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import NotFound from '@/pages/not-found';
+import { RelatedBlogGuides } from '@/components/RelatedBlogGuides';
+import { guidesForProgram } from '@/lib/blog-internal-links';
 import {
   PROGRAM_CATEGORIES,
   getProgramBySlug,
@@ -282,6 +284,17 @@ function ProgramContent({ program }: { program: Program }) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Related guides — bidirectional links to /blog/[slug] */}
+      <section className={`${sectionPad} bg-sims-bg border-t border-sims-border/60`}>
+        <div className={containerPad}>
+          <RelatedBlogGuides
+            title="Guides for this programme"
+            subtitle={`Read the matching SIMS articles for ${program.shortName}, then return here to apply.`}
+            guides={guidesForProgram(program.slug)}
+          />
         </div>
       </section>
 
