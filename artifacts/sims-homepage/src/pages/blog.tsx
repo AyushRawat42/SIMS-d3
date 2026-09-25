@@ -44,11 +44,18 @@ export function BlogIndexPage() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-3 sm:mb-4">
               SIMS Blog
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl break-words">
+            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed max-w-2xl break-words mb-6">
               Practical guides on nursing fees, admissions, and campus life at Sushila Institute of
               Medical Sciences, Dehradun—written for students and parents who want clarity before
               they enrol.
             </p>
+            <Button
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-600 text-white h-12 px-7 font-bold rounded-lg"
+              onClick={() => setModalOpen(true)}
+            >
+              Apply Now
+            </Button>
           </div>
         </div>
       </section>

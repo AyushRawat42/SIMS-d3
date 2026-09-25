@@ -9,7 +9,7 @@ export type RelatedGuide = {
 const FEE: RelatedGuide = {
   href: blogPostPath('bsc-nursing-gnm-fee-structure-dehradun-2026-27'),
   label: 'B.Sc Nursing & GNM fee guide',
-  blurb: 'Typical tuition, hostel, and clinical-training costs for the 2026–27 intake.',
+  blurb: 'Official Batch 2026 academic fees for B.Sc Nursing, GNM, Post Basic, and M.Sc.',
 };
 
 const CHECKLIST: RelatedGuide = {
@@ -56,7 +56,7 @@ export function guidesForProgram(slug: string): RelatedGuide[] {
       return onlyPublished([FEE, CHECKLIST, CAMPUS]);
     case 'post-basic-bsc-nursing':
     case 'msc-nursing':
-      return onlyPublished([UPGRADE, CAMPUS, CHECKLIST]);
+      return onlyPublished([UPGRADE, FEE, CAMPUS, CHECKLIST]);
     case 'bpt':
       return onlyPublished([BPT, CAMPUS]);
     default:

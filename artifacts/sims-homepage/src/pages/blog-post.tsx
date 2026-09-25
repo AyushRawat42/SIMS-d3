@@ -127,9 +127,9 @@ function BlogComingSoon({
             <Button
               size="lg"
               className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white h-12 px-6 font-bold rounded-lg"
-              asChild
+              onClick={() => setModalOpen(true)}
             >
-              <Link href="/blog">Back to Blog</Link>
+              Apply Now
             </Button>
             <Button
               size="lg"
@@ -137,7 +137,7 @@ function BlogComingSoon({
               className="w-full sm:w-auto border-white/40 bg-white/10 text-white hover:bg-white hover:text-sims-primary h-12 px-6 font-semibold rounded-lg"
               asChild
             >
-              <Link href="/admissions">Admissions</Link>
+              <Link href="/blog">Back to Blog</Link>
             </Button>
           </div>
         </div>
@@ -149,6 +149,8 @@ function BlogComingSoon({
 }
 
 function BlogCtaStrip({
+  onApplyClick,
+  applyLabel = 'Apply Now',
   secondaryHref,
   secondaryLabel,
   secondaryIcon = 'download',
@@ -156,6 +158,8 @@ function BlogCtaStrip({
   whatsappLabel,
   className,
 }: {
+  onApplyClick?: () => void;
+  applyLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
   secondaryIcon?: 'download' | 'link';
@@ -168,8 +172,27 @@ function BlogCtaStrip({
 
   return (
     <div className={cn('flex flex-col sm:flex-row sm:flex-wrap gap-3 w-full max-w-full', className)}>
+      {onApplyClick ? (
+        <Button
+          type="button"
+          size="lg"
+          className={cn(btnClass, 'bg-amber-500 hover:bg-amber-600 text-white')}
+          onClick={onApplyClick}
+        >
+          <span className="min-w-0">{applyLabel}</span>
+        </Button>
+      ) : null}
       {secondaryHref && secondaryLabel ? (
-        <Button size="lg" className={cn(btnClass, 'bg-amber-500 hover:bg-amber-600 text-white')} asChild>
+        <Button
+          size="lg"
+          className={cn(
+            btnClass,
+            onApplyClick
+              ? 'bg-white text-sims-primary hover:bg-sims-surface-2'
+              : 'bg-amber-500 hover:bg-amber-600 text-white',
+          )}
+          asChild
+        >
           {secondaryIcon === 'download' ? (
             <a href={secondaryHref} target="_blank" rel="noreferrer" className="gap-2">
               <Download className="w-5 h-5 shrink-0" aria-hidden="true" />
@@ -231,7 +254,7 @@ function FeeComparisonMobile({ rows }: { rows: FeeComparisonRow[] }) {
           <dl className="space-y-3 text-sm">
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-sims-text-muted mb-1">
-                Approx annual tuition
+                Official academic fee
               </dt>
               <dd className="text-sims-primary font-medium leading-snug">{row.approxAnnualTuition}</dd>
             </div>
@@ -422,7 +445,15 @@ function BlogShell({
           <p className="mt-6 text-sm text-white/60 flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
             <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
             <span>
-              Prefer a call? Use Apply Now or visit{' '}
+              Prefer a call? Use{' '}
+              <button
+                type="button"
+                className="text-amber-300 hover:underline font-semibold"
+                onClick={() => setModalOpen(true)}
+              >
+                Apply Now
+              </button>{' '}
+              or visit{' '}
               <Link href="/contact-us" className="text-amber-300 hover:underline">
                 Contact Us
               </Link>
@@ -440,9 +471,11 @@ function BlogShell({
 function FeeStructureBody({
   post,
   whatsappHref,
+  onApplyClick,
 }: {
   post: FeeStructurePost;
   whatsappHref: string;
+  onApplyClick: () => void;
 }) {
   const pdfHref = feePdfHref(post);
 
@@ -481,7 +514,7 @@ function FeeStructureBody({
                       Duration
                     </th>
                     <th scope="col" className="px-4 py-3.5 font-semibold">
-                      Approx Annual Tuition
+                      Official academic fee
                     </th>
                     <th scope="col" className="px-4 py-3.5 font-semibold">
                       Clinical/Lab Fee Details
@@ -534,6 +567,7 @@ function FeeStructureBody({
 
           <div className="mt-6 sm:mt-8">
             <BlogCtaStrip
+              onApplyClick={onApplyClick}
               secondaryHref={pdfHref}
               secondaryLabel={post.pdfCtaLabel}
               whatsappHref={whatsappHref}
@@ -1265,9 +1299,11 @@ function CampusTourBody({ post }: { post: CampusTourPost }) {
 function NursingUpgradeBody({
   post,
   whatsappHref,
+  onApplyClick,
 }: {
   post: NursingUpgradePost;
   whatsappHref: string;
+  onApplyClick: () => void;
 }) {
   const trainingIcons = [GraduationCap, Hospital, Clock, FlaskConical];
 
@@ -1347,9 +1383,8 @@ function NursingUpgradeBody({
 
           <div className="mt-6 sm:mt-8">
             <BlogCtaStrip
-              secondaryHref={post.applyHref}
-              secondaryLabel={post.applyCtaLabel}
-              secondaryIcon="link"
+              onApplyClick={onApplyClick}
+              applyLabel={post.applyCtaLabel}
               whatsappHref={whatsappHref}
               whatsappLabel={post.whatsappCtaLabel}
             />
@@ -1483,6 +1518,7 @@ export function BlogPostPage() {
   }
 
   const whatsappHref = counselorWhatsappHref(post);
+  const openContactForm = () => setModalOpen(true);
 
   if (isFeeStructurePost(post)) {
     const pdfHref = feePdfHref(post);
@@ -1493,6 +1529,7 @@ export function BlogPostPage() {
         setModalOpen={setModalOpen}
         heroCta={
           <BlogCtaStrip
+            onApplyClick={openContactForm}
             secondaryHref={pdfHref}
             secondaryLabel={post.pdfCtaLabel}
             whatsappHref={whatsappHref}
@@ -1501,6 +1538,7 @@ export function BlogPostPage() {
         }
         closingExtra={
           <BlogCtaStrip
+            onApplyClick={openContactForm}
             secondaryHref={pdfHref}
             secondaryLabel={post.pdfCtaLabel}
             whatsappHref={whatsappHref}
@@ -1509,7 +1547,11 @@ export function BlogPostPage() {
           />
         }
       >
-        <FeeStructureBody post={post} whatsappHref={whatsappHref} />
+        <FeeStructureBody
+          post={post}
+          whatsappHref={whatsappHref}
+          onApplyClick={openContactForm}
+        />
       </BlogShell>
     );
   }
@@ -1522,6 +1564,7 @@ export function BlogPostPage() {
         setModalOpen={setModalOpen}
         heroCta={
           <BlogCtaStrip
+            onApplyClick={openContactForm}
             secondaryHref="/admissions"
             secondaryLabel="View admissions procedure"
             secondaryIcon="link"
@@ -1531,6 +1574,7 @@ export function BlogPostPage() {
         }
         closingExtra={
           <BlogCtaStrip
+            onApplyClick={openContactForm}
             secondaryHref="/nursing"
             secondaryLabel="Explore nursing programs"
             secondaryIcon="link"
@@ -1553,6 +1597,7 @@ export function BlogPostPage() {
         setModalOpen={setModalOpen}
         heroCta={
           <BlogCtaStrip
+            onApplyClick={openContactForm}
             secondaryHref="/programs/bpt"
             secondaryLabel="View BPT program"
             secondaryIcon="link"
@@ -1562,6 +1607,7 @@ export function BlogPostPage() {
         }
         closingExtra={
           <BlogCtaStrip
+            onApplyClick={openContactForm}
             secondaryHref="/admissions"
             secondaryLabel="Admissions procedure"
             secondaryIcon="link"
@@ -1584,18 +1630,16 @@ export function BlogPostPage() {
         setModalOpen={setModalOpen}
         heroCta={
           <BlogCtaStrip
-            secondaryHref={post.appointmentHref}
-            secondaryLabel={post.appointmentLabel}
-            secondaryIcon="link"
+            onApplyClick={openContactForm}
+            applyLabel={post.appointmentLabel}
             whatsappHref={whatsappHref}
             whatsappLabel={post.whatsappCtaLabel}
           />
         }
         closingExtra={
           <BlogCtaStrip
-            secondaryHref={post.appointmentHref}
-            secondaryLabel={post.appointmentLabel}
-            secondaryIcon="link"
+            onApplyClick={openContactForm}
+            applyLabel={post.appointmentLabel}
             whatsappHref={whatsappHref}
             whatsappLabel={post.whatsappCtaLabel}
             className="sm:justify-center"
@@ -1615,25 +1659,27 @@ export function BlogPostPage() {
         setModalOpen={setModalOpen}
         heroCta={
           <BlogCtaStrip
-            secondaryHref={post.applyHref}
-            secondaryLabel={post.applyCtaLabel}
-            secondaryIcon="link"
+            onApplyClick={openContactForm}
+            applyLabel={post.applyCtaLabel}
             whatsappHref={whatsappHref}
             whatsappLabel={post.whatsappCtaLabel}
           />
         }
         closingExtra={
           <BlogCtaStrip
-            secondaryHref={post.applyHref}
-            secondaryLabel={post.applyCtaLabel}
-            secondaryIcon="link"
+            onApplyClick={openContactForm}
+            applyLabel={post.applyCtaLabel}
             whatsappHref={whatsappHref}
             whatsappLabel={post.whatsappCtaLabel}
             className="sm:justify-center"
           />
         }
       >
-        <NursingUpgradeBody post={post} whatsappHref={whatsappHref} />
+        <NursingUpgradeBody
+          post={post}
+          whatsappHref={whatsappHref}
+          onApplyClick={openContactForm}
+        />
       </BlogShell>
     );
   }
