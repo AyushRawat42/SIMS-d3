@@ -1,5 +1,5 @@
-import React, { useMemo, useState, type ReactNode } from 'react';
-import { Link, useParams } from 'wouter';
+import React, { useEffect, useMemo, useState, type ReactNode } from 'react';
+import { Link, useLocation, useParams } from 'wouter';
 import {
   Download,
   MessageCircle,
@@ -70,82 +70,10 @@ import { cn } from '@/lib/utils';
 
 const sectionPad = 'py-10 sm:py-14 md:py-16 lg:py-20';
 const containerPad = 'container mx-auto px-4 sm:px-5 md:px-6 min-w-0';
+const UNLISTED_BLOG_SLUGS = new Set(['bsc-nursing-gnm-fee-structure-dehradun-2026-27']);
 
 function publicNavLinks<T extends { href: string }>(links: T[]): T[] {
   return links.filter((link) => isPublicSiteHref(link.href));
-}
-
-function BlogComingSoon({
-  title,
-  breadcrumbLabel,
-  modalOpen,
-  setModalOpen,
-}: {
-  title: string;
-  breadcrumbLabel: string;
-  modalOpen: boolean;
-  setModalOpen: (open: boolean) => void;
-}) {
-  return (
-    <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20 overflow-x-clip">
-      <Header onApplyClick={() => setModalOpen(true)} />
-      <ContactModal isOpen={modalOpen} onOpenChange={setModalOpen} />
-
-      <section className="relative pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-10 sm:pb-14 overflow-hidden bg-sims-primary">
-        <div className="absolute inset-0 bg-gradient-to-br from-sims-primary via-sims-primary to-sims-primary-2" />
-        <div className={`${containerPad} relative z-10`}>
-          <nav aria-label="Breadcrumb" className="text-xs sm:text-sm text-white/70 mb-3 sm:mb-4">
-            <ol className="flex flex-wrap items-center gap-1.5">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden="true">/</li>
-              <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li aria-hidden="true">/</li>
-              <li className="text-amber-300 font-medium break-words min-w-0 max-w-full">
-                {breadcrumbLabel}
-              </li>
-            </ol>
-          </nav>
-          <p className="text-amber-300 text-sm font-semibold uppercase tracking-wide mb-3">
-            Coming soon
-          </p>
-          <h1 className="font-display text-[1.35rem] leading-snug sm:text-3xl md:text-4xl font-bold text-white tracking-tight mb-4 break-words max-w-3xl">
-            {title}
-          </h1>
-          <p className="text-white/85 text-sm sm:text-base leading-relaxed max-w-2xl mb-7">
-            This guide is drafted and waiting on confirmed SIMS figures before we publish. Browse
-            other admissions articles, or speak with a counselor for the latest fee details.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white h-12 px-6 font-bold rounded-lg"
-              onClick={() => setModalOpen(true)}
-            >
-              Apply Now
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto border-white/40 bg-white/10 text-white hover:bg-white hover:text-sims-primary h-12 px-6 font-semibold rounded-lg"
-              asChild
-            >
-              <Link href="/blog">Back to Blog</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
 }
 
 function BlogCtaStrip({
@@ -1474,9 +1402,15 @@ function NursingUpgradeBody({
 export function BlogPostPage() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug ?? '';
-  const post = getBlogPost(slug);
+  const [, setLocation] = useLocation();
+  const isUnlisted = UNLISTED_BLOG_SLUGS.has(slug);
+  const post = isUnlisted ? undefined : getBlogPost(slug);
   const [modalOpen, setModalOpen] = useState(false);
   const isLive = !!post && isBlogPostPublished(post);
+
+  useEffect(() => {
+    if (isUnlisted) setLocation('/blog', { replace: true });
+  }, [isUnlisted, setLocation]);
 
   const faqJsonLd = useMemo(
     () => (isLive && post ? buildFaqPageJsonLd(post.faqs) : null),
@@ -1488,33 +1422,18 @@ export function BlogPostPage() {
   );
 
   useDocumentMeta(
-    isLive && post
-      ? post.metaTitle
-      : post
-        ? 'Coming Soon | SIMS Blog'
-        : 'Blog | SIMS',
-    isLive && post
-      ? post.metaDescription
-      : post
-        ? 'This SIMS article is being finalized and will publish once official details are confirmed.'
-        : 'SIMS Dehradun blog',
+    isLive && post ? post.metaTitle : 'Blog | SIMS',
+    isLive && post ? post.metaDescription : 'SIMS Dehradun blog',
   );
   useJsonLd('blog-posting', blogJsonLd);
   useJsonLd('faq-page', faqJsonLd);
 
-  if (!post) {
-    return <NotFound />;
+  if (isUnlisted) {
+    return null;
   }
 
-  if (!isLive) {
-    return (
-      <BlogComingSoon
-        title={post.title}
-        breadcrumbLabel={post.breadcrumbLabel}
-        modalOpen={modalOpen}
-        setModalOpen={setModalOpen}
-      />
-    );
+  if (!post || !isLive) {
+    return <NotFound />;
   }
 
   const whatsappHref = counselorWhatsappHref(post);

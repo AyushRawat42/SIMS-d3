@@ -260,7 +260,7 @@ export function isNursingUpgradePost(post: BlogPost): post is NursingUpgradePost
 export const FEE_STRUCTURE_POST: FeeStructurePost = {
   template: 'fee-structure',
   slug: 'bsc-nursing-gnm-fee-structure-dehradun-2026-27',
-  published: true,
+  published: false,
   title:
     'B.Sc Nursing & GNM Fee Structure in Dehradun (2026–27): Tuition, Hostel & Clinical Training Charges',
   metaTitle: 'B.Sc Nursing & GNM Fee Structure in Dehradun (2026–27) | SIMS',
@@ -529,10 +529,6 @@ export const COLLEGE_SELECTION_POST: CollegeGuidePost = {
     { href: '/programs/bsc-nursing', label: 'B.Sc Nursing program' },
     { href: '/admissions', label: 'Read admission procedure' },
     { href: '/facilities/laboratories', label: 'Tour nursing labs' },
-    {
-      href: '/blog/bsc-nursing-gnm-fee-structure-dehradun-2026-27',
-      label: 'Compare fee structure guide',
-    },
   ],
   faqs: [
     {
@@ -1178,7 +1174,6 @@ export const BLOG_POSTS: BlogPost[] = [
   CAMPUS_TOUR_POST,
   BPT_CAREER_POST,
   COLLEGE_SELECTION_POST,
-  FEE_STRUCTURE_POST,
 ];
 
 /** True when the post is live on /blog, sitemap, and public widgets. */

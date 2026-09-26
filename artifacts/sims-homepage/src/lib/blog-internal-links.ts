@@ -6,12 +6,6 @@ export type RelatedGuide = {
   blurb: string;
 };
 
-const FEE: RelatedGuide = {
-  href: blogPostPath('bsc-nursing-gnm-fee-structure-dehradun-2026-27'),
-  label: 'B.Sc Nursing & GNM fee guide',
-  blurb: 'Official Batch 2026 academic fees for B.Sc Nursing, GNM, Post Basic, and M.Sc.',
-};
-
 const CHECKLIST: RelatedGuide = {
   href: blogPostPath('top-private-bsc-nursing-colleges-dehradun-affiliation-eligibility-checklist'),
   label: 'Private B.Sc Nursing college checklist',
@@ -41,7 +35,6 @@ function onlyPublished(guides: RelatedGuide[]): RelatedGuide[] {
 }
 
 export const NURSING_HUB_GUIDES: RelatedGuide[] = onlyPublished([
-  FEE,
   CHECKLIST,
   UPGRADE,
   CAMPUS,
@@ -53,10 +46,10 @@ export function guidesForProgram(slug: string): RelatedGuide[] {
   switch (slug) {
     case 'bsc-nursing':
     case 'gnm':
-      return onlyPublished([FEE, CHECKLIST, CAMPUS]);
+      return onlyPublished([CHECKLIST, CAMPUS]);
     case 'post-basic-bsc-nursing':
     case 'msc-nursing':
-      return onlyPublished([UPGRADE, FEE, CAMPUS, CHECKLIST]);
+      return onlyPublished([UPGRADE, CAMPUS, CHECKLIST]);
     case 'bpt':
       return onlyPublished([BPT, CAMPUS]);
     default:

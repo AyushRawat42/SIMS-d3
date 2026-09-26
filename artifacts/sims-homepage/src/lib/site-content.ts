@@ -232,10 +232,6 @@ export const SITE_CONTENT = {
         href: "/blog/inside-sims-dehradun-photo-facility-tour-nursing-labs-campus",
       },
       {
-        label: "Fee Structure Guide",
-        href: "/blog/bsc-nursing-gnm-fee-structure-dehradun-2026-27",
-      },
-      {
         label: "BPT Career Guide",
         href: "/blog/bpt-uttarakhand-eligibility-career-scope-salary-after-12th-pcb",
       },

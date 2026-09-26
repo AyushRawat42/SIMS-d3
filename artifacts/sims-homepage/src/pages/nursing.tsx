@@ -128,14 +128,7 @@ export function NursingPage() {
           <div className="mt-12 space-y-8">
             <div className="rounded-2xl border border-sims-border bg-white p-6 md:p-8">
               <p className="text-sm sm:text-base text-sims-text-muted leading-relaxed mb-0">
-                Compare fees in the{' '}
-                <Link
-                  href="/blog/bsc-nursing-gnm-fee-structure-dehradun-2026-27"
-                  className="text-sims-primary font-semibold underline underline-offset-2 hover:text-sims-primary-2"
-                >
-                  B.Sc Nursing & GNM fee structure guide
-                </Link>
-                , check affiliation with the{' '}
+                Check affiliation with the{' '}
                 <Link
                   href="/blog/top-private-bsc-nursing-colleges-dehradun-affiliation-eligibility-checklist"
                   className="text-sims-primary font-semibold underline underline-offset-2 hover:text-sims-primary-2"

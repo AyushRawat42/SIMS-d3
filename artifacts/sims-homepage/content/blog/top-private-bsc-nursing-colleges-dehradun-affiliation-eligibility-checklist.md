@@ -78,7 +78,6 @@ The practical difference is supervised clinical learning: skills labs, hospital 
 
 - Explore [nursing programs at SIMS](/nursing)
 - Read the [admissions procedure](/admissions)
-- Compare the [B.Sc Nursing & GNM fee structure guide](/blog/bsc-nursing-gnm-fee-structure-dehradun-2026-27)
 - Speak to an admissions counselor on WhatsApp: [+91 9759761244](https://wa.me/919759761244?text=Hello%20SIMS%20Admissions%2C%20I%20am%20comparing%20private%20B.Sc%20Nursing%20colleges%20in%20Dehradun%20and%20want%20guidance%20on%20affiliation%2C%20eligibility%2C%20and%20clinical%20training%20at%20SIMS.)
 
 ---

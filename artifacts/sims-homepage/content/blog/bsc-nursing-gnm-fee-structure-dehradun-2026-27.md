@@ -2,7 +2,7 @@
 
 **Meta title:** B.Sc Nursing & GNM Fee Structure in Dehradun (2026–27) | SIMS  
 **URL slug:** `bsc-nursing-gnm-fee-structure-dehradun-2026-27`  
-**Status:** `published: true`  
+**Status:** `draft` (`published: false` — not listed on the public site)  
 **Published:** 2026-09-25  
 **Official PDF:** `/downloads/sims-fee-structure-2026-27.pdf`  
 **Keywords:** sims bsc nursing fees; bsc nursing colleges in dehradun with fee structure; sushila institute of medical sciences fees structure; sims college of nursing dehradun fee structure
