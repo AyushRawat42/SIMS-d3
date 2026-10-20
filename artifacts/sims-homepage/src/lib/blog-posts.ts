@@ -4,6 +4,8 @@ import {
   BSC_VS_GNM_POST,
   COURSE_COMPARE_POST,
   HNBUMU_COUNSELING_POST,
+  HOSTEL_SAFETY_POST,
+  PARAMEDICAL_CAREER_POST,
 } from '@/lib/blog-resource-guides';
 import type { ResponsiveImage } from '@/lib/responsive-image';
 import {
@@ -264,6 +266,8 @@ export type ResourceGuidePost = BlogPostBase & {
   pairCompareTitle?: string;
   pairCompareIntro?: string;
   pairCompareRows?: GuidePairCompareRow[];
+  /** Renders the standard admissions fee note (no amounts). */
+  showFeeNote?: boolean;
   exploreLinks: { href: string; label: string }[];
 };
 
@@ -314,9 +318,9 @@ export const FEE_STRUCTURE_POST: FeeStructurePost = {
     'B.Sc Nursing & GNM Fee Structure in Dehradun (2026–27): Tuition, Hostel & Clinical Training Charges',
   metaTitle: 'B.Sc Nursing & GNM Fee Structure in Dehradun (2026–27) | SIMS',
   metaDescription:
-    'Official SIMS College of Nursing 2026–27 fees: B.Sc Nursing ₹1,68,000/year, GNM ₹90,000/year, plus application, admission & uniform. Download the PDF.',
+    'How to request the current SIMS College of Nursing fee breakdown for B.Sc Nursing and GNM. Amounts are shared by admissions for the active session.',
   publishedAt: '2026-09-25',
-  updatedAt: '2026-09-25',
+  updatedAt: '2026-10-20',
   author: 'SIMS Admissions',
   readingTime: '8 min read',
   breadcrumbLabel: 'Fee Structure 2026–27',
@@ -327,73 +331,71 @@ export const FEE_STRUCTURE_POST: FeeStructurePost = {
     'sims college of nursing dehradun fee structure',
   ],
   excerpt:
-    'Official SIMS College of Nursing Batch 2026 academic fees for B.Sc Nursing and GNM, with application, admission, uniform, and exam-fee notes from the institute PDF.',
+    'SIMS does not print nursing or hostel amounts on this page. Ask admissions for the current session fee breakdown and the official brochure.',
   directAnswer:
-    'For Batch 2026 at SIMS College of Nursing, Dehradun, official academic fees are ₹1,68,000 per year for B.Sc Nursing (all four years) and ₹90,000 per year for GNM (all three years). Application is ₹1,000, admission ₹10,000, and uniform ₹9,000. Exam fees are not included in those figures, and fees are not refundable once submitted. Hostel and mess are not listed on this academic sheet—confirm living costs with admissions. Download the official PDF below.',
+    'SIMS does not publish tuition, hostel, or exam amounts on this page. Fee structures follow HNBUMU and state guidelines for the current academic session. Ask admissions on WhatsApp or request the official fee brochure for B.Sc Nursing, GNM, Post Basic B.Sc Nursing, or M.Sc Nursing.',
   audienceIntroTitle: 'Who this fee guide is for',
   audienceIntro:
-    'This guide is written for 12th-grade PCB students and parents in Uttarakhand, Uttar Pradesh, and Bihar who are comparing B.Sc Nursing colleges in Dehradun with fee structure clarity before they pay a counselling or admission fee. If you have searched for SIMS B.Sc Nursing fees, Sushila Institute of Medical Sciences fees structure, or SIMS College of Nursing Dehradun fee structure, the amounts below are taken from the official SIMS College of Nursing Batch 2026 fee sheet—not from third-party listing sites.',
+    'This guide is written for 12th-grade PCB students and parents in Uttarakhand, Uttar Pradesh, and Bihar who are comparing B.Sc Nursing colleges in Dehradun before they pay a counselling or admission fee. Ask SIMS admissions for the current fee breakdown rather than relying on third-party listing sites.',
   comparisonIntro:
-    'Academic (tuition) heads below are from the official SIMS College of Nursing fee sheet for Batch 2026. Application, admission, and uniform are listed once on that sheet; university/board exam fees are explicitly excluded. Skills-lab and hospital training are part of the programme—they are not given as a separate rupee line on this PDF.',
+    'Duration and eligibility below are unchanged. Tuition, application, admission, uniform, exam, and hostel amounts are not printed here. Use the admissions note to request the current brochure.',
   comparisonRows: [
     {
       courseName: 'B.Sc Nursing',
       duration: '4 Years',
-      approxAnnualTuition: '₹1,68,000 academic fee each year (1st–4th)',
+      approxAnnualTuition: 'Ask admissions for the current session',
       clinicalLabDetails:
-        'Nursing skills labs and hospital postings are part of the course. Exam fees are not included in the academic figure. First-year extras on the sheet: application ₹1,000, admission ₹10,000, uniform ₹9,000.',
+        'Nursing skills labs and hospital postings are part of the course. Exam charges are separate from tuition. Confirm every head with admissions.',
       eligibility: '10+2 with Physics, Chemistry, Biology & English (as per university norms)',
     },
     {
       courseName: 'GNM',
       duration: '3 Years',
-      approxAnnualTuition: '₹90,000 academic fee each year (1st–3rd)',
+      approxAnnualTuition: 'Ask admissions for the current session',
       clinicalLabDetails:
-        'Foundational nursing labs, midwifery practice, and supervised clinical postings are part of the diploma pathway. Exam fees are not included. Same application ₹1,000, admission ₹10,000, and uniform ₹9,000 as listed for nursing programmes.',
+        'Foundational nursing labs, midwifery practice, and supervised clinical postings are part of the diploma pathway. Confirm every head with admissions.',
       eligibility: '10+2 or equivalent (as per admission guidelines)',
     },
     {
       courseName: 'Post Basic B.Sc Nursing',
       duration: '2 Years',
-      approxAnnualTuition: '₹1,05,000 (1st year); ₹1,10,000 (2nd year)',
+      approxAnnualTuition: 'Ask admissions for the current session',
       clinicalLabDetails:
-        'Academic fees as listed on the same College of Nursing sheet. Application ₹1,000, admission ₹10,000, uniform ₹9,000; exam fees not included.',
+        'Academic charges are confirmed with admissions for the same intake. Exam charges are separate.',
       eligibility: 'Registered GNM (as per programme / council norms)',
     },
     {
       courseName: 'M.Sc Nursing',
       duration: '2 Years',
-      approxAnnualTuition: '₹1,25,000 (1st year); ₹1,10,000 (2nd year)',
+      approxAnnualTuition: 'Ask admissions for the current session',
       clinicalLabDetails:
-        'Academic fees as listed on the same College of Nursing sheet. Application ₹1,000, admission ₹10,000, uniform ₹9,000; exam fees not included.',
+        'Academic charges are confirmed with admissions for the same intake. Exam charges are separate.',
       eligibility: 'B.Sc / Post Basic B.Sc Nursing with required registration (as per norms)',
     },
   ],
   feeDisclaimer:
-    'Figures are from the official SIMS College of Nursing Batch 2026 fee sheet (Sushila Institute of Medical Sciences). They apply to the academic heads printed on that PDF. Exam fees are not included. Fees are not refundable once submitted. Hostel, mess, and any other living costs are not printed on this sheet—confirm those with an admissions counselor. Always match a payment demand against the downloaded PDF.',
+    'This page does not list tuition or hostel amounts. Fees follow the current academic session. Confirm them with admissions and match any payment demand to the official brochure.',
   additionalCostsIntro:
-    'Academic fees are only part of the first-year budget. The official nursing sheet also lists application, admission, and uniform. Hostel and mess must be confirmed separately because they are not on this PDF.',
+    'Tuition is only one part of the first-year budget. Application, admission, uniform, examination, hostel, and mess are separate heads. Ask admissions to itemise them for your course.',
   additionalCosts: [
     {
       title: 'Application, admission & uniform',
       summary:
-        'On the SIMS College of Nursing Batch 2026 sheet, application is ₹1,000, admission is ₹10,000, and uniform is ₹9,000. These sit alongside the yearly academic fee rather than inside it.',
-      budgetNote:
-        'For B.Sc Nursing, first-year academic plus these three heads totals ₹1,88,000 before exam fees. For GNM, the same extras on ₹90,000 academic fee total ₹1,10,000 before exam fees. Later years are listed as academic fee only on this sheet.',
+        'These heads sit alongside yearly tuition rather than inside it. Admissions will name each one for the current session.',
+      budgetNote: 'Ask for the full first-year list before you compare colleges. Later years can differ from the first year.',
     },
     {
       title: 'Hostel & Mess',
       summary:
-        'Separate boys’ and girls’ hostels with mess/canteen meals are available for outstation students from UP, Bihar, and other Uttarakhand districts. Campus security, CCTV, and a study-friendly routine matter as much as the monthly rent.',
+        'Separate boys’ and girls’ hostels with mess/canteen meals are available for outstation students from UP, Bihar, and other Uttarakhand districts. Campus security, CCTV, and a study-friendly routine matter as much as the room type.',
       budgetNote:
-        'Hostel and mess rupee amounts are not printed on the Batch 2026 academic fee PDF. Ask admissions for current room-sharing options and what mess includes before you budget living costs.',
+        'Hostel and mess charges are not printed on this page. Ask admissions for room-sharing options and what mess includes.',
     },
     {
       title: 'Examination fees',
       summary:
-        'The official sheet states that exam fees are not included in the academic figures above. University or board examination charges are therefore a separate head at exam time.',
-      budgetNote:
-        'Do not treat ₹1,68,000 (B.Sc) or ₹90,000 (GNM) as an all-in annual cost. Confirm the current exam-fee amount with admissions or the examining body when the exam notice is issued.',
+        'University or board examination charges are a separate head at exam time. They are not included in tuition.',
+      budgetNote: 'Confirm the current exam charge with admissions or the examining body when the exam notice is issued.',
     },
   ],
   clinicalJustificationTitle: 'Why practical clinical exposure at SIMS justifies the investment',
@@ -401,32 +403,32 @@ export const FEE_STRUCTURE_POST: FeeStructurePost = {
     'A low sticker price from a coaching-style or theory-heavy setup often hides the real cost: weak bedside readiness. Nursing careers are built on supervised practice—vital signs, wound care concepts, midwifery skills, community health visits, and confident communication with patients and teams.',
     'At SIMS Dehradun, learning is anchored in purpose-built nursing labs (foundation, adult health, child health, OBG, community health, and advanced skills), experienced faculty, and hospital internship exposure through the institute’s clinical tie-up network—so classroom theory turns into ward-ready competence.',
     'SIMS is affiliated with Hemvati Nandan Bahuguna Medical Education University (HNBUMU), aligning curriculum expectations with recognised nursing and paramedical standards in Uttarakhand. Scholarships, demo classes, and flexible fee structures further support families who want quality without opaque “donation” culture.',
-    'When you compare B.Sc Nursing colleges in Dehradun with fee structure side by side, weigh what you get per rupee: simulation labs, real clinical postings, and mentorship—not just a brochure. That is how the SIMS College of Nursing Dehradun fee structure is meant to be evaluated: transparent cost, measurable clinical value.',
+    'When you compare B.Sc Nursing colleges in Dehradun, weigh simulation labs, real clinical postings, and mentorship—not just a brochure. Ask admissions for the current fee breakdown before you decide.',
   ],
   faqs: [
     {
       question: 'Are there installment payment options?',
       answer:
-        'SIMS supports flexible fee structures for eligible students. The Batch 2026 academic PDF lists yearly academic heads, not a month-by-month installment calendar. Confirm payment timelines with admissions before you enrol—use the contact form or WhatsApp counselor CTA on this page.',
+        'SIMS supports flexible fee structures for eligible students. Confirm payment timelines with admissions before you enrol—use the contact form or WhatsApp counselor CTA on this page.',
     },
     {
       question: 'What is the fee difference between GNM and B.Sc Nursing?',
       answer:
-        'On the official SIMS College of Nursing Batch 2026 sheet, B.Sc Nursing academic fee is ₹1,68,000 per year for four years; GNM is ₹90,000 per year for three years. Application (₹1,000), admission (₹10,000), and uniform (₹9,000) are listed the same way for both. Exam fees are extra. Hostel is not on this sheet.',
+        'This page does not publish amounts. Duration differs: B.Sc Nursing is four years and GNM is three years. Ask admissions for the current tuition, exam, and hostel breakdown for each course.',
     },
     {
       question: 'What is included in the academic fee versus charged separately?',
       answer:
-        'The printed academic fee is the yearly course fee on the College of Nursing sheet. Application, admission, and uniform are listed as separate heads. Exam fees are not included. Skills-lab and clinical training are part of the programme but are not given a separate rupee line on this PDF. Hostel and mess are not listed here.',
+        'Tuition, application, admission, uniform, exam charges, hostel, and mess are separate heads. Skills-lab and clinical training are part of the programme. Ask admissions for the itemised brochure for your intake.',
     },
     {
       question: 'Is hostel mandatory for B.Sc Nursing and GNM at SIMS?',
       answer:
-        'Hostel is strongly recommended for outstation students from UP, Bihar, and other districts, but local day scholars may have different options. Hostel rupee amounts are not on the Batch 2026 academic PDF. Availability, room type, and mess charges are confirmed with admissions.',
+        'Hostel is strongly recommended for outstation students from UP, Bihar, and other districts, but local day scholars may have different options. Availability, room type, and mess charges are confirmed with admissions.',
     },
   ],
   faqSectionSubtitle:
-    'Answers parents ask most when comparing official SIMS B.Sc Nursing fees and GNM costs for 2026–27.',
+    'Answers parents ask most when comparing SIMS B.Sc Nursing and GNM for the current session.',
   feePdfPath: '/downloads/sims-fee-structure-2026-27.pdf',
   pdfCtaLabel: 'Download Complete 2026–27 Fee PDF',
   whatsappCtaLabel: 'Speak to an Admissions Counselor on WhatsApp',
@@ -669,32 +671,32 @@ export const BPT_CAREER_POST: CareerGuidePost = {
   ],
   salaryTitle: 'Career pathways & starting salary matrix',
   salaryIntro:
-    'Starting pay for fresh BPT graduates varies by city, employer type, and shift load. Use the matrix below as an India private-sector planning band for early-career roles—not a guaranteed SIMS placement package. Confirm current offers during counselling and campus placements conversations.',
+    'Starting pay for fresh BPT graduates varies by city, employer type, and shift load. SIMS does not publish a salary package. The matrix below lists where graduates work. Confirm current offers with the employer.',
   salaryDisclaimer:
-    'Figures are approximate early-career monthly ranges commonly discussed in Indian private hospitals, clinics, and sports setups. Actual packages differ by city (Dehradun vs metros), experience, certifications, and whether the role is full-time, contractual, or private-practice based.',
+    'SIMS does not publish a guaranteed starting salary. Packages differ by city, experience, certifications, and whether the role is full-time, contractual, or private practice.',
   salaryRows: [
     {
       sector: 'Sports Medicine',
       roleFocus: 'Injury assessment, taping, return-to-play drills, athlete conditioning support',
-      startingPay: '₹25,000 – ₹45,000 / month',
+      startingPay: 'Varies by employer and city; SIMS does not publish a package',
       growthNote: 'Rises with sports certifications, team attachments, and performance outcomes',
     },
     {
       sector: 'ICU / Hospital Rehabilitation',
       roleFocus: 'Post-op mobility, chest physiotherapy support, early mobilisation protocols',
-      startingPay: '₹22,000 – ₹40,000 / month',
+      startingPay: 'Varies by employer and city; SIMS does not publish a package',
       growthNote: 'Senior rehab posts and ICU-specialist tracks after hospital experience',
     },
     {
       sector: 'Neuro Clinics',
       roleFocus: 'Stroke, Parkinson’s, spinal, and neuro-rehab exercise programmes',
-      startingPay: '₹20,000 – ₹40,000 / month',
+      startingPay: 'Varies by employer and city; SIMS does not publish a package',
       growthNote: 'Higher bands with neuro-rehab fellowships and specialty clinic roles',
     },
     {
       sector: 'Geriatric Care',
       roleFocus: 'Fall prevention, pain management, home/community mobility programmes',
-      startingPay: '₹18,000 – ₹35,000 / month',
+      startingPay: 'Varies by employer and city; SIMS does not publish a package',
       growthNote: 'Strong private and home-care demand as senior-care services expand',
     },
   ],
@@ -1219,6 +1221,8 @@ export const NURSING_UPGRADE_POST: NursingUpgradePost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  PARAMEDICAL_CAREER_POST,
+  HOSTEL_SAFETY_POST,
   BSC_VS_GNM_POST,
   HNBUMU_COUNSELING_POST,
   COURSE_COMPARE_POST,

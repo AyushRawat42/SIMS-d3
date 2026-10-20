@@ -7,6 +7,8 @@ const distDir = path.join(root, 'dist', 'public');
 const origin = 'https://www.sims.college';
 
 const REQUIRED_BLOG_SLUGS = [
+  'paramedical-career-scope-bmlt-bsc-mrit-uttarakhand',
+  'hostel-life-campus-safety-medical-college-dehradun',
   'inside-sims-dehradun-photo-facility-tour-nursing-labs-campus',
   'bpt-uttarakhand-eligibility-career-scope-salary-after-12th-pcb',
   'post-basic-bsc-nursing-vs-msc-nursing-career-upgrade',

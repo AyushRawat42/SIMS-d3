@@ -39,6 +39,7 @@ import {
 } from '@/components/ui/accordion';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { BlogInlineCTA } from '@/components/cro/BlogInlineCTA';
+import { BlogFeeNote } from '@/components/cro/BlogFeeNote';
 import { RelatedCoursesGrid } from '@/components/seo/RelatedCoursesGrid';
 import { primaryProgramSlugForArticle } from '@/lib/related-courses';
 import { markLeadTracked, phoneFromHref, trackWhatsAppLeadClick } from '@/lib/analytics/trackLead';
@@ -62,7 +63,6 @@ import {
   type CareerGuidePost,
   type ChecklistRow,
   type CollegeGuidePost,
-  type FeeComparisonRow,
   type FeeStructurePost,
   type NursingUpgradePost,
   type ResourceGuidePost,
@@ -183,44 +183,6 @@ function RichParagraph({ parts }: { parts: RichPart[] }) {
         ),
       )}
     </p>
-  );
-}
-
-function FeeComparisonMobile({ rows }: { rows: FeeComparisonRow[] }) {
-  return (
-    <ul className="md:hidden space-y-4">
-      {rows.map((row) => (
-        <li
-          key={row.courseName}
-          className="rounded-2xl border border-sims-border bg-white p-4 shadow-sm"
-        >
-          <div className="flex items-baseline justify-between gap-3 mb-3 pb-3 border-b border-sims-border/70">
-            <h3 className="font-display text-lg font-bold text-sims-primary">{row.courseName}</h3>
-            <span className="text-xs font-semibold text-sims-primary-2 shrink-0">{row.duration}</span>
-          </div>
-          <dl className="space-y-3 text-sm">
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-sims-text-muted mb-1">
-                Official academic fee
-              </dt>
-              <dd className="text-sims-primary font-medium leading-snug">{row.approxAnnualTuition}</dd>
-            </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-sims-text-muted mb-1">
-                Clinical / lab details
-              </dt>
-              <dd className="text-sims-text-muted leading-relaxed">{row.clinicalLabDetails}</dd>
-            </div>
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-sims-text-muted mb-1">
-                Eligibility
-              </dt>
-              <dd className="text-sims-text-muted leading-relaxed">{row.eligibility}</dd>
-            </div>
-          </dl>
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -444,75 +406,12 @@ function FeeStructureBody({
       <section className={`${sectionPad} bg-white border-y border-sims-border/60`}>
         <div className={`${containerPad} min-w-0`}>
           <SectionHeading
-            title="Course comparison: tuition, clinical training & eligibility"
+            title="Course comparison: duration, clinical training and eligibility"
             subtitle={post.comparisonIntro}
             className="mb-6 sm:mb-8 max-w-3xl"
           />
 
-          <FeeComparisonMobile rows={post.comparisonRows} />
-
-          <div className="hidden md:block min-w-0">
-            <div className="overflow-x-auto overscroll-x-contain rounded-2xl border border-sims-border shadow-sm max-w-full">
-              <table className="w-full min-w-[720px] text-left text-sm border-collapse">
-                <thead>
-                  <tr className="bg-sims-primary text-white">
-                    <th scope="col" className="px-4 py-3.5 font-semibold whitespace-nowrap">
-                      Course Name
-                    </th>
-                    <th scope="col" className="px-4 py-3.5 font-semibold whitespace-nowrap">
-                      Duration
-                    </th>
-                    <th scope="col" className="px-4 py-3.5 font-semibold">
-                      Official academic fee
-                    </th>
-                    <th scope="col" className="px-4 py-3.5 font-semibold">
-                      Clinical/Lab Fee Details
-                    </th>
-                    <th scope="col" className="px-4 py-3.5 font-semibold">
-                      Eligibility
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {post.comparisonRows.map((row, i) => (
-                    <tr
-                      key={row.courseName}
-                      className={i % 2 === 0 ? 'bg-white' : 'bg-sims-surface-2/60'}
-                    >
-                      <th
-                        scope="row"
-                        className="px-4 py-4 font-bold text-sims-primary align-top whitespace-nowrap"
-                      >
-                        {row.courseName}
-                      </th>
-                      <td className="px-4 py-4 text-sims-text-muted align-top whitespace-nowrap">
-                        {row.duration}
-                      </td>
-                      <td className="px-4 py-4 text-sims-primary font-medium align-top">
-                        {row.approxAnnualTuition}
-                      </td>
-                      <td className="px-4 py-4 text-sims-text-muted align-top leading-relaxed">
-                        {row.clinicalLabDetails}
-                      </td>
-                      <td className="px-4 py-4 text-sims-text-muted align-top leading-relaxed">
-                        {row.eligibility}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div className="mt-6 flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-3.5 sm:p-4 md:p-5 max-w-4xl">
-            <AlertTriangle
-              className="w-5 h-5 text-amber-600 shrink-0 mt-0.5"
-              aria-hidden="true"
-            />
-            <p className="text-sm text-sims-text-muted leading-relaxed break-words">
-              {post.feeDisclaimer}
-            </p>
-          </div>
+          <BlogFeeNote defaultCourse="B.Sc Nursing" />
 
           <div className="mt-6 sm:mt-8">
             <BlogCtaStrip
@@ -860,6 +759,7 @@ function CareerGuideBody({ post }: { post: CareerGuidePost }) {
               {post.salaryDisclaimer}
             </p>
           </div>
+          <BlogFeeNote defaultCourse="BPT" />
         </div>
       </section>
 
@@ -1529,6 +1429,8 @@ function ResourceGuideBody({
             </div>
           </div>
         ) : null}
+
+        {post.showFeeNote ? <BlogFeeNote /> : null}
 
         <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
           {publicNavLinks(post.exploreLinks).map((link) => (

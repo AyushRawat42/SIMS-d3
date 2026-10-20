@@ -4,7 +4,8 @@ export type ButtonPlacement =
   | 'floating_widget'
   | 'general_inquiry'
   | 'footer'
-  | 'blog_inline';
+  | 'blog_inline'
+  | 'blog_fee_note';
 
 export type FormType = 'apply_now' | 'brochure_download' | 'contact_inquiry';
 

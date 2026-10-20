@@ -42,6 +42,18 @@ const COMPARE: RelatedGuide = {
   blurb: 'Duration, hospital scope, and higher study after 12th PCB.',
 };
 
+const PARAMEDICAL: RelatedGuide = {
+  href: blogPostPath('paramedical-career-scope-bmlt-bsc-mrit-uttarakhand'),
+  label: 'BMLT and B.Sc MRIT career scope',
+  blurb: 'Hospital lab and radiology demand, eligibility, and starting-pay planning bands after 12th.',
+};
+
+const HOSTEL: RelatedGuide = {
+  href: blogPostPath('hostel-life-campus-safety-medical-college-dehradun'),
+  label: 'Hostel life and campus safety',
+  blurb: 'Separate hostels, mess, CCTV, security, and what parents should confirm on a Dehradun visit.',
+};
+
 const BSC_VS_GNM: RelatedGuide = {
   href: blogPostPath('bsc-nursing-vs-gnm-salary-scope-eligibility-uttarakhand'),
   label: 'B.Sc Nursing vs GNM: salary and eligibility',
@@ -61,7 +73,7 @@ export const NURSING_HUB_GUIDES: RelatedGuide[] = onlyPublished([
   CAMPUS,
 ]);
 
-export const FACILITIES_HUB_GUIDES: RelatedGuide[] = onlyPublished([CAMPUS]);
+export const FACILITIES_HUB_GUIDES: RelatedGuide[] = onlyPublished([HOSTEL, CAMPUS]);
 
 export function guidesForProgram(slug: string): RelatedGuide[] {
   switch (slug) {
@@ -75,7 +87,7 @@ export function guidesForProgram(slug: string): RelatedGuide[] {
       return onlyPublished([COMPARE, BPT, CAMPUS]);
     case 'bmlt':
     case 'bmrit':
-      return onlyPublished([COUNSELING, CAMPUS]);
+      return onlyPublished([PARAMEDICAL, HOSTEL, COUNSELING, CAMPUS]);
     default:
       return onlyPublished([COUNSELING, CAMPUS]);
   }

@@ -8,7 +8,9 @@
 
 ---
 
-After 12th PCB, B.Sc Nursing at SIMS is a 4-year degree, GNM is a 3-year diploma, and BPT is 4 years plus a 6-month internship. SIMS does not publish a guaranteed nursing starting salary. For BPT, early-career private-sector planning bands — not a placement promise — run about ₹18,000–₹45,000 per month depending on the setting.
+After 12th PCB, B.Sc Nursing at SIMS is a 4-year degree, GNM is a 3-year diploma, and BPT is 4 years plus a 6-month internship. SIMS does not publish a guaranteed nursing or physiotherapy salary. Pay varies by employer and city.
+
+Note: Fee structures are updated as per HNBUMU and state government guidelines for the current academic session. To get the exact fee breakdown for this course, please connect with our admissions team on WhatsApp or request the official fee brochure.
 
 ## Choose the qualification before you choose the campus
 
@@ -30,6 +32,6 @@ B.Sc Nursing and GNM train for bedside nursing, midwifery, and community health,
 
 B.Sc Nursing can lead toward M.Sc Nursing. GNM usually needs Post Basic B.Sc Nursing before M.Sc and many nursing-officer advertisements. BPT can lead toward MPT.
 
-SIMS does not publish a guaranteed B.Sc Nursing or GNM starting salary. BPT planning bands already published on the BPT guide are about ₹18,000–₹45,000 per month by setting (geriatric care through sports), and they are not an offer letter.
+SIMS does not publish a guaranteed B.Sc Nursing, GNM, or BPT starting salary. Pay varies by employer and city, and it is not an offer letter.
 
-Batch 2026 academic fees on the nursing sheet: B.Sc Nursing ₹1,68,000 per year; GNM ₹90,000 per year. Exam fees and hostel are extra. Confirm BPT fees with admissions.
+Note: Fee structures are updated as per HNBUMU and state government guidelines for the current academic session. To get the exact fee breakdown for this course, please connect with our admissions team on WhatsApp or request the official fee brochure.

@@ -84,12 +84,13 @@ export const HNBUMU_COUNSELING_POST: ResourceGuidePost = {
     {
       heading: 'Step 6 — Reporting, fees, and hostel',
       paragraphs: [
-        'Reporting means document verification and fee payment as printed on the allotment note, at the place and time on that note. Carry originals. On the SIMS College of Nursing Batch 2026 academic sheet, B.Sc Nursing is ₹1,68,000 per year and GNM is ₹90,000 per year, with application ₹1,000, admission ₹10,000, and uniform ₹9,000 listed once. Exam fees are extra. Hostel and mess are not on that academic sheet, so confirm living costs before you add them to the counseling budget. Paramedical fees should be confirmed with admissions for the same intake. They are not printed on the nursing sheet.',
+        'Reporting means document verification and fee payment as printed on the allotment note, at the place and time on that note. Carry originals. SIMS does not print tuition or hostel amounts on this page. Fee structures follow HNBUMU and state guidelines for the current session. Ask admissions for the B.Sc Nursing, GNM, and paramedical breakdown, and for living costs, before you add them to the counseling budget.',
         'Separate boys’ and girls’ hostels, a hygienic mess, 24×7 CCTV, trained security, and Dehradun bus routes are available. Confirm room type and whether hostel is optional for your batch. After reporting, keep the fee receipt and the provisional admission letter until the university enrolment number arrives. If a document is deferred, ask for the written last date rather than a verbal promise at the counter.',
       ],
     },
   ],
   inlineCtaAfterSection: 3,
+  showFeeNote: true,
   inlineCtaTitle: 'Locking SIMS Dehradun for B.Sc Nursing or GNM?',
   inlineCtaBody:
     'Match the course name, your document file, and the current intake with admissions before you lock a choice. Programme pages list duration and eligibility. WhatsApp is the fastest way to check seat availability for this counseling round.',
@@ -158,7 +159,7 @@ export const COURSE_COMPARE_POST: ResourceGuidePost = {
   excerpt:
     'A practical comparison of B.Sc Nursing, GNM, and BPT for PCB students: how long each course is, where graduates work, and which salary figures SIMS has actually published.',
   directAnswer:
-    'After 12th PCB, B.Sc Nursing at SIMS is a 4-year degree, GNM is a 3-year diploma, and BPT is 4 years plus a 6-month internship. All three use campus labs and Dehradun clinical postings. SIMS does not publish a guaranteed nursing starting salary. For BPT, early-career private-sector planning bands — not a placement promise — run about ₹18,000–₹45,000 per month depending on the setting.',
+    'After 12th PCB, B.Sc Nursing at SIMS is a 4-year degree, GNM is a 3-year diploma, and BPT is 4 years plus a 6-month internship. All three use campus labs and Dehradun clinical postings. SIMS does not publish a guaranteed nursing or physiotherapy salary. Pay varies by employer and city.',
   sections: [
     {
       heading: 'Choose the qualification before you choose the campus',
@@ -185,12 +186,13 @@ export const COURSE_COMPARE_POST: ResourceGuidePost = {
       heading: 'Scope, higher study, and pay',
       paragraphs: [
         'B.Sc Nursing graduates prepare for staff nurse roles in government and private hospitals, community health, and a direct route into M.Sc Nursing when experience and registration match the notice. GNM graduates prepare for diploma-level nursing posts and can move to Post Basic B.Sc Nursing, which is the usual bridge into bachelor-level grades and later M.Sc Nursing. BPT graduates prepare for hospital rehab, clinics, sports-support roles, and later MPT.',
-        'SIMS does not publish a guaranteed starting salary for B.Sc Nursing or GNM. Compare the pay band on the advertisement you care about — state nursing-officer notices and private hospital offers are not the same number. For BPT, the institute’s career guide lists early-career private-sector planning bands of about ₹18,000–₹35,000 per month in geriatric care up to about ₹25,000–₹45,000 per month in sports settings. Those figures are not a SIMS placement package.',
-        'On the Batch 2026 nursing fee sheet, B.Sc Nursing academic fee is ₹1,68,000 per year for four years and GNM is ₹90,000 per year for three years. Exam fees and hostel are extra. Weigh the shorter GNM fee against the extra years and fees of a later Post Basic degree if your target job asks for a bachelor’s.',
+        'SIMS does not publish a guaranteed starting salary for B.Sc Nursing, GNM, or BPT. Compare the pay band on the advertisement you care about — state nursing-officer notices and private hospital offers are not the same number. Those figures are not a SIMS placement package.',
+        'Tuition and hostel amounts are not printed here. A shorter GNM route is only cheaper if the jobs you want accept a diploma. If they ask for B.Sc or Post Basic B.Sc Nursing, the GNM graduate usually returns for a later degree, and the total time can exceed the original four-year degree. Ask admissions for the current fee breakdown before you compare.',
       ],
     },
   ],
   inlineCtaAfterSection: 1,
+  showFeeNote: true,
   inlineCtaTitle: 'Preparing for HNBUMU counseling? Check SIMS seat availability and fee structure',
   inlineCtaBody:
     'If you are deciding between B.Sc Nursing, GNM, and BPT, confirm eligibility and the current fee heads with admissions before you pay a counseling deposit.',
@@ -232,7 +234,7 @@ export const COURSE_COMPARE_POST: ResourceGuidePost = {
       criterion: 'Pay published by SIMS',
       bscNursing: 'No guaranteed starting salary',
       gnm: 'No guaranteed starting salary',
-      bpt: 'Planning bands about ₹18,000–₹45,000 / month by setting',
+      bpt: 'Varies by employer and city; SIMS does not publish a package',
     },
   ],
   exploreLinks: [
@@ -259,12 +261,12 @@ export const COURSE_COMPARE_POST: ResourceGuidePost = {
     {
       question: 'What starting salary should parents budget for?',
       answer:
-        'Do not budget a SIMS-guaranteed nursing salary — none is published. For BPT, use the published planning bands of roughly ₹18,000–₹45,000 per month by setting, and treat them as early-career private-sector context, not an offer letter.',
+        'Do not budget a SIMS-guaranteed nursing or physiotherapy salary — none is published. Pay varies by employer and city. Treat any figure you hear in counselling as someone else’s offer, not a SIMS package.',
     },
     {
       question: 'Which course has the lower fee at SIMS?',
       answer:
-        'On the Batch 2026 College of Nursing sheet, GNM academic fee is ₹90,000 per year and B.Sc Nursing is ₹1,68,000 per year. Application, admission, and uniform are listed in addition, and exam fees are extra. BPT fees should be confirmed with admissions; they are not on that nursing sheet.',
+        'Tuition and hostel amounts are not printed on this page. Ask admissions for the current breakdown for GNM, B.Sc Nursing, and BPT before you compare the cost of a later Post Basic degree.',
     },
   ],
   faqSectionSubtitle: 'What PCB students ask when B.Sc Nursing, GNM, and BPT are all still open.',
@@ -283,7 +285,7 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
   title: 'B.Sc Nursing vs GNM: Salary, Scope & Eligibility in Uttarakhand',
   metaTitle: 'B.Sc Nursing vs GNM: Salary, Scope & Eligibility | SIMS',
   metaDescription:
-    'Compare B.Sc Nursing and GNM in Uttarakhand: 4 years vs 3 years, 10+2 PCB eligibility, INC approval, hospital jobs, and a ₹2.5–4.5 LPA starting-pay band.',
+    'Compare B.Sc Nursing and GNM in Uttarakhand: 4 years vs 3 years, 10+2 PCB eligibility, INC approval, and hospital jobs. SIMS does not publish a starting salary.',
   publishedAt: '2026-10-09',
   updatedAt: '2026-10-09',
   author: 'SIMS Admissions',
@@ -298,7 +300,7 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
   excerpt:
     'A parent-focused comparison of B.Sc Nursing and GNM in Uttarakhand: duration, PCB eligibility, council approval, government and private jobs, and realistic starting pay.',
   directAnswer:
-    'B.Sc Nursing at SIMS Dehradun is a 4-year degree after 10+2 with Physics, Chemistry, Biology, and English. GNM is a 3-year diploma after 10+2 or equivalent. Both train for bedside nursing through campus labs and hospital postings, and both need a recognised pathway if you want State Nursing Council registration. Early private-hospital staff-nurse roles in this market are often discussed around ₹2.5 LPA to ₹4.5 LPA or more. That is a planning band, not a SIMS placement package. Government pay follows the advertisement. GNM graduates who want bachelor-level posts usually add Post Basic B.Sc Nursing before M.Sc Nursing.',
+    'B.Sc Nursing at SIMS Dehradun is a 4-year degree after 10+2 with Physics, Chemistry, Biology, and English. GNM is a 3-year diploma after 10+2 or equivalent. Both train for bedside nursing through campus labs and hospital postings, and both need a recognised pathway if you want State Nursing Council registration. SIMS does not publish a starting salary. Government pay follows the advertisement. GNM graduates who want bachelor-level posts usually add Post Basic B.Sc Nursing before M.Sc Nursing.',
   sections: [
     {
       heading: 'Start with the qualification, then the campus',
@@ -312,7 +314,7 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
       heading: 'Duration: four years or three',
       paragraphs: [
         'B.Sc Nursing runs for four years after 12th. The years combine classroom subjects, nursing labs on campus, and clinical postings. You finish with a degree that most recent staff-nurse and nursing-officer advertisements treat as the bachelor’s qualification. GNM runs for three years, including practical postings and an internship block, and you finish with a diploma in general nursing and midwifery.',
-        'The extra year is the point families argue about. A three-year diploma puts a student into paid work sooner and, on the SIMS Batch 2026 nursing sheet, at a lower annual academic fee: ₹90,000 per year for GNM against ₹1,68,000 per year for B.Sc Nursing. Application is ₹1,000, admission ₹10,000, and uniform ₹9,000, listed once. Exam fees and hostel are extra. The shorter route costs less only if the jobs you want accept a diploma. If they ask for B.Sc or Post Basic B.Sc Nursing, the GNM graduate usually returns for a two-year Post Basic degree, and the total time and fees can exceed the original four-year degree.',
+        'The extra year is the point families argue about. A three-year diploma puts a student into paid work sooner. SIMS does not print tuition on this page, so ask admissions for the current breakdown before you assume the shorter route costs less. The shorter route is only cheaper if the jobs you want accept a diploma. If they ask for B.Sc or Post Basic B.Sc Nursing, the GNM graduate usually returns for a two-year Post Basic degree, and the total time can exceed the original four-year degree.',
         'Neither course makes the graduate a doctor. Both are professional nursing pathways. The right question is which certificate the hospitals and the public advertisements in your target city are asking for this year.',
       ],
     },
@@ -343,9 +345,9 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
     {
       heading: 'Starting salary: what to plan, not what is promised',
       paragraphs: [
-        'SIMS does not publish a guaranteed starting salary for B.Sc Nursing or GNM, and this page is not an offer letter. For family budgeting in Uttarakhand, early private-hospital staff-nurse roles are commonly discussed in a band of about ₹2.5 LPA to ₹4.5 LPA, and some city hospitals or specialty units advertise above that once the nurse has a few months of ICU or OT exposure. ₹2.5 LPA is about ₹21,000 a month before deductions. ₹4.5 LPA is about ₹37,500 a month. Night duty, location, and whether the hospital adds a stipend during internship all move the number.',
-        'Government pay is a different table. It follows the pay level in the advertisement and the allowances for that post. Do not convert a private-hospital band into an expected government salary, and do not convert either figure into a SIMS placement package. Diploma holders and degree holders can start in overlapping private bands. The degree more often changes which posts you may apply for, and the ceiling after experience, than it changes the first-month private salary by a fixed gap.',
-        'If a college promises “₹4.5 LPA for every student,” ask for the employer list and the year. Use the band here only to decide whether hostel, transport from Chakrata Road, and a later Post Basic fee still fit the household.',
+        'SIMS does not publish a guaranteed starting salary for B.Sc Nursing or GNM, and this page is not an offer letter. Private-hospital pay and government scales are different numbers, and both move with night duty, city, and experience. Diploma holders and degree holders can start in overlapping private roles. The degree more often changes which posts you may apply for than it changes the first month of pay by a fixed gap.',
+        'Government pay follows the pay level in the advertisement. Do not treat a private-hospital conversation as an expected government salary, and do not treat either as a SIMS placement package.',
+        'If a college promises a fixed salary for every student, ask for the employer list and the year. Use that conversation, plus the current SIMS fee brochure, to decide whether hostel, transport from Chakrata Road, and a later Post Basic course still fit the household.',
       ],
     },
     {
@@ -358,6 +360,7 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
     },
   ],
   inlineCtaAfterSection: 2,
+  showFeeNote: true,
   inlineCtaTitle: 'Comparing B.Sc Nursing and GNM for this intake?',
   inlineCtaBody:
     'Check duration, eligibility, and seat availability for both programmes at SIMS Dehradun before you lock an HNBUMU choice. WhatsApp admissions if you want the current fee heads beside this comparison.',
@@ -396,18 +399,13 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
     },
     {
       criterion: 'Starting pay to plan',
-      bscNursing: 'About ₹2.5–4.5 LPA+ in private hospitals; government scale as advertised',
-      gnm: 'Often a similar private band; government posts depend on the notice',
+      bscNursing: 'Varies by employer and city; SIMS does not publish a package',
+      gnm: 'Often a similar private role; government posts depend on the notice',
     },
     {
       criterion: 'Higher study',
       bscNursing: 'M.Sc Nursing when registration and experience match',
       gnm: 'Post Basic B.Sc Nursing, then M.Sc Nursing',
-    },
-    {
-      criterion: 'Batch 2026 academic fee',
-      bscNursing: '₹1,68,000 per year',
-      gnm: '₹90,000 per year',
     },
   ],
   exploreLinks: [
@@ -429,7 +427,7 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
     {
       question: 'What starting salary should parents use for budgeting?',
       answer:
-        'Use about ₹2.5 LPA to ₹4.5 LPA as a private-hospital planning band for early staff-nurse roles. SIMS does not guarantee that pay. Government salaries follow the advertisement, not this band.',
+        'SIMS does not publish a starting salary. Government salaries follow the advertisement. Ask admissions for the current fee brochure before you compare household budgets.',
     },
     {
       question: 'Is Indian Nursing Council recognition the same as HNBUMU affiliation?',
@@ -449,4 +447,280 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
   closingCtaTitle: 'Match the course to the job you described',
   closingCtaBody:
     'Talk to admissions about eligibility, the nursing-council letter for this intake, and fees for B.Sc Nursing or GNM at SIMS Dehradun before you lock a choice.',
+};
+
+export const PARAMEDICAL_CAREER_POST: ResourceGuidePost = {
+  template: 'resource-guide',
+  slug: 'paramedical-career-scope-bmlt-bsc-mrit-uttarakhand',
+  published: true,
+  title:
+    'Paramedical Career Scope in India: Why BMLT & B.Sc MRIT Are High-Demand Courses After 12th',
+  metaTitle: 'BMLT & B.Sc MRIT Career Scope After 12th | SIMS Dehradun',
+  metaDescription:
+    'BMLT and B.Sc MRIT (BMRIT) after 12th science: hospital lab and radiology roles, Uttarakhand starting-pay planning bands, and SIMS Dehradun admission.',
+  publishedAt: '2026-10-20',
+  updatedAt: '2026-10-20',
+  author: 'SIMS Admissions',
+  readingTime: '12 min read',
+  breadcrumbLabel: 'BMLT & B.Sc MRIT career scope',
+  keywords: [
+    'BMLT career scope Uttarakhand',
+    'B.Sc MRIT after 12th',
+    'paramedical courses Dehradun',
+    'medical lab technician salary India',
+  ],
+  excerpt:
+    'Why hospital laboratories and radiology departments keep hiring after 12th science, how BMLT differs from B.Sc MRIT / BMRIT, and what early-career pay looks like as a planning band.',
+  directAnswer:
+    'BMLT and B.Sc MRIT (published at SIMS as BMRIT) are 3-year degrees plus a 6-month internship after 10+2 science. BMLT trains for hospital laboratories, pathology, and blood bank. B.Sc MRIT trains for X-ray, CT, MRI, and ultrasound support under radiation-safety rules. SIMS does not publish a starting salary. Pay varies by city, shift, and employer.',
+  sections: [
+    {
+      heading: 'Why laboratories and imaging departments hire after 12th science',
+      paragraphs: [
+        'Hospitals in India do not run on doctors and nurses alone. Every blood report, culture, and scan that reaches a clinician is produced by a trained paramedical team. After 12th with Physics, Chemistry, and Biology or Mathematics, two undergraduate routes at Sushila Institute of Medical Sciences, Dehradun, map directly onto that work: Bachelor of Medical Laboratory Technology (BMLT) and Bachelor of Medical Radiology and Imaging Technology. On this site the imaging degree is named BMRIT. Families searching after 12th usually type B.Sc MRIT. They are the same programme page.',
+        'Demand is structural. Diagnostic chains, district hospitals, blood banks, and imaging centres need people who can run analysers, prepare slides, position a patient for an X-ray, and follow radiation-safety rules. Those seats are not filled by MBBS graduates. They are filled by laboratory and imaging technologists. Uttarakhand students who want a clinical career without a NEET-dependent MBBS seat can treat BMLT and B.Sc MRIT as degree pathways with a compulsory internship, not as short certificate add-ons.',
+        'SIMS offers both on the Chakrata Road campus at Sheeshambara, Sighniwala, Central Hope Town, Dehradun, with HNBUMU affiliation. Affiliation covers the university examinations and the degree printed on the certificate. It does not replace the council or registration pathway that applies to laboratory or imaging practice in your state. Ask admissions for the recognition or affiliation letter that applies to your intake year before you treat a brochure line as proof.',
+      ],
+    },
+    {
+      heading: 'Hospital laboratory roles a BMLT graduate is trained toward',
+      paragraphs: [
+        'A hospital laboratory is where a clinician’s question becomes a number or a slide. The roles that hire BMLT graduates sit inside that workflow. A medical laboratory technologist receives or processes samples, runs clinical biochemistry, haematology, microbiology, and immunology tests, and releases results only after the quality checks the lab has written down. Pathology and diagnostic-lab technician posts do related bench work under a pathologist. Blood-bank posts add grouping, cross-matching, and component handling. Research and public-health laboratories hire the same skills for surveillance samples and study work. With experience, some technologists move into laboratory-supervisor pathways. None of these titles is a doctor’s post, and none of them requires an MBBS rank.',
+        'The SIMS BMLT curriculum is built around that list: clinical biochemistry and pathology, medical microbiology and immunology, haematology and blood-banking foundations, laboratory instrumentation and quality practices, and diagnostic sample analysis during internship. The programme page describes hands-on practice with diagnostic equipment. The six-month internship is the bridge from a practical class to a hospital or diagnostic-lab bench. Treat it as compulsory training, not as an optional project.',
+        'When you visit, ask which analysers and benches students use in the first two years, and which Dehradun hospital or diagnostic postings apply to BMLT for your batch. A nursing-ward posting is not the same as a pathology bench. Write the answer down. Parents who only see a microscope in a photograph cannot tell whether the laboratory can actually teach sample discipline.',
+      ],
+    },
+    {
+      heading: 'Radiology and imaging roles for B.Sc MRIT / BMRIT',
+      paragraphs: [
+        'Radiology departments hire a different skill. A B.Sc MRIT graduate is trained to support image-based diagnosis: X-ray, CT, MRI, and ultrasound foundations, plus radiation protection and patient positioning. The job is not “press a button.” It is positioning the patient, following the protocol a radiologist has authorised, keeping dose as low as the examination allows, and handing over images a doctor can read. Hospital radiology departments and standalone diagnostic centres both hire for this work. With experience, some graduates move into CT or MRI technologist support, or into application and equipment-support roles.',
+        'SIMS describes BMRIT as three years of academic and practical work plus a six-month internship after 10+2 with science subjects, as per admission norms. Students learn radiological physics and imaging principles, X-ray, CT, MRI, and ultrasound foundations, radiation protection and patient positioning, dark-room and digital imaging workflow basics, and clinical imaging practice. Patient care sits beside the physics. A graduate who cannot explain a procedure to an anxious patient is not ready for a busy imaging room, even if the theory marks were high.',
+        'Ask the same concrete questions you would ask of a laboratory: which modalities are taught on campus, which are seen only during internship, and who supervises the student when the equipment is live. Radiation safety is part of the job from the first posting, not a chapter you revise after joining.',
+      ],
+    },
+    {
+      heading: 'Duration, eligibility, and how the two degrees differ',
+      paragraphs: [
+        'Put the two degrees side by side before you pay a counselling fee. Both expect 10+2 with science subjects — PCB or PCM as applicable for BMLT, and as per admission norms for BMRIT. Both run for 3 years plus a 6-month internship. Both are undergraduate degrees. Where the SIMS undergraduate bar applies, plan for a recognised 10+2 with a minimum 45% aggregate in PCB/PCM, with category relaxation as per norms. Age limits follow the current HNBUMU and institute notice. They are not one campus-wide number on this page.',
+        'Choose BMLT if the daily work you want is the bench: samples, analysers, microbiology, and blood bank. Choose B.Sc MRIT / BMRIT if the daily work you want is the imaging suite: positioning, X-ray, CT, MRI, ultrasound foundations, and radiation safety. The courses are not interchangeable, and a laboratory registration pathway is not an imaging registration pathway. During HNBUMU choice filling, lock Sushila Institute of Medical Sciences, Dehradun, against the exact course name. Filling both “just in case” can allot a programme you did not budget for.',
+      ],
+      bullets: [
+        'BMLT: diagnostic laboratory science, 3 years + 6-month internship, careers in hospitals, labs, blood bank, and research support',
+        'B.Sc MRIT / BMRIT: medical imaging and radiation safety, 3 years + 6-month internship, careers in hospital radiology and diagnostic centres',
+        'Shared campus: Sheeshambara, Sighniwala, Chakrata Road, Dehradun, with HNBUMU affiliation for the university examinations',
+        'Most SIMS seats, about 75%, use an All India entrance examination plus an institute interview',
+      ],
+    },
+    {
+      heading: 'Starting salary planning bands in Uttarakhand and India',
+      paragraphs: [
+        'SIMS does not publish a starting salary for BMLT or BMRIT. Nothing on this page is a placement offer. Private-hospital, diagnostic-lab, and imaging-centre pay varies by city — Dehradun and the rest of Uttarakhand versus a metro — by shift load, by whether the role is full-time or contractual, and by the equipment you can already run without supervision.',
+        'For BMLT, a fresh medical laboratory technologist or pathology-laboratory role is hired by private hospitals and diagnostic centres. Blood-bank posts and regular night shifts are often harder hours, not a different degree. Government laboratory posts follow the advertisement for that department.',
+        'For B.Sc MRIT / BMRIT, a fresh imaging or X-ray technologist is hired by private hospitals and diagnostic centres. CT or MRI support, after you are trained on that modality, and metro imaging chains, can differ from a first X-ray posting. Confirm any figure you hear in counselling against a written offer from the employer.',
+        'Growth after the first job usually comes from the bench or the gantry you can run, from quality-documentation habits, and from a clean internship record. Supervisor and application-specialist titles come later. They are not the starting designation on an offer letter for a fresher in Dehradun.',
+      ],
+    },
+    {
+      heading: 'What to inspect on the SIMS campus before you decide',
+      paragraphs: [
+        'A degree title does not by itself make a technologist employable. At SIMS, BMLT students practise measurement, mixing, and diagnostic technique in laboratory sessions. BMRIT students cover imaging theory in class and are expected to connect that theory to patient positioning and radiation safety before internship. Ask to see the laboratory you will actually use. The campus photo and facility tour shows nursing labs, the paramedical setup, hostel rooms, and the Chakrata Road location so you can plan the visit.',
+        'Clinical learning at SIMS is described through campus skills labs and hospital postings in its Dehradun tie-up network. Ask which of those postings apply to laboratory students and which apply to imaging students for your batch. If the answer is vague, ask again in writing. Parents comparing paramedical colleges in Uttarakhand should leave with the name of the lab, the length of internship, and the document that shows affiliation for that intake.',
+      ],
+    },
+    {
+      heading: 'Admission, fees, and hostel as a separate budget',
+      paragraphs: [
+        'Most SIMS seats — about 75% — are filled through an All India entrance examination plus an institute interview. A notified share of NRI or sponsored seats may use qualifying-examination marks plus an interview. Register on the HNBUMU notice for that year, build the document file before choice filling, and lock the institute name only after a second person has read the course spelling aloud. The campus reporting address is Sheeshambara, Sighniwala, Central Hope Town, Chakrata Road, Dehradun – 248197. The published admissions phone is +91 9759761244.',
+        'Paramedical tuition is not printed on this page. Confirm BMLT and BMRIT fees for the intake with admissions before you travel. Application, admission, uniform, and examination charges should be asked as separate lines.',
+        'Hostel is a different bill. Separate boys’ and girls’ hostels, a hygienic mess, 24×7 CCTV, and trained security are published for residential students. Living costs are not on the nursing academic sheet. Add the hostel figure to the counselling budget only after admissions confirms the room type for your batch. Day scholars can ask about Dehradun bus routes instead of assuming a hostel seat.',
+      ],
+    },
+  ],
+  inlineCtaAfterSection: 3,
+  showFeeNote: true,
+  inlineCtaTitle: 'Comparing BMLT and B.Sc MRIT at SIMS Dehradun?',
+  inlineCtaBody:
+    'Read the programme pages for duration, eligibility, and the work each degree trains. WhatsApp admissions to check seats, fees, and lab or imaging exposure for the current intake before you lock a course name.',
+  inlineCtaLinks: [
+    { href: '/programs/bmlt', label: 'BMLT course' },
+    { href: '/programs/bmrit', label: 'B.Sc MRIT / BMRIT course' },
+  ],
+  exploreLinks: [
+    { href: '/programs/bmlt', label: 'BMLT admission in Dehradun' },
+    { href: '/programs/bmrit', label: 'BMRIT / B.Sc MRIT course details' },
+    { href: '/admissions', label: 'Admissions procedure' },
+    {
+      href: '/blog/hnbumu-nursing-paramedical-counseling-guide-uttarakhand',
+      label: 'HNBUMU counseling guide',
+    },
+    {
+      href: '/blog/inside-sims-dehradun-photo-facility-tour-nursing-labs-campus',
+      label: 'Campus photo and facility tour',
+    },
+  ],
+  faqs: [
+    {
+      question: 'Is B.Sc MRIT the same as BMRIT at SIMS?',
+      answer:
+        'Yes for this campus. The programme page is titled BMRIT — Bachelor of Medical Radiology and Imaging Technology. Searchers after 12th often type B.Sc MRIT. Use the BMRIT page for duration, eligibility, and careers, and lock that course name in counseling.',
+    },
+    {
+      question: 'What is the duration of BMLT and BMRIT?',
+      answer:
+        'Both are undergraduate degrees of 3 years plus a 6-month internship. Eligibility is 10+2 with science subjects, PCB or PCM as applicable for BMLT and as per admission norms for BMRIT.',
+    },
+    {
+      question: 'Does SIMS guarantee a BMLT or radiology starting salary in Uttarakhand?',
+      answer:
+        'No. SIMS does not publish a starting salary for BMLT or BMRIT. City, shift, and employer change the number. Ask the employer for a written offer.',
+    },
+    {
+      question: 'Can I enter BMLT or BMRIT without NEET MBBS?',
+      answer:
+        'These are not MBBS seats. Most SIMS seats are filled through an All India entrance examination plus an institute interview. Read the current HNBUMU notice for the paramedical pool you are actually eligible for.',
+    },
+  ],
+  faqSectionSubtitle: 'Questions PCB students ask before choosing a laboratory or imaging degree in Dehradun.',
+  whatsappCtaLabel: 'WhatsApp paramedical admissions',
+  whatsappPrefill:
+    'Hi SIMS Admissions Team, I am comparing BMLT and B.Sc MRIT / BMRIT on sims.college. Please share eligibility, fees, and seat availability for the current intake.',
+  closingCtaTitle: 'See the lab before you lock the course',
+  closingCtaBody:
+    'Talk to admissions about BMLT or BMRIT eligibility, the current seat matrix, fees, and which labs or imaging postings apply to your batch at SIMS Dehradun.',
+};
+
+export const HOSTEL_SAFETY_POST: ResourceGuidePost = {
+  template: 'resource-guide',
+  slug: 'hostel-life-campus-safety-medical-college-dehradun',
+  published: true,
+  title:
+    'Hostel Life & Campus Safety for Girls & Boys: What Parents Should Look For in a Dehradun Medical College',
+  metaTitle: 'Hostel & Campus Safety in Dehradun | SIMS for Parents',
+  metaDescription:
+    'What parents should check in a Dehradun medical college hostel: separate girls and boys blocks, mess hygiene, CCTV, security, wardens, and the SIMS Selaqui campus.',
+  publishedAt: '2026-10-20',
+  updatedAt: '2026-10-20',
+  author: 'SIMS Admissions',
+  readingTime: '11 min read',
+  breadcrumbLabel: 'Hostel life and campus safety',
+  keywords: [
+    'medical college hostel Dehradun',
+    'girls hostel nursing college Dehradun',
+    'SIMS campus safety Selaqui',
+    'hostel for parents Uttarakhand',
+  ],
+  excerpt:
+    'A parent checklist for hostel life at a Dehradun medical college: separate residential blocks, mess hygiene, CCTV and security, what to ask a warden, and why the Selaqui–Chakrata Road location matters.',
+  directAnswer:
+    'SIMS provides separate hostel blocks for boys and girls on its Dehradun campus, with furnished rooms, a hygienic canteen, 24×7 CCTV at residential and campus access points, and trained security staff. The campus is at Sheeshambara, Sighniwala, Central Hope Town, Chakrata Road, Selaqui, Dehradun. Parents should still visit, ask who holds the gate register after dark, and confirm the warden duty arrangement for that block. The hostel page does not publish a 24-hour warden roster, so treat supervision as a question for the visit, not as a line you assume.',
+  sections: [
+    {
+      heading: 'What parents are actually worried about',
+      paragraphs: [
+        'A medical or nursing seat in Dehradun is also a decision about where a teenager will sleep, eat, and walk after evening practicals. Families from the hills, from other Uttarakhand districts, and from neighbouring states cannot check the gate every night. The useful questions are specific. Are girls and boys in separate residential blocks? Who controls entry after dark? Is the mess a canteen you would eat in, or a line in a brochure? Can you reach the campus from Chakrata Road without guessing the landmark?',
+        'Sushila Institute of Medical Sciences answers the first set of those questions in its published hostel description. Residential students get separate hostel facilities for boys and girls inside a secure campus environment. Rooms are furnished for study and rest, with sharing arrangements and single-occupancy style options as described by the institute. Meals are served from a clean, hygienic canteen, with vegetarian and non-vegetarian options as available. Surveillance is described as 24×7 CCTV across residential and campus access points, backed by trained security staff for entry monitoring. Those are the claims to test on a visit. They are not a substitute for walking the block.',
+        'This guide is the parent checklist. It uses only what SIMS already publishes about hostel, transport, and address, and it tells you which safety points you should confirm in person because they are not printed as a roster.',
+      ],
+    },
+    {
+      heading: 'Separate girls’ and boys’ hostel blocks',
+      paragraphs: [
+        'Separate residential blocks are the first filter most parents apply, and they are right to apply it. Shared buildings with a floor rule that changes at exam time are harder to supervise than dedicated blocks. SIMS states that boys and girls have separate hostels, and that the split is there to protect privacy and a structured living environment. On a tour, ask to see the girls’ block and the boys’ block as different entrances, not as two ends of one corridor described by a counsellor standing in the lobby.',
+        'Look at the room you are actually being offered. Published hostel photographs show twin-sharing rooms with a study desk and four-sharing rooms with beds, lockers, and a study corner. Ask whether your child’s batch is twin-sharing, four-sharing, or a single-occupancy style room, and whether that room type is guaranteed in the fee receipt or only “as available.” A photograph of a tidy four-bed room is not a promise that every new student gets that layout.',
+        'Ask where visitors wait, whether a parent can enter the residential floor, and what time the gate expectation is on a teaching day. Healthcare timetables run later than school timetables when labs or postings spill past dusk. A block that looks calm at noon can tell you a different story at 7:30 pm. If you can, plan the campus visit so you see at least one arrival or dinner hour.',
+      ],
+    },
+    {
+      heading: 'Mess hygiene and the ordinary day',
+      paragraphs: [
+        'Hostel safety is not only the gate. Students who skip meals during clinical weeks get ill, and parents hear about it as a phone call, not as a prospectus line. SIMS describes nutritious meals suited to student schedules, an emphasis on clean preparation and service, vegetarian and non-vegetarian options as available, and on-campus dining so residents are not depending on the road for every meal. Stand in the serving area. Look at water, handwashing, and whether leftover food is sitting uncovered. Ask who a student tells if a meal is unsafe, and whether that complaint has a name attached or only a suggestion box nobody opens.',
+        'Ask the weekly pattern, not the festival menu. Early lectures, lab sessions, and hospital postings do not wait for a late breakfast. Residents should know which meal is packed or early when a posting starts before the usual mess hour. Day scholars are a different case: SIMS also runs bus routes across Dehradun, including Sahastradhara, Vikas Nagar, Prem Nagar, Clock Tower, and Patelnagar ISBT, with GPS tracking, trained drivers, and first-aid kits described on the transport page. A student who will live at home does not need a hostel speech. A student who will live on campus does not need you to pretend the bus replaces a warden.',
+        'Hostel and mess charges are not printed on this page. Ask admissions for the current living-cost breakdown before you compare colleges. A tuition quote that excludes mess is not the full cost of attendance.',
+      ],
+    },
+    {
+      heading: 'CCTV, security staff, and what to ask about wardens',
+      paragraphs: [
+        'SIMS publishes four security points for residential life: 24×7 CCTV across residential and campus access points, trained security staff for entry monitoring and campus safety, separate residential arrangements for boys and girls, and campus routines designed for student welfare and accountability. On the visit, ask where the cameras actually look — gates, corridors, and access points — and who watches the screens after the academic block closes. A camera no one reviews is a recording, not supervision.',
+        'Trained security at the gate is not the same job as a hostel warden. Security checks entry. A warden is the adult responsible for the residential block: attendance when the institute requires it, illness, a late return from a posting, and the phone call to a parent. The SIMS hostel page does not publish a 24-hour warden roster, a warden-to-student ratio, or a rule that a warden sleeps in every block. Do not invent that promise from a CCTV line. Ask it directly: who is the warden for the girls’ block and for the boys’ block, how a parent reaches that person at night, and what happens if a student is late from clinical posting. Write the name and the number in the same notebook as the fee receipt.',
+        'Also ask about medical help on campus. A healthcare college should be able to say where a fever or an injury goes at night — a warden who calls the family, a nearby hospital, or campus first aid if someone is still on duty. SIMS describes a campus medical room for first response during college hours, and first-aid kits on college buses. That is not the same as an overnight ward. Confirm the night path in words a parent can repeat.',
+      ],
+      bullets: [
+        'Separate boys’ and girls’ blocks, seen as separate entrances',
+        '24×7 CCTV at residential and campus access points, plus who reviews it',
+        'Trained security on entry, and a named warden contact for each block',
+        'Mess hygiene at a real meal hour, including early postings',
+        'Written hostel and mess charges, separate from tuition',
+        'The night route if a student is ill',
+      ],
+    },
+    {
+      heading: 'Why the Selaqui and Chakrata Road location matters',
+      paragraphs: [
+        'The campus address published for SIMS is Sheeshambara, Sighniwala, Central Hope Town, Chakrata Road, Selaqui, Dehradun, Uttarakhand. Families who know Dehradun as Clock Tower and Rajpur Road should not assume the institute is in that core. Selaqui and Sheeshambara sit on Chakrata Road, toward the western edge of the city. That location is an advantage if you want a campus that is not on a market street, with room for labs, hostel blocks, and buses to pull in. It is a disadvantage if you arrive without directions and expect a five-minute walk from the railway station.',
+        'Use the location on purpose. Parents driving from ISBT, Prem Nagar, or Vikas Nagar should follow Chakrata Road to Sheeshambara and call +91 9759761244 if the last turn is unclear. College buses cover a set of Dehradun points for day scholars, which matters when you are deciding whether hostel is necessary. Residents who stay on campus are close to classrooms and laboratories, which is the point of a residential medical college: practicals and postings do not require a city crossing every morning.',
+        'Selaqui is also a known industrial and educational belt on this side of Dehradun, so the approach road is used by commuters, not only by the college. Ask about lighting on the campus approach, the gate you will use after dark, and whether a parent vehicle can wait inside. Those details are visit questions. They are the difference between “Chakrata Road” as an address and “Chakrata Road” as a place you would leave your daughter or son.',
+      ],
+    },
+    {
+      heading: 'How to use the photo tour and a live visit',
+      paragraphs: [
+        'Before you travel, open the campus photo and facility tour. It walks through nursing labs, the paramedical setup, hostel photographs, and commute notes for Chakrata Road. Use it to build a question list, not to finish the decision. Photographs of a twin-sharing room, a library, or a laboratory do not show the night gate. The hostel facilities page repeats the residential claims — separate blocks, CCTV, security, hygienic dining — next to room photographs you can compare with what you see in person.',
+        'On the day, split the visit into three loops: academic (the lab your course actually uses), residential (the block, the room type, the mess, the warden question), and arrival (the gate, the parking, the time it took you from a known Dehradun point). Speak to a current resident if the institute allows it, and ask about water, laundry, and how late postings return, not only about whether they are happy. Then match the verbal answers to the fee paper.',
+        'If you cannot visit before counseling closes, book a time anyway and send one parent when the allotment is known. Locking a course and discovering the hostel rule later is how families end up paying for a room they have not seen. Contact admissions to fix the walk-through. Bring the same identity you will use at reporting so the conversation is attached to the applicant, not to a general enquiry.',
+      ],
+    },
+  ],
+  inlineCtaAfterSection: 3,
+  showFeeNote: true,
+  inlineCtaTitle: 'Want to see the hostel block before you decide?',
+  inlineCtaBody:
+    'Walk the campus photo tour, then ask admissions for a live look at the girls’ or boys’ hostel, the mess, and the gate routine. WhatsApp is the fastest way to fix a visit to Sheeshambara.',
+  inlineCtaLinks: [
+    {
+      href: '/blog/inside-sims-dehradun-photo-facility-tour-nursing-labs-campus',
+      label: 'Campus photo tour',
+    },
+    { href: '/facilities/hostel', label: 'Hostel facilities' },
+    { href: '/contact-us', label: 'Contact and directions' },
+  ],
+  exploreLinks: [
+    { href: '/facilities/hostel', label: 'Hostel facilities at SIMS' },
+    { href: '/contact-us', label: 'Contact SIMS Dehradun' },
+    {
+      href: '/blog/inside-sims-dehradun-photo-facility-tour-nursing-labs-campus',
+      label: 'Campus photo and facility tour',
+    },
+    { href: '/facilities/transport', label: 'Dehradun bus routes' },
+    { href: '/admissions', label: 'Admissions procedure' },
+  ],
+  faqs: [
+    {
+      question: 'Are girls and boys in separate hostels at SIMS Dehradun?',
+      answer:
+        'Yes. SIMS publishes separate hostel facilities for boys and girls, with dedicated residential arrangements for privacy and a structured routine. Confirm the entrance and the room type for your batch on a visit.',
+    },
+    {
+      question: 'Is there 24×7 CCTV and security?',
+      answer:
+        'The hostel page states 24×7 CCTV across residential and campus access points and trained security staff for entry monitoring. Ask who reviews the cameras after class hours and how a parent reports a concern.',
+    },
+    {
+      question: 'Does the campus promise a warden on duty all night?',
+      answer:
+        'Not in the published hostel copy. CCTV and trained security are stated. A named warden, the night phone number, and what happens if a student returns late from posting are questions to confirm on the visit and in writing.',
+    },
+    {
+      question: 'Where is the campus if we are coming from Dehradun city?',
+      answer:
+        'Sheeshambara, Sighniwala, Central Hope Town, Chakrata Road, Selaqui, Dehradun – 248197. It is on Chakrata Road, not at Clock Tower. Call +91 9759761244 for the last turn. Day-scholar buses cover several city points.',
+    },
+  ],
+  faqSectionSubtitle: 'Safety questions parents ask before they leave a student in a Dehradun hostel.',
+  whatsappCtaLabel: 'WhatsApp a campus visit',
+  whatsappPrefill:
+    'Hi SIMS Admissions Team, I read the hostel and campus safety guide on sims.college. Please help us visit the girls or boys hostel and confirm warden and gate arrangements.',
+  closingCtaTitle: 'See the block your child would live in',
+  closingCtaBody:
+    'Message admissions to book a hostel and campus walk-through at Sheeshambara, Chakrata Road, and confirm room type, mess, security, and the warden contact for this intake.',
 };

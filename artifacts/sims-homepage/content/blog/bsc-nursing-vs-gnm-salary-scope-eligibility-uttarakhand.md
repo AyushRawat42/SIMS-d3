@@ -8,7 +8,7 @@
 
 ---
 
-B.Sc Nursing at SIMS Dehradun is a 4-year degree after 10+2 with Physics, Chemistry, Biology, and English. GNM is a 3-year diploma after 10+2 or equivalent. Both train for bedside nursing through campus labs and hospital postings, and both need a recognised pathway if you want State Nursing Council registration. Early private-hospital staff-nurse roles in this market are often discussed around ₹2.5 LPA to ₹4.5 LPA or more. That is a planning band, not a SIMS placement package. Government pay follows the advertisement. GNM graduates who want bachelor-level posts usually add Post Basic B.Sc Nursing before M.Sc Nursing.
+B.Sc Nursing at SIMS Dehradun is a 4-year degree after 10+2 with Physics, Chemistry, Biology, and English. GNM is a 3-year diploma after 10+2 or equivalent. Both train for bedside nursing through campus labs and hospital postings, and both need a recognised pathway if you want State Nursing Council registration. SIMS does not publish a starting salary. Government pay follows the advertisement. GNM graduates who want bachelor-level posts usually add Post Basic B.Sc Nursing before M.Sc Nursing.
 
 ## Start with the qualification, then the campus
 
@@ -22,7 +22,9 @@ Use this page to compare duration, 10+2 PCB eligibility, Indian Nursing Council 
 
 B.Sc Nursing runs for four years after 12th. The years combine classroom subjects, nursing labs on campus, and clinical postings. You finish with a degree that most recent staff-nurse and nursing-officer advertisements treat as the bachelor’s qualification. GNM runs for three years, including practical postings and an internship block, and you finish with a diploma in general nursing and midwifery.
 
-The extra year is the point families argue about. A three-year diploma puts a student into paid work sooner and, on the SIMS Batch 2026 nursing sheet, at a lower annual academic fee: ₹90,000 per year for GNM against ₹1,68,000 per year for B.Sc Nursing. Application is ₹1,000, admission ₹10,000, and uniform ₹9,000, listed once. Exam fees and hostel are extra. The shorter route costs less only if the jobs you want accept a diploma. If they ask for B.Sc or Post Basic B.Sc Nursing, the GNM graduate usually returns for a two-year Post Basic degree, and the total time and fees can exceed the original four-year degree.
+The extra year is the point families argue about. A three-year diploma puts a student into paid work sooner. SIMS does not print tuition on this page, so ask admissions for the current breakdown before you assume the shorter route costs less. The shorter route is only cheaper if the jobs you want accept a diploma. If they ask for B.Sc or Post Basic B.Sc Nursing, the GNM graduate usually returns for a two-year Post Basic degree, and the total time can exceed the original four-year degree.
+
+Note: Fee structures are updated as per HNBUMU and state government guidelines for the current academic session. To get the exact fee breakdown for this course, please connect with our admissions team on WhatsApp or request the official fee brochure.
 
 Neither course makes the graduate a doctor. Both are professional nursing pathways. The right question is which certificate the hospitals and the public advertisements in your target city are asking for this year.
 
@@ -52,11 +54,11 @@ Private-hospital scope is wider for a first job and less predictable on pay and 
 
 ## Starting salary: what to plan, not what is promised
 
-SIMS does not publish a guaranteed starting salary for B.Sc Nursing or GNM, and this page is not an offer letter. For family budgeting in Uttarakhand, early private-hospital staff-nurse roles are commonly discussed in a band of about ₹2.5 LPA to ₹4.5 LPA, and some city hospitals or specialty units advertise above that once the nurse has a few months of ICU or OT exposure. ₹2.5 LPA is about ₹21,000 a month before deductions. ₹4.5 LPA is about ₹37,500 a month. Night duty, location, and whether the hospital adds a stipend during internship all move the number.
+SIMS does not publish a guaranteed starting salary for B.Sc Nursing or GNM, and this page is not an offer letter. Private-hospital pay and government scales are different numbers, and both move with night duty, city, and experience.
 
 Government pay is a different table. It follows the pay level in the advertisement and the allowances for that post. Do not convert a private-hospital band into an expected government salary, and do not convert either figure into a SIMS placement package. Diploma holders and degree holders can start in overlapping private bands. The degree more often changes which posts you may apply for, and the ceiling after experience, than it changes the first-month private salary by a fixed gap.
 
-If a college promises “₹4.5 LPA for every student,” ask for the employer list and the year. Use the band here only to decide whether hostel, transport from Chakrata Road, and a later Post Basic fee still fit the household.
+If a college promises a fixed salary for every student, ask for the employer list and the year. Use that conversation, plus the current SIMS fee brochure, to decide whether hostel, transport from Chakrata Road, and a later Post Basic course still fit the household.
 
 ## Higher study: Post Basic and M.Sc Nursing
 
@@ -68,7 +70,7 @@ Work experience between courses is normal. Keep the State Nursing Council regist
 
 ## B.Sc Nursing vs GNM at a glance
 
-Durations and eligibility match the SIMS programme pages. The pay row is a private-hospital planning band for Uttarakhand, not a placement promise.
+Durations and eligibility match the SIMS programme pages. Pay varies by employer and city. SIMS does not publish a package.
 
 | | B.Sc Nursing | GNM |
 | --- | --- | --- |
@@ -77,6 +79,5 @@ Durations and eligibility match the SIMS programme pages. The pay row is a priva
 | After 12th | PCB and English; about 45% PCB/PCM where the bar applies | 10+2 or equivalent, as per the current guidelines |
 | Approval to verify | HNBUMU affiliation and nursing-council recognition for the intake | HNBUMU affiliation and nursing-council recognition for the intake |
 | Typical first jobs | Staff nurse in private hospitals; degree-level government advertisements | Staff nurse where a diploma is accepted; upgrade for many government posts |
-| Starting pay to plan | About ₹2.5–4.5 LPA+ in private hospitals; government scale as advertised | Often a similar private band; government posts depend on the notice |
+| Starting pay to plan | Varies by employer and city; SIMS does not publish a package | Often a similar private role; government posts depend on the notice |
 | Higher study | M.Sc Nursing when registration and experience match | Post Basic B.Sc Nursing, then M.Sc Nursing |
-| Batch 2026 academic fee | ₹1,68,000 per year | ₹90,000 per year |

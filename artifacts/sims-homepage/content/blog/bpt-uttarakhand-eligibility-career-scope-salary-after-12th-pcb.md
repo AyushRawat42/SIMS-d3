@@ -38,16 +38,9 @@ A mandatory internship rotates you through real clinical environments—hospital
 
 ## Career pathways & starting salary matrix
 
-Starting pay for fresh BPT graduates varies by city, employer type, and shift load. Use the matrix below as an India private-sector planning band for early-career roles—not a guaranteed SIMS placement package.
+Starting pay for fresh BPT graduates varies by city, employer type, and shift load. SIMS does not publish a salary package. Graduates work in sports medicine, hospital rehabilitation, neuro clinics, and geriatric care. Confirm current offers with the employer.
 
-| Sector | Role focus | Starting pay grade | Growth note |
-| --- | --- | --- | --- |
-| Sports Medicine | Injury assessment, taping, return-to-play drills, athlete conditioning support | ₹25,000 – ₹45,000 / month | Rises with sports certifications, team attachments, and performance outcomes |
-| ICU / Hospital Rehabilitation | Post-op mobility, chest physiotherapy support, early mobilisation protocols | ₹22,000 – ₹40,000 / month | Senior rehab posts and ICU-specialist tracks after hospital experience |
-| Neuro Clinics | Stroke, Parkinson’s, spinal, and neuro-rehab exercise programmes | ₹20,000 – ₹40,000 / month | Higher bands with neuro-rehab fellowships and specialty clinic roles |
-| Geriatric Care | Fall prevention, pain management, home/community mobility programmes | ₹18,000 – ₹35,000 / month | Strong private and home-care demand as senior-care services expand |
-
-> **Disclaimer:** Figures are approximate early-career monthly ranges commonly discussed in Indian private hospitals, clinics, and sports setups. Actual packages differ by city (Dehradun vs metros), experience, certifications, and whether the role is full-time, contractual, or private-practice based.
+Note: Fee structures are updated as per HNBUMU and state government guidelines for the current academic session. To get the exact fee breakdown for this course, please connect with our admissions team on WhatsApp or request the official fee brochure.
 
 ## Why practical labs at SIMS Dehradun matter for BPT
 

@@ -66,6 +66,8 @@ Keep the admit card and the registration receipt with the allotment PDF. Verific
 
 ## Step 6 — Reporting, fees, and hostel
 
-Reporting means document verification and fee payment as printed on the allotment note, at the place and time on that note. Carry originals. On the SIMS College of Nursing Batch 2026 academic sheet, B.Sc Nursing is ₹1,68,000 per year and GNM is ₹90,000 per year, with application ₹1,000, admission ₹10,000, and uniform ₹9,000 listed once. Exam fees are extra. Hostel and mess are not on that academic sheet, so confirm living costs before you add them to the counseling budget. Paramedical fees should be confirmed with admissions for the same intake. They are not printed on the nursing sheet.
+Reporting means document verification and fee payment as printed on the allotment note, at the place and time on that note. Carry originals. SIMS does not print tuition or hostel amounts on this page. Ask admissions for the current breakdown before you add living costs to the counseling budget.
+
+Note: Fee structures are updated as per HNBUMU and state government guidelines for the current academic session. To get the exact fee breakdown for this course, please connect with our admissions team on WhatsApp or request the official fee brochure.
 
 Separate boys’ and girls’ hostels, a hygienic mess, 24×7 CCTV, trained security, and Dehradun bus routes are available. Confirm room type and whether hostel is optional for your batch. After reporting, keep the fee receipt and the provisional admission letter until the university enrolment number arrives. If a document is deferred, ask for the written last date rather than a verbal promise at the counter.
