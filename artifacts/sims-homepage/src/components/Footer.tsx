@@ -150,6 +150,7 @@ export function Footer() {
                     <a
                       key={phone.tel}
                       href={`tel:${phone.tel}`}
+                      data-lead-placement="footer"
                       className="hover:text-white transition-colors leading-snug"
                     >
                       {phone.display}

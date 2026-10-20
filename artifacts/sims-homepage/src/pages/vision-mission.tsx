@@ -7,7 +7,7 @@ import { ContactModal } from '@/components/ContactModal';
 import { AboutSectionNav } from '@/components/AboutSectionNav';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
-import { useDocumentMeta } from '@/lib/seo';
+import { usePageSeo } from '@/lib/seo';
 import {
   ABOUT_MISSION,
   ABOUT_VISION,
@@ -28,7 +28,7 @@ const portraitSizes = '(max-width: 1023px) min(100vw - 2rem, 420px), 380px';
 export function VisionMissionPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  useDocumentMeta(VISION_MISSION_PAGE.metaTitle, VISION_MISSION_PAGE.metaDescription);
+  usePageSeo('/vision-mission');
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">

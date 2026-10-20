@@ -6,8 +6,8 @@ import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
-import { useDocumentMeta } from '@/lib/seo';
-import { getPublishedBlogPosts, blogPostPath, isCampusTourPost, isCareerGuidePost, isFeeStructurePost, isNursingUpgradePost } from '@/lib/blog-posts';
+import { usePageSeo } from '@/lib/seo';
+import { getPublishedBlogPosts, blogDateLabel, blogPostPath, isCampusTourPost, isCareerGuidePost, isFeeStructurePost, isNursingUpgradePost, isResourceGuidePost } from '@/lib/blog-posts';
 
 const sectionPad = 'py-10 sm:py-14 md:py-16 lg:py-20';
 const containerPad = 'container mx-auto px-4 sm:px-5 md:px-6 min-w-0';
@@ -15,10 +15,7 @@ const containerPad = 'container mx-auto px-4 sm:px-5 md:px-6 min-w-0';
 export function BlogIndexPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  useDocumentMeta(
-    'SIMS Blog | Nursing & Admissions Guides | Dehradun',
-    'Guides for BPT, B.Sc Nursing, GNM, Post Basic vs M.Sc, fees, and admissions at Sushila Institute of Medical Sciences (SIMS), Dehradun — clear advice for students and parents.',
-  );
+  usePageSeo('/blog');
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20 overflow-x-clip">
@@ -78,14 +75,18 @@ export function BlogIndexPage() {
                     ? 'Read BPT career guide'
                     : isCampusTourPost(post)
                       ? 'Take the campus photo tour'
-                      : 'Read college guide';
+                      : isResourceGuidePost(post)
+                        ? post.slug.startsWith('hnbumu')
+                          ? 'Read HNBUMU counseling guide'
+                          : 'Compare B.Sc, GNM and BPT'
+                        : 'Read college guide';
               return (
                 <li key={post.slug} className="min-w-0">
                   <article className="rounded-2xl border border-sims-border bg-white p-4 sm:p-6 md:p-8 shadow-sm hover:shadow-md hover:border-sims-primary/25 transition-all duration-200">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-sims-text-muted mb-3">
                       <span className="inline-flex items-center gap-1.5">
                         <CalendarDays className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                        <time dateTime={post.publishedAt}>{post.publishedAt}</time>
+                        <time dateTime={post.publishedAt}>{blogDateLabel(post.publishedAt)}</time>
                       </span>
                       <span className="inline-flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />

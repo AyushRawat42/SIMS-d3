@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, type ReactNode } from 'react';
+import React, { useEffect, useState, type ReactNode } from 'react';
 import { Link, useLocation, useParams } from 'wouter';
 import {
   Download,
@@ -38,10 +38,14 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
-import { useDocumentMeta, useJsonLd } from '@/lib/seo';
+import { BlogInlineCTA } from '@/components/cro/BlogInlineCTA';
+import { RelatedCoursesGrid } from '@/components/seo/RelatedCoursesGrid';
+import { primaryProgramSlugForArticle } from '@/lib/related-courses';
+import { markLeadTracked, phoneFromHref, trackWhatsAppLeadClick } from '@/lib/analytics/trackLead';
+import { useSeoEntry } from '@/lib/seo';
+import { blogPostSeo, contentSeo, FALLBACK_KEYWORDS, getSeoEntry } from '@/lib/seo/meta-registry';
 import {
-  buildBlogPostingJsonLd,
-  buildFaqPageJsonLd,
+  blogDateLabel,
   counselorWhatsappHref,
   feePdfHref,
   getBlogPost,
@@ -52,6 +56,7 @@ import {
   isFeeStructurePost,
   isNursingUpgradePost,
   isPublicSiteHref,
+  isResourceGuidePost,
   type BlogPost,
   type CampusTourPost,
   type CareerGuidePost,
@@ -60,6 +65,7 @@ import {
   type FeeComparisonRow,
   type FeeStructurePost,
   type NursingUpgradePost,
+  type ResourceGuidePost,
   type RichPart,
   type SalaryRow,
   type TourFigure,
@@ -138,7 +144,20 @@ function BlogCtaStrip({
         className={cn(btnClass, 'bg-[#25D366] hover:bg-[#1ebe57] text-white')}
         asChild
       >
-        <a href={whatsappHref} target="_blank" rel="noreferrer" className="gap-2">
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noreferrer"
+          data-lead-placement="blog_inline"
+          className="gap-2"
+          onClick={(event) => {
+            trackWhatsAppLeadClick({
+              whatsappNumber: phoneFromHref(whatsappHref),
+              buttonPlacement: 'blog_inline',
+            });
+            markLeadTracked(event);
+          }}
+        >
           <WhatsAppIcon className="w-5 h-5 shrink-0" />
           <span className="min-w-0">{whatsappLabel}</span>
         </a>
@@ -309,7 +328,7 @@ function BlogShell({
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-white/70 mb-3 sm:mb-4">
               <span className="inline-flex items-center gap-1.5">
                 <CalendarDays className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                <time dateTime={post.publishedAt}>Updated {post.updatedAt}</time>
+                <time dateTime={post.publishedAt}>Updated {blogDateLabel(post.updatedAt)}</time>
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
@@ -390,6 +409,8 @@ function BlogShell({
           </p>
         </div>
       </section>
+
+      <RelatedCoursesGrid currentCourseSlug={primaryProgramSlugForArticle(post.slug)} />
 
       <Footer />
     </div>
@@ -1399,6 +1420,133 @@ function NursingUpgradeBody({
   );
 }
 
+function ResourceGuideBody({
+  post,
+  whatsappHref,
+}: {
+  post: ResourceGuidePost;
+  whatsappHref: string;
+}) {
+  return (
+    <section className={`${sectionPad} bg-sims-bg`}>
+      <div className={`${containerPad} max-w-3xl`}>
+        {post.sections.map((section, index) => (
+          <div key={section.heading} className={index === 0 ? undefined : 'mt-10'}>
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-sims-primary mb-4 break-words">
+              {section.heading}
+            </h2>
+            <div className="space-y-4">
+              {section.paragraphs.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 48)}
+                  className="text-sims-text-muted leading-relaxed text-[0.95rem] sm:text-base break-words"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            {section.bullets?.length ? (
+              <ul className="mt-4 space-y-2">
+                {section.bullets.map((bullet) => (
+                  <li key={bullet} className="flex gap-2 text-sm sm:text-base text-sims-text leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-sims-primary-2 shrink-0 mt-1" aria-hidden="true" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            {index === post.inlineCtaAfterSection ? (
+              <BlogInlineCTA
+                title={post.inlineCtaTitle}
+                body={post.inlineCtaBody}
+                whatsappHref={whatsappHref}
+                courseLinks={post.inlineCtaLinks}
+              />
+            ) : null}
+          </div>
+        ))}
+
+        {post.pairCompareRows?.length ? (
+          <div className="mt-10">
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-sims-primary mb-3 break-words">
+              {post.pairCompareTitle}
+            </h2>
+            {post.pairCompareIntro ? (
+              <p className="text-sims-text-muted leading-relaxed mb-4 text-sm sm:text-base">{post.pairCompareIntro}</p>
+            ) : null}
+            <div className="overflow-x-auto rounded-2xl border border-sims-border bg-white">
+              <table className="w-full min-w-[32rem] text-sm text-left">
+                <thead className="bg-sims-surface-2 text-sims-primary">
+                  <tr>
+                    <th className="p-3 font-semibold"> </th>
+                    <th className="p-3 font-semibold">B.Sc Nursing</th>
+                    <th className="p-3 font-semibold">GNM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {post.pairCompareRows.map((row) => (
+                    <tr key={row.criterion} className="border-t border-sims-border">
+                      <th className="p-3 font-semibold text-sims-text align-top">{row.criterion}</th>
+                      <td className="p-3 text-sims-text-muted align-top">{row.bscNursing}</td>
+                      <td className="p-3 text-sims-text-muted align-top">{row.gnm}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : null}
+
+        {post.compareRows?.length ? (
+          <div className="mt-10">
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-sims-primary mb-3 break-words">
+              {post.compareTitle}
+            </h2>
+            {post.compareIntro ? (
+              <p className="text-sims-text-muted leading-relaxed mb-4 text-sm sm:text-base">{post.compareIntro}</p>
+            ) : null}
+            <div className="overflow-x-auto rounded-2xl border border-sims-border bg-white">
+              <table className="w-full min-w-[40rem] text-sm text-left">
+                <thead className="bg-sims-surface-2 text-sims-primary">
+                  <tr>
+                    <th className="p-3 font-semibold"> </th>
+                    <th className="p-3 font-semibold">B.Sc Nursing</th>
+                    <th className="p-3 font-semibold">GNM</th>
+                    <th className="p-3 font-semibold">BPT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {post.compareRows.map((row) => (
+                    <tr key={row.criterion} className="border-t border-sims-border">
+                      <th className="p-3 font-semibold text-sims-text align-top">{row.criterion}</th>
+                      <td className="p-3 text-sims-text-muted align-top">{row.bscNursing}</td>
+                      <td className="p-3 text-sims-text-muted align-top">{row.gnm}</td>
+                      <td className="p-3 text-sims-text-muted align-top">{row.bpt}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : null}
+
+        <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+          {publicNavLinks(post.exploreLinks).map((link) => (
+            <Button
+              key={link.href}
+              variant="outline"
+              className="w-full sm:w-auto border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white font-semibold rounded-lg whitespace-normal h-auto min-h-11 py-2.5"
+              asChild
+            >
+              <Link href={link.href}>{link.label}</Link>
+            </Button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function BlogPostPage() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug ?? '';
@@ -1412,21 +1560,16 @@ export function BlogPostPage() {
     if (isUnlisted) setLocation('/blog', { replace: true });
   }, [isUnlisted, setLocation]);
 
-  const faqJsonLd = useMemo(
-    () => (isLive && post ? buildFaqPageJsonLd(post.faqs) : null),
-    [isLive, post],
+  useSeoEntry(
+    isLive && post
+      ? (getSeoEntry(`/blog/${post.slug}`) ?? blogPostSeo(post))
+      : contentSeo({
+          path: '/blog',
+          seoTitle: 'Blog | SIMS',
+          seoDescription: 'SIMS Dehradun blog',
+          keywords: FALLBACK_KEYWORDS,
+        }),
   );
-  const blogJsonLd = useMemo(
-    () => (isLive && post ? buildBlogPostingJsonLd(post) : null),
-    [isLive, post],
-  );
-
-  useDocumentMeta(
-    isLive && post ? post.metaTitle : 'Blog | SIMS',
-    isLive && post ? post.metaDescription : 'SIMS Dehradun blog',
-  );
-  useJsonLd('blog-posting', blogJsonLd);
-  useJsonLd('faq-page', faqJsonLd);
 
   if (isUnlisted) {
     return null;
@@ -1566,6 +1709,39 @@ export function BlogPostPage() {
         }
       >
         <CampusTourBody post={post} />
+      </BlogShell>
+    );
+  }
+
+  if (isResourceGuidePost(post)) {
+    return (
+      <BlogShell
+        post={post}
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        heroCta={
+          <BlogCtaStrip
+            onApplyClick={openContactForm}
+            secondaryHref="/admissions"
+            secondaryLabel="View admissions procedure"
+            secondaryIcon="link"
+            whatsappHref={whatsappHref}
+            whatsappLabel={post.whatsappCtaLabel}
+          />
+        }
+        closingExtra={
+          <BlogCtaStrip
+            onApplyClick={openContactForm}
+            secondaryHref="/nursing"
+            secondaryLabel="Explore nursing programs"
+            secondaryIcon="link"
+            whatsappHref={whatsappHref}
+            whatsappLabel={post.whatsappCtaLabel}
+            className="sm:justify-center"
+          />
+        }
+      >
+        <ResourceGuideBody post={post} whatsappHref={whatsappHref} />
       </BlogShell>
     );
   }

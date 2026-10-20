@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'wouter';
 import {
   Scale,
@@ -18,6 +18,7 @@ import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
+import { usePageSeo } from '@/lib/seo';
 import { CONTACT_DETAILS, MAP_CONFIG } from '@/lib/contact';
 import { SITE_CONTENT } from '@/lib/site-content';
 import { isPublicSiteHref } from '@/lib/blog-posts';
@@ -40,32 +41,6 @@ import {
 const sectionPad = 'py-14 md:py-16 lg:py-20';
 const containerPad = 'container mx-auto px-4 md:px-6';
 
-function useDocumentMeta(title: string, description: string) {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = title;
-
-    let meta = document.querySelector('meta[name="description"]');
-    const created = !meta;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    const prevDescription = meta.getAttribute('content');
-    meta.setAttribute('content', description);
-
-    return () => {
-      document.title = prevTitle;
-      if (created) {
-        meta?.remove();
-      } else if (prevDescription != null) {
-        meta?.setAttribute('content', prevDescription);
-      }
-    };
-  }, [title, description]);
-}
-
 const stepIcons = [Scale, Users, FileCheck2];
 
 export function AdmissionsPage() {
@@ -73,10 +48,7 @@ export function AdmissionsPage() {
   const primaryPhone = CONTACT_DETAILS.phones[0];
   const admissionGuides = NURSING_HUB_GUIDES.filter((guide) => isPublicSiteHref(guide.href));
 
-  useDocumentMeta(
-    'Admissions at SIMS | Sushila Institute of Medical Sciences',
-    ADMISSIONS_PAGE.metaDescription,
-  );
+  usePageSeo('/admissions');
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">

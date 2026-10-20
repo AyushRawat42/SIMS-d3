@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { cn } from '@/lib/utils';
-import { useDocumentMeta } from '@/lib/seo';
+import { usePageSeo } from '@/lib/seo';
 import {
   ABOUT_INTRO,
   ABOUT_INTRO_SECONDARY,
@@ -40,7 +40,7 @@ function aboutSocialLinkClass(label: string) {
 export function AboutPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  useDocumentMeta(ABOUT_PAGE.metaTitle, ABOUT_PAGE.metaDescription);
+  usePageSeo('/about');
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">

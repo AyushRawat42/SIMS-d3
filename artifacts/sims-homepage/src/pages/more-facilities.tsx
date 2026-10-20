@@ -30,6 +30,7 @@ export function MoreFacilitiesPage() {
     <FacilitiesPageShell
       metaTitle={MORE_FACILITIES_PAGE.metaTitle}
       metaDescription={MORE_FACILITIES_PAGE.metaDescription}
+      canonicalPath="/facilities/more"
       title={MORE_FACILITIES_PAGE.title}
       subtitle={MORE_FACILITIES_PAGE.subtitle}
       breadcrumbs={[

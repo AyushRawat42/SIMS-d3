@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import type { ResponsiveImage } from '@/lib/responsive-image';
+import { usePageSeo } from '@/lib/seo';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import {
   FACULTY_SHOWCASE,
@@ -22,40 +23,11 @@ import {
 const sectionPad = 'py-14 md:py-16 lg:py-20';
 const containerPad = 'container mx-auto px-4 md:px-6';
 
-function useDocumentMeta(title: string, description: string) {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = title;
-
-    let meta = document.querySelector('meta[name="description"]');
-    const created = !meta;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    const prevDescription = meta.getAttribute('content');
-    meta.setAttribute('content', description);
-
-    return () => {
-      document.title = prevTitle;
-      if (created) {
-        meta?.remove();
-      } else if (prevDescription != null) {
-        meta?.setAttribute('content', prevDescription);
-      }
-    };
-  }, [title, description]);
-}
-
 export function LifeAtSimsPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [lightbox, setLightbox] = useState<{ image: ResponsiveImage; alt: string } | null>(null);
 
-  useDocumentMeta(
-    'Life at SIMS | Sushila Institute of Medical Sciences',
-    LIFE_PAGE.metaDescription,
-  );
+  usePageSeo('/life-at-sims');
   usePreloadHeroImage(LIFE_HERO.src);
 
   useEffect(() => {

@@ -9,7 +9,7 @@ import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
-import { useDocumentMeta } from '@/lib/seo';
+import { usePageSeo } from '@/lib/seo';
 import { LEADERSHIP, LEADERSHIP_PAGE, type LeadershipProfile } from '@/lib/about';
 
 const sectionPad = 'py-14 md:py-16 lg:py-20';
@@ -312,7 +312,7 @@ export function LeadershipPage() {
     (l) => l.id !== 'chairman' && l.id !== 'vice-chairperson' && l.id !== 'managing-director',
   );
 
-  useDocumentMeta(LEADERSHIP_PAGE.metaTitle, LEADERSHIP_PAGE.metaDescription);
+  usePageSeo('/leadership');
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">

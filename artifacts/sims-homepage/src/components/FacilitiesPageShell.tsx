@@ -9,7 +9,8 @@ import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES, type ResponsiveImage } from '@/lib/responsive-image';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
-import { useDocumentMeta } from '@/lib/seo';
+import { useSeoEntry } from '@/lib/seo';
+import { contentSeo, FALLBACK_KEYWORDS, getSeoEntry } from '@/lib/seo/meta-registry';
 import { FACILITIES_HERO_IMAGE } from '@/lib/facilities';
 
 export const facilitiesSectionPad = 'py-14 md:py-16 lg:py-20';
@@ -20,6 +21,7 @@ type BreadcrumbItem = { label: string; href?: string };
 export function FacilitiesPageShell({
   metaTitle,
   metaDescription,
+  canonicalPath,
   title,
   subtitle,
   breadcrumbs,
@@ -32,6 +34,7 @@ export function FacilitiesPageShell({
 }: {
   metaTitle: string;
   metaDescription: string;
+  canonicalPath: string;
   title: string;
   subtitle: string;
   breadcrumbs: BreadcrumbItem[];
@@ -46,7 +49,15 @@ export function FacilitiesPageShell({
   const image = heroImage ?? FACILITIES_HERO_IMAGE.src;
   const imageAlt = heroImageAlt ?? FACILITIES_HERO_IMAGE.alt;
 
-  useDocumentMeta(metaTitle, metaDescription);
+  useSeoEntry(
+    getSeoEntry(canonicalPath) ??
+      contentSeo({
+        path: canonicalPath,
+        seoTitle: metaTitle,
+        seoDescription: metaDescription,
+        keywords: FALLBACK_KEYWORDS,
+      }),
+  );
   usePreloadHeroImage(image);
 
   return (

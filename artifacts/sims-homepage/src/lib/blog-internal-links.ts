@@ -30,11 +30,32 @@ const BPT: RelatedGuide = {
   blurb: '4.5-year pathway, lab training, and physiotherapy admission steps after 12th PCB.',
 };
 
+const COUNSELING: RelatedGuide = {
+  href: blogPostPath('hnbumu-nursing-paramedical-counseling-guide-uttarakhand'),
+  label: 'HNBUMU counseling guide',
+  blurb: 'Documents, choice filling, and how to select SIMS Dehradun.',
+};
+
+const COMPARE: RelatedGuide = {
+  href: blogPostPath('bsc-nursing-vs-gnm-vs-bpt-scope-salary-uttarakhand'),
+  label: 'B.Sc Nursing vs GNM vs BPT',
+  blurb: 'Duration, hospital scope, and higher study after 12th PCB.',
+};
+
+const BSC_VS_GNM: RelatedGuide = {
+  href: blogPostPath('bsc-nursing-vs-gnm-salary-scope-eligibility-uttarakhand'),
+  label: 'B.Sc Nursing vs GNM: salary and eligibility',
+  blurb: 'Four years vs three, PCB eligibility, hospital scope, and starting-pay planning in Uttarakhand.',
+};
+
 function onlyPublished(guides: RelatedGuide[]): RelatedGuide[] {
   return guides.filter((g) => isPublicSiteHref(g.href));
 }
 
 export const NURSING_HUB_GUIDES: RelatedGuide[] = onlyPublished([
+  BSC_VS_GNM,
+  COUNSELING,
+  COMPARE,
   CHECKLIST,
   UPGRADE,
   CAMPUS,
@@ -46,13 +67,16 @@ export function guidesForProgram(slug: string): RelatedGuide[] {
   switch (slug) {
     case 'bsc-nursing':
     case 'gnm':
-      return onlyPublished([CHECKLIST, CAMPUS]);
+      return onlyPublished([BSC_VS_GNM, COMPARE, COUNSELING, CHECKLIST, CAMPUS]);
     case 'post-basic-bsc-nursing':
     case 'msc-nursing':
-      return onlyPublished([UPGRADE, CAMPUS, CHECKLIST]);
+      return onlyPublished([UPGRADE, COUNSELING, CAMPUS, CHECKLIST]);
     case 'bpt':
-      return onlyPublished([BPT, CAMPUS]);
+      return onlyPublished([COMPARE, BPT, CAMPUS]);
+    case 'bmlt':
+    case 'bmrit':
+      return onlyPublished([COUNSELING, CAMPUS]);
     default:
-      return onlyPublished([CAMPUS]);
+      return onlyPublished([COUNSELING, CAMPUS]);
   }
 }

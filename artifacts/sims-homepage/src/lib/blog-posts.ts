@@ -1,4 +1,10 @@
+import { blogPostingSchema, faqPageSchema } from '@/lib/seo/schema';
 import { WHATSAPP_CONTACT } from '@/lib/site-content';
+import {
+  BSC_VS_GNM_POST,
+  COURSE_COMPARE_POST,
+  HNBUMU_COUNSELING_POST,
+} from '@/lib/blog-resource-guides';
 import type { ResponsiveImage } from '@/lib/responsive-image';
 import {
   DSC00177_scaled,
@@ -223,12 +229,51 @@ export type NursingUpgradePost = BlogPostBase & {
   exploreLinks: { href: string; label: string }[];
 };
 
+export type GuideSection = {
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+};
+
+export type GuideCompareRow = {
+  criterion: string;
+  bscNursing: string;
+  gnm: string;
+  bpt: string;
+};
+
+/** Two-column B.Sc Nursing vs GNM table. Rendered only when present. */
+export type GuidePairCompareRow = {
+  criterion: string;
+  bscNursing: string;
+  gnm: string;
+};
+
+export type ResourceGuidePost = BlogPostBase & {
+  template: 'resource-guide';
+  sections: GuideSection[];
+  /** Insert the mid-article CTA after this zero-based section index. */
+  inlineCtaAfterSection: number;
+  inlineCtaTitle: string;
+  inlineCtaBody: string;
+  /** When set, the mid-article CTA links these pages instead of Admissions and Nursing. */
+  inlineCtaLinks?: { href: string; label: string }[];
+  compareTitle?: string;
+  compareIntro?: string;
+  compareRows?: GuideCompareRow[];
+  pairCompareTitle?: string;
+  pairCompareIntro?: string;
+  pairCompareRows?: GuidePairCompareRow[];
+  exploreLinks: { href: string; label: string }[];
+};
+
 export type BlogPost =
   | FeeStructurePost
   | CollegeGuidePost
   | CareerGuidePost
   | CampusTourPost
-  | NursingUpgradePost;
+  | NursingUpgradePost
+  | ResourceGuidePost;
 
 const FEE_PDF_WHATSAPP_TEXT =
   'Hello SIMS Admissions, I would like the complete 2026–27 B.Sc Nursing / GNM fee structure PDF (tuition, hostel, clinical & exam charges).';
@@ -255,6 +300,10 @@ export function isCampusTourPost(post: BlogPost): post is CampusTourPost {
 
 export function isNursingUpgradePost(post: BlogPost): post is NursingUpgradePost {
   return post.template === 'nursing-upgrade';
+}
+
+export function isResourceGuidePost(post: BlogPost): post is ResourceGuidePost {
+  return post.template === 'resource-guide';
 }
 
 export const FEE_STRUCTURE_POST: FeeStructurePost = {
@@ -1170,6 +1219,9 @@ export const NURSING_UPGRADE_POST: NursingUpgradePost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  BSC_VS_GNM_POST,
+  HNBUMU_COUNSELING_POST,
+  COURSE_COMPARE_POST,
   NURSING_UPGRADE_POST,
   CAMPUS_TOUR_POST,
   BPT_CAREER_POST,
@@ -1209,43 +1261,17 @@ export function blogPostPath(slug: string): string {
   return `/blog/${slug}`;
 }
 
+/** Visible label for a stored YYYY-MM-DD date, without a leading zero on the day. */
+export function blogDateLabel(iso: string): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!match) return iso;
+  return `${match[1]}-${match[2]}-${Number(match[3])}`;
+}
+
 export function buildFaqPageJsonLd(faqs: BlogFaq[]) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  return faqPageSchema(faqs);
 }
 
 export function buildBlogPostingJsonLd(post: BlogPost) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.metaDescription,
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
-    author: {
-      '@type': 'Organization',
-      name: 'Sushila Institute of Medical Sciences',
-      url: 'https://sims.college',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Sushila Institute of Medical Sciences',
-      url: 'https://sims.college',
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://sims.college/blog/${post.slug}`,
-    },
-    keywords: post.keywords.join(', '),
-  };
+  return blogPostingSchema(post);
 }

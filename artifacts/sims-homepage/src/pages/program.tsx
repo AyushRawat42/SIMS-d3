@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { Link, useParams } from 'wouter';
-import { ArrowRight, CheckCircle2, Clock, GraduationCap, BookOpen, Briefcase, Target } from 'lucide-react';
+import { CheckCircle2, Clock, GraduationCap, BookOpen, Briefcase, Target } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
@@ -11,43 +11,26 @@ import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import NotFound from '@/pages/not-found';
 import { RelatedBlogGuides } from '@/components/RelatedBlogGuides';
+import { CourseFAQ } from '@/components/seo/CourseFAQ';
+import { RelatedCoursesGrid } from '@/components/seo/RelatedCoursesGrid';
+import { TrustSignals } from '@/components/seo/TrustSignals';
+import { MobileStickyCTA } from '@/components/cro/MobileStickyCTA';
 import { guidesForProgram } from '@/lib/blog-internal-links';
+import { getCourseFaqs } from '@/lib/course-faqs';
+import { useSeoEntry } from '@/lib/seo';
+import { getSeoEntry, programSeo } from '@/lib/seo/meta-registry';
 import {
   PROGRAM_CATEGORIES,
   getProgramBySlug,
-  getRelatedPrograms,
-  programPath,
   type Program,
 } from '@/lib/programs';
 
+const BrochureModal = lazy(() =>
+  import('@/components/cro/BrochureModal').then((mod) => ({ default: mod.BrochureModal })),
+);
+
 const sectionPad = 'py-14 md:py-16 lg:py-20';
 const containerPad = 'container mx-auto px-4 md:px-6';
-
-function useDocumentMeta(title: string, description: string) {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = title;
-
-    let meta = document.querySelector('meta[name="description"]');
-    const created = !meta;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    const prevDescription = meta.getAttribute('content');
-    meta.setAttribute('content', description);
-
-    return () => {
-      document.title = prevTitle;
-      if (created) {
-        meta?.remove();
-      } else if (prevDescription != null) {
-        meta?.setAttribute('content', prevDescription);
-      }
-    };
-  }, [title, description]);
-}
 
 function HighlightIcon({ label }: { label: string }) {
   if (label === 'Duration') return <Clock className="w-5 h-5" />;
@@ -59,22 +42,34 @@ function HighlightIcon({ label }: { label: string }) {
 
 function ProgramContent({ program }: { program: Program }) {
   const [modalOpen, setModalOpen] = useState(false);
-  const related = getRelatedPrograms(program);
+  const [brochureMounted, setBrochureMounted] = useState(false);
+  const [brochureOpen, setBrochureOpen] = useState(false);
   const categoryLabel =
     PROGRAM_CATEGORIES.find((c) => c.id === program.category)?.label ?? 'Programs';
+  const faqs = getCourseFaqs(program.slug);
 
-  useDocumentMeta(
-    `${program.name} | SIMS — Sushila Institute of Medical Sciences`,
-    program.metaDescription,
-  );
+  useSeoEntry(getSeoEntry(`/programs/${program.slug}`) ?? programSeo(program));
   usePreloadHeroImage(program.image);
 
   const handleApplyClick = () => setModalOpen(true);
+  const openBrochure = () => {
+    setBrochureMounted(true);
+    setBrochureOpen(true);
+  };
 
   return (
-    <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">
+    <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20 pb-24 md:pb-0">
       <Header onApplyClick={handleApplyClick} />
       <ContactModal isOpen={modalOpen} onOpenChange={setModalOpen} />
+      {brochureMounted ? (
+        <Suspense fallback={null}>
+          <BrochureModal
+            isOpen={brochureOpen}
+            onOpenChange={setBrochureOpen}
+            defaultCourse={program.name}
+          />
+        </Suspense>
+      ) : null}
 
       {/* Hero */}
       <section className="relative pt-28 md:pt-32 lg:pt-36 pb-14 md:pb-16 overflow-hidden">
@@ -157,6 +152,8 @@ function ProgramContent({ program }: { program: Program }) {
           </div>
         </div>
       </section>
+
+      <TrustSignals courseSlug={program.slug} variant="badges" />
 
       {/* Overview */}
       <section className={`${sectionPad} bg-white`}>
@@ -248,6 +245,8 @@ function ProgramContent({ program }: { program: Program }) {
         </div>
       </section>
 
+      <TrustSignals courseSlug={program.slug} variant="proof" />
+
       {/* Why SIMS */}
       <section className={`${sectionPad} bg-sims-surface-2`}>
         <div className={containerPad}>
@@ -298,50 +297,9 @@ function ProgramContent({ program }: { program: Program }) {
         </div>
       </section>
 
-      {/* Related programs */}
-      {related.length > 0 && (
-        <section className={`${sectionPad} bg-white border-t border-sims-border/60`}>
-          <div className={containerPad}>
-            <SectionHeading
-              title="Explore Related Programs"
-              subtitle={`Other ${categoryLabel} programs at SIMS`}
-              className="mb-8"
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {related.map((relatedProgram) => (
-                <Link
-                  key={relatedProgram.slug}
-                  href={programPath(relatedProgram.slug)}
-                  className="group rounded-2xl border border-sims-border bg-sims-bg p-6 hover:bg-white hover:shadow-md hover:border-sims-primary/20 transition-all"
-                >
-                  <p className="text-xs font-semibold text-sims-primary-2 mb-2">
-                    {relatedProgram.duration}
-                  </p>
-                  <h3 className="font-bold text-sims-primary group-hover:text-sims-primary-2 transition-colors leading-snug mb-2">
-                    {relatedProgram.name}
-                  </h3>
-                  <p className="text-sm text-sims-text-muted leading-relaxed line-clamp-3 mb-4">
-                    {relatedProgram.cardDescription}
-                  </p>
-                  <span className="inline-flex items-center text-sm font-semibold text-sims-primary-2">
-                    View program
-                    <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </Link>
-              ))}
-            </div>
-            <div className="mt-8">
-              <a
-                href="/#programs"
-                className="inline-flex items-center text-sm font-semibold text-sims-primary hover:text-sims-primary-2 transition-colors"
-              >
-                View all programs
-                <ArrowRight className="w-4 h-4 ml-1.5" />
-              </a>
-            </div>
-          </div>
-        </section>
-      )}
+      <RelatedCoursesGrid currentCourseSlug={program.slug} />
+
+      {faqs ? <CourseFAQ courseName={program.shortName} faqs={faqs} /> : null}
 
       {/* CTA */}
       <section className="py-14 md:py-16 bg-sims-primary text-white">
@@ -381,6 +339,7 @@ function ProgramContent({ program }: { program: Program }) {
       </section>
 
       <Footer />
+      <MobileStickyCTA courseName={program.shortName} onBrochureClick={openBrochure} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
-import { useDocumentMeta } from '@/lib/seo';
+import { usePageSeo } from '@/lib/seo';
 import { getProgramsByCategory, programPath } from '@/lib/programs';
 import { RelatedBlogGuides } from '@/components/RelatedBlogGuides';
 import { NURSING_HUB_GUIDES } from '@/lib/blog-internal-links';
@@ -29,7 +29,7 @@ export function NursingPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const programs = getProgramsByCategory('nursing');
 
-  useDocumentMeta(NURSING_PAGE.metaTitle, NURSING_PAGE.metaDescription);
+  usePageSeo('/nursing');
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">

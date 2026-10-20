@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'wouter';
 import {
   Phone,
@@ -18,6 +18,8 @@ import { ContactModal } from '@/components/ContactModal';
 import { SectionHeading } from '@/components/Shared';
 import { SocialFeedGrid } from '@/components/SocialFeedGrid';
 import { Button } from '@/components/ui/button';
+import { trackAdmissionFormSubmit } from '@/lib/analytics/trackLead';
+import { usePageSeo } from '@/lib/seo';
 import { SITE_CONTENT } from '@/lib/site-content';
 import {
   CAREER_COUNSELLING,
@@ -33,42 +35,13 @@ const containerPad = 'container mx-auto px-4 md:px-6';
 const fieldClassName =
   'w-full h-11 px-4 rounded-lg border border-sims-border bg-sims-bg text-sims-text placeholder:text-sims-text-muted/60 focus:outline-none focus:ring-2 focus:ring-sims-primary/40 focus:border-sims-primary/40 transition-shadow';
 
-function useDocumentMeta(title: string, description: string) {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = title;
-
-    let meta = document.querySelector('meta[name="description"]');
-    const created = !meta;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    const prevDescription = meta.getAttribute('content');
-    meta.setAttribute('content', description);
-
-    return () => {
-      document.title = prevTitle;
-      if (created) {
-        meta?.remove();
-      } else if (prevDescription != null) {
-        meta?.setAttribute('content', prevDescription);
-      }
-    };
-  }, [title, description]);
-}
-
 export function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  useDocumentMeta(
-    'Contact Us | Sushila Institute of Medical Sciences',
-    CONTACT_PAGE.metaDescription,
-  );
+  usePageSeo('/contact-us');
 
   const primaryPhone = CONTACT_DETAILS.phones[0];
 
@@ -121,6 +94,7 @@ export function ContactPage() {
       }
 
       setIsSuccess(true);
+      trackAdmissionFormSubmit({ formType: 'contact_inquiry', selectedCourse: course });
       form.reset();
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : 'Submission failed. Please try again.');

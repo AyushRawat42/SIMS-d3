@@ -585,6 +585,17 @@ export const PROGRAMS: Program[] = [
   },
 ];
 
+/**
+ * First-session academic fee in INR from the SIMS College of Nursing Batch 2026 sheet.
+ * BPT, BMLT, and BMRIT are not on that sheet, so they are omitted rather than estimated.
+ */
+export const STARTING_SESSION_FEES_INR: Partial<Record<string, number>> = {
+  'bsc-nursing': 168000,
+  gnm: 90000,
+  'post-basic-bsc-nursing': 105000,
+  'msc-nursing': 125000,
+};
+
 export function getProgramBySlug(slug: string): Program | undefined {
   return PROGRAMS.find((p) => p.slug === slug);
 }

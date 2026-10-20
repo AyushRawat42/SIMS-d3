@@ -1,7 +1,7 @@
 import path from 'path';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 
 import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
@@ -16,11 +16,30 @@ if (Number.isNaN(port) || port <= 0) {
 
 const basePath = process.env.BASE_PATH ?? '/';
 
+function seoPrerenderPlugin(): Plugin {
+  return {
+    name: 'sims-seo-prerender',
+    apply: 'build',
+    async closeBundle() {
+      const { pathToFileURL } = await import('node:url');
+      const root = path.resolve(import.meta.dirname);
+      const { prerenderDist } = await import(
+        pathToFileURL(path.resolve(root, 'scripts/prerender-dist.mjs')).href
+      );
+      await prerenderDist(
+        path.resolve(root, 'dist/public'),
+        path.resolve(root, '.seo/manifest.json'),
+      );
+    },
+  };
+}
+
 export default defineConfig({
   base: basePath,
   plugins: [
     react(),
     tailwindcss(),
+    seoPrerenderPlugin(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== 'production' &&
     process.env.REPL_ID !== undefined

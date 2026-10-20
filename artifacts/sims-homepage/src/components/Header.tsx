@@ -26,6 +26,7 @@ function CallAdmissionsButton({ className }: { className?: string }) {
   return (
     <a
       href={WHATSAPP_CONTACT.tel}
+      data-lead-placement="hero_cta"
       aria-label="Call Admissions"
       className={cn(
         'inline-flex items-center justify-center size-10 rounded-full border border-sims-border bg-white text-sims-primary shadow-sm',
@@ -904,7 +905,9 @@ export function Header({ onApplyClick }: { onApplyClick: () => void }) {
                   className="w-full justify-center h-11 rounded-lg"
                   asChild
                 >
-                  <a href={WHATSAPP_CONTACT.tel}>Call Admissions</a>
+                  <a href={WHATSAPP_CONTACT.tel} data-lead-placement="hero_cta">
+                    Call Admissions
+                  </a>
                 </Button>
                 <Button
                   className="w-full justify-center h-11 bg-sims-primary rounded-lg"

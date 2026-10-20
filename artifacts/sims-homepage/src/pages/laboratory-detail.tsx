@@ -21,6 +21,7 @@ function LabDetailContent({ labId }: { labId: string }) {
     <FacilitiesPageShell
       metaTitle={lab.metaTitle}
       metaDescription={lab.metaDescription}
+      canonicalPath={facilitiesLabPath(lab.id)}
       title={lab.title}
       subtitle={lab.shortDescription}
       breadcrumbs={[

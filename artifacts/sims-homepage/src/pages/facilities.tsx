@@ -65,6 +65,7 @@ export function FacilitiesPage() {
     <FacilitiesPageShell
       metaTitle="Facilities at SIMS | Sushila Institute of Medical Sciences"
       metaDescription={FACILITIES_PAGE.metaDescription}
+      canonicalPath="/facilities"
       title={FACILITIES_PAGE.title}
       subtitle={FACILITIES_PAGE.subtitle}
       breadcrumbs={[

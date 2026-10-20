@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { trackAdmissionFormSubmit } from '@/lib/analytics/trackLead';
 import { SITE_CONTENT } from '@/lib/site-content';
 import { CheckCircle2, Loader2 } from 'lucide-react';
 
@@ -68,6 +69,10 @@ export function ContactForm({
       }
 
       setIsSuccess(true);
+      trackAdmissionFormSubmit({
+        formType: 'apply_now',
+        selectedCourse: payload.courseInterested,
+      });
       form.reset();
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : 'Submission failed. Please try again.');

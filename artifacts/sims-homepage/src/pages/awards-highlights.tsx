@@ -8,7 +8,7 @@ import { AboutSectionNav } from '@/components/AboutSectionNav';
 import { SectionHeading } from '@/components/Shared';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
-import { useDocumentMeta } from '@/lib/seo';
+import { usePageSeo } from '@/lib/seo';
 import {
   AI_HIGHLIGHT,
   AWARDS_FEATURED,
@@ -30,7 +30,7 @@ const cardImageSizes = '(max-width: 767px) 100vw, 50vw';
 export function AwardsHighlightsPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  useDocumentMeta(AWARDS_PAGE.metaTitle, AWARDS_PAGE.metaDescription);
+  usePageSeo('/awards-highlights');
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">

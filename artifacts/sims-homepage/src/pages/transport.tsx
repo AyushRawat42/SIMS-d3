@@ -11,6 +11,7 @@ export function TransportPage() {
     <FacilitiesPageShell
       metaTitle={TRANSPORT_PAGE.metaTitle}
       metaDescription={TRANSPORT_PAGE.metaDescription}
+      canonicalPath="/facilities/transport"
       title={TRANSPORT_PAGE.title}
       subtitle={TRANSPORT_PAGE.subtitle}
       breadcrumbs={[

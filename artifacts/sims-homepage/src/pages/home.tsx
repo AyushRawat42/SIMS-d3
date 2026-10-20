@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
+import { usePageSeo } from '@/lib/seo';
 import {
   DSC00066_scaled,
   DSC00118_scaled,
@@ -60,6 +61,7 @@ const headingGap = "mb-10 md:mb-12";
 export function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   usePreloadHeroImage(heroBg);
+  usePageSeo('/');
 
   const handleApplyClick = () => setModalOpen(true);
 

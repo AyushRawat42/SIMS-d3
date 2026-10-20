@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /thank-you
+Disallow: /*?utm_
+Disallow: /*?gclid=
+Disallow: /*?fbclid=
+Disallow: /*?ref=
 
-Sitemap: https://sims.college/sitemap.xml
+Sitemap: https://www.sims.college/sitemap.xml

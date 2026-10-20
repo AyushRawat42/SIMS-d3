@@ -13,6 +13,7 @@ export function LaboratoriesPage() {
     <FacilitiesPageShell
       metaTitle={LABORATORIES_PAGE.metaTitle}
       metaDescription={LABORATORIES_PAGE.metaDescription}
+      canonicalPath="/facilities/laboratories"
       title={LABORATORIES_PAGE.title}
       subtitle={LABORATORIES_PAGE.subtitle}
       breadcrumbs={[

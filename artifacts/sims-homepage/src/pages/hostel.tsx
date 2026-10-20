@@ -11,6 +11,7 @@ export function HostelPage() {
     <FacilitiesPageShell
       metaTitle={HOSTEL_PAGE.metaTitle}
       metaDescription={HOSTEL_PAGE.metaDescription}
+      canonicalPath="/facilities/hostel"
       title={HOSTEL_PAGE.title}
       subtitle={HOSTEL_PAGE.subtitle}
       breadcrumbs={[
