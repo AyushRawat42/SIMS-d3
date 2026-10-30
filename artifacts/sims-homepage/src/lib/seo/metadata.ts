@@ -19,7 +19,7 @@ export type PageHead = {
     url: string;
     siteName: string;
     locale: 'en_IN';
-    type: 'website';
+    type: 'website' | 'article';
     image: string;
     imageWidth: number;
     imageHeight: number;
@@ -55,7 +55,7 @@ export function buildPageHead(entry: SeoEntry): PageHead {
       url: canonical,
       siteName: OG_SITE_NAME,
       locale: 'en_IN',
-      type: 'website',
+      type: entry.path.startsWith('/blog/') ? 'article' : 'website',
       image,
       imageWidth: OG_IMAGE_WIDTH,
       imageHeight: OG_IMAGE_HEIGHT,

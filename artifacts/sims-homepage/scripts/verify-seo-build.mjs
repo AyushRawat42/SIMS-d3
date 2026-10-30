@@ -12,6 +12,10 @@ const REQUIRED_BLOG_SLUGS = [
   'inside-sims-dehradun-photo-facility-tour-nursing-labs-campus',
   'bpt-uttarakhand-eligibility-career-scope-salary-after-12th-pcb',
   'post-basic-bsc-nursing-vs-msc-nursing-career-upgrade',
+  'hnbumu-nursing-paramedical-entrance-exam-preparation-syllabus',
+  'bpt-vs-bsc-nursing-career-scope-comparison',
+  'hospital-clinical-postings-practical-training-sims-dehradun',
+  'scholarships-education-loan-guide-nursing-paramedical-uttarakhand',
 ];
 
 const MONEY_URLS = [
@@ -57,14 +61,16 @@ function attr(html, pattern) {
 function parseJsonLd(html) {
   const blocks = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)];
   const errors = [];
+  const types = [];
   for (const block of blocks) {
     try {
-      JSON.parse(block[1]);
+      const value = JSON.parse(block[1]);
+      if (typeof value?.['@type'] === 'string') types.push(value['@type']);
     } catch (error) {
       errors.push(error instanceof Error ? error.message : 'invalid JSON');
     }
   }
-  return { count: blocks.length, errors };
+  return { count: blocks.length, errors, types };
 }
 
 const files = walkHtml(distDir);
@@ -148,6 +154,37 @@ for (const slug of REQUIRED_BLOG_SLUGS) {
   const block = sitemap.split('<url>').find((chunk) => chunk.includes(loc));
   if (block && !/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(block)) {
     sitemapIssues.push(`missing lastmod for ${loc}`);
+  }
+
+  const articlePath = path.join(distDir, 'blog', slug, 'index.html');
+  if (!fs.existsSync(articlePath)) {
+    sitemapIssues.push(`prerendered article missing ${articlePath}`);
+    continue;
+  }
+  const articleHtml = fs.readFileSync(articlePath, 'utf8');
+  const articleTitle = attr(articleHtml, /<title>([^<]*)<\/title>/)
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+  const articleDescription = attr(articleHtml, /<meta name="description" content="([^"]*)"/)
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+  const articleJsonLd = parseJsonLd(articleHtml);
+  if (articleTitle.length < 50 || articleTitle.length > 60) {
+    sitemapIssues.push(`SEO title length ${articleTitle.length} for ${loc}`);
+  }
+  if (articleDescription.length < 145 || articleDescription.length > 155) {
+    sitemapIssues.push(`SEO description length ${articleDescription.length} for ${loc}`);
+  }
+  if (!articleHtml.includes(`<link rel="canonical" href="${loc}"`)) {
+    sitemapIssues.push(`prerendered canonical missing for ${loc}`);
+  }
+  if (!/<meta property="og:type" content="article"/.test(articleHtml)) {
+    sitemapIssues.push(`OpenGraph article type missing for ${loc}`);
+  }
+  for (const type of ['Article', 'FAQPage', 'BreadcrumbList']) {
+    if (!articleJsonLd.types.includes(type)) sitemapIssues.push(`${type} schema missing for ${loc}`);
   }
 }
 if (!sitemap.includes(`${origin}/programs/bsc-nursing`)) sitemapIssues.push('sitemap missing course pages');

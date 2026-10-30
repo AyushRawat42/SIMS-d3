@@ -33,22 +33,25 @@ export function BlogInlineCTA({
             key={link.href}
             asChild
             variant={index === 0 ? 'default' : 'outline'}
-            className={
+            className={`min-h-[48px] w-full rounded-lg font-semibold sm:w-auto ${
               index === 0
-                ? 'bg-sims-primary hover:bg-sims-primary-2 text-white font-semibold rounded-lg'
-                : 'border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white font-semibold rounded-lg'
-            }
+                ? 'bg-sims-primary text-white hover:bg-sims-primary-2'
+                : 'border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white'
+            }`}
           >
             <Link href={link.href}>{link.label}</Link>
           </Button>
         ))}
-        <Button asChild className="bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold rounded-lg">
+        <Button
+          asChild
+          className="min-h-[48px] w-full rounded-lg bg-[#25D366] font-semibold text-white hover:bg-[#1ebe57] sm:w-auto"
+        >
           <a
             href={whatsappHref}
             target="_blank"
             rel="noreferrer"
             data-lead-placement="blog_inline"
-            className="gap-2"
+            className="min-h-[48px] gap-2"
             onClick={(event) => {
               trackWhatsAppLeadClick({
                 whatsappNumber: phoneFromHref(whatsappHref),

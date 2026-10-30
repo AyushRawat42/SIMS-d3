@@ -164,7 +164,7 @@ export function blogPostingSchema(post: BlogPostingSchemaInput): JsonLdValue {
   const url = absoluteUrl(`/blog/${post.slug}`);
   return {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.publishedAt,

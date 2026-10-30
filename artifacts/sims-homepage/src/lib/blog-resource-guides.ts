@@ -4,6 +4,7 @@ export const HNBUMU_COUNSELING_POST: ResourceGuidePost = {
   template: 'resource-guide',
   slug: 'hnbumu-nursing-paramedical-counseling-guide-uttarakhand',
   published: true,
+  category: 'HNBUMU Exams & Counseling',
   title: 'HNBUMU Nursing & Paramedical Entrance Exam Counseling Guide',
   metaTitle: 'HNBUMU Nursing & Paramedical Counseling Guide | SIMS',
   metaDescription:
@@ -140,6 +141,7 @@ export const COURSE_COMPARE_POST: ResourceGuidePost = {
   template: 'resource-guide',
   slug: 'bsc-nursing-vs-gnm-vs-bpt-scope-salary-uttarakhand',
   published: true,
+  category: 'Nursing',
   title:
     'B.Sc Nursing vs GNM vs BPT: Scope, Duration, and Salary After 12th PCB in Uttarakhand',
   metaTitle: 'B.Sc Nursing vs GNM vs BPT Scope & Salary | SIMS Dehradun',
@@ -282,6 +284,7 @@ export const BSC_VS_GNM_POST: ResourceGuidePost = {
   template: 'resource-guide',
   slug: 'bsc-nursing-vs-gnm-salary-scope-eligibility-uttarakhand',
   published: true,
+  category: 'Nursing',
   title: 'B.Sc Nursing vs GNM: Salary, Scope & Eligibility in Uttarakhand',
   metaTitle: 'B.Sc Nursing vs GNM: Salary, Scope & Eligibility | SIMS',
   metaDescription:
@@ -453,6 +456,7 @@ export const PARAMEDICAL_CAREER_POST: ResourceGuidePost = {
   template: 'resource-guide',
   slug: 'paramedical-career-scope-bmlt-bsc-mrit-uttarakhand',
   published: true,
+  category: 'Physiotherapy & Paramedical',
   title:
     'Paramedical Career Scope in India: Why BMLT & B.Sc MRIT Are High-Demand Courses After 12th',
   metaTitle: 'BMLT & B.Sc MRIT Career Scope After 12th | SIMS Dehradun',
@@ -593,11 +597,12 @@ export const HOSTEL_SAFETY_POST: ResourceGuidePost = {
   template: 'resource-guide',
   slug: 'hostel-life-campus-safety-medical-college-dehradun',
   published: true,
+  category: 'Campus & Student Life',
   title:
     'Hostel Life & Campus Safety for Girls & Boys: What Parents Should Look For in a Dehradun Medical College',
   metaTitle: 'Hostel & Campus Safety in Dehradun | SIMS for Parents',
   metaDescription:
-    'What parents should check in a Dehradun medical college hostel: separate girls and boys blocks, mess hygiene, CCTV, security, wardens, and the SIMS Selaqui campus.',
+    'What parents should check in a Dehradun college hostel: separate blocks, hygiene, CCTV, security, wardens, and the SIMS Selaqui campus before visiting.',
   publishedAt: '2026-10-20',
   updatedAt: '2026-10-20',
   author: 'SIMS Admissions',

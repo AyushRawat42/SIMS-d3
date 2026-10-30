@@ -259,7 +259,7 @@ function BlogShell({
   closingExtra?: ReactNode;
 }) {
   return (
-    <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20 overflow-x-clip">
+    <div className="min-h-[100dvh] overflow-x-hidden bg-sims-bg font-sans selection:bg-sims-primary/20">
       <Header onApplyClick={() => setModalOpen(true)} />
       <ContactModal isOpen={modalOpen} onOpenChange={setModalOpen} />
 
@@ -314,7 +314,29 @@ function BlogShell({
         </div>
       </section>
 
-      {children}
+      <main className="blog-article min-w-0">{children}</main>
+
+      {post.relatedArticles?.length ? (
+        <section className="border-t border-sims-border/60 bg-white py-8 sm:py-10">
+          <div className={`${containerPad} max-w-3xl`}>
+            <h2 className="mb-4 font-display text-xl font-bold text-sims-primary sm:text-2xl">
+              Related reading
+            </h2>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {post.relatedArticles.map((article) => (
+                <li key={article.href}>
+                  <Link
+                    href={article.href}
+                    className="flex min-h-[48px] items-center justify-between gap-3 rounded-xl border border-sims-border p-4 font-semibold leading-relaxed text-sims-primary transition-colors hover:border-sims-primary/40 hover:bg-sims-surface-2"
+                  >
+                    <span>{article.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <section className={`${sectionPad} bg-sims-bg`} id="faqs">
         <div className={`${containerPad} max-w-3xl`}>
@@ -553,8 +575,8 @@ function CollegeGuideBody({ post }: { post: CollegeGuidePost }) {
           <ChecklistMobile rows={post.checklistRows} />
 
           <div className="hidden md:block min-w-0">
-            <div className="overflow-x-auto overscroll-x-contain rounded-2xl border border-sims-border shadow-sm max-w-full">
-              <table className="w-full min-w-[640px] text-left text-sm border-collapse">
+            <div className="w-full overflow-x-auto my-6 rounded-xl border">
+              <table className="w-full min-w-[600px] text-left text-sm border-collapse">
                 <thead>
                   <tr className="bg-sims-primary text-white">
                     <th scope="col" className="px-4 py-3.5 font-semibold w-1/2">
@@ -707,8 +729,8 @@ function CareerGuideBody({ post }: { post: CareerGuidePost }) {
           <SalaryMobile rows={post.salaryRows} />
 
           <div className="hidden md:block min-w-0">
-            <div className="overflow-x-auto overscroll-x-contain rounded-2xl border border-sims-border shadow-sm max-w-full">
-              <table className="w-full min-w-[680px] text-left text-sm border-collapse">
+            <div className="w-full overflow-x-auto my-6 rounded-xl border">
+              <table className="w-full min-w-[600px] text-left text-sm border-collapse">
                 <thead>
                   <tr className="bg-sims-primary text-white">
                     <th scope="col" className="px-4 py-3.5 font-semibold">
@@ -844,13 +866,13 @@ function CareerGuideBody({ post }: { post: CareerGuidePost }) {
 function BlogFigure({ figure, priority = false }: { figure: TourFigure; priority?: boolean }) {
   return (
     <figure className="min-w-0">
-      <div className="overflow-hidden rounded-2xl border border-sims-border bg-sims-surface shadow-sm">
+      <div className="aspect-video overflow-hidden rounded-2xl border border-sims-border bg-sims-surface shadow-sm">
         <OptimizedImage
           image={figure.image}
           alt={figure.alt}
           sizes={IMAGE_SIZES.half}
           priority={priority}
-          className="w-full h-auto max-h-[min(52vh,28rem)] object-cover object-center"
+          className="h-full w-full object-cover object-center"
         />
       </div>
       <figcaption className="mt-2.5 sm:mt-3 px-0.5 text-xs sm:text-sm text-sims-text-muted leading-relaxed break-words">
@@ -988,8 +1010,8 @@ function CampusTourBody({ post }: { post: CampusTourPost }) {
           </ul>
 
           <div className="hidden md:block min-w-0 mb-8">
-            <div className="overflow-x-auto overscroll-x-contain rounded-2xl border border-sims-border shadow-sm max-w-full">
-              <table className="w-full min-w-[640px] text-left text-sm border-collapse">
+            <div className="w-full overflow-x-auto my-6 rounded-xl border">
+              <table className="w-full min-w-[600px] text-left text-sm border-collapse">
                 <thead>
                   <tr className="bg-sims-primary text-white">
                     <th scope="col" className="px-4 py-3.5 font-semibold">
@@ -1180,8 +1202,8 @@ function NursingUpgradeBody({
           <UpgradeCompareMobile rows={post.comparisonRows} />
 
           <div className="hidden md:block min-w-0">
-            <div className="overflow-x-auto overscroll-x-contain rounded-2xl border border-sims-border shadow-sm max-w-full">
-              <table className="w-full min-w-[720px] text-left text-sm border-collapse">
+            <div className="w-full overflow-x-auto my-6 rounded-xl border">
+              <table className="w-full min-w-[600px] text-left text-sm border-collapse">
                 <thead>
                   <tr className="bg-sims-primary text-white">
                     <th scope="col" className="px-4 py-3.5 font-semibold whitespace-nowrap">
@@ -1339,22 +1361,55 @@ function ResourceGuideBody({
               {section.paragraphs.map((paragraph) => (
                 <p
                   key={paragraph.slice(0, 48)}
-                  className="text-sims-text-muted leading-relaxed text-[0.95rem] sm:text-base break-words"
+                  className="text-base sm:text-lg text-sims-text-muted leading-relaxed break-words"
                 >
                   {paragraph}
                 </p>
               ))}
             </div>
             {section.bullets?.length ? (
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-4 space-y-3">
                 {section.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-2 text-sm sm:text-base text-sims-text leading-relaxed">
+                  <li key={bullet} className="flex gap-2 text-base sm:text-lg text-sims-text leading-relaxed">
                     <CheckCircle2 className="w-4 h-4 text-sims-primary-2 shrink-0 mt-1" aria-hidden="true" />
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
             ) : null}
+            {section.subsections?.map((subsection) => (
+              <div key={subsection.heading} className="mt-6">
+                <h3 className="mb-3 font-display text-lg font-bold leading-snug text-sims-primary sm:text-xl">
+                  {subsection.heading}
+                </h3>
+                <div className="space-y-4">
+                  {subsection.paragraphs.map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 48)}
+                      className="text-base leading-relaxed text-sims-text-muted sm:text-lg"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+                {subsection.bullets?.length ? (
+                  <ul className="mt-4 space-y-3">
+                    {subsection.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="flex gap-2 text-base leading-relaxed text-sims-text sm:text-lg"
+                      >
+                        <CheckCircle2
+                          className="mt-1 h-4 w-4 shrink-0 text-sims-primary-2"
+                          aria-hidden="true"
+                        />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            ))}
             {index === post.inlineCtaAfterSection ? (
               <BlogInlineCTA
                 title={post.inlineCtaTitle}
@@ -1374,8 +1429,8 @@ function ResourceGuideBody({
             {post.pairCompareIntro ? (
               <p className="text-sims-text-muted leading-relaxed mb-4 text-sm sm:text-base">{post.pairCompareIntro}</p>
             ) : null}
-            <div className="overflow-x-auto rounded-2xl border border-sims-border bg-white">
-              <table className="w-full min-w-[32rem] text-sm text-left">
+            <div className="w-full overflow-x-auto my-6 rounded-xl border bg-white">
+              <table className="w-full min-w-[600px] text-sm text-left">
                 <thead className="bg-sims-surface-2 text-sims-primary">
                   <tr>
                     <th className="p-3 font-semibold"> </th>
@@ -1405,8 +1460,8 @@ function ResourceGuideBody({
             {post.compareIntro ? (
               <p className="text-sims-text-muted leading-relaxed mb-4 text-sm sm:text-base">{post.compareIntro}</p>
             ) : null}
-            <div className="overflow-x-auto rounded-2xl border border-sims-border bg-white">
-              <table className="w-full min-w-[40rem] text-sm text-left">
+            <div className="w-full overflow-x-auto my-6 rounded-xl border bg-white">
+              <table className="w-full min-w-[600px] text-sm text-left">
                 <thead className="bg-sims-surface-2 text-sims-primary">
                   <tr>
                     <th className="p-3 font-semibold"> </th>
@@ -1430,6 +1485,50 @@ function ResourceGuideBody({
           </div>
         ) : null}
 
+        {post.comparisonTable ? (
+          <div className="mt-10">
+            <h2 className="mb-3 font-display text-xl font-bold text-sims-primary sm:text-2xl">
+              {post.comparisonTable.title}
+            </h2>
+            {post.comparisonTable.intro ? (
+              <p className="mb-4 text-base leading-relaxed text-sims-text-muted sm:text-lg">
+                {post.comparisonTable.intro}
+              </p>
+            ) : null}
+            <div className="w-full overflow-x-auto my-6 rounded-xl border bg-white">
+              <table className="w-full min-w-[600px] text-left text-sm">
+                <thead className="bg-sims-surface-2 text-sims-primary">
+                  <tr>
+                    <th scope="col" className="p-3 font-semibold">Comparison</th>
+                    {post.comparisonTable.columns.map((column) => (
+                      <th key={column} scope="col" className="p-3 font-semibold">
+                        {column}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {post.comparisonTable.rows.map((row) => (
+                    <tr key={row.criterion} className="border-t border-sims-border">
+                      <th scope="row" className="p-3 align-top font-semibold text-sims-text">
+                        {row.criterion}
+                      </th>
+                      {row.values.map((value, index) => (
+                        <td
+                          key={`${row.criterion}-${index}`}
+                          className="p-3 align-top text-sims-text-muted"
+                        >
+                          {value}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : null}
+
         {post.showFeeNote ? <BlogFeeNote /> : null}
 
         <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
@@ -1437,7 +1536,7 @@ function ResourceGuideBody({
             <Button
               key={link.href}
               variant="outline"
-              className="w-full sm:w-auto border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white font-semibold rounded-lg whitespace-normal h-auto min-h-11 py-2.5"
+              className="w-full sm:w-auto border-sims-primary text-sims-primary hover:bg-sims-primary hover:text-white font-semibold rounded-lg whitespace-normal h-auto min-h-[48px] py-2.5"
               asChild
             >
               <Link href={link.href}>{link.label}</Link>

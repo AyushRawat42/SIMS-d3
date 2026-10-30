@@ -60,6 +60,30 @@ const BSC_VS_GNM: RelatedGuide = {
   blurb: 'Four years vs three, PCB eligibility, hospital scope, and starting-pay planning in Uttarakhand.',
 };
 
+const ENTRANCE_PREPARATION: RelatedGuide = {
+  href: blogPostPath('hnbumu-nursing-paramedical-entrance-exam-preparation-syllabus'),
+  label: 'HNBUMU entrance syllabus and study plan',
+  blurb: 'Subject-wise nursing and paramedical preparation alongside Class 12 boards.',
+};
+
+const BPT_VS_NURSING: RelatedGuide = {
+  href: blogPostPath('bpt-vs-bsc-nursing-career-scope-comparison'),
+  label: 'BPT vs B.Sc Nursing career comparison',
+  blurb: 'Compare rehabilitation practice, hospital nursing roles, programme duration, and career fit.',
+};
+
+const CLINICAL_POSTINGS: RelatedGuide = {
+  href: blogPostPath('hospital-clinical-postings-practical-training-sims-dehradun'),
+  label: 'Clinical postings and practical training',
+  blurb: 'How nursing labs, diagnostics practice, and supervised rotations connect with classroom learning.',
+};
+
+const SCHOLARSHIPS: RelatedGuide = {
+  href: blogPostPath('scholarships-education-loan-guide-nursing-paramedical-uttarakhand'),
+  label: 'Scholarships and education-loan checklist',
+  blurb: 'Organize bank documents and check current NSP and Uttarakhand scholarship requirements.',
+};
+
 function onlyPublished(guides: RelatedGuide[]): RelatedGuide[] {
   return guides.filter((g) => isPublicSiteHref(g.href));
 }
@@ -67,27 +91,42 @@ function onlyPublished(guides: RelatedGuide[]): RelatedGuide[] {
 export const NURSING_HUB_GUIDES: RelatedGuide[] = onlyPublished([
   BSC_VS_GNM,
   COUNSELING,
+  ENTRANCE_PREPARATION,
+  BPT_VS_NURSING,
+  SCHOLARSHIPS,
   COMPARE,
   CHECKLIST,
   UPGRADE,
   CAMPUS,
 ]);
 
-export const FACILITIES_HUB_GUIDES: RelatedGuide[] = onlyPublished([HOSTEL, CAMPUS]);
+export const FACILITIES_HUB_GUIDES: RelatedGuide[] = onlyPublished([
+  HOSTEL,
+  CAMPUS,
+  CLINICAL_POSTINGS,
+]);
 
 export function guidesForProgram(slug: string): RelatedGuide[] {
   switch (slug) {
     case 'bsc-nursing':
     case 'gnm':
-      return onlyPublished([BSC_VS_GNM, COMPARE, COUNSELING, CHECKLIST, CAMPUS]);
+      return onlyPublished([
+        BSC_VS_GNM,
+        COMPARE,
+        COUNSELING,
+        ENTRANCE_PREPARATION,
+        SCHOLARSHIPS,
+        CHECKLIST,
+        CAMPUS,
+      ]);
     case 'post-basic-bsc-nursing':
     case 'msc-nursing':
-      return onlyPublished([UPGRADE, COUNSELING, CAMPUS, CHECKLIST]);
+      return onlyPublished([UPGRADE, COUNSELING, SCHOLARSHIPS, CLINICAL_POSTINGS, CAMPUS, CHECKLIST]);
     case 'bpt':
-      return onlyPublished([COMPARE, BPT, CAMPUS]);
+      return onlyPublished([BPT_VS_NURSING, COMPARE, BPT, CLINICAL_POSTINGS, CAMPUS]);
     case 'bmlt':
     case 'bmrit':
-      return onlyPublished([PARAMEDICAL, HOSTEL, COUNSELING, CAMPUS]);
+      return onlyPublished([PARAMEDICAL, CLINICAL_POSTINGS, SCHOLARSHIPS, HOSTEL, COUNSELING, CAMPUS]);
     default:
       return onlyPublished([COUNSELING, CAMPUS]);
   }

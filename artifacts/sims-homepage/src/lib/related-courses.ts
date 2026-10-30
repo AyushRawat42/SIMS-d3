@@ -63,6 +63,10 @@ const ARTICLE_PRIMARY_SLUG: Record<string, string> = {
   'bsc-nursing-gnm-fee-structure-dehradun-2026-27': 'bsc-nursing',
   'post-basic-bsc-nursing-vs-msc-nursing-career-upgrade': 'post-basic-bsc-nursing',
   'bpt-uttarakhand-eligibility-career-scope-salary-after-12th-pcb': 'bpt',
+  'hnbumu-nursing-paramedical-entrance-exam-preparation-syllabus': 'bsc-nursing',
+  'bpt-vs-bsc-nursing-career-scope-comparison': 'bpt',
+  'hospital-clinical-postings-practical-training-sims-dehradun': 'bmlt',
+  'scholarships-education-loan-guide-nursing-paramedical-uttarakhand': 'bsc-nursing',
 };
 
 export function primaryProgramSlugForArticle(articleSlug: string): string | undefined {

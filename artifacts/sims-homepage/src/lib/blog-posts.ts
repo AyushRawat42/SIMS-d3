@@ -1,6 +1,12 @@
 import { blogPostingSchema, faqPageSchema } from '@/lib/seo/schema';
 import { WHATSAPP_CONTACT } from '@/lib/site-content';
 import {
+  BPT_VS_BSC_NURSING_POST,
+  CLINICAL_POSTINGS_POST,
+  HNBUMU_EXAM_PREPARATION_POST,
+  SCHOLARSHIP_GUIDE_POST,
+} from '@/lib/blog-feature-guides';
+import {
   BSC_VS_GNM_POST,
   COURSE_COMPARE_POST,
   HNBUMU_COUNSELING_POST,
@@ -25,6 +31,17 @@ import {
 export type BlogFaq = {
   question: string;
   answer: string;
+};
+
+export type BlogCategory =
+  | 'Nursing'
+  | 'Physiotherapy & Paramedical'
+  | 'HNBUMU Exams & Counseling'
+  | 'Campus & Student Life';
+
+export type BlogArticleLink = {
+  href: string;
+  label: string;
 };
 
 export type FeeComparisonRow = {
@@ -58,6 +75,7 @@ export type RichPart =
 export type BlogPostBase = {
   slug: string;
   title: string;
+  category: BlogCategory;
   metaTitle: string;
   metaDescription: string;
   /**
@@ -81,6 +99,7 @@ export type BlogPostBase = {
   whatsappPrefill: string;
   closingCtaTitle: string;
   closingCtaBody: string;
+  relatedArticles?: BlogArticleLink[];
 };
 
 export type FeeStructurePost = BlogPostBase & {
@@ -235,6 +254,18 @@ export type GuideSection = {
   heading: string;
   paragraphs: string[];
   bullets?: string[];
+  subsections?: {
+    heading: string;
+    paragraphs: string[];
+    bullets?: string[];
+  }[];
+};
+
+export type GuideComparisonTable = {
+  title: string;
+  intro?: string;
+  columns: string[];
+  rows: { criterion: string; values: string[] }[];
 };
 
 export type GuideCompareRow = {
@@ -266,6 +297,7 @@ export type ResourceGuidePost = BlogPostBase & {
   pairCompareTitle?: string;
   pairCompareIntro?: string;
   pairCompareRows?: GuidePairCompareRow[];
+  comparisonTable?: GuideComparisonTable;
   /** Renders the standard admissions fee note (no amounts). */
   showFeeNote?: boolean;
   exploreLinks: { href: string; label: string }[];
@@ -314,6 +346,7 @@ export const FEE_STRUCTURE_POST: FeeStructurePost = {
   template: 'fee-structure',
   slug: 'bsc-nursing-gnm-fee-structure-dehradun-2026-27',
   published: false,
+  category: 'Nursing',
   title:
     'B.Sc Nursing & GNM Fee Structure in Dehradun (2026–27): Tuition, Hostel & Clinical Training Charges',
   metaTitle: 'B.Sc Nursing & GNM Fee Structure in Dehradun (2026–27) | SIMS',
@@ -451,6 +484,17 @@ export const COLLEGE_SELECTION_POST: CollegeGuidePost = {
   template: 'college-guide',
   slug: 'top-private-bsc-nursing-colleges-dehradun-affiliation-eligibility-checklist',
   published: true,
+  category: 'Nursing',
+  relatedArticles: [
+    {
+      href: blogPostPath('hnbumu-nursing-paramedical-entrance-exam-preparation-syllabus'),
+      label: 'Prepare for the HNBUMU nursing entrance exam',
+    },
+    {
+      href: blogPostPath('scholarships-education-loan-guide-nursing-paramedical-uttarakhand'),
+      label: 'Scholarships and education loans for students',
+    },
+  ],
   title:
     'Top Private B.Sc Nursing Colleges in Dehradun: Affiliation, Eligibility, and Campus Selection Checklist',
   metaTitle: 'Top Private B.Sc Nursing Colleges in Dehradun | Checklist | SIMS',
@@ -617,11 +661,22 @@ export const BPT_CAREER_POST: CareerGuidePost = {
   template: 'career-guide',
   slug: 'bpt-uttarakhand-eligibility-career-scope-salary-after-12th-pcb',
   published: true,
+  category: 'Physiotherapy & Paramedical',
+  relatedArticles: [
+    {
+      href: blogPostPath('bpt-vs-bsc-nursing-career-scope-comparison'),
+      label: 'Compare BPT and B.Sc Nursing career paths',
+    },
+    {
+      href: blogPostPath('hospital-clinical-postings-practical-training-sims-dehradun'),
+      label: 'See why clinical postings and lab practice matter',
+    },
+  ],
   title:
     'Bachelor of Physiotherapy (BPT) in Uttarakhand: Eligibility, Career Scope, and Salary After 12th PCB',
-  metaTitle: 'BPT in Uttarakhand After 12th PCB | Eligibility, Career & Salary | SIMS',
+  metaTitle: 'BPT in Uttarakhand: Scope, Eligibility & Salary | SIMS',
   metaDescription:
-    'BPT course eligibility in Dehradun, career scope, and starting salary paths after 12th PCB—plus how SIMS labs and clinical exposure prepare licensed physiotherapists.',
+    'Review BPT eligibility, career options, and clinical learning after 12th PCB. Explore physiotherapy training and admission guidance at SIMS Dehradun.',
   publishedAt: '2026-09-09',
   updatedAt: '2026-09-09',
   author: 'SIMS Career Guidance',
@@ -788,11 +843,22 @@ export const CAMPUS_TOUR_POST: CampusTourPost = {
   template: 'campus-tour',
   slug: 'inside-sims-dehradun-photo-facility-tour-nursing-labs-campus',
   published: true,
+  category: 'Campus & Student Life',
+  relatedArticles: [
+    {
+      href: blogPostPath('hospital-clinical-postings-practical-training-sims-dehradun'),
+      label: 'How hospital postings build practical confidence',
+    },
+    {
+      href: blogPostPath('scholarships-education-loan-guide-nursing-paramedical-uttarakhand'),
+      label: 'Plan scholarships and education-loan documents',
+    },
+  ],
   title:
     'Inside SIMS Dehradun: A Photo & Facility Tour of Our Nursing Labs, Paramedical Setup, and Campus',
   metaTitle: 'SIMS Dehradun Photos, Labs & Location | Campus Tour | SIMS',
   metaDescription:
-    'See Sushila Institute of Medical Sciences photos: nursing labs, paramedical setup, hostel, and the SIMS College of Nursing Dehradun location on Chakrata Road with commute tips.',
+    'Explore SIMS Dehradun labs, hostel, and campus facilities through photos. Find the Selaqui location, Chakrata Road directions, and visit tips for families.',
   publishedAt: '2026-09-09',
   updatedAt: '2026-09-09',
   author: 'SIMS Campus Life',
@@ -1054,11 +1120,22 @@ export const NURSING_UPGRADE_POST: NursingUpgradePost = {
   template: 'nursing-upgrade',
   slug: 'post-basic-bsc-nursing-vs-msc-nursing-career-upgrade',
   published: true,
+  category: 'Nursing',
+  relatedArticles: [
+    {
+      href: blogPostPath('hnbumu-nursing-paramedical-entrance-exam-preparation-syllabus'),
+      label: 'Review the HNBUMU entrance syllabus and study plan',
+    },
+    {
+      href: blogPostPath('scholarships-education-loan-guide-nursing-paramedical-uttarakhand'),
+      label: 'Explore scholarship and loan application steps',
+    },
+  ],
   title:
     'Post Basic B.Sc Nursing vs. M.Sc Nursing: Which Program Best Elevates Your Nursing Career?',
   metaTitle: 'Post Basic B.Sc vs M.Sc Nursing Career Upgrade | SIMS',
   metaDescription:
-    'Compare Post Basic B.Sc Nursing in Dehradun with M.Sc Nursing colleges in Uttarakhand—eligibility, NORCET, UK/Gulf licensing, faculty pathways, and SIMS training.',
+    'Compare Post Basic B.Sc Nursing and M.Sc Nursing pathways, eligibility and career development in Uttarakhand. See training options at SIMS Dehradun.',
   publishedAt: '2026-09-09',
   updatedAt: '2026-09-09',
   author: 'SIMS Academic Guidance',
@@ -1226,6 +1303,10 @@ export const BLOG_POSTS: BlogPost[] = [
   BSC_VS_GNM_POST,
   HNBUMU_COUNSELING_POST,
   COURSE_COMPARE_POST,
+  HNBUMU_EXAM_PREPARATION_POST,
+  BPT_VS_BSC_NURSING_POST,
+  CLINICAL_POSTINGS_POST,
+  SCHOLARSHIP_GUIDE_POST,
   NURSING_UPGRADE_POST,
   CAMPUS_TOUR_POST,
   BPT_CAREER_POST,

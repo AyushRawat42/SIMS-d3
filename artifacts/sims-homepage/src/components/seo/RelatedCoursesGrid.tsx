@@ -20,7 +20,7 @@ export function RelatedCoursesGrid({ currentCourseSlug }: { currentCourseSlug?: 
             <Link
               key={course.slug}
               href={relatedCourseHref(course.slug)}
-              className="group flex flex-col rounded-2xl border border-sims-border bg-white p-5 md:p-6 hover:shadow-md hover:border-sims-primary/20 transition-all"
+              className="group flex min-h-[48px] flex-col rounded-2xl border border-sims-border bg-white p-5 md:p-6 hover:shadow-md hover:border-sims-primary/20 transition-all"
             >
               <p className="text-xs font-semibold text-sims-primary-2 mb-2">{course.duration}</p>
               <h3 className="font-bold text-sims-primary group-hover:text-sims-primary-2 transition-colors leading-snug mb-3">

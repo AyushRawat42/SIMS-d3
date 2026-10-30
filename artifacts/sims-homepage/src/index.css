@@ -3,6 +3,36 @@
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-article h2,
+.blog-article h3 {
+  scroll-margin-top: 6rem;
+}
+
+.blog-article p,
+.blog-article li {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.blog-article .min-h-11 {
+  min-height: 48px;
+}
+
+@media (min-width: 640px) {
+  .blog-article p,
+  .blog-article li {
+    font-size: 1.125rem;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
