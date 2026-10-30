@@ -1,3 +1,4 @@
 .seo
 .vercel
 .env*
+/public/attached_assets/optimized/

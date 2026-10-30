@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "node ./scripts/generate-seo.mjs && vite build --config vite.config.ts && node ./scripts/verify-seo-build.mjs",
+    "dev": "node ./scripts/sync-life-at-sims-assets.mjs && vite --config vite.config.ts --host 0.0.0.0",
+    "build": "node ./scripts/sync-life-at-sims-assets.mjs && node ./scripts/generate-seo.mjs && vite build --config vite.config.ts && node ./scripts/verify-seo-build.mjs",
     "verify:seo": "node ./scripts/verify-seo-build.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
