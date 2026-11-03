@@ -13,6 +13,7 @@ import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import { usePageSeo } from '@/lib/seo';
+import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import {
   DSC00066_scaled,
   DSC00118_scaled,
@@ -67,6 +68,7 @@ export function Home() {
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20">
+      <OrganizationSchema />
       <Header onApplyClick={handleApplyClick} />
       <ContactModal isOpen={modalOpen} onOpenChange={setModalOpen} />
 

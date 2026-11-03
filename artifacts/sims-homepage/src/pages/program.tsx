@@ -12,6 +12,7 @@ import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import NotFound from '@/pages/not-found';
 import { RelatedBlogGuides } from '@/components/RelatedBlogGuides';
 import { CourseFAQ } from '@/components/seo/CourseFAQ';
+import { CourseSchema } from '@/components/seo/CourseSchema';
 import { RelatedCoursesGrid } from '@/components/seo/RelatedCoursesGrid';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import { MobileStickyCTA } from '@/components/cro/MobileStickyCTA';
@@ -62,6 +63,10 @@ function ProgramContent({ program }: { program: Program }) {
 
   return (
     <div className="min-h-[100dvh] bg-sims-bg font-sans selection:bg-sims-primary/20 pb-24 md:pb-0">
+      <CourseSchema
+        courseName={program.name}
+        description={program.metaDescription || program.subtitle}
+      />
       <Header onApplyClick={handleApplyClick} />
       <ContactModal isOpen={modalOpen} onOpenChange={setModalOpen} />
       {brochureMounted ? (

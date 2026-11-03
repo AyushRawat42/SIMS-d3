@@ -49,9 +49,11 @@ export function collegeSchema(): JsonLdValue {
     '@context': 'https://schema.org',
     '@type': 'CollegeOrUniversity',
     '@id': ORGANIZATION_ID,
-    name: 'Sushila Institute of Medical Sciences (SIMS)',
+    name: 'Sushila Institute of Medical Sciences',
     alternateName: 'SIMS Dehradun',
-    url: SITE_ORIGIN,
+    url: 'https://sims.college',
+    logo: 'https://sims.college/logo.png',
+    description: 'A premier nursing and paramedical college located in Dehradun, Uttarakhand.',
     telephone: ['+91-9759761244', '+91-9759761243', '+91-9759761241'],
     address: {
       '@type': 'PostalAddress',
@@ -66,6 +68,7 @@ export function collegeSchema(): JsonLdValue {
       latitude: 30.3456,
       longitude: 77.8712,
     },
+    areaServed: 'Dehradun',
     parentOrganization: {
       '@type': 'CollegeOrUniversity',
       name: 'Hemwati Nandan Bahuguna Uttarakhand Medical Education University (HNBUMU)',
@@ -113,13 +116,18 @@ export function courseSchema(program: CourseSchemaInput): JsonLdValue {
     provider: {
       '@type': 'CollegeOrUniversity',
       '@id': ORGANIZATION_ID,
-      name: 'Sushila Institute of Medical Sciences (SIMS)',
-      url: SITE_ORIGIN,
+      name: 'Sushila Institute of Medical Sciences',
+      url: 'https://sims.college',
+      sameAs: 'https://sims.college',
     },
     hasCourseInstance: {
       '@type': 'CourseInstance',
-      courseMode: 'onsite',
+      courseMode: 'Onsite',
       courseWorkload: courseWorkload(program.duration, program.slug),
+      location: {
+        '@type': 'Place',
+        name: 'SIMS Campus Dehradun',
+      },
     },
     offers: {
       '@type': 'Offer',
