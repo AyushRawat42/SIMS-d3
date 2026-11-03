@@ -1,9 +1,10 @@
 import { Link, useParams } from 'wouter';
-import { ArrowRight, CheckCircle2, FlaskConical } from 'lucide-react';
+import { ArrowRight, CheckCircle2, FlaskConical, Images } from 'lucide-react';
 import { SectionHeading } from '@/components/Shared';
 import { FacilitiesPageShell, facilitiesContainerPad, facilitiesSectionPad } from '@/components/FacilitiesPageShell';
 import { facilitiesLabPath } from '@/lib/facilities-nav';
 import { LAB_CATEGORIES, getLabById, getRelatedLabs } from '@/lib/labs';
+import { AutoLinkText } from '@/components/AutoLinkText';
 import NotFound from '@/pages/not-found';
 
 function LabDetailContent({ labId }: { labId: string }) {
@@ -16,6 +17,9 @@ function LabDetailContent({ labId }: { labId: string }) {
   const categoryLabel =
     LAB_CATEGORIES.find((category) => category.id === lab.category)?.title ?? 'Laboratories';
   const related = getRelatedLabs(lab);
+  const galleryPhotos = lab.gallery ?? lab.photos;
+  const isTwoItemGallery = galleryPhotos && galleryPhotos.length === 2;
+  const isFourItemGallery = galleryPhotos && galleryPhotos.length === 4;
 
   return (
     <FacilitiesPageShell
@@ -30,7 +34,7 @@ function LabDetailContent({ labId }: { labId: string }) {
         { label: 'Laboratories', href: '/facilities/laboratories' },
         { label: lab.title },
       ]}
-      heroImage={lab.image}
+      heroImage={lab.thumbnail ?? lab.image}
       heroImageAlt={lab.imageAlt}
       ctaTitle={`Learn more about ${lab.title}`}
       ctaText="Speak with admissions about practical training, programme options, and campus visits at SIMS Dehradun."
@@ -45,7 +49,9 @@ function LabDetailContent({ labId }: { labId: string }) {
               <SectionHeading title={`About the ${lab.title}`} className="mb-6" />
               <div className="space-y-4 text-sims-text-muted leading-relaxed text-[0.975rem] md:text-base">
                 {lab.paragraphs.map((para) => (
-                  <p key={para.slice(0, 48)}>{para}</p>
+                  <p key={para.slice(0, 48)}>
+                    <AutoLinkText excludePath={facilitiesLabPath(lab.id)}>{para}</AutoLinkText>
+                  </p>
                 ))}
               </div>
             </div>
@@ -100,8 +106,70 @@ function LabDetailContent({ labId }: { labId: string }) {
         </div>
       </section>
 
+      {/* Lab Photo Gallery Grid */}
+      {galleryPhotos && galleryPhotos.length > 0 ? (
+        <section className={`${facilitiesSectionPad} bg-white border-b border-sims-border/60`}>
+          <div className={facilitiesContainerPad}>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-lg bg-sims-surface flex items-center justify-center text-sims-primary-2 shrink-0">
+                <Images className="w-5 h-5" aria-hidden="true" />
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-sims-primary-2">
+                Campus Photography
+              </p>
+            </div>
+            <SectionHeading
+              title="Laboratory Gallery"
+              subtitle={`Demonstrations, clinical simulators, and learning spaces inside the ${lab.title}.`}
+              className="mb-8 md:mb-10"
+            />
+            <div
+              className={`grid gap-6 ${
+                isTwoItemGallery
+                  ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-4xl'
+                  : isFourItemGallery
+                  ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+                  : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              }`}
+            >
+              {galleryPhotos.map((photo, idx) => (
+                <figure
+                  key={photo.src + idx}
+                  className="group overflow-hidden rounded-xl border border-sims-border bg-white shadow-sm hover:shadow-md hover:border-sims-primary/25 transition-all flex flex-col h-full"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-sims-surface">
+                    <picture>
+                      <source srcSet={photo.src} type="image/webp" />
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        sizes={
+                          isTwoItemGallery
+                            ? '(max-width: 768px) 100vw, 50vw'
+                            : isFourItemGallery
+                            ? '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw'
+                            : '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                        }
+                        width={photo.width ?? 1024}
+                        height={photo.height ?? 768}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </picture>
+                  </div>
+                  <figcaption className="p-4 text-xs sm:text-sm text-sims-text-muted leading-relaxed flex-1 flex items-start border-t border-sims-border/60">
+                    {photo.alt}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {related.length > 0 ? (
-        <section className={`${facilitiesSectionPad} bg-white`}>
+        <section className={`${facilitiesSectionPad} bg-sims-bg`}>
           <div className={facilitiesContainerPad}>
             <SectionHeading
               title="Related Labs"
@@ -113,7 +181,7 @@ function LabDetailContent({ labId }: { labId: string }) {
                 <Link
                   key={item.id}
                   href={facilitiesLabPath(item.id)}
-                  className="rounded-2xl border border-sims-border bg-sims-bg p-6 shadow-sm hover:shadow-md hover:border-sims-primary/15 transition-all block h-full"
+                  className="rounded-2xl border border-sims-border bg-white p-6 shadow-sm hover:shadow-md hover:border-sims-primary/15 transition-all block h-full"
                 >
                   <h3 className="text-lg font-bold text-sims-primary mb-2 leading-snug">
                     {item.title}

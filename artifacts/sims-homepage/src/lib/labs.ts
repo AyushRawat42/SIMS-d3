@@ -1,14 +1,10 @@
 import type { ResponsiveImage } from '@/lib/responsive-image';
 import {
-  DSC00066_scaled,
   DSC00118_scaled,
   DSC00134_scaled,
-  DSC00177_scaled,
-  DSC00287,
   DSC00312,
   DSC00338,
   DSC00484,
-  DSC00503,
   DSC00555,
   DSC00646,
   img_12,
@@ -18,16 +14,21 @@ import {
   lab_exercise_therapy_swiss_ball_group,
   lab_manual_therapy_limb_assessment,
   lab_manual_therapy_spinal_technique,
-  lab_microscopy_slide_examination,
   lab_nutrition_kitchen_demonstration,
   lab_ot_instrument_set_inspection,
-  lab_pathology_microscope_examination,
   lab_physio_gait_training_walker,
   lab_radiology_xray_film_review,
   labs_collage,
 } from '@/lib/responsive-images.generated';
 
 export type LabCategoryId = 'nursing' | 'paramedical' | 'physiotherapy' | 'common';
+
+export interface LabPhoto {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
 
 export interface LabDetail {
   id: string;
@@ -39,8 +40,11 @@ export interface LabDetail {
   academicUses: string[];
   metaTitle: string;
   metaDescription: string;
-  image?: ResponsiveImage;
+  image?: ResponsiveImage | string;
+  thumbnail?: string;
   imageAlt?: string;
+  gallery?: LabPhoto[];
+  photos?: LabPhoto[];
 }
 
 export const LAB_CATEGORIES: {
@@ -114,9 +118,50 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Nursing Foundation Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Explore the Nursing Foundation Lab at SIMS Dehradun — mannequins, demonstration beds, and supervised skills practice for fundamental nursing procedures.',
-    image: DSC00177_scaled,
+    thumbnail: '/images/laboratories/nursing-foundation-lab-patient-bed-demonstration.webp',
+    image: '/images/laboratories/nursing-foundation-lab-patient-bed-demonstration.webp',
     imageAlt:
-      'SIMS faculty demonstrating a bedside nursing procedure on a mannequin with a sterile instrument tray while students observe',
+      'Nursing faculty instructing students on patient comfort and tray preparation at bedside simulation unit',
+    gallery: [
+      {
+        src: '/images/laboratories/nursing-foundation-lab-patient-bed-demonstration.webp',
+        alt: 'Nursing faculty instructing students on patient comfort and tray preparation at bedside simulation unit',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/nursing-foundation-lab-bed-making-skills.webp',
+        alt: 'Nursing students practicing bed-making, hygiene, and patient positioning procedures',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/nursing-foundation-lab-clinical-procedure-teaching.webp',
+        alt: 'Instructor demonstrating fundamental clinical nursing competencies on full-body manikin',
+        width: 768,
+        height: 1024,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/nursing-foundation-lab-patient-bed-demonstration.webp',
+        alt: 'Nursing faculty instructing students on patient comfort and tray preparation at bedside simulation unit',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/nursing-foundation-lab-bed-making-skills.webp',
+        alt: 'Nursing students practicing bed-making, hygiene, and patient positioning procedures',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/nursing-foundation-lab-clinical-procedure-teaching.webp',
+        alt: 'Instructor demonstrating fundamental clinical nursing competencies on full-body manikin',
+        width: 768,
+        height: 1024,
+      },
+    ],
   },
   {
     id: 'adult-health-nursing-lab',
@@ -175,6 +220,46 @@ export const LABS: LabDetail[] = [
     image: lab_community_health_sanitation_models,
     imageAlt:
       'SIMS nursing students arranging sanitation and water-safety teaching models in the community health lab',
+    gallery: [
+      {
+        src: '/images/laboratories/community-health-lab-subcentre-model.webp',
+        alt: 'Nursing students reviewing rural primary health centre and subcentre scale models in Community Health Lab',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/community-health-lab-education-aids.webp',
+        alt: 'Community health education exhibits, AV aids, and hygiene awareness displays',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/community-health-lab-sanitation-simulation.webp',
+        alt: 'Students demonstrating rural sanitation, clean water sourcing, and hand pump simulation',
+        width: 1024,
+        height: 768,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/community-health-lab-subcentre-model.webp',
+        alt: 'Nursing students reviewing rural primary health centre and subcentre scale models in Community Health Lab',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/community-health-lab-education-aids.webp',
+        alt: 'Community health education exhibits, AV aids, and hygiene awareness displays',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/community-health-lab-sanitation-simulation.webp',
+        alt: 'Students demonstrating rural sanitation, clean water sourcing, and hand pump simulation',
+        width: 1024,
+        height: 768,
+      },
+    ],
   },
   {
     id: 'advanced-nursing-skills-lab',
@@ -201,9 +286,74 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Advanced Nursing Skills Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Advanced Nursing Skills Lab at SIMS Dehradun for critical care, emergency drills, BLS practice, and high-acuity nursing simulation.',
-    image: DSC00287,
+    thumbnail: '/images/laboratories/advanced-nursing-skills-lab-icu-setup.webp',
+    image: '/images/laboratories/advanced-nursing-skills-lab-icu-setup.webp',
     imageAlt:
-      'SIMS faculty leading a bedside simulation on a patient mannequin with monitoring equipment while masked students observe',
+      'Nursing students practicing advanced respiratory care and multi-parameter monitoring on high-fidelity manikin',
+    gallery: [
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-icu-setup.webp',
+        alt: 'Nursing students practicing advanced respiratory care and multi-parameter monitoring on high-fidelity manikin',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-bp-assessment.webp',
+        alt: 'Students practicing non-invasive blood pressure measurement and clinical assessment beside patient simulator',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-iv-infusion.webp',
+        alt: 'Nursing trainees managing IV line calibration and intravenous fluid therapy administration',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-vitals-monitoring.webp',
+        alt: 'Pair of students recording diagnostic vital parameters using bedside electronic monitoring console',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-cardiac-monitor.webp',
+        alt: 'Student calibrating wall-mounted cardiac telemetry and telemetry monitor in ICU simulation suite',
+        width: 768,
+        height: 1024,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-icu-setup.webp',
+        alt: 'Nursing students practicing advanced respiratory care and multi-parameter monitoring on high-fidelity manikin',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-bp-assessment.webp',
+        alt: 'Students practicing non-invasive blood pressure measurement and clinical assessment beside patient simulator',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-iv-infusion.webp',
+        alt: 'Nursing trainees managing IV line calibration and intravenous fluid therapy administration',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-vitals-monitoring.webp',
+        alt: 'Pair of students recording diagnostic vital parameters using bedside electronic monitoring console',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/advanced-nursing-skills-lab-cardiac-monitor.webp',
+        alt: 'Student calibrating wall-mounted cardiac telemetry and telemetry monitor in ICU simulation suite',
+        width: 768,
+        height: 1024,
+      },
+    ],
   },
   {
     id: 'paediatrics-child-health-nursing-lab',
@@ -230,9 +380,74 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Paediatrics & Child Health Nursing Lab at SIMS Dehradun',
     metaDescription:
       'Paediatrics and Child Health Nursing Lab at SIMS Dehradun for newborn care, growth monitoring, and paediatric nursing skills practice.',
-    image: DSC00134_scaled,
+    thumbnail: '/images/laboratories/pediatrics-lab-radiant-warmer-main.webp',
+    image: '/images/laboratories/pediatrics-lab-radiant-warmer-main.webp',
     imageAlt:
-      'SIMS nursing student weighing an infant mannequin on a baby weighing scale at a paediatric skill station',
+      'Nursing students monitoring neonatal manikin under a radiant warmer in Child Health Lab',
+    gallery: [
+      {
+        src: '/images/laboratories/pediatrics-lab-radiant-warmer-main.webp',
+        alt: 'Nursing students monitoring neonatal manikin under a radiant warmer in Child Health Lab',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-play-therapy-area.webp',
+        alt: 'Designated pediatric play therapy and developmental assessment area with interactive educational toys',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-infusion-crib-care.webp',
+        alt: 'Students setting up IV infusion and medication titration beside a pediatric crib',
+        width: 1024,
+        height: 748,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-fetal-skull-anatomy.webp',
+        alt: 'Students studying neonatal skull anatomy and cranial suture models',
+        width: 1024,
+        height: 762,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-clinical-instruments.webp',
+        alt: 'Pediatric nursing workstation with emergency suction equipment and clinical drug charts',
+        width: 557,
+        height: 1024,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/pediatrics-lab-radiant-warmer-main.webp',
+        alt: 'Nursing students monitoring neonatal manikin under a radiant warmer in Child Health Lab',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-play-therapy-area.webp',
+        alt: 'Designated pediatric play therapy and developmental assessment area with interactive educational toys',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-infusion-crib-care.webp',
+        alt: 'Students setting up IV infusion and medication titration beside a pediatric crib',
+        width: 1024,
+        height: 748,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-fetal-skull-anatomy.webp',
+        alt: 'Students studying neonatal skull anatomy and cranial suture models',
+        width: 1024,
+        height: 762,
+      },
+      {
+        src: '/images/laboratories/pediatrics-lab-clinical-instruments.webp',
+        alt: 'Pediatric nursing workstation with emergency suction equipment and clinical drug charts',
+        width: 557,
+        height: 1024,
+      },
+    ],
   },
   {
     id: 'nutrition-dietetics-lab',
@@ -262,6 +477,34 @@ export const LABS: LabDetail[] = [
     image: lab_nutrition_kitchen_demonstration,
     imageAlt:
       'SIMS students preparing a therapeutic diet at the cooking demonstration counter in the nutrition and dietetics lab',
+    gallery: [
+      {
+        src: '/images/laboratories/nutrition-dietetics-lab-ingredients-storage.webp',
+        alt: 'SIMS student measuring grains, cereals, and dietary ingredients in the Nutrition and Dietetics Lab',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/nutrition-dietetics-lab-food-prep-cold-storage.webp',
+        alt: 'Student accessing refrigeration and food preparation station in the therapeutic diet lab',
+        width: 1024,
+        height: 768,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/nutrition-dietetics-lab-ingredients-storage.webp',
+        alt: 'SIMS student measuring grains, cereals, and dietary ingredients in the Nutrition and Dietetics Lab',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/nutrition-dietetics-lab-food-prep-cold-storage.webp',
+        alt: 'Student accessing refrigeration and food preparation station in the therapeutic diet lab',
+        width: 1024,
+        height: 768,
+      },
+    ],
   },
   {
     id: 'pre-clinical-sciences-lab',
@@ -288,9 +531,62 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Pre-Clinical Sciences Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Pre-Clinical Sciences Lab at SIMS Dehradun for anatomy, physiology, and foundational biomedical learning for nursing students.',
-    image: DSC00066_scaled,
+    thumbnail: '/images/laboratories/preclinical-lab-skeletal-demonstration.webp',
+    image: '/images/laboratories/preclinical-lab-skeletal-demonstration.webp',
     imageAlt:
-      'SIMS faculty teaching skull and bone structure with an articulated skeleton and bone models during a pre-clinical practical',
+      'Students attending anatomy and skeletal system demonstration in Pre-Clinical Science Lab',
+    gallery: [
+      {
+        src: '/images/laboratories/preclinical-lab-skeletal-demonstration.webp',
+        alt: 'Students attending anatomy and skeletal system demonstration in Pre-Clinical Science Lab',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/preclinical-sciences-lab.webp',
+        alt: 'Pre-clinical science laboratory equipment and anatomical training specimens',
+        width: 1024,
+        height: 683,
+      },
+      {
+        src: '/images/laboratories/preclinical-lab-digital-board-lecture.webp',
+        alt: 'Faculty conducting anatomy lecture using smart interactive display and full human skeleton model',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/preclinical-lab-interactive-teaching.webp',
+        alt: 'Interactive classroom demonstration on nervous system and musculoskeletal anatomy',
+        width: 1024,
+        height: 768,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/preclinical-lab-skeletal-demonstration.webp',
+        alt: 'Students attending anatomy and skeletal system demonstration in Pre-Clinical Science Lab',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/preclinical-sciences-lab.webp',
+        alt: 'Pre-clinical science laboratory equipment and anatomical training specimens',
+        width: 1024,
+        height: 683,
+      },
+      {
+        src: '/images/laboratories/preclinical-lab-digital-board-lecture.webp',
+        alt: 'Faculty conducting anatomy lecture using smart interactive display and full human skeleton model',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/preclinical-lab-interactive-teaching.webp',
+        alt: 'Interactive classroom demonstration on nervous system and musculoskeletal anatomy',
+        width: 1024,
+        height: 768,
+      },
+    ],
   },
   {
     id: 'obstetrics-gynaecology-nursing-lab',
@@ -317,9 +613,62 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Obstetrics & Gynaecology Nursing Lab at SIMS Dehradun',
     metaDescription:
       'OBG Nursing Lab at SIMS Dehradun for antenatal, intranatal, postnatal, and newborn care skills with maternity nursing models.',
-    image: DSC00118_scaled,
+    thumbnail: '/images/laboratories/obg-nursing-lab-main.webp',
+    image: '/images/laboratories/obg-nursing-lab-main.webp',
     imageAlt:
-      'SIMS nursing student examining a fetal skull model beside fetal presentation and cervical dilatation charts in the maternity lab',
+      'SIMS students practicing delivery procedures on maternal birthing simulator',
+    gallery: [
+      {
+        src: '/images/laboratories/obg-nursing-lab-main.webp',
+        alt: 'SIMS students practicing delivery procedures on maternal birthing simulator',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/obg-nursing-lab-demonstration.webp',
+        alt: 'Faculty demonstrating anatomical stages of labor in OBG lab',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/obg-nursing-lab-postnatal.webp',
+        alt: 'Nursing student conducting IV setup in the postnatal care simulator area',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/obg-nursing-lab-antenatal-palpation.webp',
+        alt: 'Students performing abdominal palpation maneuvers on obstetric torso model',
+        width: 1024,
+        height: 768,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/obg-nursing-lab-main.webp',
+        alt: 'SIMS students practicing delivery procedures on maternal birthing simulator',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/obg-nursing-lab-demonstration.webp',
+        alt: 'Faculty demonstrating anatomical stages of labor in OBG lab',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/obg-nursing-lab-postnatal.webp',
+        alt: 'Nursing student conducting IV setup in the postnatal care simulator area',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/obg-nursing-lab-antenatal-palpation.webp',
+        alt: 'Students performing abdominal palpation maneuvers on obstetric torso model',
+        width: 1024,
+        height: 768,
+      },
+    ],
   },
 
   // —— Paramedical ——
@@ -348,9 +697,62 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Microbiology Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Microbiology Lab at SIMS Dehradun for microscopy, staining, aseptic technique, and diagnostic microbiology learning.',
-    image: lab_microscopy_slide_examination,
+    thumbnail: '/images/laboratories/microbiology-lab-laminar-air-flow.webp',
+    image: '/images/laboratories/microbiology-lab-laminar-air-flow.webp',
     imageAlt:
-      'SIMS student examining a prepared slide under a compound microscope during a microbiology practical',
+      'Students inoculating culture plates inside laminar air flow chambers under sterile conditions',
+    gallery: [
+      {
+        src: '/images/laboratories/microbiology-lab-laminar-air-flow.webp',
+        alt: 'Students inoculating culture plates inside laminar air flow chambers under sterile conditions',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/microbiology-lab-digital-microscope.webp',
+        alt: 'Student performing high-magnification microbial visualization using a digital screen compound microscope',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/microbiology-lab-micropipette-technique.webp',
+        alt: 'Microbiology trainees practicing precision liquid pipetting and reagent titration',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/microbiology-lab-specimen-handling.webp',
+        alt: 'Students inspecting diagnostic sample vials and reagent tubes on the laboratory workstation',
+        width: 768,
+        height: 1024,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/microbiology-lab-laminar-air-flow.webp',
+        alt: 'Students inoculating culture plates inside laminar air flow chambers under sterile conditions',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/microbiology-lab-digital-microscope.webp',
+        alt: 'Student performing high-magnification microbial visualization using a digital screen compound microscope',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/microbiology-lab-micropipette-technique.webp',
+        alt: 'Microbiology trainees practicing precision liquid pipetting and reagent titration',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/microbiology-lab-specimen-handling.webp',
+        alt: 'Students inspecting diagnostic sample vials and reagent tubes on the laboratory workstation',
+        width: 768,
+        height: 1024,
+      },
+    ],
   },
   {
     id: 'clinical-research-lab',
@@ -464,9 +866,50 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Biochemistry Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Biochemistry Lab at SIMS Dehradun for clinical chemistry practicals, analytical technique, and diagnostic lab training.',
-    image: DSC00503,
+    thumbnail: '/images/laboratories/biochemistry-lab-hot-air-oven-sterilization.webp',
+    image: '/images/laboratories/biochemistry-lab-hot-air-oven-sterilization.webp',
     imageAlt:
-      'SIMS students in lab coats measuring a reagent into graduated glassware during a biochemistry practical',
+      'Faculty demonstrating dry-heat sterilization and thermal calibration using the laboratory Hot Air Oven',
+    gallery: [
+      {
+        src: '/images/laboratories/biochemistry-lab-hot-air-oven-sterilization.webp',
+        alt: 'Faculty demonstrating dry-heat sterilization and thermal calibration using the laboratory Hot Air Oven',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/biochemistry-lab-compound-microscope-examination.webp',
+        alt: 'Paramedical student performing diagnostic slide examination under an electrical compound microscope',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/biochemistry-lab-microscopic-analysis.webp',
+        alt: 'Close-up of biochemical specimen evaluation and fine-focus microscopy analysis',
+        width: 1024,
+        height: 768,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/biochemistry-lab-hot-air-oven-sterilization.webp',
+        alt: 'Faculty demonstrating dry-heat sterilization and thermal calibration using the laboratory Hot Air Oven',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/biochemistry-lab-compound-microscope-examination.webp',
+        alt: 'Paramedical student performing diagnostic slide examination under an electrical compound microscope',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/biochemistry-lab-microscopic-analysis.webp',
+        alt: 'Close-up of biochemical specimen evaluation and fine-focus microscopy analysis',
+        width: 1024,
+        height: 768,
+      },
+    ],
   },
   {
     id: 'pathology-lab',
@@ -493,9 +936,62 @@ export const LABS: LabDetail[] = [
     metaTitle: 'Pathology Lab Facilities at SIMS Dehradun',
     metaDescription:
       'Pathology Lab at SIMS Dehradun for haematology practicals, microscopy, staining, and diagnostic laboratory training.',
-    image: lab_pathology_microscope_examination,
+    thumbnail: '/images/laboratories/pathology-lab-workstation-overview.webp',
+    image: '/images/laboratories/pathology-lab-workstation-overview.webp',
     imageAlt:
-      'SIMS student adjusting a microscope while examining a pathology slide at the laboratory bench',
+      'Paramedical and pathology students running sample separation and diagnostic prep across the laboratory bench',
+    gallery: [
+      {
+        src: '/images/laboratories/pathology-lab-workstation-overview.webp',
+        alt: 'Paramedical and pathology students running sample separation and diagnostic prep across the laboratory bench',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/pathology-lab-centrifuge-microtomy.webp',
+        alt: 'Students operating benchtop centrifuge and precision microtome for histological sectioning',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/pathology-lab-colony-counter.webp',
+        alt: 'Laboratory technician using illuminated digital colony counter and magnifying lens for microbiological culture analysis',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/pathology-lab-autoclave-sterilization.webp',
+        alt: 'Students regulating pressure and temperature on vertical laboratory autoclave sterilizer',
+        width: 1024,
+        height: 768,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/pathology-lab-workstation-overview.webp',
+        alt: 'Paramedical and pathology students running sample separation and diagnostic prep across the laboratory bench',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/pathology-lab-centrifuge-microtomy.webp',
+        alt: 'Students operating benchtop centrifuge and precision microtome for histological sectioning',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/pathology-lab-colony-counter.webp',
+        alt: 'Laboratory technician using illuminated digital colony counter and magnifying lens for microbiological culture analysis',
+        width: 768,
+        height: 1024,
+      },
+      {
+        src: '/images/laboratories/pathology-lab-autoclave-sterilization.webp',
+        alt: 'Students regulating pressure and temperature on vertical laboratory autoclave sterilizer',
+        width: 1024,
+        height: 768,
+      },
+    ],
   },
   {
     id: 'radiology-imaging-technology-lab',
@@ -790,6 +1286,34 @@ export const LABS: LabDetail[] = [
     image: DSC00555,
     imageAlt:
       'SIMS students working together at a desktop workstation in the campus computer lab',
+    gallery: [
+      {
+        src: '/images/laboratories/computer-lab-hall-overview.webp',
+        alt: 'Front view of SIMS high-speed computer lab equipped with networked desktop workstations',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/computer-lab-workstations-angle.webp',
+        alt: 'Side perspective of spacious, air-conditioned computer training facility and dedicated IT terminal rows',
+        width: 1024,
+        height: 768,
+      },
+    ],
+    photos: [
+      {
+        src: '/images/laboratories/computer-lab-hall-overview.webp',
+        alt: 'Front view of SIMS high-speed computer lab equipped with networked desktop workstations',
+        width: 1024,
+        height: 768,
+      },
+      {
+        src: '/images/laboratories/computer-lab-workstations-angle.webp',
+        alt: 'Side perspective of spacious, air-conditioned computer training facility and dedicated IT terminal rows',
+        width: 1024,
+        height: 768,
+      },
+    ],
   },
   {
     id: 'av-aids-lab',

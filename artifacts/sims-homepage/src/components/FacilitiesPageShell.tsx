@@ -38,7 +38,7 @@ export function FacilitiesPageShell({
   title: string;
   subtitle: string;
   breadcrumbs: BreadcrumbItem[];
-  heroImage?: ResponsiveImage;
+  heroImage?: ResponsiveImage | string;
   heroImageAlt?: string;
   heroImageClassName?: string;
   children: ReactNode;
@@ -48,6 +48,8 @@ export function FacilitiesPageShell({
   const [modalOpen, setModalOpen] = useState(false);
   const image = heroImage ?? FACILITIES_HERO_IMAGE.src;
   const imageAlt = heroImageAlt ?? FACILITIES_HERO_IMAGE.alt;
+  const aspectRatioStyle =
+    typeof image === 'string' ? '4 / 3' : `${image.width} / ${image.height}`;
 
   useSeoEntry(
     getSeoEntry(canonicalPath) ??
@@ -146,7 +148,7 @@ export function FacilitiesPageShell({
             <div className="lg:col-span-5">
               <div
                 className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/10"
-                style={{ aspectRatio: `${image.width} / ${image.height}` }}
+                style={{ aspectRatio: aspectRatioStyle }}
               >
                 <OptimizedImage
                   image={image}

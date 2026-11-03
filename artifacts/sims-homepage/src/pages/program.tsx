@@ -19,9 +19,11 @@ import { guidesForProgram } from '@/lib/blog-internal-links';
 import { getCourseFaqs } from '@/lib/course-faqs';
 import { useSeoEntry } from '@/lib/seo';
 import { getSeoEntry, programSeo } from '@/lib/seo/meta-registry';
+import { AutoLinkText } from '@/components/AutoLinkText';
 import {
   PROGRAM_CATEGORIES,
   getProgramBySlug,
+  programPath,
   type Program,
 } from '@/lib/programs';
 
@@ -47,6 +49,7 @@ function ProgramContent({ program }: { program: Program }) {
   const categoryLabel =
     PROGRAM_CATEGORIES.find((c) => c.id === program.category)?.label ?? 'Programs';
   const faqs = getCourseFaqs(program.slug);
+  const currentPath = programPath(program.slug);
 
   useSeoEntry(getSeoEntry(`/programs/${program.slug}`) ?? programSeo(program));
   usePreloadHeroImage(program.image);
@@ -163,7 +166,9 @@ function ProgramContent({ program }: { program: Program }) {
               <SectionHeading title="Program Overview" className="mb-6" />
               <div className="space-y-4 text-sims-text-muted leading-relaxed text-[0.975rem] md:text-base">
                 {program.overview.map((para, i) => (
-                  <p key={i}>{para}</p>
+                  <p key={i}>
+                    <AutoLinkText excludePath={currentPath}>{para}</AutoLinkText>
+                  </p>
                 ))}
               </div>
             </div>
@@ -199,7 +204,7 @@ function ProgramContent({ program }: { program: Program }) {
       <section className={`${sectionPad} bg-sims-bg border-y border-sims-border/60`}>
         <div className={containerPad}>
           <SectionHeading
-            title="What You’ll Study"
+            title="What You'll Study"
             subtitle="A practical overview of core learning areas. Exact semester-wise syllabi follow university guidelines and may be confirmed with admissions."
             className="mb-8 md:mb-10"
           />

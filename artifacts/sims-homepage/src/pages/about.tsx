@@ -11,6 +11,7 @@ import { OptimizedImage } from '@/components/OptimizedImage';
 import { IMAGE_SIZES } from '@/lib/responsive-image';
 import { cn } from '@/lib/utils';
 import { usePageSeo } from '@/lib/seo';
+import { AutoLinkText } from '@/components/AutoLinkText';
 import {
   ABOUT_INTRO,
   ABOUT_INTRO_SECONDARY,
@@ -124,7 +125,9 @@ export function AboutPage() {
             </div>
             <div className="lg:col-span-8 space-y-4 text-sims-text-muted leading-relaxed text-[0.975rem] md:text-base">
               {ABOUT_INTRO.map((para) => (
-                <p key={para.slice(0, 48)}>{para}</p>
+                <p key={para.slice(0, 48)}>
+                  <AutoLinkText excludePath="/about">{para}</AutoLinkText>
+                </p>
               ))}
             </div>
           </div>
@@ -160,7 +163,9 @@ export function AboutPage() {
             </div>
             <div className="lg:col-span-7 space-y-4 text-sims-text-muted leading-relaxed text-[0.975rem] md:text-base">
               {ABOUT_INTRO_SECONDARY.map((para) => (
-                <p key={para.slice(0, 48)}>{para}</p>
+                <p key={para.slice(0, 48)}>
+                  <AutoLinkText excludePath="/about">{para}</AutoLinkText>
+                </p>
               ))}
             </div>
           </div>

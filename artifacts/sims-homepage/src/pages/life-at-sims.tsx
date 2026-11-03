@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import {
   ArrowRight,
+  BookOpen,
   Bus,
   Building2,
   Calendar,
@@ -23,6 +24,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ContactModal } from '@/components/ContactModal';
 import { Button } from '@/components/ui/button';
+import { Image } from '@/components/OptimizedImage';
 import { usePreloadHeroImage } from '@/hooks/usePreloadHeroImage';
 import { usePageSeo } from '@/lib/seo';
 import { LIFE_HERO } from '@/lib/life-at-sims';
@@ -236,6 +238,26 @@ const TIMELINE_STEPS = [
     description:
       'Badminton, indoor games, library access, group study, and time with the campus community.',
     tag: 'Wellness & Study',
+  },
+];
+
+
+const CENTRAL_LIBRARY_PHOTOS = [
+  {
+    src: '/images/life-at-sims/sims-library-group-study-table.webp',
+    alt: 'SIMS students engaged in collaborative peer study in the central campus library',
+  },
+  {
+    src: '/images/life-at-sims/sims-library-circulation-desk-issue.webp',
+    alt: 'Student at the central library circulation desk for reference material issuance',
+  },
+  {
+    src: '/images/life-at-sims/sims-library-interactive-discussion.webp',
+    alt: 'Interactive academic discussion and group review among nursing and paramedical students',
+  },
+  {
+    src: '/images/life-at-sims/sims-library-student-reading-hall.webp',
+    alt: 'Students utilizing quiet reading hours and medical reference journals in SIMS library',
   },
 ];
 
@@ -620,10 +642,54 @@ export function LifeAtSimsPage() {
         </div>
       </section>
 
-      <section className="overflow-x-hidden bg-white py-16 md:py-20">
+      {/* Central Library & Knowledge Resource Centre */}
+      <section id="library" className="overflow-x-hidden border-t border-sims-border bg-white py-16 md:py-20">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-10 max-w-3xl text-center md:mb-12">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-sims-border bg-sims-surface px-3 py-1 text-xs font-bold tracking-wider text-sims-primary sm:text-sm">
+              <BookOpen className="h-4 w-4 text-sims-primary" />
+              Central Library & Knowledge Hub
+            </span>
+            <h2 className="mt-3 mb-2 font-display text-2xl font-bold text-sims-primary sm:text-3xl md:text-4xl">
+              Academic Library & Reading Resource Centre
+            </h2>
+            <p className="text-sm leading-relaxed text-sims-text-muted sm:text-base">
+              Quiet study zones, comprehensive medical literature, digital reference terminals, and collaborative discussion spaces supporting everyday coursework and clinical research.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {CENTRAL_LIBRARY_PHOTOS.map((item) => (
+              <figure
+                key={item.src}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-sims-border bg-white shadow-sm transition-all hover:border-sims-primary/30 hover:shadow-md"
+              >
+                <div className="relative w-full overflow-hidden rounded-2xl aspect-[4/3]">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    loading="lazy"
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 transition-opacity duration-300 group-hover:opacity-95" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3.5 sm:p-4">
+                    <p className="text-xs sm:text-sm font-medium text-white line-clamp-2 leading-snug drop-shadow-sm">
+                      {item.alt}
+                    </p>
+                  </div>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="overflow-x-hidden border-t border-sims-border bg-sims-surface py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto mb-12 max-w-3xl text-center">
-            <span className="rounded-full border border-sims-border bg-sims-surface px-3 py-1 text-xs font-bold tracking-wider text-sims-primary sm:text-sm">
+            <span className="rounded-full border border-sims-border bg-white px-3 py-1 text-xs font-bold tracking-wider text-sims-primary sm:text-sm">
               Safe & Supportive
             </span>
             <h2 className="mt-3 mb-2 font-display text-2xl font-bold text-sims-primary sm:text-3xl md:text-4xl">
